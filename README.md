@@ -52,6 +52,7 @@ Every paper of mine with a number in it ships with a replication package here: m
 ### Elsewhere
 
 <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7457522"><img src="https://img.shields.io/badge/SSRN-154881?style=for-the-badge&logo=ssrn&logoColor=white" alt="SSRN"></a>
+<a href="https://scholar.google.com/citations?user=RihXr08AAAAJ"><img src="https://img.shields.io/badge/Google%20Scholar-4285F4?style=for-the-badge&logo=googlescholar&logoColor=white" alt="Google Scholar"></a>
 <a href="https://orcid.org/0009-0002-7753-7052"><img src="https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" alt="ORCID"></a>
 <a href="https://scarcitythinker.substack.com"><img src="https://img.shields.io/badge/Substack-FF6719?style=for-the-badge&logo=substack&logoColor=white" alt="Scarcity Thinker on Substack"></a>
 
