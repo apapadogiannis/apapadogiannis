@@ -121,7 +121,7 @@ Every paper of mine with a number in it ships with a replication package here: m
 <td valign="top">
 <p><b><a href="https://github.com/apapadogiannis/covered-call-etfs">High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs</a></b></p>
 <p>Published in <i>The Journal of Beta Investment Strategies</i>, 2026. A primer and due-diligence guide to funds that sell equity upside for option income. Across four US and four UCITS funds in late 2025, distribution yields ran from 7% to 12% a year, while one-year total returns ran from &minus;5% to 13% and fell short of the yield in seven of the eight: a payout is not a return. Code and data only; the article text is copyright PMR.</p>
-<p><a href="https://github.com/apapadogiannis/covered-call-etfs/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/covered-call-etfs/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> <a href="https://ssrn.com/abstract=5370897"><img src="https://img.shields.io/badge/SSRN-5370897-1f4e79" alt="SSRN"></a></p>
+<p><a href="https://github.com/apapadogiannis/covered-call-etfs/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/covered-call-etfs/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> <a href="https://doi.org/10.5281/zenodo.24244700"><img src="https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.24244700-007ec6" alt="Zenodo"></a> <a href="https://ssrn.com/abstract=5370897"><img src="https://img.shields.io/badge/SSRN-5370897-1f4e79" alt="SSRN"></a></p>
 </td>
 </tr>
 </table>
