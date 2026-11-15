@@ -113,6 +113,7 @@ def build():
             "turns red if a single table differs from the published one.", ""]
     for k, name, what in QUESTIONS:
         mine = [p for p in papers if p["question"] == k]
+        mine.sort(key=lambda p: "repo" not in p)  # papers with a replication package first; order otherwise as in papers.toml
         n_pk = sum("repo" in p for p in mine)
         count = f'{len(mine)} paper{"s" if len(mine) != 1 else ""}'
         if n_pk:
