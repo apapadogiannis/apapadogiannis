@@ -1,6 +1,14 @@
 ## Agisilaos Papadogiannis
 
-Engineer by training (PhD, MBA), with a research background in wireless communications. I do independent research in finance on two questions: valuation, what an asset is worth, and pricing, what return it must earn for the risk its holders bear. My dual-risk framework joins the two.
+Engineer by training (PhD, MBA), with a research background in wireless communications. I do independent research in finance on two questions, valuation and pricing.
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="assets/research-map-dark.svg">
+<source media="(prefers-color-scheme: light)" srcset="assets/research-map-light.svg">
+<img src="assets/research-map-light.svg" width="640" alt="Two overlapping circles. Valuation: what an asset is worth. Pricing: what return it must earn. Their overlap is the dual-risk framework, in which expected cash flows shift the required return and the required return sets the value.">
+</picture>
+</p>
 
 Every paper of mine with a number in it ships with a replication package here: manuscript, data, code, and one script that regenerates every table and figure. The green badge on each is live. GitHub re-runs the full pipeline on a clean machine at every change and once a month, and the badge turns red if a single table differs from the published one.
 
