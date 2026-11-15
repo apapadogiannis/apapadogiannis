@@ -110,7 +110,7 @@ def build():
     out += ["### All papers by question", "",
             "Click a line to open its list. Where a paper has a replication package, the green badge is live: "
             "GitHub re-runs the full pipeline on a clean machine at every change and once a month, and the badge "
-            "turns red if a single table differs from the published one.", ""]
+            "turns red if any stored result is not reproduced to nine significant digits.", ""]
     for k, name, what in QUESTIONS:
         mine = [p for p in papers if p["question"] == k]
         mine.sort(key=lambda p: "repo" not in p)  # papers with a replication package first; order otherwise as in papers.toml
