@@ -44,7 +44,7 @@ Every paper of mine with a number in it ships with a replication package here: m
 <td valign="top">
 <p><b><a href="https://github.com/apapadogiannis/ai-broad-index-investing">Does AI break the case for broad index investing? Rent decay, private capital, and deflation</a></b></p>
 <p>Forthcoming in <i>The Journal of Beta Investment Strategies</i>. Since the release of ChatGPT the S&amp;P 500 returned 19% a year against 11% for its equal-weighted version, and two of three AI-themed funds trailed it: a capitalization-weighted index follows rents as AI moves them, without a forecast. Code and data only; the article text is copyright PMR.</p>
-<p><a href="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> <a href="https://ssrn.com/abstract=6058896"><img src="https://img.shields.io/badge/SSRN-6058896-1f4e79" alt="SSRN"></a></p>
+<p><a href="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> <a href="https://doi.org/10.5281/zenodo.24240516"><img src="https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.24240516-007ec6" alt="Zenodo"></a> <a href="https://ssrn.com/abstract=6058896"><img src="https://img.shields.io/badge/SSRN-6058896-1f4e79" alt="SSRN"></a></p>
 </td>
 </tr>
 </table>
