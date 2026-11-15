@@ -5,7 +5,8 @@
 #   ssrn      : SSRN abstract number
 #   published : link to the published article
 #   repo      : name of the replication package on GitHub;  zenodo : its Zenodo DOI
-#   featured  : true for the one package shown as a card for its question (needs figure, figure_alt, summary)
+#   featured  : true for the one package shown as a card for its question (needs figure, figure_alt and
+#               summary, one short sentence: the cards are narrow)
 
 [profile]
 name = "Agisilaos Papadogiannis"
@@ -33,7 +34,7 @@ zenodo = "10.5281/zenodo.24051776"
 featured = true
 figure = "assets/economic-scarcity.png"
 figure_alt = "Implied desirability of Bitcoin, Ethereum and Bittensor, with sensitivity ranges"
-summary = "Network value written as desirability times scarcity times adoption, applied to Bitcoin, Ethereum and Bittensor. Bitcoin and Ethereum come out within about 25% of each other; Bittensor's valuation rests mainly on expectations."
+summary = "Network value written as desirability times scarcity times adoption, for Bitcoin, Ethereum and Bittensor."
 
 [[paper]]
 title = "Valuing Scarcity: A General Framework for Bitcoin, Gold, and Traditional Assets"
@@ -84,7 +85,7 @@ zenodo = "10.5281/zenodo.24003938"
 featured = true
 figure = "assets/required-return.png"
 figure_alt = "Bitcoin's required return since 2012, split into risk-free rate, market risk, concentration risk and mortality risk"
-summary = "The MCM equation: the return Bitcoin's holders should require is the risk-free rate plus market, concentration and mortality risk. For 2026 that is about 18% a year (90% range 15–22%). Built on a census of 1,815 cryptoassets with 520 deaths; an audit script re-checks every number in the paper."
+summary = "The MCM equation prices market, concentration and mortality risk: about 18% a year for 2026."
 
 [[paper]]
 title = "Bitcoin's Expected Return: An Age Rule That Beats Current Practice"
@@ -119,7 +120,7 @@ zenodo = "10.5281/zenodo.24243060"
 featured = true
 figure = "assets/beyond-discount-rates.png"
 figure_alt = "Realized gain of capital over three-year horizons for SPY, QQQ and IWM, by starting month, 2000 to 2020"
-summary = "Forthcoming in <i>The Journal of Investing</i>. Discounted cash flow valuation with two return components: a cost of capital for priced risk and a gain of capital that arises when expected cash flows are misestimated. For SPY, QQQ and IWM from 2000 to 2023 the gain is large and persistent: over one year it exceeds 20 percentage points in 22% of months for SPY and 43% for QQQ. Code and data only; the article text is copyright PMR."
+summary = "A cost of capital for priced risk, plus a gain of capital when expected cash flows are misestimated."
 
 [[paper]]
 title = "A Dual-Risk Theory of Valuation: Bridging Discounting and Expectational Distortion"
@@ -155,7 +156,7 @@ zenodo = "10.5281/zenodo.24240516"
 featured = true
 figure = "assets/ai-broad-index.png"
 figure_alt = "Annual returns since the release of ChatGPT: capitalization-weighted indices against the equal-weighted S&P 500 and three AI-themed funds"
-summary = "Forthcoming in <i>The Journal of Beta Investment Strategies</i>. Since the release of ChatGPT the S&amp;P 500 returned 19% a year against 11% for its equal-weighted version, and two of three AI-themed funds trailed it: a capitalization-weighted index follows rents as AI moves them, without a forecast. Code and data only; the article text is copyright PMR."
+summary = "Since ChatGPT the S&amp;P 500 returned 19% a year against 11% equal-weighted: a capitalization-weighted index follows rents as AI moves them."
 
 [[paper]]
 title = "High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs"

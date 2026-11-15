@@ -28,10 +28,12 @@ def esc(text):
     return html.escape(text, quote=False)
 
 
-def badges(p):
-    """Live replication badge, then Zenodo and SSRN, for a paper with a package."""
+def badges(p, live_only=False):
+    """Live replication badge, then (unless live_only) Zenodo and SSRN, for a paper with a package."""
     wf = f'{GH}/{p["repo"]}/actions/workflows/replicate.yml'
     out = [f'<a href="{wf}"><img src="{wf}/badge.svg" alt="replication"></a>']
+    if live_only:
+        return out[0]
     if "zenodo" in p:
         out.append(f'<a href="https://doi.org/{p["zenodo"]}"><img src="https://img.shields.io/badge/Zenodo-'
                    f'{p["zenodo"].replace("/", "%2F")}-007ec6" alt="Zenodo"></a>')
@@ -42,18 +44,18 @@ def badges(p):
 
 
 def card(p):
-    """One featured package: colour band, figure, question tag, title, summary, badges."""
+    """One featured package: colour band, figure, question tag, title, one-sentence summary, live badge."""
     q = p["question"]
     name = next(n for k, n, _ in QUESTIONS if k == q)
     url = f'{GH}/{p["repo"]}'
     return "\n".join([
-        '<td width="50%" valign="top">',
+        '<td width="25%" valign="top">',
         f'<p><img src="assets/hband-{q}.svg" width="100%" alt=""></p>',
         f'<a href="{url}"><img src="{p["figure"]}" alt="{html.escape(p["figure_alt"])}"></a>',
         f'<p><img src="assets/tag-{q}.svg" height="22" alt="{name}"></p>',
         f'<p><b><a href="{url}">{esc(p["title"])}</a></b></p>',
         f'<p>{p["summary"]}</p>',
-        f'<p>{badges(p)}</p>',
+        f'<p>{badges(p, live_only=True)}</p>',
         '</td>'])
 
 
@@ -102,8 +104,7 @@ def build():
     out += ["### Featured replication packages", "",
             "One per question. Each holds the data and code behind a paper, with one script that regenerates "
             "every table and figure.", "", "<table>"]
-    for i in range(0, len(featured), 2):
-        out += ["<tr>"] + [card(p) for p in featured[i:i + 2]] + ["</tr>"]
+    out += ["<tr>"] + [card(p) for p in featured] + ["</tr>"]
     out += ["</table>", ""]
 
     out += ["### All papers by question", "",

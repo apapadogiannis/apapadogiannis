@@ -18,39 +18,37 @@ One per question. Each holds the data and code behind a paper, with one script t
 
 <table>
 <tr>
-<td width="50%" valign="top">
+<td width="25%" valign="top">
 <p><img src="assets/hband-valuation.svg" width="100%" alt=""></p>
 <a href="https://github.com/apapadogiannis/economic-scarcity-as-value"><img src="assets/economic-scarcity.png" alt="Implied desirability of Bitcoin, Ethereum and Bittensor, with sensitivity ranges"></a>
 <p><img src="assets/tag-valuation.svg" height="22" alt="Valuation"></p>
 <p><b><a href="https://github.com/apapadogiannis/economic-scarcity-as-value">Economic Scarcity as Value: A Universal Framework for Blockchain and Beyond</a></b></p>
-<p>Network value written as desirability times scarcity times adoption, applied to Bitcoin, Ethereum and Bittensor. Bitcoin and Ethereum come out within about 25% of each other; Bittensor's valuation rests mainly on expectations.</p>
-<p><a href="https://github.com/apapadogiannis/economic-scarcity-as-value/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/economic-scarcity-as-value/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> <a href="https://doi.org/10.5281/zenodo.24051776"><img src="https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.24051776-007ec6" alt="Zenodo"></a> <a href="https://ssrn.com/abstract=5384204"><img src="https://img.shields.io/badge/SSRN-5384204-1f4e79" alt="SSRN"></a></p>
+<p>Network value written as desirability times scarcity times adoption, for Bitcoin, Ethereum and Bittensor.</p>
+<p><a href="https://github.com/apapadogiannis/economic-scarcity-as-value/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/economic-scarcity-as-value/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></p>
 </td>
-<td width="50%" valign="top">
+<td width="25%" valign="top">
 <p><img src="assets/hband-pricing.svg" width="100%" alt=""></p>
 <a href="https://github.com/apapadogiannis/bitcoin-required-return"><img src="assets/required-return.png" alt="Bitcoin&#x27;s required return since 2012, split into risk-free rate, market risk, concentration risk and mortality risk"></a>
 <p><img src="assets/tag-pricing.svg" height="22" alt="Pricing"></p>
 <p><b><a href="https://github.com/apapadogiannis/bitcoin-required-return">Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold</a></b></p>
-<p>The MCM equation: the return Bitcoin's holders should require is the risk-free rate plus market, concentration and mortality risk. For 2026 that is about 18% a year (90% range 15–22%). Built on a census of 1,815 cryptoassets with 520 deaths; an audit script re-checks every number in the paper.</p>
-<p><a href="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> <a href="https://doi.org/10.5281/zenodo.24003938"><img src="https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.24003938-007ec6" alt="Zenodo"></a> <a href="https://ssrn.com/abstract=7705239"><img src="https://img.shields.io/badge/SSRN-7705239-1f4e79" alt="SSRN"></a></p>
+<p>The MCM equation prices market, concentration and mortality risk: about 18% a year for 2026.</p>
+<p><a href="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></p>
 </td>
-</tr>
-<tr>
-<td width="50%" valign="top">
+<td width="25%" valign="top">
 <p><img src="assets/hband-dual-risk.svg" width="100%" alt=""></p>
 <a href="https://github.com/apapadogiannis/beyond-discount-rates"><img src="assets/beyond-discount-rates.png" alt="Realized gain of capital over three-year horizons for SPY, QQQ and IWM, by starting month, 2000 to 2020"></a>
 <p><img src="assets/tag-dual-risk.svg" height="22" alt="Dual-risk framework"></p>
 <p><b><a href="https://github.com/apapadogiannis/beyond-discount-rates">Beyond Discount Rates: A Valuation Framework for Unpriced Systematic Risk</a></b></p>
-<p>Forthcoming in <i>The Journal of Investing</i>. Discounted cash flow valuation with two return components: a cost of capital for priced risk and a gain of capital that arises when expected cash flows are misestimated. For SPY, QQQ and IWM from 2000 to 2023 the gain is large and persistent: over one year it exceeds 20 percentage points in 22% of months for SPY and 43% for QQQ. Code and data only; the article text is copyright PMR.</p>
-<p><a href="https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> <a href="https://doi.org/10.5281/zenodo.24243060"><img src="https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.24243060-007ec6" alt="Zenodo"></a> <a href="https://ssrn.com/abstract=5180040"><img src="https://img.shields.io/badge/SSRN-5180040-1f4e79" alt="SSRN"></a></p>
+<p>A cost of capital for priced risk, plus a gain of capital when expected cash flows are misestimated.</p>
+<p><a href="https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></p>
 </td>
-<td width="50%" valign="top">
+<td width="25%" valign="top">
 <p><img src="assets/hband-capture.svg" width="100%" alt=""></p>
 <a href="https://github.com/apapadogiannis/ai-broad-index-investing"><img src="assets/ai-broad-index.png" alt="Annual returns since the release of ChatGPT: capitalization-weighted indices against the equal-weighted S&amp;P 500 and three AI-themed funds"></a>
 <p><img src="assets/tag-capture.svg" height="22" alt="Capture"></p>
 <p><b><a href="https://github.com/apapadogiannis/ai-broad-index-investing">Does AI break the case for broad index investing? Rent decay, private capital, and deflation</a></b></p>
-<p>Forthcoming in <i>The Journal of Beta Investment Strategies</i>. Since the release of ChatGPT the S&amp;P 500 returned 19% a year against 11% for its equal-weighted version, and two of three AI-themed funds trailed it: a capitalization-weighted index follows rents as AI moves them, without a forecast. Code and data only; the article text is copyright PMR.</p>
-<p><a href="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> <a href="https://doi.org/10.5281/zenodo.24240516"><img src="https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.24240516-007ec6" alt="Zenodo"></a> <a href="https://ssrn.com/abstract=6058896"><img src="https://img.shields.io/badge/SSRN-6058896-1f4e79" alt="SSRN"></a></p>
+<p>Since ChatGPT the S&amp;P 500 returned 19% a year against 11% equal-weighted: a capitalization-weighted index follows rents as AI moves them.</p>
+<p><a href="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></p>
 </td>
 </tr>
 </table>
