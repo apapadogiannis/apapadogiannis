@@ -58,7 +58,7 @@ One per question. Each holds the data and code behind a paper, with one script t
 Click a line to open its list. Where a paper has a replication package, the green badge is live: GitHub re-runs the full pipeline on a clean machine at every change and once a month, and the badge turns red if a single table differs from the published one.
 
 <details>
-<summary><img src="assets/dot-valuation.svg" width="12" height="12" alt=""> <b>Valuation</b>: what an asset is worth (8 papers, 1 with a replication package)</summary>
+<summary><img src="assets/dot-valuation.svg" width="12" height="12" alt=""> <b>Valuation</b>: what an asset is worth (8 papers, 2 with a replication package)</summary>
 <ul>
 <li><b>Economic Scarcity as Value: A Universal Framework for Blockchain and Beyond</b>. <a href="https://ssrn.com/abstract=5384204">SSRN</a> · <a href="https://github.com/apapadogiannis/economic-scarcity-as-value">Replication package</a> <a href="https://github.com/apapadogiannis/economic-scarcity-as-value/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/economic-scarcity-as-value/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></li>
 <li><b>Valuing Scarcity: A General Framework for Bitcoin, Gold, and Traditional Assets</b>. Financial Economics Letters, 2026. <a href="https://ssrn.com/abstract=5289457">SSRN</a> · <a href="https://doi.org/10.58567/fel05020001">Published version</a></li>
@@ -66,7 +66,7 @@ Click a line to open its list. Where a paper has a replication package, the gree
 <li><b>Scarcity in an Age of AI Abundance</b>. <a href="https://ssrn.com/abstract=5924462">SSRN</a></li>
 <li><b>What Moves the Price of Gold: An Economic-Scarcity Lens on Policy, the Dollar, and the Debasement Trade</b>. <a href="https://ssrn.com/abstract=5619373">SSRN</a></li>
 <li><b>The Productivity Myth: Why Scarcity Drives All Value</b>. <a href="https://ssrn.com/abstract=5367197">SSRN</a></li>
-<li><b>Bitcoin Is Not Money: Why Fixed Supply Fails in a Modern Economy</b>. <a href="https://ssrn.com/abstract=5435197">SSRN</a></li>
+<li><b>Bitcoin Is Not Money: Why Fixed Supply Fails in a Modern Economy</b>. Asian Economics Letters, forthcoming. <a href="https://ssrn.com/abstract=5435197">SSRN</a> · <a href="https://github.com/apapadogiannis/bitcoin-is-not-money">Replication package</a> <a href="https://github.com/apapadogiannis/bitcoin-is-not-money/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/bitcoin-is-not-money/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></li>
 <li><b>How to Classify any Asset: Ontology, Anchor, Rail, Composability</b>. <a href="https://ssrn.com/abstract=5635610">SSRN</a></li>
 </ul>
 </details>

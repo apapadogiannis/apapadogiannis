@@ -68,7 +68,9 @@ ssrn = "5367197"
 [[paper]]
 title = "Bitcoin Is Not Money: Why Fixed Supply Fails in a Modern Economy"
 question = "valuation"
+venue = "Asian Economics Letters, forthcoming"
 ssrn = "5435197"
+repo = "bitcoin-is-not-money"
 
 [[paper]]
 title = "How to Classify any Asset: Ontology, Anchor, Rail, Composability"
