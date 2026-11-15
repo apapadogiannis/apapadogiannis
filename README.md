@@ -65,7 +65,8 @@ Every paper of mine with a number in it ships with a replication package here: m
 
 <table>
 <tr>
-<td width="42%" valign="middle">
+<td width="42%" valign="top">
+<p><img src="assets/band-pricing.svg" width="100%" height="8" alt=""></p>
 <a href="https://github.com/apapadogiannis/bitcoin-required-return"><img src="assets/required-return.png" alt="Bitcoin's required return since 2012, split into risk-free rate, market risk, concentration risk and mortality risk"></a>
 </td>
 <td valign="top">
@@ -76,7 +77,8 @@ Every paper of mine with a number in it ships with a replication package here: m
 </td>
 </tr>
 <tr>
-<td width="42%" valign="middle">
+<td width="42%" valign="top">
+<p><img src="assets/band-pricing.svg" width="100%" height="8" alt=""></p>
 <a href="https://github.com/apapadogiannis/bitcoin-age-rule"><img src="assets/age-rule.png" alt="The age rule's five-year expected return for Bitcoin at each date, against the return that followed"></a>
 </td>
 <td valign="top">
@@ -87,7 +89,8 @@ Every paper of mine with a number in it ships with a replication package here: m
 </td>
 </tr>
 <tr>
-<td width="42%" valign="middle">
+<td width="42%" valign="top">
+<p><img src="assets/band-valuation.svg" width="100%" height="8" alt=""></p>
 <a href="https://github.com/apapadogiannis/economic-scarcity-as-value"><img src="assets/economic-scarcity.png" alt="Implied desirability of Bitcoin, Ethereum and Bittensor, with sensitivity ranges"></a>
 </td>
 <td valign="top">
@@ -98,7 +101,8 @@ Every paper of mine with a number in it ships with a replication package here: m
 </td>
 </tr>
 <tr>
-<td width="42%" valign="middle">
+<td width="42%" valign="top">
+<p><img src="assets/band-capture.svg" width="100%" height="8" alt=""></p>
 <a href="https://github.com/apapadogiannis/ai-broad-index-investing"><img src="assets/ai-broad-index.png" alt="Annual returns since the release of ChatGPT: capitalization-weighted indices against the equal-weighted S&amp;P 500 and three AI-themed funds"></a>
 </td>
 <td valign="top">
@@ -109,7 +113,8 @@ Every paper of mine with a number in it ships with a replication package here: m
 </td>
 </tr>
 <tr>
-<td width="42%" valign="middle">
+<td width="42%" valign="top">
+<p><img src="assets/band-dual-risk.svg" width="100%" height="8" alt=""></p>
 <a href="https://github.com/apapadogiannis/beyond-discount-rates"><img src="assets/beyond-discount-rates.png" alt="Realized gain of capital over three-year horizons for SPY, QQQ and IWM, by starting month, 2000 to 2020"></a>
 </td>
 <td valign="top">
@@ -120,7 +125,8 @@ Every paper of mine with a number in it ships with a replication package here: m
 </td>
 </tr>
 <tr>
-<td width="42%" valign="middle">
+<td width="42%" valign="top">
+<p><img src="assets/band-capture.svg" width="100%" height="8" alt=""></p>
 <a href="https://github.com/apapadogiannis/covered-call-etfs"><img src="assets/covered-call-etfs.png" alt="Trailing distribution yield against one-year NAV total return for four US and four UCITS covered-call ETFs, late 2025"></a>
 </td>
 <td valign="top">
