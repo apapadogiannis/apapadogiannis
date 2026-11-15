@@ -92,7 +92,7 @@ def build():
             sys.exit(f"more than one featured package for {name}")
         featured += f
 
-    out = [f'## {prof["name"]}', ""]
+    out = [f'## {prof["name"]}', "", prof["links"].strip(), ""]
     for para in prof["intro"]:
         out += [para, ""]
     out += ['<p align="center">', '<picture>',
@@ -121,7 +121,6 @@ def build():
                 f'<summary><img src="assets/dot-{k}.svg" width="12" height="12" alt=""> <b>{name}</b>: {what} ({count})</summary>',
                 "<ul>"] + [line(p) for p in mine] + ["</ul>", "</details>", ""]
 
-    out += ["### Elsewhere", "", prof["elsewhere"].strip(), ""]
     return "\n".join(out)
 
 
