@@ -71,6 +71,7 @@ question = "valuation"
 venue = "Asian Economics Letters, forthcoming"
 ssrn = "5435197"
 repo = "bitcoin-is-not-money"
+zenodo = "10.5281/zenodo.24249917"
 
 [[paper]]
 title = "How to Classify any Asset: Ontology, Anchor, Rail, Composability"
