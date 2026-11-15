@@ -1,0 +1,172 @@
+# The data behind the profile page. Edit this file, then run:  python3 build.py
+# Each [[paper]] is one entry. Only "title" and "question" are required.
+#   question  : valuation | pricing | dual-risk | capture
+#   venue     : journal and year, for published or forthcoming papers (leave out while under review)
+#   ssrn      : SSRN abstract number
+#   published : link to the published article
+#   repo      : name of the replication package on GitHub;  zenodo : its Zenodo DOI
+#   featured  : true for the one package shown as a card for its question (needs figure, figure_alt, summary)
+
+[profile]
+name = "Agisilaos Papadogiannis"
+intro = [
+  "Engineer by training (PhD, MBA). My first research career was in wireless communications, with IEEE publications that have drawn about 2,000 citations. I now do independent research in finance, published in peer-reviewed journals.",
+  "My work asks three questions about assets: what they are worth (valuation), what return they must earn (pricing), and what their holders actually keep (capture). I treat research as engineering: every empirical result comes with open data and code, written in Python and re-run automatically on GitHub.",
+]
+# The block under "Elsewhere", copied to the page as written.
+elsewhere = '''
+<a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7457522"><img src="https://img.shields.io/badge/SSRN-154881?style=for-the-badge&logo=ssrn&logoColor=white" alt="SSRN"></a>
+<a href="https://scholar.google.com/citations?user=RihXr08AAAAJ"><img src="https://img.shields.io/badge/Google%20Scholar-4285F4?style=for-the-badge&logo=googlescholar&logoColor=white" alt="Google Scholar"></a>
+<a href="https://orcid.org/0009-0002-7753-7052"><img src="https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" alt="ORCID"></a>
+<a href="https://scarcitythinker.substack.com"><img src="https://img.shields.io/badge/Substack-FF6719?style=for-the-badge&logo=substack&logoColor=white" alt="Scarcity Thinker on Substack"></a>
+
+Contact: apapadogiannis@gmail.com
+'''
+
+# ---------------------------------------------------------------- valuation
+[[paper]]
+title = "Economic Scarcity as Value: A Universal Framework for Blockchain and Beyond"
+question = "valuation"
+ssrn = "5384204"
+repo = "economic-scarcity-as-value"
+zenodo = "10.5281/zenodo.24051776"
+featured = true
+figure = "assets/economic-scarcity.png"
+figure_alt = "Implied desirability of Bitcoin, Ethereum and Bittensor, with sensitivity ranges"
+summary = "Network value written as desirability times scarcity times adoption, applied to Bitcoin, Ethereum and Bittensor. Bitcoin and Ethereum come out within about 25% of each other; Bittensor's valuation rests mainly on expectations."
+
+[[paper]]
+title = "Valuing Scarcity: A General Framework for Bitcoin, Gold, and Traditional Assets"
+question = "valuation"
+venue = "Financial Economics Letters, 2026"
+ssrn = "5289457"
+published = "https://doi.org/10.58567/fel05020001"
+
+[[paper]]
+title = "The Architecture of Blockchain Value: Capabilities, Pillars, and Growth Dynamics"
+question = "valuation"
+venue = "Frontiers in Blockchain, 2026"
+ssrn = "6196338"
+published = "https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2026.1747512/full"
+
+[[paper]]
+title = "Scarcity in an Age of AI Abundance"
+question = "valuation"
+ssrn = "5924462"
+
+[[paper]]
+title = "What Moves the Price of Gold: An Economic-Scarcity Lens on Policy, the Dollar, and the Debasement Trade"
+question = "valuation"
+ssrn = "5619373"
+
+[[paper]]
+title = "The Productivity Myth: Why Scarcity Drives All Value"
+question = "valuation"
+ssrn = "5367197"
+
+[[paper]]
+title = "Bitcoin Is Not Money: Why Fixed Supply Fails in a Modern Economy"
+question = "valuation"
+ssrn = "5435197"
+
+[[paper]]
+title = "How to Classify any Asset: Ontology, Anchor, Rail, Composability"
+question = "valuation"
+ssrn = "5635610"
+
+# ---------------------------------------------------------------- pricing
+[[paper]]
+title = "Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold"
+question = "pricing"
+ssrn = "7705239"
+repo = "bitcoin-required-return"
+zenodo = "10.5281/zenodo.24003938"
+featured = true
+figure = "assets/required-return.png"
+figure_alt = "Bitcoin's required return since 2012, split into risk-free rate, market risk, concentration risk and mortality risk"
+summary = "The MCM equation: the return Bitcoin's holders should require is the risk-free rate plus market, concentration and mortality risk. For 2026 that is about 18% a year (90% range 15–22%). Built on a census of 1,815 cryptoassets with 520 deaths; an audit script re-checks every number in the paper."
+
+[[paper]]
+title = "Bitcoin's Expected Return: An Age Rule That Beats Current Practice"
+question = "pricing"
+ssrn = "7705438"
+repo = "bitcoin-age-rule"
+zenodo = "10.5281/zenodo.24004326"
+
+[[paper]]
+title = "On the Physics of Expected Asset Returns"
+question = "pricing"
+ssrn = "6586879"
+
+[[paper]]
+title = "Scarcity-Aligned Discounting in Asset Valuation"
+question = "pricing"
+ssrn = "5368003"
+
+[[paper]]
+title = "The Bitcoin Hurdle Fallacy: Why Risk Misalignment Distorts Valuation"
+question = "pricing"
+ssrn = "5368091"
+
+# ---------------------------------------------------------------- dual-risk framework
+[[paper]]
+title = "Beyond Discount Rates: A Valuation Framework for Unpriced Systematic Risk"
+question = "dual-risk"
+venue = "The Journal of Investing, forthcoming 2027"
+ssrn = "5180040"
+repo = "beyond-discount-rates"
+zenodo = "10.5281/zenodo.24243060"
+featured = true
+figure = "assets/beyond-discount-rates.png"
+figure_alt = "Realized gain of capital over three-year horizons for SPY, QQQ and IWM, by starting month, 2000 to 2020"
+summary = "Forthcoming in <i>The Journal of Investing</i>. Discounted cash flow valuation with two return components: a cost of capital for priced risk and a gain of capital that arises when expected cash flows are misestimated. For SPY, QQQ and IWM from 2000 to 2023 the gain is large and persistent: over one year it exceeds 20 percentage points in 22% of months for SPY and 43% for QQQ. Code and data only; the article text is copyright PMR."
+
+[[paper]]
+title = "A Dual-Risk Theory of Valuation: Bridging Discounting and Expectational Distortion"
+question = "dual-risk"
+venue = "Discover Analytics, 2026"
+ssrn = "5226017"
+published = "https://doi.org/10.1007/s44257-026-00062-9"
+
+[[paper]]
+title = "From Unified Discounting to Dual-Risk: A New Lens on DCF Valuation"
+question = "dual-risk"
+venue = "Finance Research Open, 2026"
+ssrn = "6127866"
+published = "https://doi.org/10.1016/j.finr.2026.100096"
+
+[[paper]]
+title = "Rethinking Capital Budgeting: Embedding Ex-Ante Alpha in the Cost of Capital"
+question = "dual-risk"
+
+[[paper]]
+title = "Unifying DCF Valuation Across Traditional and Cryptoassets"
+question = "dual-risk"
+ssrn = "5363661"
+
+# ---------------------------------------------------------------- capture
+[[paper]]
+title = "Does AI break the case for broad index investing? Rent decay, private capital, and deflation"
+question = "capture"
+venue = "The Journal of Beta Investment Strategies, forthcoming 2027"
+ssrn = "6058896"
+repo = "ai-broad-index-investing"
+zenodo = "10.5281/zenodo.24240516"
+featured = true
+figure = "assets/ai-broad-index.png"
+figure_alt = "Annual returns since the release of ChatGPT: capitalization-weighted indices against the equal-weighted S&P 500 and three AI-themed funds"
+summary = "Forthcoming in <i>The Journal of Beta Investment Strategies</i>. Since the release of ChatGPT the S&amp;P 500 returned 19% a year against 11% for its equal-weighted version, and two of three AI-themed funds trailed it: a capitalization-weighted index follows rents as AI moves them, without a forecast. Code and data only; the article text is copyright PMR."
+
+[[paper]]
+title = "High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs"
+question = "capture"
+venue = "The Journal of Beta Investment Strategies, 2026"
+ssrn = "5370897"
+published = "https://doi.org/10.3905/jbis.2026.001"
+repo = "covered-call-etfs"
+zenodo = "10.5281/zenodo.24244700"
+
+[[paper]]
+title = "Crypto Treasury Companies: Financing Dynamics, Accretion Conditions, and Systemic Risk"
+question = "capture"
+ssrn = "5487486"
