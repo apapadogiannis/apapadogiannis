@@ -14,7 +14,7 @@ Every paper of mine with a number in it ships with a replication package here: m
 <td valign="top">
 <p><b><a href="https://github.com/apapadogiannis/bitcoin-required-return">Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold</a></b></p>
 <p>The MCM equation: the return Bitcoin's holders should require is the risk-free rate plus market, concentration and mortality risk. For 2026 that is about 18% a year (90% range 15–22%). Built on a census of 1,815 cryptoassets with 520 deaths; an audit script re-checks every number in the paper.</p>
-<p><a href="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> <a href="https://doi.org/10.5281/zenodo.24003938"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.24003938.svg" alt="DOI"></a> <a href="https://ssrn.com/abstract=7705239"><img src="https://img.shields.io/badge/SSRN-7705239-1f4e79" alt="SSRN"></a></p>
+<p><a href="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> <a href="https://doi.org/10.5281/zenodo.24003938"><img src="https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.24003938-007ec6" alt="Zenodo"></a> <a href="https://ssrn.com/abstract=7705239"><img src="https://img.shields.io/badge/SSRN-7705239-1f4e79" alt="SSRN"></a></p>
 </td>
 </tr>
 <tr>
@@ -24,7 +24,7 @@ Every paper of mine with a number in it ships with a replication package here: m
 <td valign="top">
 <p><b><a href="https://github.com/apapadogiannis/bitcoin-age-rule">Bitcoin's Expected Return: An Age Rule That Beats Current Practice</a></b></p>
 <p>A backtest, since 2012, of the ways practitioners set Bitcoin's long-run expected return. Constant rates of 7–21% a year were beaten in about nine periods in ten; a rule based on Bitcoin's age comes closest.</p>
-<p><a href="https://github.com/apapadogiannis/bitcoin-age-rule/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/bitcoin-age-rule/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> <a href="https://doi.org/10.5281/zenodo.24004326"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.24004326.svg" alt="DOI"></a> <a href="https://ssrn.com/abstract=7705438"><img src="https://img.shields.io/badge/SSRN-7705438-1f4e79" alt="SSRN"></a></p>
+<p><a href="https://github.com/apapadogiannis/bitcoin-age-rule/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/bitcoin-age-rule/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> <a href="https://doi.org/10.5281/zenodo.24004326"><img src="https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.24004326-007ec6" alt="Zenodo"></a> <a href="https://ssrn.com/abstract=7705438"><img src="https://img.shields.io/badge/SSRN-7705438-1f4e79" alt="SSRN"></a></p>
 </td>
 </tr>
 <tr>
@@ -34,7 +34,7 @@ Every paper of mine with a number in it ships with a replication package here: m
 <td valign="top">
 <p><b><a href="https://github.com/apapadogiannis/economic-scarcity-as-value">Economic Scarcity as Value: A Universal Framework for Blockchain and Beyond</a></b></p>
 <p>Network value written as desirability times scarcity times adoption, applied to Bitcoin, Ethereum and Bittensor. Bitcoin and Ethereum come out within about 25% of each other; Bittensor's valuation rests mainly on expectations.</p>
-<p><a href="https://github.com/apapadogiannis/economic-scarcity-as-value/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/economic-scarcity-as-value/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> <a href="https://doi.org/10.5281/zenodo.24051776"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.24051776.svg" alt="DOI"></a> <a href="https://ssrn.com/abstract=5384204"><img src="https://img.shields.io/badge/SSRN-5384204-1f4e79" alt="SSRN"></a></p>
+<p><a href="https://github.com/apapadogiannis/economic-scarcity-as-value/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/economic-scarcity-as-value/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> <a href="https://doi.org/10.5281/zenodo.24051776"><img src="https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.24051776-007ec6" alt="Zenodo"></a> <a href="https://ssrn.com/abstract=5384204"><img src="https://img.shields.io/badge/SSRN-5384204-1f4e79" alt="SSRN"></a></p>
 </td>
 </tr>
 <tr>
