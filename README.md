@@ -1,14 +1,63 @@
 ## Agisilaos Papadogiannis
 
-Engineer by training (PhD, MBA), with a research background in wireless communications. I do independent research in finance on two questions, valuation and pricing.
+Engineer by training (PhD, MBA). My first research career was in wireless communications, with IEEE publications that have drawn about 2,000 citations. I now do independent research in finance, published in peer-reviewed journals.
+
+My work asks three questions about assets: what they are worth (valuation), what return they must earn (pricing), and what their holders actually keep (capture). I treat research as engineering: every empirical result comes with open data and code, written in Python and re-run automatically on GitHub.
 
 <p align="center">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="assets/research-map-dark.svg">
 <source media="(prefers-color-scheme: light)" srcset="assets/research-map-light.svg">
-<img src="assets/research-map-light.svg" width="640" alt="Two overlapping circles. Valuation: what an asset is worth. Pricing: what return it must earn. Their overlap is the dual-risk framework, in which expected cash flows shift the required return and the required return sets the value.">
+<img src="assets/research-map-light.svg" width="820" alt="Two overlapping circles. Valuation: what an asset is worth. Pricing: what return it must earn. Their overlap is the dual-risk framework, in which expected cash flows shift the required return and the required return sets the value.">
 </picture>
 </p>
+
+<p><b>Papers by question.</b> Click a line to open its list.</p>
+
+<details>
+<summary><img src="assets/dot-valuation.svg" width="12" height="12" alt=""> <b>Valuation</b>: what an asset is worth (8 papers)</summary>
+<ul>
+<li><i>Valuing Scarcity: A General Framework for Bitcoin, Gold, and Traditional Assets.</i> Financial Economics Letters, 2026.</li>
+<li><i>Economic Scarcity as Value: A Universal Framework for Blockchain and Beyond.</i> Working paper. <a href="https://github.com/apapadogiannis/economic-scarcity-as-value">Replication package</a>.</li>
+<li><i>The Architecture of Blockchain Value: Capabilities, Pillars, and Growth Dynamics.</i> Frontiers in Blockchain.</li>
+<li><i>Scarcity in an Age of AI Abundance.</i></li>
+<li><i>What Moves the Price of Gold: An Economic-Scarcity Lens on Policy, the Dollar, and the Debasement Trade.</i></li>
+<li><i>The Productivity Myth: Why Scarcity Drives All Value.</i></li>
+<li><i>Bitcoin Is Not Money: Why Fixed Supply Fails in a Modern Economy.</i></li>
+<li><i>How to Classify any Asset: Ontology, Anchor, Rail, Composability.</i></li>
+</ul>
+</details>
+
+<details>
+<summary><img src="assets/dot-pricing.svg" width="12" height="12" alt=""> <b>Pricing</b>: what return it must earn (5 papers)</summary>
+<ul>
+<li><i>Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold.</i> Working paper. <a href="https://github.com/apapadogiannis/bitcoin-required-return">Replication package</a>.</li>
+<li><i>Bitcoin's Expected Return: An Age Rule That Beats Current Practice.</i> Working paper. <a href="https://github.com/apapadogiannis/bitcoin-age-rule">Replication package</a>.</li>
+<li><i>On the Physics of Expected Asset Returns.</i></li>
+<li><i>Scarcity-Aligned Discounting in Asset Valuation.</i></li>
+<li><i>The Bitcoin Hurdle Fallacy: Why Risk Misalignment Distorts Valuation.</i></li>
+</ul>
+</details>
+
+<details>
+<summary><img src="assets/dot-dual-risk.svg" width="12" height="12" alt=""> <b>Dual-risk framework</b>: where valuation and pricing meet (5 papers)</summary>
+<ul>
+<li><i>A Dual-Risk Theory of Valuation: Bridging Discounting and Expectational Distortion.</i> Discover Analytics, 2026.</li>
+<li><i>From Unified Discounting to Dual-Risk: A New Lens on DCF Valuation.</i> Finance Research Open, 2026.</li>
+<li><i>Beyond Discount Rates: A Valuation Framework for Unpriced Systematic Risk.</i> The Journal of Investing, forthcoming 2027. <a href="https://github.com/apapadogiannis/beyond-discount-rates">Replication package</a>.</li>
+<li><i>Rethinking Capital Budgeting: Embedding Ex-Ante Alpha in the Cost of Capital.</i></li>
+<li><i>Unifying DCF Valuation Across Traditional and Cryptoassets.</i></li>
+</ul>
+</details>
+
+<details>
+<summary><img src="assets/dot-capture.svg" width="12" height="12" alt=""> <b>Capture</b>: what the holder actually keeps (3 papers)</summary>
+<ul>
+<li><i>High Yield, Capped Gains: A Conceptual Primer on Covered Call ETFs.</i> The Journal of Beta Investment Strategies, 2026.</li>
+<li><i>Does AI Break the Case for Broad Index Investing? Rent Decay, Private Capital, and Deflation.</i> The Journal of Beta Investment Strategies, forthcoming 2027. <a href="https://github.com/apapadogiannis/ai-broad-index-investing">Replication package</a>.</li>
+<li><i>Crypto Treasury Companies: Financing Dynamics, Accretion Conditions, and Systemic Risk.</i></li>
+</ul>
+</details>
 
 Every paper of mine with a number in it ships with a replication package here: manuscript, data, code, and one script that regenerates every table and figure. The green badge on each is live. GitHub re-runs the full pipeline on a clean machine at every change and once a month, and the badge turns red if a single table differs from the published one.
 
