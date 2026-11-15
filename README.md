@@ -1,6 +1,6 @@
 ## Agisilaos Papadogiannis
 
-Engineer by training (PhD, MBA), with a research background in wireless communications. I do independent research in finance: asset valuation, expected returns, and the economics of money and AI.
+Engineer by training (PhD, MBA), with a research background in wireless communications. I do independent research in finance on two questions: valuation, what an asset is worth, and pricing, what return it must earn for the risk its holders bear. My dual-risk framework joins the two.
 
 Every paper of mine with a number in it ships with a replication package here: manuscript, data, code, and one script that regenerates every table and figure. The green badge on each is live. GitHub re-runs the full pipeline on a clean machine at every change and once a month, and the badge turns red if a single table differs from the published one.
 
