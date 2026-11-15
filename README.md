@@ -47,6 +47,16 @@ Every paper of mine with a number in it ships with a replication package here: m
 <p><a href="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> <a href="https://doi.org/10.5281/zenodo.24240516"><img src="https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.24240516-007ec6" alt="Zenodo"></a> <a href="https://ssrn.com/abstract=6058896"><img src="https://img.shields.io/badge/SSRN-6058896-1f4e79" alt="SSRN"></a></p>
 </td>
 </tr>
+<tr>
+<td width="42%" valign="middle">
+<a href="https://github.com/apapadogiannis/beyond-discount-rates"><img src="assets/beyond-discount-rates.png" alt="Realized gain of capital over three-year horizons for SPY, QQQ and IWM, by starting month, 2000 to 2020"></a>
+</td>
+<td valign="top">
+<p><b><a href="https://github.com/apapadogiannis/beyond-discount-rates">Beyond Discount Rates: A Valuation Framework for Unpriced Systematic Risk</a></b></p>
+<p>Forthcoming in <i>The Journal of Investing</i>. Discounted cash flow valuation with two return components: a cost of capital for priced risk and a gain of capital that arises when expected cash flows are misestimated. For SPY, QQQ and IWM from 2000 to 2023 the gain is large and persistent: over one year it exceeds 20 percentage points in 22% of months for SPY and 43% for QQQ. Code and data only; the article text is copyright PMR.</p>
+<p><a href="https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> <a href="https://ssrn.com/abstract=5180040"><img src="https://img.shields.io/badge/SSRN-5180040-1f4e79" alt="SSRN"></a></p>
+</td>
+</tr>
 </table>
 
 ### Elsewhere
