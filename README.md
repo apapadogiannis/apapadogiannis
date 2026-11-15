@@ -53,7 +53,7 @@ My work asks three questions about assets: what they are worth (valuation), what
 <details>
 <summary><img src="assets/dot-capture.svg" width="12" height="12" alt=""> <b>Capture</b>: what the holder actually keeps (3 papers)</summary>
 <ul>
-<li><i>High Yield, Capped Gains: A Conceptual Primer on Covered Call ETFs.</i> The Journal of Beta Investment Strategies, 2026.</li>
+<li><i>High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs.</i> The Journal of Beta Investment Strategies, 2026. <a href="https://github.com/apapadogiannis/covered-call-etfs">Replication package</a>.</li>
 <li><i>Does AI Break the Case for Broad Index Investing? Rent Decay, Private Capital, and Deflation.</i> The Journal of Beta Investment Strategies, forthcoming 2027. <a href="https://github.com/apapadogiannis/ai-broad-index-investing">Replication package</a>.</li>
 <li><i>Crypto Treasury Companies: Financing Dynamics, Accretion Conditions, and Systemic Risk.</i></li>
 </ul>
@@ -112,6 +112,16 @@ Every paper of mine with a number in it ships with a replication package here: m
 <p><b><a href="https://github.com/apapadogiannis/beyond-discount-rates">Beyond Discount Rates: A Valuation Framework for Unpriced Systematic Risk</a></b></p>
 <p>Forthcoming in <i>The Journal of Investing</i>. Discounted cash flow valuation with two return components: a cost of capital for priced risk and a gain of capital that arises when expected cash flows are misestimated. For SPY, QQQ and IWM from 2000 to 2023 the gain is large and persistent: over one year it exceeds 20 percentage points in 22% of months for SPY and 43% for QQQ. Code and data only; the article text is copyright PMR.</p>
 <p><a href="https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> <a href="https://doi.org/10.5281/zenodo.24243060"><img src="https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.24243060-007ec6" alt="Zenodo"></a> <a href="https://ssrn.com/abstract=5180040"><img src="https://img.shields.io/badge/SSRN-5180040-1f4e79" alt="SSRN"></a></p>
+</td>
+</tr>
+<tr>
+<td width="42%" valign="middle">
+<a href="https://github.com/apapadogiannis/covered-call-etfs"><img src="assets/covered-call-etfs.png" alt="Trailing distribution yield against one-year NAV total return for four US and four UCITS covered-call ETFs, late 2025"></a>
+</td>
+<td valign="top">
+<p><b><a href="https://github.com/apapadogiannis/covered-call-etfs">High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs</a></b></p>
+<p>Published in <i>The Journal of Beta Investment Strategies</i>, 2026. A primer and due-diligence guide to funds that sell equity upside for option income. Across four US and four UCITS funds in late 2025, distribution yields ran from 7% to 12% a year, while one-year total returns ran from &minus;5% to 13% and fell short of the yield in seven of the eight: a payout is not a return. Code and data only; the article text is copyright PMR.</p>
+<p><a href="https://github.com/apapadogiannis/covered-call-etfs/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/covered-call-etfs/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> <a href="https://ssrn.com/abstract=5370897"><img src="https://img.shields.io/badge/SSRN-5370897-1f4e79" alt="SSRN"></a></p>
 </td>
 </tr>
 </table>
