@@ -6,7 +6,9 @@
 <a href="https://scarcitythinker.substack.com"><img src="https://img.shields.io/badge/Substack-FF6719?style=for-the-badge&logo=substack&logoColor=white" alt="Scarcity Thinker on Substack"></a>
 <a href="mailto:apapadogiannis@gmail.com"><img src="https://img.shields.io/badge/Email-555555?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
 
-Engineer by training (PhD, MBA). My first research career was in wireless communications, with IEEE publications that have drawn about 2,000 citations. I now do independent research in finance, published in peer-reviewed journals.
+Engineer by training (PhD, MBA), based in The Hague. My first research career was in wireless communications, with IEEE publications that have drawn about 2,000 citations. I now do independent research in finance, published in peer-reviewed journals.
+
+I bring an engineer's habits to finance: state the model, measure the inputs, and publish the code so anyone can check the result. The work is unfunded and independent. If you rerun a package and find something that does not hold, please open an issue.
 
 My work follows value through four questions: where it comes from (value creation), what return an asset must earn and can be expected to earn (returns), what it is worth once both are known (valuation), and what its holder actually keeps (value capture). I treat research as engineering: every empirical result comes with open data and code, written in Python and re-run automatically on GitHub.
 
