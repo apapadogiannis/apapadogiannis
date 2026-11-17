@@ -6,7 +6,7 @@
 <a href="https://scarcitythinker.substack.com"><img src="https://img.shields.io/badge/Substack-FF6719?style=for-the-badge&logo=substack&logoColor=white" alt="Scarcity Thinker on Substack"></a>
 <a href="mailto:apapadogiannis@gmail.com"><img src="https://img.shields.io/badge/Email-555555?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
 
-Engineer by training (PhD, MBA), based in The Hague. My first research career was in wireless communications, with IEEE publications that have drawn about 2,000 citations. I now do independent research in finance, published in peer-reviewed journals.
+Engineer by training (PhD, MBA). My first research career was in wireless communications, with IEEE publications that have drawn about 2,000 citations. I now do independent research in finance, published in peer-reviewed journals.
 
 I bring an engineer's habits to finance: state the model, measure the inputs, and publish the code so anyone can check the result. The work is unfunded and independent, and corrections are welcome.
 

@@ -12,7 +12,7 @@
 [profile]
 name = "Agisilaos Papadogiannis"
 intro = [
-  "Engineer by training (PhD, MBA), based in The Hague. My first research career was in wireless communications, with IEEE publications that have drawn about 2,000 citations. I now do independent research in finance, published in peer-reviewed journals.",
+  "Engineer by training (PhD, MBA). My first research career was in wireless communications, with IEEE publications that have drawn about 2,000 citations. I now do independent research in finance, published in peer-reviewed journals.",
   "I bring an engineer's habits to finance: state the model, measure the inputs, and publish the code so anyone can check the result. The work is unfunded and independent, and corrections are welcome.",
   "My work follows value through four questions: where it comes from (value creation), what return an asset must earn and can be expected to earn (returns), what it is worth once both are known (valuation), and what its holder actually keeps (value capture). Every empirical result comes with open data and code, written in Python and re-run automatically on GitHub.",
 ]
