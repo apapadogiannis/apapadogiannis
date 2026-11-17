@@ -8,13 +8,13 @@
 
 Engineer by training (PhD, MBA). My first research career was in wireless communications, with IEEE publications that have drawn about 2,000 citations. I now do independent research in finance, published in peer-reviewed journals.
 
-My work asks three questions about assets: what they are worth (valuation), what return they must earn (pricing), and what their holders actually keep (capture). I treat research as engineering: every empirical result comes with open data and code, written in Python and re-run automatically on GitHub.
+My work follows value through four questions: where it comes from (value creation), what return an asset must earn and can be expected to earn (returns), what it is worth once both are known (valuation), and what its holder actually keeps (value capture). I treat research as engineering: every empirical result comes with open data and code, written in Python and re-run automatically on GitHub.
 
 <p align="center">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="assets/research-map-dark.svg">
-<source media="(prefers-color-scheme: light)" srcset="assets/research-map-light.svg">
-<img src="assets/research-map-light.svg" width="820" alt="Two overlapping circles. Valuation: what an asset is worth. Pricing: what return it must earn. Their overlap is the dual-risk framework, in which expected cash flows shift the required return and the required return sets the value. Both lead to a band below: capture, what the holder actually keeps.">
+<source media="(prefers-color-scheme: dark)" srcset="assets/map-dark.svg">
+<source media="(prefers-color-scheme: light)" srcset="assets/map-light.svg">
+<img src="assets/map-light.svg" width="720" alt="Two overlapping circles. Value creation: where value comes from. Returns: required and expected. Their overlap is valuation, the dual-risk framework: a valuation carries two risks, in the cash flows and in the required return. Both lead to a band below: value capture, what the holder actually keeps.">
 </picture>
 </p>
 
@@ -25,33 +25,33 @@ One per question. Each holds the data and code behind a paper, with one script t
 <table>
 <tr>
 <td width="25%" valign="top">
-<p><img src="assets/hband-valuation.svg" width="100%" alt=""></p>
+<p><img src="assets/q-creation-band.svg" width="100%" alt=""></p>
 <a href="https://github.com/apapadogiannis/economic-scarcity-as-value"><img src="assets/economic-scarcity.png" alt="Implied desirability of Bitcoin, Ethereum and Bittensor, with sensitivity ranges"></a>
-<p><img src="assets/tag-valuation.svg" height="22" alt="Valuation"></p>
+<p><img src="assets/q-creation-tag.svg" height="22" alt="Value creation"></p>
 <p><b><a href="https://github.com/apapadogiannis/economic-scarcity-as-value">Economic Scarcity as Value: A Universal Framework for Blockchain and Beyond</a></b></p>
 <p>Network value written as desirability times scarcity times adoption, for Bitcoin, Ethereum and Bittensor.</p>
 <p><a href="https://github.com/apapadogiannis/economic-scarcity-as-value/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/economic-scarcity-as-value/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></p>
 </td>
 <td width="25%" valign="top">
-<p><img src="assets/hband-pricing.svg" width="100%" alt=""></p>
+<p><img src="assets/q-returns-band.svg" width="100%" alt=""></p>
 <a href="https://github.com/apapadogiannis/bitcoin-required-return"><img src="assets/required-return.png" alt="Bitcoin&#x27;s required return since 2012, split into risk-free rate, market risk, concentration risk and mortality risk"></a>
-<p><img src="assets/tag-pricing.svg" height="22" alt="Pricing"></p>
+<p><img src="assets/q-returns-tag.svg" height="22" alt="Returns"></p>
 <p><b><a href="https://github.com/apapadogiannis/bitcoin-required-return">Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold</a></b></p>
 <p>The MCM equation prices market, concentration and mortality risk: about 18% a year for 2026.</p>
 <p><a href="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></p>
 </td>
 <td width="25%" valign="top">
-<p><img src="assets/hband-dual-risk.svg" width="100%" alt=""></p>
+<p><img src="assets/q-valuation-band.svg" width="100%" alt=""></p>
 <a href="https://github.com/apapadogiannis/beyond-discount-rates"><img src="assets/beyond-discount-rates.png" alt="Realized gain of capital over three-year horizons for SPY, QQQ and IWM, by starting month, 2000 to 2020"></a>
-<p><img src="assets/tag-dual-risk.svg" height="22" alt="Dual-risk framework"></p>
+<p><img src="assets/q-valuation-tag.svg" height="22" alt="Valuation"></p>
 <p><b><a href="https://github.com/apapadogiannis/beyond-discount-rates">Beyond Discount Rates: A Valuation Framework for Unpriced Systematic Risk</a></b></p>
 <p>A cost of capital for priced risk, plus a gain of capital when expected cash flows are misestimated.</p>
 <p><a href="https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></p>
 </td>
 <td width="25%" valign="top">
-<p><img src="assets/hband-capture.svg" width="100%" alt=""></p>
+<p><img src="assets/q-capture-band.svg" width="100%" alt=""></p>
 <a href="https://github.com/apapadogiannis/ai-broad-index-investing"><img src="assets/ai-broad-index.png" alt="Annual returns since the release of ChatGPT: capitalization-weighted indices against the equal-weighted S&amp;P 500 and three AI-themed funds"></a>
-<p><img src="assets/tag-capture.svg" height="22" alt="Capture"></p>
+<p><img src="assets/q-capture-tag.svg" height="22" alt="Value capture"></p>
 <p><b><a href="https://github.com/apapadogiannis/ai-broad-index-investing">Does AI break the case for broad index investing? Rent decay, private capital, and deflation</a></b></p>
 <p>Since ChatGPT the S&amp;P 500 returned 19% a year against 11% equal-weighted: a capitalization-weighted index follows rents as AI moves them.</p>
 <p><a href="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></p>
@@ -64,7 +64,7 @@ One per question. Each holds the data and code behind a paper, with one script t
 Click a line to open its list. Where a paper has a replication package, the green badge is live: GitHub re-runs the full pipeline on a clean machine at every change and once a month, and the badge turns red if any stored result is not reproduced to nine significant digits.
 
 <details>
-<summary><img src="assets/dot-valuation.svg" width="12" height="12" alt=""> <b>Valuation</b>: what an asset is worth (8 papers, 2 with a replication package)</summary>
+<summary><img src="assets/q-creation-dot.svg" width="12" height="12" alt=""> <b>Value creation</b>: where value comes from (8 papers, 2 with a replication package)</summary>
 <ul>
 <li><b>Economic Scarcity as Value: A Universal Framework for Blockchain and Beyond</b>. <a href="https://ssrn.com/abstract=5384204">SSRN</a> · <a href="https://github.com/apapadogiannis/economic-scarcity-as-value">Replication package</a> <a href="https://github.com/apapadogiannis/economic-scarcity-as-value/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/economic-scarcity-as-value/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></li>
 <li><b>Bitcoin Is Not Money: Why Fixed Supply Fails in a Modern Economy</b>. Asian Economics Letters, forthcoming. <a href="https://ssrn.com/abstract=5435197">SSRN</a> · <a href="https://github.com/apapadogiannis/bitcoin-is-not-money">Replication package</a> <a href="https://github.com/apapadogiannis/bitcoin-is-not-money/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/bitcoin-is-not-money/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></li>
@@ -78,7 +78,7 @@ Click a line to open its list. Where a paper has a replication package, the gree
 </details>
 
 <details>
-<summary><img src="assets/dot-pricing.svg" width="12" height="12" alt=""> <b>Pricing</b>: what return it must earn (5 papers, 2 with a replication package)</summary>
+<summary><img src="assets/q-returns-dot.svg" width="12" height="12" alt=""> <b>Returns</b>: required and expected (5 papers, 2 with a replication package)</summary>
 <ul>
 <li><b>Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold</b>. <a href="https://ssrn.com/abstract=7705239">SSRN</a> · <a href="https://github.com/apapadogiannis/bitcoin-required-return">Replication package</a> <a href="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></li>
 <li><b>Bitcoin's Expected Return: An Age Rule That Beats Current Practice</b>. <a href="https://ssrn.com/abstract=7705438">SSRN</a> · <a href="https://github.com/apapadogiannis/bitcoin-age-rule">Replication package</a> <a href="https://github.com/apapadogiannis/bitcoin-age-rule/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/bitcoin-age-rule/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></li>
@@ -89,7 +89,7 @@ Click a line to open its list. Where a paper has a replication package, the gree
 </details>
 
 <details>
-<summary><img src="assets/dot-dual-risk.svg" width="12" height="12" alt=""> <b>Dual-risk framework</b>: where valuation and pricing meet (5 papers, 1 with a replication package)</summary>
+<summary><img src="assets/q-valuation-dot.svg" width="12" height="12" alt=""> <b>Valuation</b>: the dual-risk framework (5 papers, 1 with a replication package)</summary>
 <ul>
 <li><b>Beyond Discount Rates: A Valuation Framework for Unpriced Systematic Risk</b>. The Journal of Investing, forthcoming 2027. <a href="https://ssrn.com/abstract=5180040">SSRN</a> · <a href="https://github.com/apapadogiannis/beyond-discount-rates">Replication package</a> <a href="https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></li>
 <li><b>A Dual-Risk Theory of Valuation: Bridging Discounting and Expectational Distortion</b>. Discover Analytics, 2026. <a href="https://ssrn.com/abstract=5226017">SSRN</a> · <a href="https://doi.org/10.1007/s44257-026-00062-9">Published version</a></li>
@@ -100,7 +100,7 @@ Click a line to open its list. Where a paper has a replication package, the gree
 </details>
 
 <details>
-<summary><img src="assets/dot-capture.svg" width="12" height="12" alt=""> <b>Capture</b>: what the holder actually keeps (3 papers, 2 with a replication package)</summary>
+<summary><img src="assets/q-capture-dot.svg" width="12" height="12" alt=""> <b>Value capture</b>: what the holder actually keeps (3 papers, 2 with a replication package)</summary>
 <ul>
 <li><b>Does AI break the case for broad index investing? Rent decay, private capital, and deflation</b>. The Journal of Beta Investment Strategies, forthcoming 2027. <a href="https://ssrn.com/abstract=6058896">SSRN</a> · <a href="https://github.com/apapadogiannis/ai-broad-index-investing">Replication package</a> <a href="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></li>
 <li><b>High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs</b>. The Journal of Beta Investment Strategies, 2026. <a href="https://ssrn.com/abstract=5370897">SSRN</a> · <a href="https://doi.org/10.3905/jbis.2026.001">Published version</a> · <a href="https://github.com/apapadogiannis/covered-call-etfs">Replication package</a> <a href="https://github.com/apapadogiannis/covered-call-etfs/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/covered-call-etfs/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></li>

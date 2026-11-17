@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 524" width="720" height="524" role="img" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif"><title>Research map</title><desc>Two overlapping circles. Value creation: where value comes from. Returns: required and expected. Their overlap is valuation, the dual-risk framework: a valuation carries two risks, in the cash flows and in the required return. Both lead to a band below: value capture, what the holder actually keeps.</desc>
+<circle cx="255" cy="195" r="165" fill="#2f6fde" fill-opacity="0.16" stroke="#1f56b8" stroke-width="2"/>
+<circle cx="465" cy="195" r="165" fill="#1a9a6c" fill-opacity="0.16" stroke="#0f7550" stroke-width="2"/>
+<text x="198" y="190" text-anchor="middle" font-size="20" font-weight="700" fill="#1f56b8" letter-spacing="1.2">VALUE CREATION</text>
+<text x="198" y="216" text-anchor="middle" font-size="15" font-weight="500" fill="#1f2328">where value comes from</text>
+<text x="524" y="190" text-anchor="middle" font-size="20" font-weight="700" fill="#0f7550" letter-spacing="1.2">RETURNS</text>
+<text x="524" y="216" text-anchor="middle" font-size="15" font-weight="500" fill="#1f2328">required and expected</text>
+<line x1="326" y1="152" x2="392" y2="152" stroke="#1f56b8" stroke-width="2.5" stroke-linecap="round"/><path d="M394 152 l-9 -5.5 v11 z" fill="#1f56b8"/>
+<text x="360" y="190" text-anchor="middle" font-size="15.5" font-weight="700" fill="#1f2328" letter-spacing="1.0">VALUATION</text>
+<text x="360" y="210" text-anchor="middle" font-size="13" font-weight="400" fill="#59636e">dual-risk</text>
+<text x="360" y="226" text-anchor="middle" font-size="13" font-weight="400" fill="#59636e">framework</text>
+<line x1="394" y1="250" x2="328" y2="250" stroke="#0f7550" stroke-width="2.5" stroke-linecap="round"/><path d="M326 250 l9 -5.5 v11 z" fill="#0f7550"/>
+<text x="360" y="392" text-anchor="middle" font-size="14.5" fill="#1f2328">A valuation carries two risks: <tspan font-weight="700" fill="#1f56b8">in the cash flows</tspan> and <tspan font-weight="700" fill="#0f7550">in the required return</tspan></text>
+<line x1="360" y1="408" x2="360" y2="432" stroke="#a85d0c" stroke-width="2.5" stroke-linecap="round"/><path d="M360 434 l-5.5 -9 h11 z" fill="#a85d0c"/>
+<rect x="90" y="440" width="540" height="70" rx="14" fill="#d98324" fill-opacity="0.16" stroke="#a85d0c" stroke-width="2"/>
+<text x="360" y="471" text-anchor="middle" font-size="20" font-weight="700" fill="#a85d0c" letter-spacing="1.2">VALUE CAPTURE</text>
+<text x="360" y="495" text-anchor="middle" font-size="15" font-weight="500" fill="#1f2328">what the holder actually keeps</text>
+</svg>

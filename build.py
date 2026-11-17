@@ -14,14 +14,14 @@ from pathlib import Path
 HERE = Path(__file__).parent
 GH = "https://github.com/apapadogiannis"
 QUESTIONS = [  # key, name, what it asks
-    ("valuation", "Valuation", "what an asset is worth"),
-    ("pricing", "Pricing", "what return it must earn"),
-    ("dual-risk", "Dual-risk framework", "where valuation and pricing meet"),
-    ("capture", "Capture", "what the holder actually keeps"),
+    ("creation", "Value creation", "where value comes from"),
+    ("returns", "Returns", "required and expected"),
+    ("valuation", "Valuation", "the dual-risk framework"),
+    ("capture", "Value capture", "what the holder actually keeps"),
 ]
-MAP_ALT = ("Two overlapping circles. Valuation: what an asset is worth. Pricing: what return it must earn. "
-           "Their overlap is the dual-risk framework, in which expected cash flows shift the required return "
-           "and the required return sets the value. Both lead to a band below: capture, what the holder actually keeps.")
+MAP_ALT = ("Two overlapping circles. Value creation: where value comes from. Returns: required and expected. "
+           "Their overlap is valuation, the dual-risk framework: a valuation carries two risks, in the cash flows "
+           "and in the required return. Both lead to a band below: value capture, what the holder actually keeps.")
 
 
 def esc(text):
@@ -50,9 +50,9 @@ def card(p):
     url = f'{GH}/{p["repo"]}'
     return "\n".join([
         '<td width="25%" valign="top">',
-        f'<p><img src="assets/hband-{q}.svg" width="100%" alt=""></p>',
+        f'<p><img src="assets/q-{q}-band.svg" width="100%" alt=""></p>',
         f'<a href="{url}"><img src="{p["figure"]}" alt="{html.escape(p["figure_alt"])}"></a>',
-        f'<p><img src="assets/tag-{q}.svg" height="22" alt="{name}"></p>',
+        f'<p><img src="assets/q-{q}-tag.svg" height="22" alt="{name}"></p>',
         f'<p><b><a href="{url}">{esc(p["title"])}</a></b></p>',
         f'<p>{p["summary"]}</p>',
         f'<p>{badges(p, live_only=True)}</p>',
@@ -96,9 +96,9 @@ def build():
     for para in prof["intro"]:
         out += [para, ""]
     out += ['<p align="center">', '<picture>',
-            '<source media="(prefers-color-scheme: dark)" srcset="assets/research-map-dark.svg">',
-            '<source media="(prefers-color-scheme: light)" srcset="assets/research-map-light.svg">',
-            f'<img src="assets/research-map-light.svg" width="820" alt="{MAP_ALT}">',
+            '<source media="(prefers-color-scheme: dark)" srcset="assets/map-dark.svg">',
+            '<source media="(prefers-color-scheme: light)" srcset="assets/map-light.svg">',
+            f'<img src="assets/map-light.svg" width="720" alt="{MAP_ALT}">',
             '</picture>', '</p>', ""]
 
     out += ["### Featured replication packages", "",
@@ -119,7 +119,7 @@ def build():
         if n_pk:
             count += f', {n_pk} with a replication package'
         out += ["<details>",
-                f'<summary><img src="assets/dot-{k}.svg" width="12" height="12" alt=""> <b>{name}</b>: {what} ({count})</summary>',
+                f'<summary><img src="assets/q-{k}-dot.svg" width="12" height="12" alt=""> <b>{name}</b>: {what} ({count})</summary>',
                 "<ul>"] + [line(p) for p in mine] + ["</ul>", "</details>", ""]
 
     return "\n".join(out)
