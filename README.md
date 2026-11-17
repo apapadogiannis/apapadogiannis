@@ -10,7 +10,7 @@ Engineer by training (PhD, MBA), based in The Hague. My first research career wa
 
 I bring an engineer's habits to finance: state the model, measure the inputs, and publish the code so anyone can check the result. The work is unfunded and independent. If you rerun a package and find something that does not hold, please open an issue.
 
-My work follows value through four questions: where it comes from (value creation), what return an asset must earn and can be expected to earn (returns), what it is worth once both are known (valuation), and what its holder actually keeps (value capture). I treat research as engineering: every empirical result comes with open data and code, written in Python and re-run automatically on GitHub.
+My work follows value through four questions: where it comes from (value creation), what return an asset must earn and can be expected to earn (returns), what it is worth once both are known (valuation), and what its holder actually keeps (value capture). Every empirical result comes with open data and code, written in Python and re-run automatically on GitHub.
 
 <p align="center">
 <picture>
