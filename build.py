@@ -71,7 +71,7 @@ def line(p):
         links.append(f'<a href="{p["published"]}">Published version</a>')
     if "repo" in p:
         wf = f'{GH}/{p["repo"]}/actions/workflows/replicate.yml'
-        links.append(f'<a href="{GH}/{p["repo"]}">{esc(p.get("package", "Replication package"))}</a> '
+        links.append(f'<a href="{GH}/{p["repo"]}">Replication package</a> '
                      f'<a href="{wf}"><img src="{wf}/badge.svg" alt="replication"></a>')
     if "demo" in p:
         links.append(f'<a href="{p["demo"]}">Interactive demo</a>')

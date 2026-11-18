@@ -6,8 +6,6 @@
 #   ssrn      : SSRN abstract number
 #   published : link to the published article
 #   repo      : name of the replication package on GitHub;  zenodo : its Zenodo DOI
-#   package   : what the link to the repo is called, if not "Replication package" (for a theory paper
-#               whose repo holds model code and figures and replicates no empirical result)
 #   demo      : link to an interactive demo page served from the repo
 #   featured  : true for the one package shown as a card for its question (needs figure, figure_alt and
 #               summary, one short sentence: the cards are narrow)
@@ -54,7 +52,6 @@ venue = "Frontiers in Blockchain, 2026"
 ssrn = "6196338"
 published = "https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2026.1747512/full"
 repo = "architecture-of-blockchain-value"
-package = "Model code and figures"
 demo = "https://apapadogiannis.github.io/architecture-of-blockchain-value/"
 
 [[paper]]
