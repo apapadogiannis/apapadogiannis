@@ -133,12 +133,6 @@ def build():
             f'<img src="assets/map-light.svg" width="720" alt="{MAP_ALT}">',
             '</picture>', '</p>', ""]
 
-    out += ["### Featured replication packages", "",
-            "One per question. Each holds the data and code behind a paper, with one script that regenerates "
-            "every table and figure.", "", "<table>"]
-    out += ["<tr>"] + [card(p) for p in featured] + ["</tr>"]
-    out += ["</table>", ""]
-
     if tools:
         out += ["### Tools", "",
                 "Research that keeps running: each tool applies a paper's method to current public data, on a page that "
@@ -146,6 +140,12 @@ def build():
                 "before the page is rebuilt.", ""]
         for t in tools:
             out += [tool(t), ""]
+
+    out += ["### Featured replication packages", "",
+            "One per question. Each holds the data and code behind a paper, with one script that regenerates "
+            "every table and figure.", "", "<table>"]
+    out += ["<tr>"] + [card(p) for p in featured] + ["</tr>"]
+    out += ["</table>", ""]
 
     out += ["### All papers by question", "",
             "Click a line to open its list. Where a paper has a replication package, the green badge is live: "

@@ -20,6 +20,24 @@ My work follows value through four questions: where it comes from (value creatio
 </picture>
 </p>
 
+### Tools
+
+Research that keeps running: each tool applies a paper's method to current public data, on a page that updates itself. The badge shows the latest automated check, which reruns the paper's stored results before the page is rebuilt.
+
+<table>
+<tr>
+<td width="45%" valign="top">
+<a href="https://apapadogiannis.github.io/crypto-observatory/"><img src="assets/crypto-observatory.png" alt="Bitcoin&#x27;s required return since 2012 as a band with its midpoint, with the average delivered return of each three-year period marked on it"></a>
+</td>
+<td valign="top">
+<p><b><a href="https://apapadogiannis.github.io/crypto-observatory/">Crypto Observatory: required returns, risks and survival</a></b></p>
+<p>Bitcoin's required return, recomputed every month from public data and set against what Bitcoin delivered. With the equation explained term by term, the tests of fit, and a census of cryptoasset deaths.</p>
+<p>Implements <i>Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold</i>.</p>
+<p><a href="https://apapadogiannis.github.io/crypto-observatory/">Open the page</a> · <a href="https://github.com/apapadogiannis/crypto-observatory">Code and data</a> <a href="https://github.com/apapadogiannis/crypto-observatory/actions/workflows/check.yml"><img src="https://github.com/apapadogiannis/crypto-observatory/actions/workflows/check.yml/badge.svg" alt="check"></a></p>
+</td>
+</tr>
+</table>
+
 ### Featured replication packages
 
 One per question. Each holds the data and code behind a paper, with one script that regenerates every table and figure.
@@ -57,24 +75,6 @@ One per question. Each holds the data and code behind a paper, with one script t
 <p><b><a href="https://github.com/apapadogiannis/ai-broad-index-investing">Does AI break the case for broad index investing? Rent decay, private capital, and deflation</a></b></p>
 <p>Since ChatGPT the S&amp;P 500 returned 19% a year against 11% equal-weighted: a capitalization-weighted index follows rents as AI moves them.</p>
 <p><a href="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></p>
-</td>
-</tr>
-</table>
-
-### Tools
-
-Research that keeps running: each tool applies a paper's method to current public data, on a page that updates itself. The badge shows the latest automated check, which reruns the paper's stored results before the page is rebuilt.
-
-<table>
-<tr>
-<td width="45%" valign="top">
-<a href="https://apapadogiannis.github.io/crypto-observatory/"><img src="assets/crypto-observatory.png" alt="Bitcoin&#x27;s required return since 2012 as a band with its midpoint, with the average delivered return of each three-year period marked on it"></a>
-</td>
-<td valign="top">
-<p><b><a href="https://apapadogiannis.github.io/crypto-observatory/">Crypto Observatory: required returns, risks and survival</a></b></p>
-<p>Bitcoin's required return, recomputed every month from public data and set against what Bitcoin delivered. With the equation explained term by term, the tests of fit, and a census of cryptoasset deaths.</p>
-<p>Implements <i>Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold</i>.</p>
-<p><a href="https://apapadogiannis.github.io/crypto-observatory/">Open the page</a> · <a href="https://github.com/apapadogiannis/crypto-observatory">Code and data</a> <a href="https://github.com/apapadogiannis/crypto-observatory/actions/workflows/check.yml"><img src="https://github.com/apapadogiannis/crypto-observatory/actions/workflows/check.yml/badge.svg" alt="check"></a></p>
 </td>
 </tr>
 </table>
