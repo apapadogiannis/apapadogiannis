@@ -94,9 +94,9 @@ def tool(t):
         '<td valign="top">',
         f'<p><b><a href="{t["page"]}">{esc(t["title"])}</a></b></p>',
         f'<p>{esc(t["summary"])}</p>',
-        f'<p>Implements <i>{esc(t["paper"])}</i>.</p>',
         f'<p><a href="{t["page"]}">Open the page</a> · <a href="{repo}">Code and data</a> '
         f'<a href="{check}"><img src="{check}/badge.svg" alt="check"></a></p>',
+        f'<p><sub>Method: {t["paper_link"]}</sub></p>',
         "</td>", "</tr>", "</table>"])
 
 
@@ -105,9 +105,12 @@ def build():
     prof, papers, tools = data["profile"], data["paper"], data.get("tool", [])
     titles = {p["title"] for p in papers}
     pages = {t["repo"]: t["page"] for t in tools}
+    by_title = {p["title"]: p for p in papers}
     for t in tools:
         if t["paper"] not in titles:
             sys.exit(f'tool "{t["title"]}" names a paper that is not listed: {t["paper"]}')
+        src = by_title[t["paper"]]
+        t["paper_link"] = (f'<a href="https://ssrn.com/abstract={src["ssrn"]}">{esc(t["paper"])}</a>' if "ssrn" in src else esc(t["paper"]))
     for p in papers:
         if "tool" in p:
             if p["tool"] not in pages:

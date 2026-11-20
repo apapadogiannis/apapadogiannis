@@ -14,7 +14,7 @@
 # Each [[tool]] is one application: software that runs the research on live data but is not the replication
 # of a paper. All fields are required.
 #   title, repo, page (the live address), summary (two or three sentences), figure, figure_alt,
-#   paper (the title of the [[paper]] it implements), workflow (the file name of its check, for the badge)
+#   paper (the title of the [[paper]] whose method it uses), workflow (the file name of its check, for the badge)
 
 [profile]
 name = "Agisilaos Papadogiannis"
@@ -195,4 +195,4 @@ paper = "Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold
 workflow = "check.yml"
 figure = "assets/crypto-observatory.png"
 figure_alt = "Bitcoin's required return since 2012 as a band with its midpoint, with the average delivered return of each three-year period marked on it"
-summary = "Bitcoin's required return, recomputed every month from public data and set against what Bitcoin delivered. With the equation explained term by term, the tests of fit, and a census of cryptoasset deaths."
+summary = "What return should Bitcoin's holders require, and did they get it? The answer is recomputed every month from public data, with the equation explained term by term, the tests of fit, and a census of cryptoasset deaths."

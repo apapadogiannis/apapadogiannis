@@ -31,9 +31,9 @@ Research that keeps running: each tool applies a paper's method to current publi
 </td>
 <td valign="top">
 <p><b><a href="https://apapadogiannis.github.io/crypto-observatory/">Crypto Observatory: required returns, risks and survival</a></b></p>
-<p>Bitcoin's required return, recomputed every month from public data and set against what Bitcoin delivered. With the equation explained term by term, the tests of fit, and a census of cryptoasset deaths.</p>
-<p>Implements <i>Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold</i>.</p>
+<p>What return should Bitcoin's holders require, and did they get it? The answer is recomputed every month from public data, with the equation explained term by term, the tests of fit, and a census of cryptoasset deaths.</p>
 <p><a href="https://apapadogiannis.github.io/crypto-observatory/">Open the page</a> · <a href="https://github.com/apapadogiannis/crypto-observatory">Code and data</a> <a href="https://github.com/apapadogiannis/crypto-observatory/actions/workflows/check.yml"><img src="https://github.com/apapadogiannis/crypto-observatory/actions/workflows/check.yml/badge.svg" alt="check"></a></p>
+<p><sub>Method: <a href="https://ssrn.com/abstract=7705239">Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold</a></sub></p>
 </td>
 </tr>
 </table>
