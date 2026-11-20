@@ -75,14 +75,44 @@ def line(p):
                      f'<a href="{wf}"><img src="{wf}/badge.svg" alt="replication"></a>')
     if "demo" in p:
         links.append(f'<a href="{p["demo"]}">Interactive demo</a>')
+    if "tool" in p:
+        links.append(f'<a href="{p["tool_page"]}">Live tool</a>')
     if links:
         text += " " + " · ".join(links)
     return f"<li>{text}</li>"
 
 
+def tool(t):
+    """One application: its picture beside its name, what it does and where it runs."""
+    repo = f'{GH}/{t["repo"]}'
+    check = f'{repo}/actions/workflows/{t["workflow"]}'
+    return "\n".join([
+        "<table>", "<tr>",
+        '<td width="45%" valign="top">',
+        f'<a href="{t["page"]}"><img src="{t["figure"]}" alt="{html.escape(t["figure_alt"])}"></a>',
+        "</td>",
+        '<td valign="top">',
+        f'<p><b><a href="{t["page"]}">{esc(t["title"])}</a></b></p>',
+        f'<p>{esc(t["summary"])}</p>',
+        f'<p>Implements <i>{esc(t["paper"])}</i>.</p>',
+        f'<p><a href="{t["page"]}">Open the page</a> · <a href="{repo}">Code and data</a> '
+        f'<a href="{check}"><img src="{check}/badge.svg" alt="check"></a></p>',
+        "</td>", "</tr>", "</table>"])
+
+
 def build():
     data = tomllib.loads((HERE / "papers.toml").read_text(encoding="utf-8"))
-    prof, papers = data["profile"], data["paper"]
+    prof, papers, tools = data["profile"], data["paper"], data.get("tool", [])
+    titles = {p["title"] for p in papers}
+    pages = {t["repo"]: t["page"] for t in tools}
+    for t in tools:
+        if t["paper"] not in titles:
+            sys.exit(f'tool "{t["title"]}" names a paper that is not listed: {t["paper"]}')
+    for p in papers:
+        if "tool" in p:
+            if p["tool"] not in pages:
+                sys.exit(f'unknown tool "{p["tool"]}" for: {p["title"]}')
+            p["tool_page"] = pages[p["tool"]]
     known = {k for k, _, _ in QUESTIONS}
     for p in papers:
         if p["question"] not in known:
@@ -108,6 +138,14 @@ def build():
             "every table and figure.", "", "<table>"]
     out += ["<tr>"] + [card(p) for p in featured] + ["</tr>"]
     out += ["</table>", ""]
+
+    if tools:
+        out += ["### Tools", "",
+                "Research that keeps running: each tool applies a paper's method to current public data, on a page that "
+                "updates itself. The badge shows the latest automated check, which reruns the paper's stored results "
+                "before the page is rebuilt.", ""]
+        for t in tools:
+            out += [tool(t), ""]
 
     out += ["### All papers by question", "",
             "Click a line to open its list. Where a paper has a replication package, the green badge is live: "

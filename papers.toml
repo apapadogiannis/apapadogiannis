@@ -7,8 +7,14 @@
 #   published : link to the published article
 #   repo      : name of the replication package on GitHub;  zenodo : its Zenodo DOI
 #   demo      : link to an interactive demo page served from the repo
+#   tool      : repository name of a [[tool]] below that runs this paper's method on live data
 #   featured  : true for the one package shown as a card for its question (needs figure, figure_alt and
 #               summary, one short sentence: the cards are narrow)
+
+# Each [[tool]] is one application: software that runs the research on live data but is not the replication
+# of a paper. All fields are required.
+#   title, repo, page (the live address), summary (two or three sentences), figure, figure_alt,
+#   paper (the title of the [[paper]] it implements), workflow (the file name of its check, for the badge)
 
 [profile]
 name = "Agisilaos Papadogiannis"
@@ -89,6 +95,7 @@ question = "returns"
 ssrn = "7705239"
 repo = "bitcoin-required-return"
 zenodo = "10.5281/zenodo.24003938"
+tool = "crypto-observatory"
 featured = true
 figure = "assets/required-return.png"
 figure_alt = "Bitcoin's required return since 2012, split into risk-free rate, market risk, concentration risk and mortality risk"
@@ -178,3 +185,14 @@ zenodo = "10.5281/zenodo.24244700"
 title = "Crypto Treasury Companies: Financing Dynamics, Accretion Conditions, and Systemic Risk"
 question = "capture"
 ssrn = "5487486"
+
+# ---------------------------------------------------------------- tools
+[[tool]]
+title = "Crypto Observatory: required returns, risks and survival"
+repo = "crypto-observatory"
+page = "https://apapadogiannis.github.io/crypto-observatory/"
+paper = "Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold"
+workflow = "check.yml"
+figure = "assets/crypto-observatory.png"
+figure_alt = "Bitcoin's required return since 2012 as a band with its midpoint, with the average delivered return of each three-year period marked on it"
+summary = "Bitcoin's required return, recomputed every month from public data and set against what Bitcoin delivered. With the equation explained term by term, the tests of fit, and a census of cryptoasset deaths."

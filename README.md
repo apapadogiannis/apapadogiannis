@@ -61,6 +61,24 @@ One per question. Each holds the data and code behind a paper, with one script t
 </tr>
 </table>
 
+### Tools
+
+Research that keeps running: each tool applies a paper's method to current public data, on a page that updates itself. The badge shows the latest automated check, which reruns the paper's stored results before the page is rebuilt.
+
+<table>
+<tr>
+<td width="45%" valign="top">
+<a href="https://apapadogiannis.github.io/crypto-observatory/"><img src="assets/crypto-observatory.png" alt="Bitcoin&#x27;s required return since 2012 as a band with its midpoint, with the average delivered return of each three-year period marked on it"></a>
+</td>
+<td valign="top">
+<p><b><a href="https://apapadogiannis.github.io/crypto-observatory/">Crypto Observatory: required returns, risks and survival</a></b></p>
+<p>Bitcoin's required return, recomputed every month from public data and set against what Bitcoin delivered. With the equation explained term by term, the tests of fit, and a census of cryptoasset deaths.</p>
+<p>Implements <i>Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold</i>.</p>
+<p><a href="https://apapadogiannis.github.io/crypto-observatory/">Open the page</a> · <a href="https://github.com/apapadogiannis/crypto-observatory">Code and data</a> <a href="https://github.com/apapadogiannis/crypto-observatory/actions/workflows/check.yml"><img src="https://github.com/apapadogiannis/crypto-observatory/actions/workflows/check.yml/badge.svg" alt="check"></a></p>
+</td>
+</tr>
+</table>
+
 ### All papers by question
 
 Click a line to open its list. Where a paper has a replication package, the green badge is live: GitHub re-runs the full pipeline on a clean machine at every change and once a month, and the badge turns red if any stored result is not reproduced to nine significant digits.
@@ -82,7 +100,7 @@ Click a line to open its list. Where a paper has a replication package, the gree
 <details>
 <summary><img src="assets/q-returns-dot.svg" width="12" height="12" alt=""> <b>Returns</b>: required and expected (5 papers, 2 with a replication package)</summary>
 <ul>
-<li><b>Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold</b>. <a href="https://ssrn.com/abstract=7705239">SSRN</a> · <a href="https://github.com/apapadogiannis/bitcoin-required-return">Replication package</a> <a href="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></li>
+<li><b>Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold</b>. <a href="https://ssrn.com/abstract=7705239">SSRN</a> · <a href="https://github.com/apapadogiannis/bitcoin-required-return">Replication package</a> <a href="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> · <a href="https://apapadogiannis.github.io/crypto-observatory/">Live tool</a></li>
 <li><b>Bitcoin's Expected Return: An Age Rule That Beats Current Practice</b>. <a href="https://ssrn.com/abstract=7705438">SSRN</a> · <a href="https://github.com/apapadogiannis/bitcoin-age-rule">Replication package</a> <a href="https://github.com/apapadogiannis/bitcoin-age-rule/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/bitcoin-age-rule/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></li>
 <li><b>On the Physics of Expected Asset Returns</b>. <a href="https://ssrn.com/abstract=6586879">SSRN</a></li>
 <li><b>Scarcity-Aligned Discounting in Asset Valuation</b>. <a href="https://ssrn.com/abstract=5368003">SSRN</a></li>
