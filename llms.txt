@@ -34,20 +34,23 @@ Each recomputes its figures from current public data and publishes them as data 
   Working paper.
   SSRN: https://ssrn.com/abstract=5384204
   Replication package: https://github.com/apapadogiannis/economic-scarcity-as-value (archive: https://doi.org/10.5281/zenodo.24051776)
-  No guide yet: the README of the package describes its files.
+  Guide: https://raw.githubusercontent.com/apapadogiannis/economic-scarcity-as-value/main/llms.txt
+  Results as data: https://raw.githubusercontent.com/apapadogiannis/economic-scarcity-as-value/main/outputs/results.json
 
 - The Architecture of Blockchain Value: Capabilities, Pillars, and Growth Dynamics
   Frontiers in Blockchain, 2026.
   Published article: https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2026.1747512/full
   SSRN: https://ssrn.com/abstract=5401302
   Replication package: https://github.com/apapadogiannis/architecture-of-blockchain-value (archive: https://doi.org/10.5281/zenodo.24404059)
-  No guide yet: the README of the package describes its files.
+  Guide: https://raw.githubusercontent.com/apapadogiannis/architecture-of-blockchain-value/main/llms.txt
+  Results as data: https://raw.githubusercontent.com/apapadogiannis/architecture-of-blockchain-value/main/outputs/results.json
 
 - Bitcoin Is Not Money: Why Fixed Supply Fails in a Modern Economy
   Asian Economics Letters, forthcoming.
   SSRN: https://ssrn.com/abstract=5435197
   Replication package: https://github.com/apapadogiannis/bitcoin-is-not-money (archive: https://doi.org/10.5281/zenodo.24249917)
-  No guide yet: the README of the package describes its files.
+  Guide: https://raw.githubusercontent.com/apapadogiannis/bitcoin-is-not-money/main/llms.txt
+  Results as data: https://raw.githubusercontent.com/apapadogiannis/bitcoin-is-not-money/main/outputs/results.json
 
 - Valuing Scarcity: A General Framework for Bitcoin, Gold, and Traditional Assets
   Financial Economics Letters, 2026.
@@ -84,7 +87,8 @@ Each recomputes its figures from current public data and publishes them as data 
   Working paper.
   SSRN: https://ssrn.com/abstract=7705438
   Replication package: https://github.com/apapadogiannis/bitcoin-age-rule (archive: https://doi.org/10.5281/zenodo.24004326)
-  No guide yet: the README of the package describes its files.
+  Guide: https://raw.githubusercontent.com/apapadogiannis/bitcoin-age-rule/main/llms.txt
+  Results as data: https://raw.githubusercontent.com/apapadogiannis/bitcoin-age-rule/main/outputs/results.json
 
 - On the Physics of Expected Asset Returns
   Working paper.

@@ -41,6 +41,7 @@ title = "Economic Scarcity as Value: A Universal Framework for Blockchain and Be
 question = "creation"
 ssrn = "5384204"
 repo = "economic-scarcity-as-value"
+guide = true
 zenodo = "10.5281/zenodo.24051776"
 featured = true
 figure = "assets/economic-scarcity.png"
@@ -61,6 +62,7 @@ venue = "Frontiers in Blockchain, 2026"
 ssrn = "5401302"
 published = "https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2026.1747512/full"
 repo = "architecture-of-blockchain-value"
+guide = true
 zenodo = "10.5281/zenodo.24404059"
 demo = "https://apapadogiannis.github.io/architecture-of-blockchain-value/"
 
@@ -85,6 +87,7 @@ question = "creation"
 venue = "Asian Economics Letters, forthcoming"
 ssrn = "5435197"
 repo = "bitcoin-is-not-money"
+guide = true
 zenodo = "10.5281/zenodo.24249917"
 
 [[paper]]
@@ -111,6 +114,7 @@ title = "Bitcoin's Expected Return: An Age Rule That Beats Current Practice"
 question = "returns"
 ssrn = "7705438"
 repo = "bitcoin-age-rule"
+guide = true
 zenodo = "10.5281/zenodo.24004326"
 
 [[paper]]
