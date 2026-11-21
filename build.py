@@ -142,22 +142,17 @@ def line(p):
 
 
 def tool(t):
-    """One application: its picture beside its name, what it does and where it runs."""
+    """One application, at the full width of the page: name, latest figures, picture, what it does, where it runs."""
     repo = f'{GH}/{t["repo"]}'
     check = f'{repo}/actions/workflows/{t["workflow"]}'
     return "\n".join([
-        "<table>", "<tr>",
-        '<td width="45%" valign="top">',
-        f'<a href="{t["page"]}"><img src="{t["figure"]}" alt="{html.escape(t["figure_alt"])}"></a>',
-        "</td>",
-        '<td valign="top">',
-        f'<p><b><a href="{t["page"]}">{esc(t["title"])}</a></b></p>',
-        f'<p>{esc(t["summary"])}</p>',
+        f'<h4><a href="{t["page"]}">{esc(t["title"])}</a></h4>',
         *([f'<p>{t["latest"]}</p>'] if t.get("latest") else []),
-        f'<p><a href="{t["page"]}">Open the page</a> · <a href="{repo}">Code and data</a> '
-        f'<a href="{check}"><img src="{check}/badge.svg" alt="check"></a></p>',
-        f'<p><sub>{t.get("paper_role", "Method")}: {t["paper_link"]}</sub></p>',
-        "</td>", "</tr>", "</table>"])
+        f'<p><a href="{t["page"]}"><img src="{t["figure"]}" width="100%" alt="{html.escape(t["figure_alt"])}"></a></p>',
+        f'<p>{esc(t["summary"])}</p>',
+        f'<p><a href="{t["page"]}">Open the page</a> · <a href="{repo}">Code and data</a> · '
+        f'{t.get("paper_role", "Method")}: {t["paper_link"]} '
+        f'<a href="{check}"><img src="{check}/badge.svg" alt="check"></a></p>'])
 
 
 def build():
