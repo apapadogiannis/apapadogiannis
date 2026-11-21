@@ -141,3 +141,5 @@ Click a line to open its list. Where a paper has a replication package, the gree
 <li><b>Crypto Treasury Companies: Financing Dynamics, Accretion Conditions, and Systemic Risk</b>. <a href="https://ssrn.com/abstract=5487486">SSRN</a></li>
 </ul>
 </details>
+
+<sub>For AI agents and programs: <a href="llms.txt">llms.txt</a> lists every tool, paper and replication package with the address of its guide.</sub>

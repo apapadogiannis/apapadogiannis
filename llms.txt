@@ -15,12 +15,14 @@ Each recomputes its figures from current public data and publishes them as data 
 - Crypto Observatory: required returns, risks and survival
   Page: https://apapadogiannis.github.io/crypto-observatory/
   Guide: https://apapadogiannis.github.io/crypto-observatory/llms.txt
+  Same guide in the repository: https://raw.githubusercontent.com/apapadogiannis/crypto-observatory/main/api/llms.txt
   Code and data: https://github.com/apapadogiannis/crypto-observatory
   Method: Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold
 
 - Covered-Call Monitor: returns, overlays and flows from SEC filings
   Page: https://apapadogiannis.github.io/covered-call-monitor/
   Guide: https://apapadogiannis.github.io/covered-call-monitor/llms.txt
+  Same guide in the repository: https://raw.githubusercontent.com/apapadogiannis/covered-call-monitor/main/api/llms.txt
   Code and data: https://github.com/apapadogiannis/covered-call-monitor
   Background: High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs
 
@@ -30,17 +32,20 @@ Each recomputes its figures from current public data and publishes them as data 
   Working paper.
   SSRN: https://ssrn.com/abstract=5384204
   Replication package: https://github.com/apapadogiannis/economic-scarcity-as-value (archive: https://doi.org/10.5281/zenodo.24051776)
+  No guide yet: the README of the package describes its files.
 
 - The Architecture of Blockchain Value: Capabilities, Pillars, and Growth Dynamics
   Frontiers in Blockchain, 2026.
   Published article: https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2026.1747512/full
   SSRN: https://ssrn.com/abstract=5401302
   Replication package: https://github.com/apapadogiannis/architecture-of-blockchain-value (archive: https://doi.org/10.5281/zenodo.24404059)
+  No guide yet: the README of the package describes its files.
 
 - Bitcoin Is Not Money: Why Fixed Supply Fails in a Modern Economy
   Asian Economics Letters, forthcoming.
   SSRN: https://ssrn.com/abstract=5435197
   Replication package: https://github.com/apapadogiannis/bitcoin-is-not-money (archive: https://doi.org/10.5281/zenodo.24249917)
+  No guide yet: the README of the package describes its files.
 
 - Valuing Scarcity: A General Framework for Bitcoin, Gold, and Traditional Assets
   Financial Economics Letters, 2026.
@@ -77,6 +82,7 @@ Each recomputes its figures from current public data and publishes them as data 
   Working paper.
   SSRN: https://ssrn.com/abstract=7705438
   Replication package: https://github.com/apapadogiannis/bitcoin-age-rule (archive: https://doi.org/10.5281/zenodo.24004326)
+  No guide yet: the README of the package describes its files.
 
 - On the Physics of Expected Asset Returns
   Working paper.
@@ -96,6 +102,7 @@ Each recomputes its figures from current public data and publishes them as data 
   The Journal of Investing, forthcoming 2027.
   SSRN: https://ssrn.com/abstract=5180040
   Replication package: https://github.com/apapadogiannis/beyond-discount-rates (archive: https://doi.org/10.5281/zenodo.24243060)
+  No guide yet: the README of the package describes its files.
 
 - A Dual-Risk Theory of Valuation: Bridging Discounting and Expectational Distortion
   Discover Analytics, 2026.
@@ -129,6 +136,7 @@ Each recomputes its figures from current public data and publishes them as data 
   The Journal of Beta Investment Strategies, forthcoming 2027.
   SSRN: https://ssrn.com/abstract=6058896
   Replication package: https://github.com/apapadogiannis/ai-broad-index-investing (archive: https://doi.org/10.5281/zenodo.24240516)
+  No guide yet: the README of the package describes its files.
 
 - Crypto Treasury Companies: Financing Dynamics, Accretion Conditions, and Systemic Risk
   Working paper.

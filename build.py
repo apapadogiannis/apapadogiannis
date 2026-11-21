@@ -165,6 +165,8 @@ def build():
                 f'<summary><img src="assets/q-{k}-dot.svg" width="12" height="12" alt=""> <b>{name}</b>: {what} ({count})</summary>',
                 "<ul>"] + [line(p) for p in mine] + ["</ul>", "</details>", ""]
 
+    out += ['<sub>For AI agents and programs: <a href="llms.txt">llms.txt</a> lists every tool, paper and '
+            'replication package with the address of its guide.</sub>', ""]
     return "\n".join(out), index(prof, papers, tools)
 
 
@@ -182,6 +184,7 @@ def index(prof, papers, tools):
            "Each recomputes its figures from current public data and publishes them as data files beside its page.", ""]
     for t in tools:
         out += [f'- {t["title"]}', f'  Page: {t["page"]}', f'  Guide: {t["page"]}llms.txt',
+                f'  Same guide in the repository: {raw}/{t["repo"]}/main/api/llms.txt',
                 f'  Code and data: {GH}/{t["repo"]}', f'  {t.get("paper_role", "Method")}: {t["paper"]}', ""]
     for k, name, what in QUESTIONS:
         out += [f"## {name}: {what}", ""]
@@ -199,6 +202,8 @@ def index(prof, papers, tools):
             if p.get("guide"):
                 out.append(f'  Guide: {raw}/{p["repo"]}/main/llms.txt')
                 out.append(f'  Results as data: {raw}/{p["repo"]}/main/outputs/results.json')
+            elif "repo" in p:
+                out.append("  No guide yet: the README of the package describes its files.")
             if "tool_page" in p:
                 out.append(f'  Live tool: {p["tool_page"]}')
             out.append("")
