@@ -104,7 +104,8 @@ Each recomputes its figures from current public data and publishes them as data 
   The Journal of Investing, forthcoming 2027.
   SSRN: https://ssrn.com/abstract=5180040
   Replication package: https://github.com/apapadogiannis/beyond-discount-rates (archive: https://doi.org/10.5281/zenodo.24243060)
-  No guide yet: the README of the package describes its files.
+  Guide: https://raw.githubusercontent.com/apapadogiannis/beyond-discount-rates/main/llms.txt
+  Results as data: https://raw.githubusercontent.com/apapadogiannis/beyond-discount-rates/main/outputs/results.json
 
 - A Dual-Risk Theory of Valuation: Bridging Discounting and Expectational Distortion
   Discover Analytics, 2026.
@@ -125,6 +126,13 @@ Each recomputes its figures from current public data and publishes them as data 
 
 ## Value capture: what the holder actually keeps
 
+- Does AI break the case for broad index investing? Rent decay, private capital, and deflation
+  The Journal of Beta Investment Strategies, forthcoming 2027.
+  SSRN: https://ssrn.com/abstract=6058896
+  Replication package: https://github.com/apapadogiannis/ai-broad-index-investing (archive: https://doi.org/10.5281/zenodo.24240516)
+  Guide: https://raw.githubusercontent.com/apapadogiannis/ai-broad-index-investing/main/llms.txt
+  Results as data: https://raw.githubusercontent.com/apapadogiannis/ai-broad-index-investing/main/outputs/results.json
+
 - High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs
   The Journal of Beta Investment Strategies, 2026.
   Published article: https://doi.org/10.3905/jbis.2026.001
@@ -133,12 +141,6 @@ Each recomputes its figures from current public data and publishes them as data 
   Guide: https://raw.githubusercontent.com/apapadogiannis/covered-call-etfs/main/llms.txt
   Results as data: https://raw.githubusercontent.com/apapadogiannis/covered-call-etfs/main/outputs/results.json
   Live tool: https://apapadogiannis.github.io/covered-call-monitor/
-
-- Does AI break the case for broad index investing? Rent decay, private capital, and deflation
-  The Journal of Beta Investment Strategies, forthcoming 2027.
-  SSRN: https://ssrn.com/abstract=6058896
-  Replication package: https://github.com/apapadogiannis/ai-broad-index-investing (archive: https://doi.org/10.5281/zenodo.24240516)
-  No guide yet: the README of the package describes its files.
 
 - Crypto Treasury Companies: Financing Dynamics, Accretion Conditions, and Systemic Risk
   Working paper.
