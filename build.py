@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Writes README.md, the profile page, from papers.toml.
+"""Writes README.md, the profile page, and llms.txt, the index for AI agents and programs, from papers.toml.
 
-    python3 build.py           # rewrite README.md
-    python3 build.py --check   # exit 1 if README.md is out of date (used by the automated check)
+    python3 build.py           # rewrite README.md and llms.txt
+    python3 build.py --check   # exit 1 if either is out of date (used by the automated check)
 
 Standard library only (Python 3.11+).
 """
@@ -165,16 +165,58 @@ def build():
                 f'<summary><img src="assets/q-{k}-dot.svg" width="12" height="12" alt=""> <b>{name}</b>: {what} ({count})</summary>',
                 "<ul>"] + [line(p) for p in mine] + ["</ul>", "</details>", ""]
 
+    return "\n".join(out), index(prof, papers, tools)
+
+
+def index(prof, papers, tools):
+    """llms.txt: every tool and paper in one list, with the address of its own guide where it has one."""
+    raw = "https://raw.githubusercontent.com/apapadogiannis"
+    out = [f'# {prof["name"]}: independent research in finance, with open code and data', "",
+           "> An index of this account for AI agents and other programs: live tools, papers and replication",
+           "> packages. Where an entry has a guide, the guide says what the repository holds, what it adds,",
+           "> which file to use, what not to use it for, and how to cite it.", "",
+           f"Page for people: {GH}", "",
+           "The work follows value through four questions: " +
+           "; ".join(f"{name.lower()} ({what})" for _, name, what in QUESTIONS) + ".", "",
+           "## Live tools", "",
+           "Each recomputes its figures from current public data and publishes them as data files beside its page.", ""]
+    for t in tools:
+        out += [f'- {t["title"]}', f'  Page: {t["page"]}', f'  Guide: {t["page"]}llms.txt',
+                f'  Code and data: {GH}/{t["repo"]}', f'  {t.get("paper_role", "Method")}: {t["paper"]}', ""]
+    for k, name, what in QUESTIONS:
+        out += [f"## {name}: {what}", ""]
+        mine = [p for p in papers if p["question"] == k]
+        mine.sort(key=lambda p: (not p.get("guide"), "repo" not in p))
+        for p in mine:
+            out.append(f'- {p["title"]}')
+            out.append(f'  {p["venue"]}.' if "venue" in p else "  Working paper.")
+            if "published" in p:
+                out.append(f'  Published article: {p["published"]}')
+            if "ssrn" in p:
+                out.append(f'  SSRN: https://ssrn.com/abstract={p["ssrn"]}')
+            if "repo" in p:
+                out.append(f'  Replication package: {GH}/{p["repo"]}' + (f' (archive: https://doi.org/{p["zenodo"]})' if "zenodo" in p else ""))
+            if p.get("guide"):
+                out.append(f'  Guide: {raw}/{p["repo"]}/main/llms.txt')
+                out.append(f'  Results as data: {raw}/{p["repo"]}/main/outputs/results.json')
+            if "tool_page" in p:
+                out.append(f'  Live tool: {p["tool_page"]}')
+            out.append("")
+    out += ["## Licence and credit", "",
+            "Each repository states its own licence. In general the code is under the MIT License and the results",
+            "under CC BY 4.0, whose one condition is credit: cite the paper, or the tool, as its guide says.",
+            "Published articles belong to their publishers and are not reproduced in these repositories.", ""]
     return "\n".join(out)
 
 
 if __name__ == "__main__":
-    page = build()
-    target = HERE / "README.md"
-    if "--check" in sys.argv[1:]:
-        if not target.exists() or target.read_text(encoding="utf-8") != page:
-            sys.exit("README.md is out of date: run  python3 build.py")
-        print("README.md is up to date")
-    else:
-        target.write_text(page, encoding="utf-8")
-        print(f"wrote {target.name}")
+    files = dict(zip(("README.md", "llms.txt"), build()))
+    for name, text in files.items():
+        target = HERE / name
+        if "--check" in sys.argv[1:]:
+            if not target.exists() or target.read_text(encoding="utf-8") != text:
+                sys.exit(f"{name} is out of date: run  python3 build.py")
+            print(f"{name} is up to date")
+        else:
+            target.write_text(text, encoding="utf-8")
+            print(f"wrote {name}")

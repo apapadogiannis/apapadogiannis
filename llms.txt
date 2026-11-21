@@ -1,0 +1,141 @@
+# Agisilaos Papadogiannis: independent research in finance, with open code and data
+
+> An index of this account for AI agents and other programs: live tools, papers and replication
+> packages. Where an entry has a guide, the guide says what the repository holds, what it adds,
+> which file to use, what not to use it for, and how to cite it.
+
+Page for people: https://github.com/apapadogiannis
+
+The work follows value through four questions: value creation (where value comes from); returns (required and expected); valuation (the dual-risk framework); value capture (what the holder actually keeps).
+
+## Live tools
+
+Each recomputes its figures from current public data and publishes them as data files beside its page.
+
+- Crypto Observatory: required returns, risks and survival
+  Page: https://apapadogiannis.github.io/crypto-observatory/
+  Guide: https://apapadogiannis.github.io/crypto-observatory/llms.txt
+  Code and data: https://github.com/apapadogiannis/crypto-observatory
+  Method: Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold
+
+- Covered-Call Monitor: returns, overlays and flows from SEC filings
+  Page: https://apapadogiannis.github.io/covered-call-monitor/
+  Guide: https://apapadogiannis.github.io/covered-call-monitor/llms.txt
+  Code and data: https://github.com/apapadogiannis/covered-call-monitor
+  Background: High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs
+
+## Value creation: where value comes from
+
+- Economic Scarcity as Value: A Universal Framework for Blockchain and Beyond
+  Working paper.
+  SSRN: https://ssrn.com/abstract=5384204
+  Replication package: https://github.com/apapadogiannis/economic-scarcity-as-value (archive: https://doi.org/10.5281/zenodo.24051776)
+
+- The Architecture of Blockchain Value: Capabilities, Pillars, and Growth Dynamics
+  Frontiers in Blockchain, 2026.
+  Published article: https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2026.1747512/full
+  SSRN: https://ssrn.com/abstract=5401302
+  Replication package: https://github.com/apapadogiannis/architecture-of-blockchain-value (archive: https://doi.org/10.5281/zenodo.24404059)
+
+- Bitcoin Is Not Money: Why Fixed Supply Fails in a Modern Economy
+  Asian Economics Letters, forthcoming.
+  SSRN: https://ssrn.com/abstract=5435197
+  Replication package: https://github.com/apapadogiannis/bitcoin-is-not-money (archive: https://doi.org/10.5281/zenodo.24249917)
+
+- Valuing Scarcity: A General Framework for Bitcoin, Gold, and Traditional Assets
+  Financial Economics Letters, 2026.
+  Published article: https://doi.org/10.58567/fel05020001
+  SSRN: https://ssrn.com/abstract=5289457
+
+- Scarcity in an Age of AI Abundance
+  Working paper.
+  SSRN: https://ssrn.com/abstract=5924462
+
+- What Moves the Price of Gold: An Economic-Scarcity Lens on Policy, the Dollar, and the Debasement Trade
+  Working paper.
+  SSRN: https://ssrn.com/abstract=5619373
+
+- The Productivity Myth: Why Scarcity Drives All Value
+  Working paper.
+  SSRN: https://ssrn.com/abstract=5367197
+
+- How to Classify any Asset: Ontology, Anchor, Rail, Composability
+  Working paper.
+  SSRN: https://ssrn.com/abstract=5635610
+
+## Returns: required and expected
+
+- Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold
+  Working paper.
+  SSRN: https://ssrn.com/abstract=7705239
+  Replication package: https://github.com/apapadogiannis/bitcoin-required-return (archive: https://doi.org/10.5281/zenodo.24003938)
+  Guide: https://raw.githubusercontent.com/apapadogiannis/bitcoin-required-return/main/llms.txt
+  Results as data: https://raw.githubusercontent.com/apapadogiannis/bitcoin-required-return/main/outputs/results.json
+  Live tool: https://apapadogiannis.github.io/crypto-observatory/
+
+- Bitcoin's Expected Return: An Age Rule That Beats Current Practice
+  Working paper.
+  SSRN: https://ssrn.com/abstract=7705438
+  Replication package: https://github.com/apapadogiannis/bitcoin-age-rule (archive: https://doi.org/10.5281/zenodo.24004326)
+
+- On the Physics of Expected Asset Returns
+  Working paper.
+  SSRN: https://ssrn.com/abstract=6586879
+
+- Scarcity-Aligned Discounting in Asset Valuation
+  Working paper.
+  SSRN: https://ssrn.com/abstract=5368003
+
+- The Bitcoin Hurdle Fallacy: Why Risk Misalignment Distorts Valuation
+  Working paper.
+  SSRN: https://ssrn.com/abstract=5368091
+
+## Valuation: the dual-risk framework
+
+- Beyond Discount Rates: A Valuation Framework for Unpriced Systematic Risk
+  The Journal of Investing, forthcoming 2027.
+  SSRN: https://ssrn.com/abstract=5180040
+  Replication package: https://github.com/apapadogiannis/beyond-discount-rates (archive: https://doi.org/10.5281/zenodo.24243060)
+
+- A Dual-Risk Theory of Valuation: Bridging Discounting and Expectational Distortion
+  Discover Analytics, 2026.
+  Published article: https://doi.org/10.1007/s44257-026-00062-9
+  SSRN: https://ssrn.com/abstract=5226017
+
+- From Unified Discounting to Dual-Risk: A New Lens on DCF Valuation
+  Finance Research Open, 2026.
+  Published article: https://doi.org/10.1016/j.finr.2026.100096
+  SSRN: https://ssrn.com/abstract=6127866
+
+- Rethinking Capital Budgeting: Embedding Ex-Ante Alpha in the Cost of Capital
+  Working paper.
+
+- Unifying DCF Valuation Across Traditional and Cryptoassets
+  Working paper.
+  SSRN: https://ssrn.com/abstract=5363661
+
+## Value capture: what the holder actually keeps
+
+- High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs
+  The Journal of Beta Investment Strategies, 2026.
+  Published article: https://doi.org/10.3905/jbis.2026.001
+  SSRN: https://ssrn.com/abstract=5370897
+  Replication package: https://github.com/apapadogiannis/covered-call-etfs (archive: https://doi.org/10.5281/zenodo.24244700)
+  Guide: https://raw.githubusercontent.com/apapadogiannis/covered-call-etfs/main/llms.txt
+  Results as data: https://raw.githubusercontent.com/apapadogiannis/covered-call-etfs/main/outputs/results.json
+  Live tool: https://apapadogiannis.github.io/covered-call-monitor/
+
+- Does AI break the case for broad index investing? Rent decay, private capital, and deflation
+  The Journal of Beta Investment Strategies, forthcoming 2027.
+  SSRN: https://ssrn.com/abstract=6058896
+  Replication package: https://github.com/apapadogiannis/ai-broad-index-investing (archive: https://doi.org/10.5281/zenodo.24240516)
+
+- Crypto Treasury Companies: Financing Dynamics, Accretion Conditions, and Systemic Risk
+  Working paper.
+  SSRN: https://ssrn.com/abstract=5487486
+
+## Licence and credit
+
+Each repository states its own licence. In general the code is under the MIT License and the results
+under CC BY 4.0, whose one condition is credit: cite the paper, or the tool, as its guide says.
+Published articles belong to their publishers and are not reproduced in these repositories.

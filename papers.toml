@@ -7,6 +7,7 @@
 #   published : link to the published article
 #   repo      : name of the replication package on GitHub;  zenodo : its Zenodo DOI
 #   demo      : link to an interactive demo page served from the repo
+#   guide     : true when the package has an llms.txt guide for AI agents and programs at its root
 #   tool      : repository name of a [[tool]] below that runs this paper's method on live data
 #   featured  : true for the one package shown as a card for its question (needs figure, figure_alt and
 #               summary, one short sentence: the cards are narrow)
@@ -95,6 +96,7 @@ title = "Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold
 question = "returns"
 ssrn = "7705239"
 repo = "bitcoin-required-return"
+guide = true
 zenodo = "10.5281/zenodo.24003938"
 tool = "crypto-observatory"
 featured = true
@@ -180,6 +182,7 @@ venue = "The Journal of Beta Investment Strategies, 2026"
 ssrn = "5370897"
 published = "https://doi.org/10.3905/jbis.2026.001"
 repo = "covered-call-etfs"
+guide = true
 zenodo = "10.5281/zenodo.24244700"
 tool = "covered-call-monitor"
 
