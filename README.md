@@ -8,9 +8,11 @@
 
 Engineer by training (PhD, MBA). My first research career was in wireless communications, with IEEE publications that have drawn about 2,000 citations. I now do independent research in finance, published in peer-reviewed journals.
 
-I bring an engineer's habits to finance: state the model, measure the inputs, and publish the code so anyone can check the result. The work is unfunded and independent, and corrections are welcome.
+This page holds open finance research whose every published number is recomputed automatically, with machine-readable results and stated limits. It comes in two forms. **Tools** recompute their figures from current public data, on a page that updates itself. **Replication packages** hold the data and code behind a paper and are re-run on a clean machine at every change; 8 of the 21 papers below have one so far. The work is unfunded and independent, and corrections are welcome.
 
-My work follows value through four questions: where it comes from (value creation), what return an asset must earn and can be expected to earn (returns), what it is worth once both are known (valuation), and what its holder actually keeps (value capture). Every empirical result comes with open data and code, written in Python and re-run automatically on GitHub.
+The work follows value through four questions: where it comes from (value creation), what return an asset must earn and can be expected to earn (returns), what it is worth once both are known (valuation), and what its holder actually keeps (value capture).
+
+**For AI agents and programs:** [llms.txt](llms.txt) lists every tool, paper and replication package. Where one has a guide, it gives the address; the guide says what the repository holds, what it adds, which file to use and what not to use it for.
 
 <p align="center">
 <picture>
@@ -141,5 +143,3 @@ Click a line to open its list. Where a paper has a replication package, the gree
 <li><b>Crypto Treasury Companies: Financing Dynamics, Accretion Conditions, and Systemic Risk</b>. <a href="https://ssrn.com/abstract=5487486">SSRN</a></li>
 </ul>
 </details>
-
-<sub>For AI agents and programs: <a href="llms.txt">llms.txt</a> lists every tool, paper and replication package with the address of its guide.</sub>

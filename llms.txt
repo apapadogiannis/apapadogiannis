@@ -1,4 +1,6 @@
-# Agisilaos Papadogiannis: independent research in finance, with open code and data
+# Agisilaos Papadogiannis: open finance research
+
+Every published number is recomputed automatically, with machine-readable results and stated limits.
 
 > An index of this account for AI agents and other programs: live tools, papers and replication
 > packages. Where an entry has a guide, the guide says what the repository holds, what it adds,

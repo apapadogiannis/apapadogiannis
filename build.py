@@ -128,8 +128,10 @@ def build():
         featured += f
 
     out = [f'## {prof["name"]}', "", prof["links"].strip(), ""]
+    counts = {"papers": len(papers), "packages": sum("repo" in p for p in papers)}
     for para in prof["intro"]:
-        out += [para, ""]
+        out += [para.format(**counts), ""]
+    out += [prof["agents"], ""]
     out += ['<p align="center">', '<picture>',
             '<source media="(prefers-color-scheme: dark)" srcset="assets/map-dark.svg">',
             '<source media="(prefers-color-scheme: light)" srcset="assets/map-light.svg">',
@@ -165,15 +167,14 @@ def build():
                 f'<summary><img src="assets/q-{k}-dot.svg" width="12" height="12" alt=""> <b>{name}</b>: {what} ({count})</summary>',
                 "<ul>"] + [line(p) for p in mine] + ["</ul>", "</details>", ""]
 
-    out += ['<sub>For AI agents and programs: <a href="llms.txt">llms.txt</a> lists every tool, paper and '
-            'replication package with the address of its guide.</sub>', ""]
     return "\n".join(out), index(prof, papers, tools)
 
 
 def index(prof, papers, tools):
     """llms.txt: every tool and paper in one list, with the address of its own guide where it has one."""
     raw = "https://raw.githubusercontent.com/apapadogiannis"
-    out = [f'# {prof["name"]}: independent research in finance, with open code and data', "",
+    out = [f'# {prof["name"]}: open finance research', "",
+           "Every published number is recomputed automatically, with machine-readable results and stated limits.", "",
            "> An index of this account for AI agents and other programs: live tools, papers and replication",
            "> packages. Where an entry has a guide, the guide says what the repository holds, what it adds,",
            "> which file to use, what not to use it for, and how to cite it.", "",
