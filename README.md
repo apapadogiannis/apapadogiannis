@@ -12,7 +12,7 @@ This page holds open finance research whose every published number is recomputed
 
 The work follows value through four questions: where it comes from (value creation), what return an asset must earn and can be expected to earn (returns), what it is worth once both are known (valuation), and what its holder actually keeps (value capture).
 
-**For AI agents and programs:** [llms.txt](llms.txt) lists every tool, paper and replication package. Where one has a guide, it gives the address; the guide says what the repository holds, what it adds, which file to use and what not to use it for.
+**For AI agents and programs:** [llms.txt](llms.txt) lists every tool, paper and replication package. Where one has a guide, it gives the address; the guide says what the repository holds, what it adds, which file to use and what not to use it for. To use this work from your own agent, add the skill [skill/SKILL.md](skill/SKILL.md).
 
 <p align="center">
 <picture>

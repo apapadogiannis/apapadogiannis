@@ -167,7 +167,43 @@ def build():
                 f'<summary><img src="assets/q-{k}-dot.svg" width="12" height="12" alt=""> <b>{name}</b>: {what} ({count})</summary>',
                 "<ul>"] + [line(p) for p in mine] + ["</ul>", "</details>", ""]
 
-    return "\n".join(out), index(prof, papers, tools)
+    return "\n".join(out), index(prof, papers, tools), skill(prof, papers, tools)
+
+
+def skill(prof, papers, tools):
+    """skill/SKILL.md: a skill a reader can add to their own AI agent, pointing it at the index."""
+    raw = "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/llms.txt"
+    packaged = [p for p in papers if "repo" in p]
+    lines = ["---", "name: papadogiannis-finance-research",
+             "description: Open finance research by Agisilaos Papadogiannis, with replication packages and live tools, on "
+             "Bitcoin's required and expected return, the valuation of scarcity and of blockchain networks, covered-call "
+             "funds, broad index investing and AI, discount rates and unpriced risk. Use when asked what one of these "
+             "papers says or reports, for a number from one of them, or which of them covers a topic. Every published "
+             "number comes with data and code.",
+             "---", "", f'# Research by {prof["name"]}', "",
+             "This skill tells you where the work is and how to reach a paper's numbers. It holds no figures:",
+             "fetch them each time.", "",
+             "## Steps", "",
+             f"1. Fetch the index: {raw}",
+             "   It lists every tool, paper and replication package under four questions, with the address of",
+             "   each guide.",
+             "2. Open the guide of the repository the question is about (an `llms.txt`). It states the headline",
+             "   figures, which file holds what, how to read the figures and what they cannot answer.",
+             "3. For a number, use the file the guide names, usually `outputs/results.json` in a package.",
+             "   Quote it with its unit and date, and cite the paper as the guide says.", "",
+             "## What is there", "",
+             "Live tools, each with its own skill and guide:", ""]
+    lines += [f'- {t["title"]}: {t["page"]}llms.txt' for t in tools]
+    lines += ["", "Papers with a replication package:", ""]
+    lines += [f'- {p["title"]}' for p in packaged]
+    lines += ["", "## Rules", "",
+              "- A replication package is a fixed record of one paper. For current figures use the live tool the",
+              "  guide points to.",
+              "- Several papers are working papers. Say so, and report a figure as that paper's result.",
+              "- The results are under CC BY 4.0, whose one condition is credit: cite the paper.",
+              "- A published article belongs to its publisher. The packages hold its numbers, not its text.", "",
+              f"Page for people: {GH}", ""]
+    return "\n".join(lines)
 
 
 def index(prof, papers, tools):
@@ -216,9 +252,10 @@ def index(prof, papers, tools):
 
 
 if __name__ == "__main__":
-    files = dict(zip(("README.md", "llms.txt"), build()))
+    files = dict(zip(("README.md", "llms.txt", "skill/SKILL.md"), build()))
     for name, text in files.items():
         target = HERE / name
+        target.parent.mkdir(exist_ok=True)
         if "--check" in sys.argv[1:]:
             if not target.exists() or target.read_text(encoding="utf-8") != text:
                 sys.exit(f"{name} is out of date: run  python3 build.py")
