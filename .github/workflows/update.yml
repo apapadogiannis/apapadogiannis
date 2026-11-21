@@ -17,11 +17,11 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: "3.13"
-      - name: Read the tools' latest figures and rebuild the page
+      - name: Read the tools' latest figures, redraw their pictures and rebuild the page
         run: python3 build.py --fetch
       - name: Store the page if a figure has changed
         run: |
-          git add live.json README.md llms.txt skill
+          git add live.json README.md llms.txt skill assets
           if git diff --cached --quiet; then echo "No new figures."; exit 0; fi
           git config user.name "Agisilaos Papadogiannis"
           git config user.email "apapadogiannis@gmail.com"

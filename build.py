@@ -9,9 +9,12 @@ Standard library only (Python 3.11+).
 """
 import html
 import json
+import math
 import sys
 import tomllib
 from pathlib import Path
+
+import charts
 
 HERE = Path(__file__).parent
 GH = "https://github.com/apapadogiannis"
@@ -44,9 +47,17 @@ def fetch():
         with urlopen(f"{RAW}/{path}", timeout=60) as r:
             return json.load(r)
 
-    m = get("crypto-observatory/main/api/data.json")["months"][-1]
+    obs = get("crypto-observatory/main/api/data.json")
+    m = obs["months"][-1]
     live = {"crypto-observatory": {"month_end": m["month_end"], "required": m["required"],
                                    "terms_at_midpoint": m["terms_at_midpoint"]}}
+    live["crypto-observatory"]["picture"] = {
+        "alt": "Bitcoin's required return since 2012 as a band with its midpoint, with the average required and "
+               "delivered return of each three-year period marked on it",
+        "months": [{"month_end": x["month_end"], **{k: x["required"][k] for k in ("lower", "midpoint", "upper")}}
+                   for x in obs["months"]],
+        "periods": [{k: p[k] for k in ("period", "from", "to", "months", "required_mid", "delivered")}
+                    for p in obs["periods"] if not p["summary"]]}
     funds = [f for f in get("covered-call-monitor/main/api/funds.json")["funds"]
              if f["role"] == "fund" and f["still_reporting"]]
     pairs = [f["against_benchmark"]["last_12_months"] for f in funds
@@ -58,6 +69,22 @@ def fetch():
     live["covered-call-monitor"] = {"funds": len(funds), "from": pairs[0]["from"], "to": pairs[0]["to"],
                                     "beside_an_index_fund": len(pairs), "returned_less": sum(g < 0 for g in gaps),
                                     "smallest_gap": gaps[-1], "largest_gap": gaps[0]}
+    detail, years = get("covered-call-monitor/main/api/data.json")["detail"], 3
+    to = min(f["months"][-1]["month"] for f in detail)
+    bars = []
+    for f in detail:
+        span = [x for x in f["months"] if x["month"] <= to][-12 * years:]
+        grow = lambda key: (math.prod(1 + x[key] / 100 for x in span) - 1) * 100
+        if len(span) == 12 * years:
+            bars.append({"ticker": f["ticker"], "index_fund": f["benchmark"], "fund": grow("fund"),
+                         "benchmark": grow("benchmark"), "from": span[0]["month"]})
+    if len({b["from"] for b in bars}) != 1:
+        sys.exit("the funds in the picture do not cover the same months")
+    live["covered-call-monitor"]["picture"] = {
+        "alt": f"Total return over {years} years of {len(bars)} large covered-call funds, each beside the index fund "
+               "on the same market",
+        "years": years, "from": bars[0]["from"], "to": to,
+        "bars": [{k: b[k] for k in ("ticker", "index_fund", "fund", "benchmark")} for b in bars]}
     (HERE / "live.json").write_text(json.dumps(live, indent=1) + "\n", encoding="utf-8")
     print("wrote live.json")
 
@@ -141,6 +168,16 @@ def line(p):
     return f"<li>{text}</li>"
 
 
+def picture(t):
+    """The tool's picture: drawn from its data for a light and a dark page, or the stored file if none is drawn."""
+    alt = html.escape(t.get("drawn_alt") or t["figure_alt"])
+    if not t.get("drawn_alt"):
+        return f'<img src="{t["figure"]}" width="100%" alt="{alt}">'
+    return (f'<picture><source media="(prefers-color-scheme: dark)" srcset="assets/{t["repo"]}-dark.svg">'
+            f'<source media="(prefers-color-scheme: light)" srcset="assets/{t["repo"]}-light.svg">'
+            f'<img src="assets/{t["repo"]}-light.svg" width="100%" alt="{alt}"></picture>')
+
+
 def tool(t):
     """One application, at the full width of the page: name, latest figures, picture, what it does, where it runs."""
     repo = f'{GH}/{t["repo"]}'
@@ -148,7 +185,7 @@ def tool(t):
     return "\n".join([
         f'<h4><a href="{t["page"]}">{esc(t["title"])}</a></h4>',
         *([f'<p>{t["latest"]}</p>'] if t.get("latest") else []),
-        f'<p><a href="{t["page"]}"><img src="{t["figure"]}" width="100%" alt="{html.escape(t["figure_alt"])}"></a></p>',
+        f'<p><a href="{t["page"]}">{picture(t)}</a></p>',
         f'<p>{esc(t["summary"])}</p>',
         f'<p><a href="{t["page"]}">Open the page</a> · <a href="{repo}">Code and data</a> · '
         f'{t.get("paper_role", "Method")}: {t["paper_link"]} '
@@ -165,6 +202,7 @@ def build():
     live = json.loads(live_file.read_text(encoding="utf-8")) if live_file.exists() else {}
     for t in tools:
         t["latest"] = latest(t["repo"], live)
+        t["drawn_alt"] = live.get(t["repo"], {}).get("picture", {}).get("alt")
         if t["paper"] not in titles:
             sys.exit(f'tool "{t["title"]}" names a paper that is not listed: {t["paper"]}')
         src = by_title[t["paper"]]
@@ -234,7 +272,8 @@ def build():
 
     out += ["### For AI agents and programs", "", prof["agents"], "", "### About", "", prof["about"], ""]
 
-    return "\n".join(out), index(prof, papers, tools), skill(prof, papers, tools)
+    return {"README.md": "\n".join(out), "llms.txt": index(prof, papers, tools),
+            "skill/SKILL.md": skill(prof, papers, tools), **charts.pictures(live)}
 
 
 def skill(prof, papers, tools):
@@ -321,7 +360,7 @@ def index(prof, papers, tools):
 if __name__ == "__main__":
     if "--fetch" in sys.argv[1:]:
         fetch()
-    files = dict(zip(("README.md", "llms.txt", "skill/SKILL.md"), build()))
+    files = build()
     for name, text in files.items():
         target = HERE / name
         target.parent.mkdir(exist_ok=True)
