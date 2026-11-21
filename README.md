@@ -40,15 +40,15 @@ Research that keeps running: each page rebuilds itself from current public data,
 </tr>
 </table>
 
-### The research
+### The research: one corpus, four questions
 
-The research follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. 8 of the 21 papers are published or forthcoming in peer-reviewed journals. 8 have a replication package: the data and code, re-run on a clean machine at every change and once a month, with a badge that turns red if a stored result is not reproduced. The other 13 have no package so far.
+The papers are written to be used together, as one corpus on value. It follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. The whole is indexed for people on this page and for programs in [llms.txt](llms.txt), so a question can be answered from it with a number and its source. 8 of the 21 papers are published or forthcoming in peer-reviewed journals. 8 have a replication package: the data and code, re-run on a clean machine at every change and once a month, with a badge that turns red if a stored result is not reproduced. The other 13 have no package so far.
 
 <p align="center">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="assets/map-dark.svg">
 <source media="(prefers-color-scheme: light)" srcset="assets/map-light.svg">
-<img src="assets/map-light.svg" width="720" alt="Two overlapping circles. Value creation: where value comes from, with the risk in the cash flows. Returns: required and expected, with the risk in the required return. Their overlap is valuation, the dual-risk framework. An arrow leads to a band below: value capture, what the holder actually keeps.">
+<img src="assets/map-light.svg" width="720" alt="Two overlapping circles. Value creation: where value comes from, through scarcity, desirability and adoption. Returns: required and expected, what an asset must earn. Their overlap is valuation, the dual-risk framework: a valuation carries two risks, in what the asset delivers and in the return it must earn. An arrow leads to a band below: value capture, what the holder actually keeps.">
 </picture>
 </p>
 

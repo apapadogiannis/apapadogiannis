@@ -21,9 +21,10 @@ QUESTIONS = [  # key, name, what it asks
     ("valuation", "Valuation", "the dual-risk framework"),
     ("capture", "Value capture", "what the holder actually keeps"),
 ]
-MAP_ALT = ("Two overlapping circles. Value creation: where value comes from, with the risk in the cash flows. "
-           "Returns: required and expected, with the risk in the required return. Their overlap is valuation, "
-           "the dual-risk framework. An arrow leads to a band below: value capture, what the holder actually keeps.")
+MAP_ALT = ("Two overlapping circles. Value creation: where value comes from, through scarcity, desirability and "
+           "adoption. Returns: required and expected, what an asset must earn. Their overlap is valuation, the "
+           "dual-risk framework: a valuation carries two risks, in what the asset delivers and in the return it must "
+           "earn. An arrow leads to a band below: value capture, what the holder actually keeps.")
 
 
 RAW = "https://raw.githubusercontent.com/apapadogiannis"
@@ -208,7 +209,7 @@ def build():
         for t in tools:
             out += [tool(t), ""]
 
-    out += ["### The research", ""]
+    out += ["### The research: one corpus, four questions", ""]
     for para in prof["intro"]:
         out += [para.format(**counts), ""]
     out += ['<p align="center">', '<picture>',
