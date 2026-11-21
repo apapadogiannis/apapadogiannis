@@ -1,0 +1,28 @@
+{
+ "crypto-observatory": {
+  "month_end": "2026-10-31",
+  "required": {
+   "lower": 11.77,
+   "midpoint": 20.12,
+   "upper": 28.47,
+   "upper_if_surveyed_owner": 28.47,
+   "upper_if_early_holder": 6.97,
+   "upper_set_by": "average surveyed owner"
+  },
+  "terms_at_midpoint": {
+   "risk_free": 4.94,
+   "market": 5.78,
+   "concentration": 7.5,
+   "mortality": 1.9
+  }
+ },
+ "covered-call-monitor": {
+  "funds": 87,
+  "from": "2025-07",
+  "to": "2026-06",
+  "beside_an_index_fund": 18,
+  "returned_less": 18,
+  "smallest_gap": -0.8006000000000029,
+  "largest_gap": -19.6733
+ }
+}

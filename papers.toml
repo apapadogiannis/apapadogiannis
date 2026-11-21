@@ -16,11 +16,13 @@
 # of a paper. All fields are required.
 #   title, repo, page (the live address), summary (two or three sentences), figure, figure_alt,
 #   paper (the title of the [[paper]] whose method it uses), workflow (the file name of its check, for the badge)
+# The latest figures shown with each tool are not typed here: "python3 build.py --fetch" reads them from the
+# tool's own data file into live.json, and the update workflow does so every month.
 
 [profile]
 name = "Agisilaos Papadogiannis"
 # One sentence under the name: what the work is.
-position = "Independent finance research on what an asset is worth and what return it must earn, built so that any person or program can check the numbers."
+position = "Independent finance research on what an asset is worth and what return it must earn. {Tools_word} live tools recompute the answers from current public data, and {packages_word} papers come with the data and code to check every number."
 # The plain row of links under it: label, address.
 links = [
   ["SSRN", "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7457522"],
@@ -29,12 +31,12 @@ links = [
   ["Substack", "https://scarcitythinker.substack.com"],
   ["Email", "mailto:apapadogiannis@gmail.com"],
 ]
-# Above the map. {papers}, {published}, {packages}, {tools} and {rest} are counted from this file.
+# Under the links. {papers}, {published}, {packages}, {tools} and {rest} are counted from this file.
+checked = "**Open, and checked by machine.** In the tools and replication packages below, every published number is recomputed automatically, with machine-readable results and stated limits."
+# Above the map.
 intro = [
-  "The research follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. {published} of the {papers} papers are published or forthcoming in peer-reviewed journals.",
+  "The research follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. {published} of the {papers} papers are published or forthcoming in peer-reviewed journals. {packages} have a replication package: the data and code, re-run on a clean machine at every change and once a month, with a badge that turns red if a stored result is not reproduced. The other {rest} have no package so far.",
 ]
-# Below the map.
-checked = "**Open, and checked by machine.** In the tools and replication packages below, every published number is recomputed automatically, with machine-readable results and stated limits. The {tools} live tools recompute their figures from current public data, on pages that update themselves. {packages} papers have a replication package: the data and code, re-run on a clean machine at every change and once a month, with a badge that turns red if a stored result is not reproduced. The other {rest} papers have no package so far."
 # The section for programs, near the end of the page.
 agents = "[llms.txt](llms.txt) lists every tool, paper and replication package. Where one has a guide, it gives the address; the guide says what the repository holds, what it adds, which file to use and what not to use it for. To use this work from your own agent, add the skill [skill/SKILL.md](skill/SKILL.md)."
 # The last section.

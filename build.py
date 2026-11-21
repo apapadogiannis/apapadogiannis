@@ -3,10 +3,12 @@
 
     python3 build.py           # rewrite README.md and llms.txt
     python3 build.py --check   # exit 1 if either is out of date (used by the automated check)
+    python3 build.py --fetch   # first read the tools' latest figures from their data files into live.json
 
 Standard library only (Python 3.11+).
 """
 import html
+import json
 import sys
 import tomllib
 from pathlib import Path
@@ -22,6 +24,62 @@ QUESTIONS = [  # key, name, what it asks
 MAP_ALT = ("Two overlapping circles. Value creation: where value comes from, with the risk in the cash flows. "
            "Returns: required and expected, with the risk in the required return. Their overlap is valuation, "
            "the dual-risk framework. An arrow leads to a band below: value capture, what the holder actually keeps.")
+
+
+RAW = "https://raw.githubusercontent.com/apapadogiannis"
+MONTHS = "January February March April May June July August September October November December".split()
+
+
+def month(ym):
+    """'2026-06' or '2026-06-30' as 'June 2026'."""
+    return f"{MONTHS[int(ym[5:7]) - 1]} {ym[:4]}"
+
+
+def fetch():
+    """The latest figures of each tool, from the data file the tool publishes. Written to live.json."""
+    from urllib.request import urlopen
+
+    def get(path):
+        with urlopen(f"{RAW}/{path}", timeout=60) as r:
+            return json.load(r)
+
+    m = get("crypto-observatory/main/api/data.json")["months"][-1]
+    live = {"crypto-observatory": {"month_end": m["month_end"], "required": m["required"],
+                                   "terms_at_midpoint": m["terms_at_midpoint"]}}
+    funds = [f for f in get("covered-call-monitor/main/api/funds.json")["funds"]
+             if f["role"] == "fund" and f["still_reporting"]]
+    pairs = [f["against_benchmark"]["last_12_months"] for f in funds
+             if f.get("against_benchmark") and f["against_benchmark"].get("last_12_months")]
+    periods = {(p["from"], p["to"]) for p in pairs}
+    if len(periods) != 1:
+        sys.exit("the funds set beside an index fund do not cover the same twelve months")
+    gaps = sorted(p["fund"] - p["benchmark"] for p in pairs)
+    live["covered-call-monitor"] = {"funds": len(funds), "from": pairs[0]["from"], "to": pairs[0]["to"],
+                                    "beside_an_index_fund": len(pairs), "returned_less": sum(g < 0 for g in gaps),
+                                    "smallest_gap": gaps[-1], "largest_gap": gaps[0]}
+    (HERE / "live.json").write_text(json.dumps(live, indent=1) + "\n", encoding="utf-8")
+    print("wrote live.json")
+
+
+def latest(repo, live):
+    """One sentence with the tool's latest figures, or nothing if live.json has none for it."""
+    d = live.get(repo)
+    if not d:
+        return ""
+    if repo == "crypto-observatory":
+        r, t = d["required"], d["terms_at_midpoint"]
+        return (f'<b>Latest, {month(d["month_end"])}:</b> Bitcoin\'s required return is {r["midpoint"]:.1f}% a year '
+                f'(band {r["lower"]:.1f}% to {r["upper"]:.1f}%). Of the midpoint: risk-free {t["risk_free"]:.1f}, '
+                f'market {t["market"]:.1f}, concentration {t["concentration"]:.1f}, mortality {t["mortality"]:.1f}.')
+    if repo == "covered-call-monitor":
+        n, less = d["beside_an_index_fund"], d["returned_less"]
+        who = f"all {n}" if less == n else f"{less} of the {n}"
+        text = (f'<b>Latest, 12 months to {month(d["to"])}:</b> {who} funds that have an index fund on the same market '
+                f'beside them returned less than it')
+        if less == n:
+            text += f', by {-d["smallest_gap"]:.1f} to {-d["largest_gap"]:.1f} percentage points'
+        return text + ", distributions reinvested."
+    return ""
 
 
 def esc(text):
@@ -94,6 +152,7 @@ def tool(t):
         '<td valign="top">',
         f'<p><b><a href="{t["page"]}">{esc(t["title"])}</a></b></p>',
         f'<p>{esc(t["summary"])}</p>',
+        *([f'<p>{t["latest"]}</p>'] if t.get("latest") else []),
         f'<p><a href="{t["page"]}">Open the page</a> · <a href="{repo}">Code and data</a> '
         f'<a href="{check}"><img src="{check}/badge.svg" alt="check"></a></p>',
         f'<p><sub>{t.get("paper_role", "Method")}: {t["paper_link"]}</sub></p>',
@@ -106,7 +165,10 @@ def build():
     titles = {p["title"] for p in papers}
     pages = {t["repo"]: t["page"] for t in tools}
     by_title = {p["title"]: p for p in papers}
+    live_file = HERE / "live.json"
+    live = json.loads(live_file.read_text(encoding="utf-8")) if live_file.exists() else {}
     for t in tools:
+        t["latest"] = latest(t["repo"], live)
         if t["paper"] not in titles:
             sys.exit(f'tool "{t["title"]}" names a paper that is not listed: {t["paper"]}')
         src = by_title[t["paper"]]
@@ -130,22 +192,30 @@ def build():
     counts = {"papers": len(papers), "packages": sum("repo" in p for p in papers), "tools": len(tools),
               "published": sum("venue" in p for p in papers)}
     counts["rest"] = counts["papers"] - counts["packages"]
-    out = [f'## {prof["name"]}', "", f'**{prof["position"]}**', "",
-           " · ".join(f'<a href="{url}">{esc(label)}</a>' for label, url in prof["links"]), ""]
+    words = "zero one two three four five six seven eight nine ten eleven twelve".split()
+    for key in ("tools", "packages"):  # as words, for the sentence under the name
+        counts[key + "_word"] = words[counts[key]] if counts[key] < len(words) else str(counts[key])
+    counts["Tools_word"] = counts["tools_word"].capitalize()
+    out = [f'## {prof["name"]}', "", f'**{prof["position"].format(**counts)}**', "",
+           " · ".join(f'<a href="{url}">{esc(label)}</a>' for label, url in prof["links"]), "",
+           prof["checked"].format(**counts), ""]
+
+    if tools:
+        out += ["### Live tools", "",
+                "Research that keeps running: each page rebuilds itself from current public data, and only after an "
+                "automated check has reproduced a fixed set of reference results. The figures below are read from "
+                "the tools' own data files every month.", ""]
+        for t in tools:
+            out += [tool(t), ""]
+
+    out += ["### The research", ""]
     for para in prof["intro"]:
         out += [para.format(**counts), ""]
     out += ['<p align="center">', '<picture>',
             '<source media="(prefers-color-scheme: dark)" srcset="assets/map-dark.svg">',
             '<source media="(prefers-color-scheme: light)" srcset="assets/map-light.svg">',
             f'<img src="assets/map-light.svg" width="720" alt="{MAP_ALT}">',
-            '</picture>', '</p>', "", prof["checked"].format(**counts), ""]
-
-    if tools:
-        out += ["### Live tools", "",
-                "Research that keeps running. The badge shows the latest automated check, which must reproduce a "
-                "fixed set of reference results before the page is rebuilt.", ""]
-        for t in tools:
-            out += [tool(t), ""]
+            '</picture>', '</p>', ""]
 
     out += ["### Four papers, one per question", "",
             "Each has a replication package, with one script that regenerates every table and figure.", "", "<table>"]
@@ -253,6 +323,8 @@ def index(prof, papers, tools):
 
 
 if __name__ == "__main__":
+    if "--fetch" in sys.argv[1:]:
+        fetch()
     files = dict(zip(("README.md", "llms.txt", "skill/SKILL.md"), build()))
     for name, text in files.items():
         target = HERE / name

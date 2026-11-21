@@ -1,24 +1,14 @@
 ## Agisilaos Papadogiannis
 
-**Independent finance research on what an asset is worth and what return it must earn, built so that any person or program can check the numbers.**
+**Independent finance research on what an asset is worth and what return it must earn. Two live tools recompute the answers from current public data, and eight papers come with the data and code to check every number.**
 
 <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7457522">SSRN</a> · <a href="https://scholar.google.com/citations?user=RihXr08AAAAJ">Google Scholar</a> · <a href="https://orcid.org/0009-0002-7753-7052">ORCID</a> · <a href="https://scarcitythinker.substack.com">Substack</a> · <a href="mailto:apapadogiannis@gmail.com">Email</a>
 
-The research follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. 8 of the 21 papers are published or forthcoming in peer-reviewed journals.
-
-<p align="center">
-<picture>
-<source media="(prefers-color-scheme: dark)" srcset="assets/map-dark.svg">
-<source media="(prefers-color-scheme: light)" srcset="assets/map-light.svg">
-<img src="assets/map-light.svg" width="720" alt="Two overlapping circles. Value creation: where value comes from, with the risk in the cash flows. Returns: required and expected, with the risk in the required return. Their overlap is valuation, the dual-risk framework. An arrow leads to a band below: value capture, what the holder actually keeps.">
-</picture>
-</p>
-
-**Open, and checked by machine.** In the tools and replication packages below, every published number is recomputed automatically, with machine-readable results and stated limits. The 2 live tools recompute their figures from current public data, on pages that update themselves. 8 papers have a replication package: the data and code, re-run on a clean machine at every change and once a month, with a badge that turns red if a stored result is not reproduced. The other 13 papers have no package so far.
+**Open, and checked by machine.** In the tools and replication packages below, every published number is recomputed automatically, with machine-readable results and stated limits.
 
 ### Live tools
 
-Research that keeps running. The badge shows the latest automated check, which must reproduce a fixed set of reference results before the page is rebuilt.
+Research that keeps running: each page rebuilds itself from current public data, and only after an automated check has reproduced a fixed set of reference results. The figures below are read from the tools' own data files every month.
 
 <table>
 <tr>
@@ -28,6 +18,7 @@ Research that keeps running. The badge shows the latest automated check, which m
 <td valign="top">
 <p><b><a href="https://apapadogiannis.github.io/crypto-observatory/">Crypto Observatory: required returns, risks and survival</a></b></p>
 <p>What return should Bitcoin's holders require, and did they get it? The answer is recomputed every month from public data, with the equation explained term by term, the tests of fit, and a census of cryptoasset deaths.</p>
+<p><b>Latest, October 2026:</b> Bitcoin's required return is 20.1% a year (band 11.8% to 28.5%). Of the midpoint: risk-free 4.9, market 5.8, concentration 7.5, mortality 1.9.</p>
 <p><a href="https://apapadogiannis.github.io/crypto-observatory/">Open the page</a> · <a href="https://github.com/apapadogiannis/crypto-observatory">Code and data</a> <a href="https://github.com/apapadogiannis/crypto-observatory/actions/workflows/check.yml"><img src="https://github.com/apapadogiannis/crypto-observatory/actions/workflows/check.yml/badge.svg" alt="check"></a></p>
 <p><sub>Method: <a href="https://ssrn.com/abstract=7705239">Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold</a></sub></p>
 </td>
@@ -42,11 +33,24 @@ Research that keeps running. The badge shows the latest automated check, which m
 <td valign="top">
 <p><b><a href="https://apapadogiannis.github.io/covered-call-monitor/">Covered-Call Monitor: returns, overlays and flows from SEC filings</a></b></p>
 <p>What does the yield cost? For 87 US covered-call, buy-write and premium-income funds: the total return with distributions reinvested, beside an index fund where one applies, the options each fund had actually written, and the money moving in and out. Rebuilt every quarter from SEC filings, with data files and a guide for programs and AI agents.</p>
+<p><b>Latest, 12 months to June 2026:</b> all 18 funds that have an index fund on the same market beside them returned less than it, by 0.8 to 19.7 percentage points, distributions reinvested.</p>
 <p><a href="https://apapadogiannis.github.io/covered-call-monitor/">Open the page</a> · <a href="https://github.com/apapadogiannis/covered-call-monitor">Code and data</a> <a href="https://github.com/apapadogiannis/covered-call-monitor/actions/workflows/check.yml"><img src="https://github.com/apapadogiannis/covered-call-monitor/actions/workflows/check.yml/badge.svg" alt="check"></a></p>
 <p><sub>Background: <a href="https://ssrn.com/abstract=5370897">High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs</a></sub></p>
 </td>
 </tr>
 </table>
+
+### The research
+
+The research follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. 8 of the 21 papers are published or forthcoming in peer-reviewed journals. 8 have a replication package: the data and code, re-run on a clean machine at every change and once a month, with a badge that turns red if a stored result is not reproduced. The other 13 have no package so far.
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="assets/map-dark.svg">
+<source media="(prefers-color-scheme: light)" srcset="assets/map-light.svg">
+<img src="assets/map-light.svg" width="720" alt="Two overlapping circles. Value creation: where value comes from, with the risk in the cash flows. Returns: required and expected, with the risk in the required return. Their overlap is valuation, the dual-risk framework. An arrow leads to a band below: value capture, what the holder actually keeps.">
+</picture>
+</p>
 
 ### Four papers, one per question
 
