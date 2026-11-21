@@ -34,7 +34,8 @@
 <text x="148.8" y="48.0" font-size="12" font-weight="600" fill="#52514e" text-anchor="middle">2012–14</text>
 <line x1="68.0" y1="142.7" x2="229.6" y2="142.7" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
 <line x1="68.0" y1="142.7" x2="229.6" y2="142.7" stroke="#2a78d6" stroke-width="5" stroke-linecap="round"/>
-<text x="225.6" y="160.7" font-size="12" font-weight="600" fill="#0b0b0b" text-anchor="end" stroke="#cde2fb" stroke-width="4" stroke-linejoin="round" paint-order="stroke">158%</text>
+<text x="225.6" y="160.7" font-size="12" font-weight="600" fill="none" text-anchor="end" stroke="#cde2fb" stroke-width="4" stroke-linejoin="round">158%</text>
+<text x="225.6" y="160.7" font-size="12" font-weight="600" fill="#0b0b0b" text-anchor="end">158%</text>
 <line x1="148.8" y1="110.1" x2="148.8" y2="138.7" stroke="#0b0b0b" stroke-width="1.2" stroke-dasharray="3 3"/>
 <circle cx="148.8" cy="104.1" r="6" fill="#ffffff" stroke="#0b0b0b" stroke-width="2"/>
 <text x="159.8" y="108.1" font-size="12.5" font-weight="700" fill="#0b0b0b" text-anchor="start">278%</text>
@@ -42,7 +43,8 @@
 <text x="322.4" y="48.0" font-size="12" font-weight="600" fill="#52514e" text-anchor="middle">2015–17</text>
 <line x1="241.6" y1="207.0" x2="403.2" y2="207.0" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
 <line x1="241.6" y1="207.0" x2="403.2" y2="207.0" stroke="#2a78d6" stroke-width="5" stroke-linecap="round"/>
-<text x="399.2" y="225.0" font-size="12" font-weight="600" fill="#0b0b0b" text-anchor="end" stroke="#cde2fb" stroke-width="4" stroke-linejoin="round" paint-order="stroke">61%</text>
+<text x="399.2" y="225.0" font-size="12" font-weight="600" fill="none" text-anchor="end" stroke="#cde2fb" stroke-width="4" stroke-linejoin="round">61%</text>
+<text x="399.2" y="225.0" font-size="12" font-weight="600" fill="#0b0b0b" text-anchor="end">61%</text>
 <line x1="322.4" y1="147.9" x2="322.4" y2="203.0" stroke="#0b0b0b" stroke-width="1.2" stroke-dasharray="3 3"/>
 <circle cx="322.4" cy="141.9" r="6" fill="#ffffff" stroke="#0b0b0b" stroke-width="2"/>
 <text x="333.4" y="145.9" font-size="12.5" font-weight="700" fill="#0b0b0b" text-anchor="start">160%</text>
@@ -50,7 +52,8 @@
 <text x="496.0" y="48.0" font-size="12" font-weight="600" fill="#52514e" text-anchor="middle">2018–20</text>
 <line x1="415.2" y1="238.1" x2="576.8" y2="238.1" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
 <line x1="415.2" y1="238.1" x2="576.8" y2="238.1" stroke="#2a78d6" stroke-width="5" stroke-linecap="round"/>
-<text x="572.8" y="256.1" font-size="12" font-weight="600" fill="#0b0b0b" text-anchor="end" stroke="#cde2fb" stroke-width="4" stroke-linejoin="round" paint-order="stroke">39%</text>
+<text x="572.8" y="256.1" font-size="12" font-weight="600" fill="none" text-anchor="end" stroke="#cde2fb" stroke-width="4" stroke-linejoin="round">39%</text>
+<text x="572.8" y="256.1" font-size="12" font-weight="600" fill="#0b0b0b" text-anchor="end">39%</text>
 <line x1="496.0" y1="204.7" x2="496.0" y2="234.1" stroke="#0b0b0b" stroke-width="1.2" stroke-dasharray="3 3"/>
 <circle cx="496.0" cy="198.7" r="6" fill="#ffffff" stroke="#0b0b0b" stroke-width="2"/>
 <text x="507.0" y="202.7" font-size="12.5" font-weight="700" fill="#0b0b0b" text-anchor="start">69%</text>
@@ -58,7 +61,8 @@
 <text x="669.6" y="48.0" font-size="12" font-weight="600" fill="#52514e" text-anchor="middle">2021–23</text>
 <line x1="588.8" y1="264.3" x2="750.4" y2="264.3" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
 <line x1="588.8" y1="264.3" x2="750.4" y2="264.3" stroke="#2a78d6" stroke-width="5" stroke-linecap="round"/>
-<text x="746.4" y="282.3" font-size="12" font-weight="600" fill="#0b0b0b" text-anchor="end" stroke="#cde2fb" stroke-width="4" stroke-linejoin="round" paint-order="stroke">27%</text>
+<text x="746.4" y="282.3" font-size="12" font-weight="600" fill="none" text-anchor="end" stroke="#cde2fb" stroke-width="4" stroke-linejoin="round">27%</text>
+<text x="746.4" y="282.3" font-size="12" font-weight="600" fill="#0b0b0b" text-anchor="end">27%</text>
 <line x1="669.6" y1="261.8" x2="669.6" y2="260.3" stroke="#0b0b0b" stroke-width="1.2" stroke-dasharray="3 3"/>
 <circle cx="669.6" cy="255.8" r="6" fill="#ffffff" stroke="#0b0b0b" stroke-width="2"/>
 <text x="680.6" y="259.8" font-size="12.5" font-weight="700" fill="#0b0b0b" text-anchor="start">30%</text>
@@ -66,7 +70,8 @@
 <text x="833.6" y="48.0" font-size="12" font-weight="600" fill="#52514e" text-anchor="middle">2024–26 (32 months)</text>
 <line x1="762.4" y1="266.6" x2="904.8" y2="266.6" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
 <line x1="762.4" y1="266.6" x2="904.8" y2="266.6" stroke="#2a78d6" stroke-width="5" stroke-linecap="round"/>
-<text x="900.8" y="284.6" font-size="12" font-weight="600" fill="#0b0b0b" text-anchor="end" stroke="#cde2fb" stroke-width="4" stroke-linejoin="round" paint-order="stroke">26%</text>
+<text x="900.8" y="284.6" font-size="12" font-weight="600" fill="none" text-anchor="end" stroke="#cde2fb" stroke-width="4" stroke-linejoin="round">26%</text>
+<text x="900.8" y="284.6" font-size="12" font-weight="600" fill="#0b0b0b" text-anchor="end">26%</text>
 <line x1="833.6" y1="247.0" x2="833.6" y2="262.6" stroke="#0b0b0b" stroke-width="1.2" stroke-dasharray="3 3"/>
 <circle cx="833.6" cy="241.0" r="6" fill="#ffffff" stroke="#0b0b0b" stroke-width="2"/>
 <text x="844.6" y="245.0" font-size="12.5" font-weight="700" fill="#0b0b0b" text-anchor="start">37%</text>

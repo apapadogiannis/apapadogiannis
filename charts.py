@@ -79,8 +79,9 @@ def observatory(d, c):
         yr, yd = Y(p["required_mid"]), Y(p["delivered"])
         out += [f'<line x1="{xa + 6:.1f}" y1="{yr:.1f}" x2="{xb - 6:.1f}" y2="{yr:.1f}" stroke="{c["page"]}" stroke-width="9" stroke-linecap="round"/>',
                 f'<line x1="{xa + 6:.1f}" y1="{yr:.1f}" x2="{xb - 6:.1f}" y2="{yr:.1f}" stroke="{c["blue"]}" stroke-width="5" stroke-linecap="round"/>',
-                f'<text x="{xb - 10:.1f}" y="{yr + 18:.1f}" font-size="12" font-weight="600" fill="{c["ink"]}" text-anchor="end" '
-                f'stroke="{c["band"]}" stroke-width="4" stroke-linejoin="round" paint-order="stroke">{whole(p["required_mid"])}%</text>',
+                f'<text x="{xb - 10:.1f}" y="{yr + 18:.1f}" font-size="12" font-weight="600" fill="none" text-anchor="end" '
+                f'stroke="{c["band"]}" stroke-width="4" stroke-linejoin="round">{whole(p["required_mid"])}%</text>',
+                text(xb - 10, yr + 18, f'{whole(p["required_mid"])}%', 12, c["ink"], 600, "end"),
                 f'<line x1="{mid:.1f}" y1="{yd + 6:.1f}" x2="{mid:.1f}" y2="{yr - 4:.1f}" stroke="{c["ink"]}" stroke-width="1.2" stroke-dasharray="3 3"/>',
                 f'<circle cx="{mid:.1f}" cy="{yd:.1f}" r="6" fill="{c["page"]}" stroke="{c["ink"]}" stroke-width="2"/>',
                 text(mid + 11, yd + 4, f'{whole(p["delivered"])}%', 12.5, c["ink"], 700)]
