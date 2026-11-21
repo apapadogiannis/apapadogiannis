@@ -181,6 +181,7 @@ ssrn = "5370897"
 published = "https://doi.org/10.3905/jbis.2026.001"
 repo = "covered-call-etfs"
 zenodo = "10.5281/zenodo.24244700"
+tool = "covered-call-monitor"
 
 [[paper]]
 title = "Crypto Treasury Companies: Financing Dynamics, Accretion Conditions, and Systemic Risk"
@@ -197,3 +198,14 @@ workflow = "check.yml"
 figure = "assets/crypto-observatory.png"
 figure_alt = "Bitcoin's required return since 2012 as a band with its midpoint, with the average delivered return of each three-year period marked on it"
 summary = "What return should Bitcoin's holders require, and did they get it? The answer is recomputed every month from public data, with the equation explained term by term, the tests of fit, and a census of cryptoasset deaths."
+
+[[tool]]
+title = "Covered-Call Monitor: returns, overlays and flows from SEC filings"
+repo = "covered-call-monitor"
+page = "https://apapadogiannis.github.io/covered-call-monitor/"
+paper = "High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs"
+paper_role = "Background"
+workflow = "check.yml"
+figure = "assets/covered-call-monitor.png"
+figure_alt = "Total return over three years of five large covered-call funds, each beside the index fund on the same market"
+summary = "What does the yield cost? For 87 US covered-call, buy-write and premium-income funds: the total return with distributions reinvested, beside an index fund where one applies, the options each fund had actually written, and the money moving in and out. Rebuilt every quarter from SEC filings, with data files and a guide for programs and AI agents."

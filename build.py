@@ -96,7 +96,7 @@ def tool(t):
         f'<p>{esc(t["summary"])}</p>',
         f'<p><a href="{t["page"]}">Open the page</a> · <a href="{repo}">Code and data</a> '
         f'<a href="{check}"><img src="{check}/badge.svg" alt="check"></a></p>',
-        f'<p><sub>Method: {t["paper_link"]}</sub></p>',
+        f'<p><sub>{t.get("paper_role", "Method")}: {t["paper_link"]}</sub></p>',
         "</td>", "</tr>", "</table>"])
 
 
@@ -138,9 +138,9 @@ def build():
 
     if tools:
         out += ["### Tools", "",
-                "Research that keeps running: each tool applies a paper's method to current public data, on a page that "
-                "updates itself. The badge shows the latest automated check, which reruns the paper's stored results "
-                "before the page is rebuilt.", ""]
+                "Research that keeps running: each tool recomputes its figures from current public data, on a page "
+                "that updates itself. The badge shows the latest automated check, which must reproduce a fixed set "
+                "of reference results before the page is rebuilt.", ""]
         for t in tools:
             out += [tool(t), ""]
 

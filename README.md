@@ -22,7 +22,7 @@ My work follows value through four questions: where it comes from (value creatio
 
 ### Tools
 
-Research that keeps running: each tool applies a paper's method to current public data, on a page that updates itself. The badge shows the latest automated check, which reruns the paper's stored results before the page is rebuilt.
+Research that keeps running: each tool recomputes its figures from current public data, on a page that updates itself. The badge shows the latest automated check, which must reproduce a fixed set of reference results before the page is rebuilt.
 
 <table>
 <tr>
@@ -34,6 +34,20 @@ Research that keeps running: each tool applies a paper's method to current publi
 <p>What return should Bitcoin's holders require, and did they get it? The answer is recomputed every month from public data, with the equation explained term by term, the tests of fit, and a census of cryptoasset deaths.</p>
 <p><a href="https://apapadogiannis.github.io/crypto-observatory/">Open the page</a> · <a href="https://github.com/apapadogiannis/crypto-observatory">Code and data</a> <a href="https://github.com/apapadogiannis/crypto-observatory/actions/workflows/check.yml"><img src="https://github.com/apapadogiannis/crypto-observatory/actions/workflows/check.yml/badge.svg" alt="check"></a></p>
 <p><sub>Method: <a href="https://ssrn.com/abstract=7705239">Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold</a></sub></p>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="45%" valign="top">
+<a href="https://apapadogiannis.github.io/covered-call-monitor/"><img src="assets/covered-call-monitor.png" alt="Total return over three years of five large covered-call funds, each beside the index fund on the same market"></a>
+</td>
+<td valign="top">
+<p><b><a href="https://apapadogiannis.github.io/covered-call-monitor/">Covered-Call Monitor: returns, overlays and flows from SEC filings</a></b></p>
+<p>What does the yield cost? For 87 US covered-call, buy-write and premium-income funds: the total return with distributions reinvested, beside an index fund where one applies, the options each fund had actually written, and the money moving in and out. Rebuilt every quarter from SEC filings, with data files and a guide for programs and AI agents.</p>
+<p><a href="https://apapadogiannis.github.io/covered-call-monitor/">Open the page</a> · <a href="https://github.com/apapadogiannis/covered-call-monitor">Code and data</a> <a href="https://github.com/apapadogiannis/covered-call-monitor/actions/workflows/check.yml"><img src="https://github.com/apapadogiannis/covered-call-monitor/actions/workflows/check.yml/badge.svg" alt="check"></a></p>
+<p><sub>Background: <a href="https://ssrn.com/abstract=5370897">High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs</a></sub></p>
 </td>
 </tr>
 </table>
@@ -123,7 +137,7 @@ Click a line to open its list. Where a paper has a replication package, the gree
 <summary><img src="assets/q-capture-dot.svg" width="12" height="12" alt=""> <b>Value capture</b>: what the holder actually keeps (3 papers, 2 with a replication package)</summary>
 <ul>
 <li><b>Does AI break the case for broad index investing? Rent decay, private capital, and deflation</b>. The Journal of Beta Investment Strategies, forthcoming 2027. <a href="https://ssrn.com/abstract=6058896">SSRN</a> · <a href="https://github.com/apapadogiannis/ai-broad-index-investing">Replication package</a> <a href="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></li>
-<li><b>High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs</b>. The Journal of Beta Investment Strategies, 2026. <a href="https://ssrn.com/abstract=5370897">SSRN</a> · <a href="https://doi.org/10.3905/jbis.2026.001">Published version</a> · <a href="https://github.com/apapadogiannis/covered-call-etfs">Replication package</a> <a href="https://github.com/apapadogiannis/covered-call-etfs/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/covered-call-etfs/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></li>
+<li><b>High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs</b>. The Journal of Beta Investment Strategies, 2026. <a href="https://ssrn.com/abstract=5370897">SSRN</a> · <a href="https://doi.org/10.3905/jbis.2026.001">Published version</a> · <a href="https://github.com/apapadogiannis/covered-call-etfs">Replication package</a> <a href="https://github.com/apapadogiannis/covered-call-etfs/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/covered-call-etfs/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> · <a href="https://apapadogiannis.github.io/covered-call-monitor/">Live tool</a></li>
 <li><b>Crypto Treasury Companies: Financing Dynamics, Accretion Conditions, and Systemic Risk</b>. <a href="https://ssrn.com/abstract=5487486">SSRN</a></li>
 </ul>
 </details>
