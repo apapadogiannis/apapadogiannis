@@ -1,14 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 486" width="720" height="486" role="img" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif"><title>Research map</title><desc>Two overlapping circles. Value creation: where value comes from, through scarcity, desirability and adoption. Returns: required and expected, what an asset must earn. Their overlap is valuation, the dual-risk framework: a valuation carries two risks, in what the asset delivers and in the return it must earn. An arrow leads to a band below: value capture, what the holder actually keeps.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 486" width="720" height="486" role="img" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif"><title>Research map</title><desc>Two overlapping circles. Value creation: where value comes from, through cash flows, scarcity, desirability and adoption. Returns: required and expected, what an asset must earn and is expected to earn. Their overlap is valuation, the dual-risk framework: a valuation carries two risks, in what the asset delivers and in the return it must earn. An arrow leads to a band below: value capture, what the holder actually keeps.</desc>
 <circle cx="260" cy="172" r="160" fill="#2f6fde" fill-opacity="0.16" stroke="#1f56b8" stroke-width="2"/>
 <circle cx="460" cy="172" r="160" fill="#1a9a6c" fill-opacity="0.16" stroke="#0f7550" stroke-width="2"/>
-<text x="200" y="158" text-anchor="middle" font-size="19" font-weight="700" fill="#1f56b8" letter-spacing="1.1">VALUE CREATION</text>
-<text x="200" y="183" text-anchor="middle" font-size="15" font-weight="500" fill="#1f2328">where value comes from</text>
-<line x1="170" y1="200" x2="230" y2="200" stroke="#1f56b8" stroke-width="1.5" stroke-opacity="0.55"/>
-<text x="204" y="222" text-anchor="middle" font-size="12" font-weight="600" fill="#1f56b8">scarcity · desirability · adoption</text>
-<text x="520" y="158" text-anchor="middle" font-size="19" font-weight="700" fill="#0f7550" letter-spacing="1.1">RETURNS</text>
-<text x="520" y="183" text-anchor="middle" font-size="15" font-weight="500" fill="#1f2328">required and expected</text>
-<line x1="490" y1="200" x2="550" y2="200" stroke="#0f7550" stroke-width="1.5" stroke-opacity="0.55"/>
-<text x="520" y="222" text-anchor="middle" font-size="13" font-weight="600" fill="#0f7550">what an asset must earn</text>
+<text x="200" y="150" text-anchor="middle" font-size="19" font-weight="700" fill="#1f56b8" letter-spacing="1.1">VALUE CREATION</text>
+<text x="200" y="175" text-anchor="middle" font-size="15" font-weight="500" fill="#1f2328">where value comes from</text>
+<line x1="170" y1="192" x2="230" y2="192" stroke="#1f56b8" stroke-width="1.5" stroke-opacity="0.55"/>
+<text x="200" y="214" text-anchor="middle" font-size="13" font-weight="600" fill="#1f56b8">cash flows · scarcity</text>
+<text x="200" y="232" text-anchor="middle" font-size="13" font-weight="600" fill="#1f56b8">desirability · adoption</text>
+<text x="520" y="150" text-anchor="middle" font-size="19" font-weight="700" fill="#0f7550" letter-spacing="1.1">RETURNS</text>
+<text x="520" y="175" text-anchor="middle" font-size="15" font-weight="500" fill="#1f2328">required and expected</text>
+<line x1="490" y1="192" x2="550" y2="192" stroke="#0f7550" stroke-width="1.5" stroke-opacity="0.55"/>
+<text x="520" y="214" text-anchor="middle" font-size="13" font-weight="600" fill="#0f7550">what an asset must earn</text>
+<text x="520" y="232" text-anchor="middle" font-size="13" font-weight="600" fill="#0f7550">and is expected to earn</text>
 <text x="360" y="166" text-anchor="middle" font-size="15.5" font-weight="700" fill="#1f2328" letter-spacing="1.0">VALUATION</text>
 <text x="360" y="187" text-anchor="middle" font-size="13" font-weight="400" fill="#59636e">dual-risk</text>
 <text x="360" y="203" text-anchor="middle" font-size="13" font-weight="400" fill="#59636e">framework</text>

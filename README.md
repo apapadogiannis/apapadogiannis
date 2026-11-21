@@ -48,7 +48,7 @@ The papers are written to be used together, as one corpus on value. It follows v
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="assets/map-dark.svg">
 <source media="(prefers-color-scheme: light)" srcset="assets/map-light.svg">
-<img src="assets/map-light.svg" width="720" alt="Two overlapping circles. Value creation: where value comes from, through scarcity, desirability and adoption. Returns: required and expected, what an asset must earn. Their overlap is valuation, the dual-risk framework: a valuation carries two risks, in what the asset delivers and in the return it must earn. An arrow leads to a band below: value capture, what the holder actually keeps.">
+<img src="assets/map-light.svg" width="720" alt="Two overlapping circles. Value creation: where value comes from, through cash flows, scarcity, desirability and adoption. Returns: required and expected, what an asset must earn and is expected to earn. Their overlap is valuation, the dual-risk framework: a valuation carries two risks, in what the asset delivers and in the return it must earn. An arrow leads to a band below: value capture, what the holder actually keeps.">
 </picture>
 </p>
 

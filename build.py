@@ -21,8 +21,8 @@ QUESTIONS = [  # key, name, what it asks
     ("valuation", "Valuation", "the dual-risk framework"),
     ("capture", "Value capture", "what the holder actually keeps"),
 ]
-MAP_ALT = ("Two overlapping circles. Value creation: where value comes from, through scarcity, desirability and "
-           "adoption. Returns: required and expected, what an asset must earn. Their overlap is valuation, the "
+MAP_ALT = ("Two overlapping circles. Value creation: where value comes from, through cash flows, scarcity, desirability "
+           "and adoption. Returns: required and expected, what an asset must earn and is expected to earn. Their overlap is valuation, the "
            "dual-risk framework: a valuation carries two risks, in what the asset delivers and in the return it must "
            "earn. An arrow leads to a band below: value capture, what the holder actually keeps.")
 
