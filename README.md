@@ -1,30 +1,24 @@
 ## Agisilaos Papadogiannis
 
-<a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7457522"><img src="https://img.shields.io/badge/SSRN-154881?style=for-the-badge&logo=ssrn&logoColor=white" alt="SSRN"></a>
-<a href="https://scholar.google.com/citations?user=RihXr08AAAAJ"><img src="https://img.shields.io/badge/Google%20Scholar-4285F4?style=for-the-badge&logo=googlescholar&logoColor=white" alt="Google Scholar"></a>
-<a href="https://orcid.org/0009-0002-7753-7052"><img src="https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" alt="ORCID"></a>
-<a href="https://scarcitythinker.substack.com"><img src="https://img.shields.io/badge/Substack-FF6719?style=for-the-badge&logo=substack&logoColor=white" alt="Scarcity Thinker on Substack"></a>
-<a href="mailto:apapadogiannis@gmail.com"><img src="https://img.shields.io/badge/Email-555555?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+**Independent finance research on what an asset is worth and what return it must earn, built so that any person or program can check the numbers.**
 
-Engineer by training (PhD, MBA). My first research career was in wireless communications, with IEEE publications that have drawn about 2,000 citations. I now do independent research in finance, published in peer-reviewed journals.
+<a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7457522">SSRN</a> · <a href="https://scholar.google.com/citations?user=RihXr08AAAAJ">Google Scholar</a> · <a href="https://orcid.org/0009-0002-7753-7052">ORCID</a> · <a href="https://scarcitythinker.substack.com">Substack</a> · <a href="mailto:apapadogiannis@gmail.com">Email</a>
 
-This page holds open finance research whose every published number is recomputed automatically, with machine-readable results and stated limits. It comes in two forms. **Tools** recompute their figures from current public data, on a page that updates itself. **Replication packages** hold the data and code behind a paper and are re-run on a clean machine at every change; 8 of the 21 papers below have one so far. The work is unfunded and independent, and corrections are welcome.
-
-The work follows value through four questions: where it comes from (value creation), what return an asset must earn and can be expected to earn (returns), what it is worth once both are known (valuation), and what its holder actually keeps (value capture).
-
-**For AI agents and programs:** [llms.txt](llms.txt) lists every tool, paper and replication package. Where one has a guide, it gives the address; the guide says what the repository holds, what it adds, which file to use and what not to use it for. To use this work from your own agent, add the skill [skill/SKILL.md](skill/SKILL.md).
+The research follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. 8 of the 21 papers are published or forthcoming in peer-reviewed journals.
 
 <p align="center">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="assets/map-dark.svg">
 <source media="(prefers-color-scheme: light)" srcset="assets/map-light.svg">
-<img src="assets/map-light.svg" width="720" alt="Two overlapping circles. Value creation: where value comes from. Returns: required and expected. Their overlap is valuation, the dual-risk framework: a valuation carries two risks, in the cash flows and in the required return. Both lead to a band below: value capture, what the holder actually keeps.">
+<img src="assets/map-light.svg" width="720" alt="Two overlapping circles. Value creation: where value comes from, with the risk in the cash flows. Returns: required and expected, with the risk in the required return. Their overlap is valuation, the dual-risk framework. An arrow leads to a band below: value capture, what the holder actually keeps.">
 </picture>
 </p>
 
-### Tools
+**Open, and checked by machine.** In the tools and replication packages below, every published number is recomputed automatically, with machine-readable results and stated limits. The 2 live tools recompute their figures from current public data, on pages that update themselves. 8 papers have a replication package: the data and code, re-run on a clean machine at every change and once a month, with a badge that turns red if a stored result is not reproduced. The other 13 papers have no package so far.
 
-Research that keeps running: each tool recomputes its figures from current public data, on a page that updates itself. The badge shows the latest automated check, which must reproduce a fixed set of reference results before the page is rebuilt.
+### Live tools
+
+Research that keeps running. The badge shows the latest automated check, which must reproduce a fixed set of reference results before the page is rebuilt.
 
 <table>
 <tr>
@@ -54,9 +48,9 @@ Research that keeps running: each tool recomputes its figures from current publi
 </tr>
 </table>
 
-### Featured replication packages
+### Four papers, one per question
 
-One per question. Each holds the data and code behind a paper, with one script that regenerates every table and figure.
+Each has a replication package, with one script that regenerates every table and figure.
 
 <table>
 <tr>
@@ -97,7 +91,7 @@ One per question. Each holds the data and code behind a paper, with one script t
 
 ### All papers by question
 
-Click a line to open its list. Where a paper has a replication package, the green badge is live: GitHub re-runs the full pipeline on a clean machine at every change and once a month, and the badge turns red if any stored result is not reproduced to nine significant digits.
+Click a line to open its list. A green badge is live: it turns red if any stored result of that package is not reproduced to nine significant digits.
 
 <details>
 <summary><img src="assets/q-creation-dot.svg" width="12" height="12" alt=""> <b>Value creation</b>: where value comes from (8 papers, 3 with a replication package)</summary>
@@ -143,3 +137,11 @@ Click a line to open its list. Where a paper has a replication package, the gree
 <li><b>Crypto Treasury Companies: Financing Dynamics, Accretion Conditions, and Systemic Risk</b>. <a href="https://ssrn.com/abstract=5487486">SSRN</a></li>
 </ul>
 </details>
+
+### For AI agents and programs
+
+[llms.txt](llms.txt) lists every tool, paper and replication package. Where one has a guide, it gives the address; the guide says what the repository holds, what it adds, which file to use and what not to use it for. To use this work from your own agent, add the skill [skill/SKILL.md](skill/SKILL.md).
+
+### About
+
+Engineer by training (PhD, MBA). My first research career was in wireless communications, with IEEE publications that have drawn about 2,000 citations. The finance research is independent and unfunded. Corrections are welcome, by email or as an issue on the repository concerned.

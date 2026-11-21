@@ -19,21 +19,26 @@
 
 [profile]
 name = "Agisilaos Papadogiannis"
-intro = [
-  "Engineer by training (PhD, MBA). My first research career was in wireless communications, with IEEE publications that have drawn about 2,000 citations. I now do independent research in finance, published in peer-reviewed journals.",
-  "This page holds open finance research whose every published number is recomputed automatically, with machine-readable results and stated limits. It comes in two forms. **Tools** recompute their figures from current public data, on a page that updates itself. **Replication packages** hold the data and code behind a paper and are re-run on a clean machine at every change; {packages} of the {papers} papers below have one so far. The work is unfunded and independent, and corrections are welcome.",
-  "The work follows value through four questions: where it comes from (value creation), what return an asset must earn and can be expected to earn (returns), what it is worth once both are known (valuation), and what its holder actually keeps (value capture).",
+# One sentence under the name: what the work is.
+position = "Independent finance research on what an asset is worth and what return it must earn, built so that any person or program can check the numbers."
+# The plain row of links under it: label, address.
+links = [
+  ["SSRN", "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7457522"],
+  ["Google Scholar", "https://scholar.google.com/citations?user=RihXr08AAAAJ"],
+  ["ORCID", "https://orcid.org/0009-0002-7753-7052"],
+  ["Substack", "https://scarcitythinker.substack.com"],
+  ["Email", "mailto:apapadogiannis@gmail.com"],
 ]
-# The line for programs, shown under the introduction.
-agents = "**For AI agents and programs:** [llms.txt](llms.txt) lists every tool, paper and replication package. Where one has a guide, it gives the address; the guide says what the repository holds, what it adds, which file to use and what not to use it for. To use this work from your own agent, add the skill [skill/SKILL.md](skill/SKILL.md)."
-# The row of links under the name, copied to the page as written.
-links = '''
-<a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7457522"><img src="https://img.shields.io/badge/SSRN-154881?style=for-the-badge&logo=ssrn&logoColor=white" alt="SSRN"></a>
-<a href="https://scholar.google.com/citations?user=RihXr08AAAAJ"><img src="https://img.shields.io/badge/Google%20Scholar-4285F4?style=for-the-badge&logo=googlescholar&logoColor=white" alt="Google Scholar"></a>
-<a href="https://orcid.org/0009-0002-7753-7052"><img src="https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" alt="ORCID"></a>
-<a href="https://scarcitythinker.substack.com"><img src="https://img.shields.io/badge/Substack-FF6719?style=for-the-badge&logo=substack&logoColor=white" alt="Scarcity Thinker on Substack"></a>
-<a href="mailto:apapadogiannis@gmail.com"><img src="https://img.shields.io/badge/Email-555555?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
-'''
+# Above the map. {papers}, {published}, {packages}, {tools} and {rest} are counted from this file.
+intro = [
+  "The research follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. {published} of the {papers} papers are published or forthcoming in peer-reviewed journals.",
+]
+# Below the map.
+checked = "**Open, and checked by machine.** In the tools and replication packages below, every published number is recomputed automatically, with machine-readable results and stated limits. The {tools} live tools recompute their figures from current public data, on pages that update themselves. {packages} papers have a replication package: the data and code, re-run on a clean machine at every change and once a month, with a badge that turns red if a stored result is not reproduced. The other {rest} papers have no package so far."
+# The section for programs, near the end of the page.
+agents = "[llms.txt](llms.txt) lists every tool, paper and replication package. Where one has a guide, it gives the address; the guide says what the repository holds, what it adds, which file to use and what not to use it for. To use this work from your own agent, add the skill [skill/SKILL.md](skill/SKILL.md)."
+# The last section.
+about = "Engineer by training (PhD, MBA). My first research career was in wireless communications, with IEEE publications that have drawn about 2,000 citations. The finance research is independent and unfunded. Corrections are welcome, by email or as an issue on the repository concerned."
 
 # ---------------------------------------------------------------- value creation
 [[paper]]

@@ -19,9 +19,9 @@ QUESTIONS = [  # key, name, what it asks
     ("valuation", "Valuation", "the dual-risk framework"),
     ("capture", "Value capture", "what the holder actually keeps"),
 ]
-MAP_ALT = ("Two overlapping circles. Value creation: where value comes from. Returns: required and expected. "
-           "Their overlap is valuation, the dual-risk framework: a valuation carries two risks, in the cash flows "
-           "and in the required return. Both lead to a band below: value capture, what the holder actually keeps.")
+MAP_ALT = ("Two overlapping circles. Value creation: where value comes from, with the risk in the cash flows. "
+           "Returns: required and expected, with the risk in the required return. Their overlap is valuation, "
+           "the dual-risk framework. An arrow leads to a band below: value capture, what the holder actually keeps.")
 
 
 def esc(text):
@@ -127,35 +127,34 @@ def build():
             sys.exit(f"more than one featured package for {name}")
         featured += f
 
-    out = [f'## {prof["name"]}', "", prof["links"].strip(), ""]
-    counts = {"papers": len(papers), "packages": sum("repo" in p for p in papers)}
+    counts = {"papers": len(papers), "packages": sum("repo" in p for p in papers), "tools": len(tools),
+              "published": sum("venue" in p for p in papers)}
+    counts["rest"] = counts["papers"] - counts["packages"]
+    out = [f'## {prof["name"]}', "", f'**{prof["position"]}**', "",
+           " · ".join(f'<a href="{url}">{esc(label)}</a>' for label, url in prof["links"]), ""]
     for para in prof["intro"]:
         out += [para.format(**counts), ""]
-    out += [prof["agents"], ""]
     out += ['<p align="center">', '<picture>',
             '<source media="(prefers-color-scheme: dark)" srcset="assets/map-dark.svg">',
             '<source media="(prefers-color-scheme: light)" srcset="assets/map-light.svg">',
             f'<img src="assets/map-light.svg" width="720" alt="{MAP_ALT}">',
-            '</picture>', '</p>', ""]
+            '</picture>', '</p>', "", prof["checked"].format(**counts), ""]
 
     if tools:
-        out += ["### Tools", "",
-                "Research that keeps running: each tool recomputes its figures from current public data, on a page "
-                "that updates itself. The badge shows the latest automated check, which must reproduce a fixed set "
-                "of reference results before the page is rebuilt.", ""]
+        out += ["### Live tools", "",
+                "Research that keeps running. The badge shows the latest automated check, which must reproduce a "
+                "fixed set of reference results before the page is rebuilt.", ""]
         for t in tools:
             out += [tool(t), ""]
 
-    out += ["### Featured replication packages", "",
-            "One per question. Each holds the data and code behind a paper, with one script that regenerates "
-            "every table and figure.", "", "<table>"]
+    out += ["### Four papers, one per question", "",
+            "Each has a replication package, with one script that regenerates every table and figure.", "", "<table>"]
     out += ["<tr>"] + [card(p) for p in featured] + ["</tr>"]
     out += ["</table>", ""]
 
     out += ["### All papers by question", "",
-            "Click a line to open its list. Where a paper has a replication package, the green badge is live: "
-            "GitHub re-runs the full pipeline on a clean machine at every change and once a month, and the badge "
-            "turns red if any stored result is not reproduced to nine significant digits.", ""]
+            "Click a line to open its list. A green badge is live: it turns red if any stored result of that "
+            "package is not reproduced to nine significant digits.", ""]
     for k, name, what in QUESTIONS:
         mine = [p for p in papers if p["question"] == k]
         mine.sort(key=lambda p: "repo" not in p)  # papers with a replication package first; order otherwise as in papers.toml
@@ -166,6 +165,8 @@ def build():
         out += ["<details>",
                 f'<summary><img src="assets/q-{k}-dot.svg" width="12" height="12" alt=""> <b>{name}</b>: {what} ({count})</summary>',
                 "<ul>"] + [line(p) for p in mine] + ["</ul>", "</details>", ""]
+
+    out += ["### For AI agents and programs", "", prof["agents"], "", "### About", "", prof["about"], ""]
 
     return "\n".join(out), index(prof, papers, tools), skill(prof, papers, tools)
 
