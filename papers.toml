@@ -2,6 +2,8 @@
 # Each [[paper]] is one entry. Only "title" and "question" are required.
 #   question  : creation | returns | valuation | capture
 #               (value creation, returns, valuation with the dual-risk framework, value capture)
+#   record    : repository of a paper record, for a paper with nothing to compute (conventions A1);
+#               not counted as a replication package
 #   venue     : journal and year, for published or forthcoming papers (leave out while under review)
 #   ssrn      : SSRN abstract number
 #   published : link to the published article
@@ -84,7 +86,9 @@ demo = "https://apapadogiannis.github.io/architecture-of-blockchain-value/"
 [[paper]]
 title = "Scarcity in an Age of AI Abundance"
 question = "creation"
+venue = "Asian Review of Political Economy, forthcoming 2027"
 ssrn = "5924462"
+record = "ai-abundance"
 
 [[paper]]
 title = "What Moves the Price of Gold: An Economic-Scarcity Lens on Policy, the Dollar, and the Debasement Trade"

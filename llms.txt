@@ -61,14 +61,15 @@ are and how to read them, and holds no figures.
   Guide: https://raw.githubusercontent.com/apapadogiannis/bitcoin-is-not-money/main/llms.txt
   Results as data: https://raw.githubusercontent.com/apapadogiannis/bitcoin-is-not-money/main/outputs/results.json
 
+- Scarcity in an Age of AI Abundance
+  Asian Review of Political Economy, forthcoming 2027.
+  SSRN: https://ssrn.com/abstract=5924462
+  Paper record (the paper has no computation; its definitions, model and tables as data): https://github.com/apapadogiannis/ai-abundance
+
 - Valuing Scarcity: A General Framework for Bitcoin, Gold, and Traditional Assets
   Financial Economics Letters, 2026.
   Published article: https://doi.org/10.58567/fel05020001
   SSRN: https://ssrn.com/abstract=5289457
-
-- Scarcity in an Age of AI Abundance
-  Working paper.
-  SSRN: https://ssrn.com/abstract=5924462
 
 - What Moves the Price of Gold: An Economic-Scarcity Lens on Policy, the Dollar, and the Debasement Trade
   Working paper.

@@ -170,6 +170,10 @@ def line(p):
         wf = f'{GH}/{p["repo"]}/actions/workflows/replicate.yml'
         links.append(f'<a href="{GH}/{p["repo"]}">Replication package</a> '
                      f'<a href="{wf}"><img src="{wf}/badge.svg" alt="replication"></a>')
+    if "record" in p:   # a paper with nothing to compute: its definitions, model and tables as data
+        wf = f'{GH}/{p["record"]}/actions/workflows/check.yml'
+        links.append(f'<a href="{GH}/{p["record"]}">Paper record</a> '
+                     f'<a href="{wf}"><img src="{wf}/badge.svg" alt="check"></a>')
     if "demo" in p:
         links.append(f'<a href="{p["demo"]}">Interactive demo</a>')
     if "tool" in p:
@@ -300,7 +304,7 @@ def build():
             "the last automated run.", ""]
     for k, name, what in QUESTIONS:
         mine = [p for p in papers if p["question"] == k]
-        mine.sort(key=lambda p: "repo" not in p)  # papers with a replication package first; order otherwise as in papers.toml
+        mine.sort(key=lambda p: ("repo" not in p, "record" not in p))  # papers with a replication package first; order otherwise as in papers.toml
         n_pk = sum("repo" in p for p in mine)
         count = f'{len(mine)} paper{"s" if len(mine) != 1 else ""}'
         if n_pk:
@@ -378,7 +382,7 @@ def index(prof, papers, tools):
     for k, name, what in QUESTIONS:
         out += [f"## {name}: {what}", ""]
         mine = [p for p in papers if p["question"] == k]
-        mine.sort(key=lambda p: (not p.get("guide"), "repo" not in p))
+        mine.sort(key=lambda p: (not p.get("guide"), "repo" not in p, "record" not in p))
         for p in mine:
             out.append(f'- {p["title"]}')
             out.append(f'  {p["venue"]}.' if "venue" in p else "  Working paper.")
@@ -388,9 +392,12 @@ def index(prof, papers, tools):
                 out.append(f'  SSRN: https://ssrn.com/abstract={p["ssrn"]}')
             if "repo" in p:
                 out.append(f'  Replication package: {GH}/{p["repo"]}' + (f' (archive: https://doi.org/{p["zenodo"]})' if "zenodo" in p else ""))
+            if "record" in p:
+                out.append(f'  Paper record (the paper has no computation; its definitions, model and tables as data): {GH}/{p["record"]}'
+                           + (f' (archive: https://doi.org/{p["zenodo"]})' if "zenodo" in p else ""))
             if p.get("guide"):
-                out.append(f'  Guide: {raw}/{p["repo"]}/main/llms.txt')
-                out.append(f'  Results as data: {raw}/{p["repo"]}/main/outputs/results.json')
+                out.append(f'  Guide: {raw}/{p.get("repo") or p["record"]}/main/llms.txt')
+                out.append(f'  Results as data: {raw}/{p.get("repo") or p["record"]}/main/outputs/results.json')
             elif "repo" in p:
                 out.append("  No guide yet: the README of the package describes its files.")
             if "tool_page" in p:
