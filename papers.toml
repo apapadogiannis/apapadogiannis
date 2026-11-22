@@ -89,6 +89,8 @@ question = "creation"
 venue = "Asian Review of Political Economy, forthcoming 2027"
 ssrn = "5924462"
 record = "ai-abundance"
+guide = true
+zenodo = "10.5281/zenodo.24441153"
 
 [[paper]]
 title = "What Moves the Price of Gold: An Economic-Scarcity Lens on Policy, the Dollar, and the Debasement Trade"

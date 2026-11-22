@@ -64,7 +64,9 @@ are and how to read them, and holds no figures.
 - Scarcity in an Age of AI Abundance
   Asian Review of Political Economy, forthcoming 2027.
   SSRN: https://ssrn.com/abstract=5924462
-  Paper record (the paper has no computation; its definitions, model and tables as data): https://github.com/apapadogiannis/ai-abundance
+  Paper record (the paper has no computation; its definitions, model and tables as data): https://github.com/apapadogiannis/ai-abundance (archive: https://doi.org/10.5281/zenodo.24441153)
+  Guide: https://raw.githubusercontent.com/apapadogiannis/ai-abundance/main/llms.txt
+  Results as data: https://raw.githubusercontent.com/apapadogiannis/ai-abundance/main/outputs/results.json
 
 - Valuing Scarcity: A General Framework for Bitcoin, Gold, and Traditional Assets
   Financial Economics Letters, 2026.
