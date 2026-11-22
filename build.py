@@ -309,6 +309,9 @@ def build():
         count = f'{len(mine)} paper{"s" if len(mine) != 1 else ""}'
         if n_pk:
             count += f', {n_pk} with a replication package'
+        n_rec = sum("record" in p for p in mine)
+        if n_rec:
+            count += f', {n_rec} with a paper record'
         out += ["<details>",
                 f'<summary><img src="assets/q-{k}-dot.svg" width="12" height="12" alt=""> <b>{name}</b>: {what} ({count})</summary>',
                 "<ul>"] + [line(p) for p in mine] + ["</ul>", "</details>", ""]
