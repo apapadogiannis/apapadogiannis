@@ -28,6 +28,15 @@ Each recomputes its figures from current public data and publishes them as data 
   Code and data: https://github.com/apapadogiannis/covered-call-monitor
   Background: High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs
 
+## Skills
+
+Instruction files a reader adds to their own AI agent. Each says when to use the work, where its files
+are and how to read them, and holds no figures.
+
+- crypto-observatory: Bitcoin's required return, its parts and its record. https://raw.githubusercontent.com/apapadogiannis/crypto-observatory/main/api/SKILL.md
+- covered-call-monitor: Covered-call funds: returns, written calls and flows. https://raw.githubusercontent.com/apapadogiannis/covered-call-monitor/main/api/SKILL.md
+- papadogiannis-finance-research: A number or a finding from any of the papers. https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/skill/SKILL.md
+
 ## Value creation: where value comes from
 
 - Economic Scarcity as Value: A Universal Framework for Blockchain and Beyond

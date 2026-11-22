@@ -15,7 +15,8 @@
 # Each [[tool]] is one application: software that runs the research on live data but is not the replication
 # of a paper. All fields are required.
 #   title, repo, page (the live address), summary (two or three sentences), figure, figure_alt,
-#   paper (the title of the [[paper]] whose method it uses), workflow (the file name of its check, for the badge)
+#   paper (the title of the [[paper]] whose method it uses), workflow (the file name of its check, for the badge),
+#   skill_for and skill_ask (what its skill answers, and a question to try), caption (one line above its picture)
 # The latest figures shown with each tool are not typed here: "python3 build.py --fetch" reads them from the
 # tool's own data file into live.json, and the update workflow does so every month.
 
@@ -31,16 +32,23 @@ links = [
   ["Substack", "https://scarcitythinker.substack.com"],
   ["Email", "mailto:apapadogiannis@gmail.com"],
 ]
-# Under the links. {papers}, {published}, {packages}, {tools} and {rest} are counted from this file.
-checked = "**Open, and checked by machine.** In the tools and replication packages below, every published number is recomputed automatically, with machine-readable results and stated limits."
+# Under the links. {papers}, {published}, {packages}, {both}, {tools}, {rest} and {journals} are taken from this file.
+checked = "{published} of the {papers} papers are published or forthcoming in peer-reviewed journals: {journals}. In the tools and replication packages, every published number is recomputed automatically, with machine-readable results and stated limits."
 # Above the map.
 intro = [
-  "The papers are written to be used together, as one corpus on value. It follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. The whole is indexed for people on this page and for programs in [llms.txt](llms.txt), so a question can be answered from it with a number and its source. {published} of the {papers} papers are published or forthcoming in peer-reviewed journals. {packages} have a replication package: the data and code, re-run on a clean machine at every change and once a month, with a badge that turns red if a stored result is not reproduced. The other {rest} have no package so far.",
+  "The papers are written to be used together, as one corpus on value. It follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. Of the {papers} papers, {published} are published or forthcoming and {packages} have a replication package with the data and code ({both} are both).",
 ]
-# The section for programs, near the end of the page.
-agents = "[llms.txt](llms.txt) lists every tool, paper and replication package. Where one has a guide, it gives the address; the guide says what the repository holds, what it adds, which file to use and what not to use it for. To use this work from your own agent, add the skill [skill/SKILL.md](skill/SKILL.md)."
+# The section on skills. {skills} is counted.
+skills = [
+  "A skill is a short instruction file that you add once to an AI assistant such as Claude. From then on you can ask in plain words, and the assistant answers from the latest figures here, with the date and the source, instead of from memory. The {skills} skills are free and need no account or key. They hold no figures, so they do not go out of date.",
+]
+# What the skill of the whole account is for, and a question to try.
+skill_for = "A number or a finding from any of the papers"
+skill_ask = "What does the age-rule paper report for Bitcoin's expected return?"
+# One line for programs, under the links.
+agents = "AI agents and programs: start at [llms.txt](llms.txt), the index of every tool, paper and data file."
 # The last section.
-about = "Engineer by training (PhD, MBA). My first research career was in wireless communications, with IEEE publications that have drawn about 2,000 citations. The finance research is independent and unfunded. Corrections are welcome, by email or as an issue on the repository concerned."
+about = "Engineer by training (PhD, MBA). My first research career was in wireless communications, with IEEE publications that have drawn about 2,000 citations. The finance research is independent and unfunded. Corrections and questions are welcome, by email or as an issue on the repository concerned."
 
 # ---------------------------------------------------------------- value creation
 [[paper]]
@@ -114,7 +122,7 @@ tool = "crypto-observatory"
 featured = true
 figure = "assets/required-return.png"
 figure_alt = "Bitcoin's required return since 2012, split into risk-free rate, market risk, concentration risk and mortality risk"
-summary = "The MCM equation prices market, concentration and mortality risk: about 18% a year for 2026."
+summary = "The MCM equation prices market, concentration and mortality risk: about 18% a year for 2026 at the median. The live tool above shows the midpoint of its band."
 
 [[paper]]
 title = "Bitcoin's Expected Return: An Age Rule That Beats Current Practice"
@@ -213,6 +221,9 @@ repo = "crypto-observatory"
 page = "https://apapadogiannis.github.io/crypto-observatory/"
 paper = "Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold"
 workflow = "check.yml"
+skill_for = "Bitcoin's required return, its parts and its record"
+skill_ask = "What return should Bitcoin's holders require now, and how is it made up?"
+caption = "The required return since 2012, and what each period delivered against it."
 figure = "assets/crypto-observatory.png"
 figure_alt = "Bitcoin's required return since 2012 as a band with its midpoint, with the average delivered return of each three-year period marked on it"
 summary = "What return should Bitcoin's holders require, and did they get it? The answer is recomputed every month from public data, with the equation explained term by term, the tests of fit, and a census of cryptoasset deaths."
@@ -224,6 +235,9 @@ page = "https://apapadogiannis.github.io/covered-call-monitor/"
 paper = "High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs"
 paper_role = "Background"
 workflow = "check.yml"
+skill_for = "Covered-call funds: returns, written calls and flows"
+skill_ask = "How did JEPI do against its index fund over three years?"
+caption = "Five of the largest funds over three years, each beside its index fund."
 figure = "assets/covered-call-monitor.png"
 figure_alt = "Total return over three years of five large covered-call funds, each beside the index fund on the same market"
-summary = "What does the yield cost? For 87 US covered-call, buy-write and premium-income funds: the total return with distributions reinvested, beside an index fund where one applies, the options each fund had actually written, and the money moving in and out. Rebuilt every quarter from SEC filings, with data files and a guide for programs and AI agents."
+summary = "What does the yield cost? For 87 US covered-call, buy-write and premium-income funds: the total return with distributions reinvested, beside an index fund where one applies, the options each fund had actually written, and the money moving in and out. Rebuilt every quarter from SEC filings."

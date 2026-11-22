@@ -1139,6 +1139,11 @@
   "returned_less": 18,
   "smallest_gap": -0.8006000000000029,
   "largest_gap": -19.6733,
+  "median_gap": -5.506000000000002,
+  "index_funds_returned": [
+   22.2905,
+   40.5889
+  ],
   "picture": {
    "alt": "Total return over 3 years of 5 large covered-call funds, each beside the index fund on the same market",
    "years": 3,

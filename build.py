@@ -10,6 +10,7 @@ Standard library only (Python 3.11+).
 import html
 import json
 import math
+import statistics
 import sys
 import tomllib
 from pathlib import Path
@@ -66,9 +67,12 @@ def fetch():
     if len(periods) != 1:
         sys.exit("the funds set beside an index fund do not cover the same twelve months")
     gaps = sorted(p["fund"] - p["benchmark"] for p in pairs)
+    index_returns = sorted({round(p["benchmark"], 4) for p in pairs})
     live["covered-call-monitor"] = {"funds": len(funds), "from": pairs[0]["from"], "to": pairs[0]["to"],
                                     "beside_an_index_fund": len(pairs), "returned_less": sum(g < 0 for g in gaps),
-                                    "smallest_gap": gaps[-1], "largest_gap": gaps[0]}
+                                    "smallest_gap": gaps[-1], "largest_gap": gaps[0],
+                                    "median_gap": statistics.median(gaps),
+                                    "index_funds_returned": [index_returns[0], index_returns[-1]]}
     detail, years = get("covered-call-monitor/main/api/data.json")["detail"], 3
     to = min(f["months"][-1]["month"] for f in detail)
     bars = []
@@ -96,17 +100,24 @@ def latest(repo, live):
         return ""
     if repo == "crypto-observatory":
         r, t = d["required"], d["terms_at_midpoint"]
-        return (f'<b>Latest, {month(d["month_end"])}:</b> Bitcoin\'s required return is {r["midpoint"]:.1f}% a year '
-                f'(band {r["lower"]:.1f}% to {r["upper"]:.1f}%). Of the midpoint: risk-free {t["risk_free"]:.1f}, '
-                f'market {t["market"]:.1f}, concentration {t["concentration"]:.1f}, mortality {t["mortality"]:.1f}.')
+        return (f'<b>Latest, {month(d["month_end"])}:</b> Bitcoin\'s required return is {r["midpoint"]:.1f}% a year: '
+                f'risk-free {t["risk_free"]:.1f}, market {t["market"]:.1f}, concentration {t["concentration"]:.1f}, '
+                f'mortality {t["mortality"]:.1f}. Across the range of the model\'s inputs it runs from {r["lower"]:.1f}% '
+                f'to {r["upper"]:.1f}%.')
     if repo == "covered-call-monitor":
         n, less = d["beside_an_index_fund"], d["returned_less"]
         who = f"all {n}" if less == n else f"{less} of the {n}"
         text = (f'<b>Latest, 12 months to {month(d["to"])}:</b> {who} funds that have an index fund on the same market '
                 f'beside them returned less than it')
         if less == n:
-            text += f', by {-d["smallest_gap"]:.1f} to {-d["largest_gap"]:.1f} percentage points'
-        return text + ", distributions reinvested."
+            text += (f', by {-d["smallest_gap"]:.1f} to {-d["largest_gap"]:.1f} percentage points '
+                     f'(median {-d["median_gap"]:.1f})')
+        text += ", distributions reinvested."
+        lo, hi = d["index_funds_returned"]
+        if lo > 10:
+            text += (f' The index funds returned {lo:.0f}% to {hi:.0f}% over these months: a market that rises this '
+                     f'fast is where a cap on the upside costs most.')
+        return text
     return ""
 
 
@@ -137,11 +148,11 @@ def card(p):
     return "\n".join([
         '<td width="25%" valign="top">',
         f'<p><img src="assets/q-{q}-band.svg" width="100%" alt=""></p>',
-        f'<a href="{url}"><img src="{p["figure"]}" alt="{html.escape(p["figure_alt"])}"></a>',
+        f'<img src="{p["figure"]}" alt="{html.escape(p["figure_alt"])}">',
         f'<p><img src="assets/q-{q}-tag.svg" height="22" alt="{name}"></p>',
         f'<p><b><a href="{url}">{esc(p["title"])}</a></b></p>',
         f'<p>{p["summary"]}</p>',
-        f'<p>{badges(p, live_only=True)}</p>',
+        f'<p><img src="{url}/actions/workflows/replicate.yml/badge.svg" alt="replication check"></p>',
         '</td>'])
 
 
@@ -179,17 +190,16 @@ def picture(t):
 
 
 def tool(t):
-    """One application, at the full width of the page: name, latest figures, picture, what it does, where it runs."""
+    """One application, at the full width of the page: name, latest figures, picture, what it does, one row of links."""
     repo = f'{GH}/{t["repo"]}'
     check = f'{repo}/actions/workflows/{t["workflow"]}'
     return "\n".join([
-        f'<h4><a href="{t["page"]}">{esc(t["title"])}</a></h4>',
-        *([f'<p>{t["latest"]}</p>'] if t.get("latest") else []),
-        f'<p><a href="{t["page"]}">{picture(t)}</a></p>',
+        f'<h4>{esc(t["title"])} <img src="{check}/badge.svg" alt="automated check"></h4>',
         f'<p>{esc(t["summary"])}</p>',
-        f'<p><a href="{t["page"]}">Open the page</a> · <a href="{repo}">Code and data</a> · '
-        f'{t.get("paper_role", "Method")}: {t["paper_link"]} '
-        f'<a href="{check}"><img src="{check}/badge.svg" alt="check"></a></p>'])
+        *([f'<p>{t["latest"]}</p>'] if t.get("latest") else []),
+        f'<p><sub>{esc(t["caption"])}</sub><br>{picture(t)}</p>',
+        f'<p><b><a href="{t["page"]}">Open the tool</a></b> · <a href="{repo}">Code and data</a> · '
+        f'<a href="{t["paper_url"]}">The paper behind it</a> · <a href="#ask-your-own-ai-assistant">Its skill</a></p>'])
 
 
 def build():
@@ -206,7 +216,7 @@ def build():
         if t["paper"] not in titles:
             sys.exit(f'tool "{t["title"]}" names a paper that is not listed: {t["paper"]}')
         src = by_title[t["paper"]]
-        t["paper_link"] = (f'<a href="https://ssrn.com/abstract={src["ssrn"]}">{esc(t["paper"])}</a>' if "ssrn" in src else esc(t["paper"]))
+        t["paper_url"] = src.get("published") or f'https://ssrn.com/abstract={src["ssrn"]}'
     for p in papers:
         if "tool" in p:
             if p["tool"] not in pages:
@@ -225,22 +235,51 @@ def build():
 
     counts = {"papers": len(papers), "packages": sum("repo" in p for p in papers), "tools": len(tools),
               "published": sum("venue" in p for p in papers)}
-    counts["rest"] = counts["papers"] - counts["packages"]
     words = "zero one two three four five six seven eight nine ten eleven twelve".split()
+    counts["rest"] = counts["papers"] - counts["packages"]
+    counts["both"] = sum("repo" in p and "venue" in p for p in papers)
+    counts["skills"] = words[len(tools) + 1]
+    journals = []
+    for p in papers:
+        name = p.get("venue", "").split(",")[0].strip()
+        if name and name not in journals:
+            journals.append(name)
+    counts["journals"] = ", ".join(journals[:-1]) + " and " + journals[-1]
     for key in ("tools", "packages"):  # as words, for the sentence under the name
         counts[key + "_word"] = words[counts[key]] if counts[key] < len(words) else str(counts[key])
     counts["Tools_word"] = counts["tools_word"].capitalize()
     out = [f'## {prof["name"]}', "", f'**{prof["position"].format(**counts)}**', "",
            " · ".join(f'<a href="{url}">{esc(label)}</a>' for label, url in prof["links"]), "",
-           prof["checked"].format(**counts), ""]
+           prof["checked"].format(**counts), "", f'<sub>{prof["agents"]}</sub>', ""]
 
     if tools:
         out += ["### Live tools", "",
-                "Research that keeps running: each page rebuilds itself from current public data, and only after an "
-                "automated check has reproduced a fixed set of reference results. The figures below are read from "
-                "the tools' own data files every month.", ""]
+                "Research that keeps running: each tool rebuilds itself from current public data. The figures and "
+                "pictures below are read from the tools' own data files every month.", ""]
         for t in tools:
             out += [tool(t), ""]
+
+    rows = [(t["repo"], t["skill_for"], t["skill_ask"], f'{t["repo"]}/main/api/SKILL.md', f'{t["repo"]}/blob/main/api/SKILL.md')
+            for t in tools]
+    rows.append(("papadogiannis-finance-research", prof["skill_for"], prof["skill_ask"],
+                 "apapadogiannis/main/skill/SKILL.md", "apapadogiannis/blob/main/skill/SKILL.md"))
+    out += ["### Ask your own AI assistant", ""]
+    for para in prof["skills"]:
+        out += [para.format(**counts), ""]
+    out += ["<table>", "<tr><th>Skill</th><th>What it answers</th><th>A question to try</th></tr>"]
+    out += [f'<tr><td><a href="{GH}/{blob}"><code>{name}</code></a></td><td>{esc(what)}</td><td>“{esc(ask)}”</td></tr>'
+            for name, what, ask, _, blob in rows]
+    out += ["</table>", "", "<details>", "<summary>How to add one</summary>", "",
+            "In Claude Code, one file in one folder. For example:", "", "```",
+            *[line for name, _, _, raw, _ in rows[:1] for line in (
+                f"mkdir -p ~/.claude/skills/{name}",
+                f"curl -o ~/.claude/skills/{name}/SKILL.md {RAW}/{raw}")],
+            "```", "",
+            "The other two work the same way: " +
+            "; ".join(f"`{name}` from `{RAW}/{raw}`" for name, _, _, raw, _ in rows[1:]) + ".", "",
+            "In another assistant, add the same file wherever it takes instructions or skills, or give it the "
+            "address of [llms.txt](llms.txt). The Bitcoin and Ether price inputs come from Coin Metrics community "
+            "data, which are for non-commercial use, as the Observatory's skill states.", "", "</details>", ""]
 
     out += ["### The research: one corpus, four questions", ""]
     for para in prof["intro"]:
@@ -252,13 +291,13 @@ def build():
             '</picture>', '</p>', ""]
 
     out += ["### Four papers, one per question", "",
-            "Each has a replication package, with one script that regenerates every table and figure.", "", "<table>"]
+            "Each comes with its data and code.", "", "<table>"]
     out += ["<tr>"] + [card(p) for p in featured] + ["</tr>"]
     out += ["</table>", ""]
 
     out += ["### All papers by question", "",
-            "Click a line to open its list. A green badge is live: it turns red if any stored result of that "
-            "package is not reproduced to nine significant digits.", ""]
+            "Click a line to open its list. A green badge means the package's stored results were reproduced at "
+            "the last automated run.", ""]
     for k, name, what in QUESTIONS:
         mine = [p for p in papers if p["question"] == k]
         mine.sort(key=lambda p: "repo" not in p)  # papers with a replication package first; order otherwise as in papers.toml
@@ -270,7 +309,7 @@ def build():
                 f'<summary><img src="assets/q-{k}-dot.svg" width="12" height="12" alt=""> <b>{name}</b>: {what} ({count})</summary>',
                 "<ul>"] + [line(p) for p in mine] + ["</ul>", "</details>", ""]
 
-    out += ["### For AI agents and programs", "", prof["agents"], "", "### About", "", prof["about"], ""]
+    out += ["### About", "", prof["about"], ""]
 
     return {"README.md": "\n".join(out), "llms.txt": index(prof, papers, tools),
             "skill/SKILL.md": skill(prof, papers, tools), **charts.pictures(live)}
@@ -299,7 +338,9 @@ def skill(prof, papers, tools):
              "   Quote it with its unit and date, and cite the paper as the guide says.", "",
              "## What is there", "",
              "Live tools, each with its own skill and guide:", ""]
-    lines += [f'- {t["title"]}: {t["page"]}llms.txt' for t in tools]
+    for t in tools:
+        lines += [f'- {t["title"]}', f'  Guide: {t["page"]}llms.txt',
+                  f'  Its skill: {RAW}/{t["repo"]}/main/api/SKILL.md']
     lines += ["", "Papers with a replication package:", ""]
     lines += [f'- {p["title"]}' for p in packaged]
     lines += ["", "## Rules", "",
@@ -329,6 +370,11 @@ def index(prof, papers, tools):
         out += [f'- {t["title"]}', f'  Page: {t["page"]}', f'  Guide: {t["page"]}llms.txt',
                 f'  Same guide in the repository: {raw}/{t["repo"]}/main/api/llms.txt',
                 f'  Code and data: {GH}/{t["repo"]}', f'  {t.get("paper_role", "Method")}: {t["paper"]}', ""]
+    out += ["## Skills", "",
+            "Instruction files a reader adds to their own AI agent. Each says when to use the work, where its files",
+            "are and how to read them, and holds no figures.", ""]
+    out += [f'- {t["repo"]}: {t["skill_for"]}. {raw}/{t["repo"]}/main/api/SKILL.md' for t in tools]
+    out += [f'- papadogiannis-finance-research: {prof["skill_for"]}. {raw}/apapadogiannis/main/skill/SKILL.md', ""]
     for k, name, what in QUESTIONS:
         out += [f"## {name}: {what}", ""]
         mine = [p for p in papers if p["question"] == k]

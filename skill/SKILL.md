@@ -22,8 +22,12 @@ fetch them each time.
 
 Live tools, each with its own skill and guide:
 
-- Crypto Observatory: required returns, risks and survival: https://apapadogiannis.github.io/crypto-observatory/llms.txt
-- Covered-Call Monitor: returns, overlays and flows from SEC filings: https://apapadogiannis.github.io/covered-call-monitor/llms.txt
+- Crypto Observatory: required returns, risks and survival
+  Guide: https://apapadogiannis.github.io/crypto-observatory/llms.txt
+  Its skill: https://raw.githubusercontent.com/apapadogiannis/crypto-observatory/main/api/SKILL.md
+- Covered-Call Monitor: returns, overlays and flows from SEC filings
+  Guide: https://apapadogiannis.github.io/covered-call-monitor/llms.txt
+  Its skill: https://raw.githubusercontent.com/apapadogiannis/covered-call-monitor/main/api/SKILL.md
 
 Papers with a replication package:
 
