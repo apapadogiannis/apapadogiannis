@@ -61,7 +61,7 @@ are and how to read them, and holds no figures.
   Guide: https://raw.githubusercontent.com/apapadogiannis/bitcoin-is-not-money/main/llms.txt
   Results as data: https://raw.githubusercontent.com/apapadogiannis/bitcoin-is-not-money/main/outputs/results.json
 
-- Scarcity in an Age of AI Abundance
+- Scarcity in an age of AI abundance
   Asian Review of Political Economy, forthcoming 2027.
   SSRN: https://ssrn.com/abstract=5924462
   Paper record (the paper has no computation; its definitions, model and tables as data): https://github.com/apapadogiannis/ai-abundance (archive: https://doi.org/10.5281/zenodo.24441153)

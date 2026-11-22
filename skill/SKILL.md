@@ -11,7 +11,7 @@ fetch them each time.
 ## Steps
 
 1. Fetch the index: https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/llms.txt
-   It lists every tool, paper and replication package under four questions, with the address of
+   It lists every tool, paper, replication package and paper record under four questions, with the address of
    each guide.
 2. Open the guide of the repository the question is about (an `llms.txt`). It states the headline
    figures, which file holds what, how to read the figures and what they cannot answer.
@@ -39,6 +39,10 @@ Papers with a replication package:
 - Beyond Discount Rates: A Valuation Framework for Unpriced Systematic Risk
 - Does AI break the case for broad index investing? Rent decay, private capital, and deflation
 - High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs
+
+Papers with a paper record (no computation; the definitions, model and tables as data):
+
+- Scarcity in an age of AI abundance
 
 ## Rules
 

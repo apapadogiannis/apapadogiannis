@@ -84,7 +84,7 @@ zenodo = "10.5281/zenodo.24404059"
 demo = "https://apapadogiannis.github.io/architecture-of-blockchain-value/"
 
 [[paper]]
-title = "Scarcity in an Age of AI Abundance"
+title = "Scarcity in an age of AI abundance"
 question = "creation"
 venue = "Asian Review of Political Economy, forthcoming 2027"
 ssrn = "5924462"

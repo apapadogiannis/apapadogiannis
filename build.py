@@ -337,7 +337,7 @@ def skill(prof, papers, tools):
              "fetch them each time.", "",
              "## Steps", "",
              f"1. Fetch the index: {raw}",
-             "   It lists every tool, paper and replication package under four questions, with the address of",
+             "   It lists every tool, paper, replication package and paper record under four questions, with the address of",
              "   each guide.",
              "2. Open the guide of the repository the question is about (an `llms.txt`). It states the headline",
              "   figures, which file holds what, how to read the figures and what they cannot answer.",
@@ -350,6 +350,10 @@ def skill(prof, papers, tools):
                   f'  Its skill: {RAW}/{t["repo"]}/main/api/SKILL.md']
     lines += ["", "Papers with a replication package:", ""]
     lines += [f'- {p["title"]}' for p in packaged]
+    recorded = [p for p in papers if "record" in p]
+    if recorded:
+        lines += ["", "Papers with a paper record (no computation; the definitions, model and tables as data):", ""]
+        lines += [f'- {p["title"]}' for p in recorded]
     lines += ["", "## Rules", "",
               "- A replication package is a fixed record of one paper. For current figures use the live tool the",
               "  guide points to.",
