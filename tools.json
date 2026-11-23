@@ -25,6 +25,19 @@
    "picture_dark": "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/assets/covered-call-monitor-dark.svg",
    "page": "https://apapadogiannis.github.io/covered-call-monitor/",
    "code": "https://github.com/apapadogiannis/covered-call-monitor"
+  },
+  {
+   "name": "Dual-Risk DCF Calculator",
+   "subtitle": "the discount rate and the forecast, separated",
+   "summary": "Enter a benchmark rate and two views of the same asset, two forecasts or a forecast and a price, and the calculator puts the whole gap into one number, the valuation ratio K, with the gain of capital and the effective discount rate that follow from it. It also runs the same reading over your own price series. It computes in your browser and sends nothing out, and it runs as an MCP server for an AI assistant on your own machine.",
+   "latest_label": "Worked example:",
+   "latest": "a forecast 10% below the benchmark, at a benchmark rate of 8% over 5 years, gives a valuation ratio K of 1.111 and a gain of capital of +0.163. One discount rate would have to fall to 5.7% to hide the gap.",
+   "caption": "A worked example: two forecasts of the same asset, valued at the same benchmark rate.",
+   "picture_alt": "Two bars: the value of a benchmark forecast and of a forecast 10% lower, both discounted at the same benchmark rate, with the valuation ratio K, the gain of capital and the effective rate",
+   "picture_light": "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/assets/dual-risk-calculator-light.svg",
+   "picture_dark": "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/assets/dual-risk-calculator-dark.svg",
+   "page": "https://apapadogiannis.github.io/dual-risk-calculator/",
+   "code": "https://github.com/apapadogiannis/dual-risk-calculator"
   }
  ]
 }

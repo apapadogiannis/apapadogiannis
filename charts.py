@@ -124,7 +124,32 @@ def monitor(d, c):
     return frame("Covered-call funds beside their index funds", d["alt"], out)
 
 
-DRAW = {"crypto-observatory": observatory, "covered-call-monitor": monitor}
+def calculator(d, c):
+    """The calculator's worked example: the two present values as bars, then K, the gain and the effective rate."""
+    r, i = d["results"], d["inputs"]
+    x0, x1 = 250, 800
+    scale = (x1 - x0) / max(r["v_fair"], r["v_own"])
+    below = (1 - r["v_own"] / r["v_fair"]) * 100
+    out = [text(20, 30, f'Benchmark rate {i["c"] * 100:.0f}% a year, {r["horizon"]:.0f} years. '
+                        f'The examined forecast is {below:.0f}% below the benchmark forecast in every year.', 14, c["ink2"])]
+    for k, (label, key, colour) in enumerate((("Benchmark fair value", "v_fair", "blue"), ("Valuation examined", "v_own", "orange"))):
+        y = 66 + k * 54
+        out += [text(20, y + 21, label, 15, c["ink"], 600),
+                f'<rect x="{x0}" y="{y}" width="{r[key] * scale:.1f}" height="30" rx="5" fill="{c[colour]}"/>',
+                text(x0 + r[key] * scale + 12, y + 21, f'{r[key]:.2f}', 15, c["ink"], 700)]
+    out.append(f'<line x1="20" y1="196" x2="{W - 20}" y2="196" stroke="{c["line"]}" stroke-width="1"/>')
+    tiles = ((f'{r["K"]:.3f}', "Valuation ratio K", "fair value divided by the valuation examined"),
+             (f'{r["gain"]:+.3f}', "Gain of capital g", f'per unit invested, over the {r["horizon"]:.0f} years'),
+             (f'{r["c_eff"] * 100:.1f}%', "Effective rate", f'the one rate that would hide the gap, against {i["c"] * 100:.0f}%'))
+    for k, (big, name, note) in enumerate(tiles):
+        x = 20 + k * 340
+        out += [text(x, 262, big, 44, c["ink"], 700), text(x, 296, name, 15, c["ink"], 600), text(x, 318, note, 12.5, c["ink2"])]
+    out.append(text(20, 372, f'Solved on the yearly amounts and not in closed form, the effective rate is {r["c_eff_stream"] * 100:.1f}%. '
+                             'The calculator shows both.', 12.5, c["mut"]))
+    return frame("Dual-Risk DCF Calculator: a worked example", d["alt"], out)
+
+
+DRAW = {"crypto-observatory": observatory, "covered-call-monitor": monitor, "dual-risk-calculator": calculator}
 
 
 def pictures(live):

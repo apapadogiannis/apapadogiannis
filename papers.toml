@@ -16,7 +16,8 @@
 
 # Each [[tool]] is one application: software that runs the research on live data but is not the replication
 # of a paper. All fields are required.
-#   title, repo, page (the live address), summary (two or three sentences), figure, figure_alt,
+#   title, repo, page (the live address), question (what it answers, one short sentence, for its card on the
+#   profile page), summary (two or three sentences, for the tools page), figure, figure_alt,
 #   paper (the title of the [[paper]] whose method it uses), workflow (the file name of its check, for the badge),
 #   skill_for and skill_ask (what its skill answers, and a question to try), caption (one line above its picture)
 # The latest figures shown with each tool are not typed here: "python3 build.py --fetch" reads them from the
@@ -25,7 +26,9 @@
 [profile]
 name = "Agisilaos Papadogiannis"
 # One sentence under the name: what the work is.
-position = "Independent finance research on what an asset is worth and what return it must earn. {Tools_word} live tools recompute the answers from current public data, and {packages_word} of the {papers} papers come with the data and code to check every number."
+position = "Independent finance research on what an asset is worth and what return it must earn."
+# The second sentence under the name: the forms the work comes in.
+forms = "It comes in three forms: {tools_word} tools you can use now, {papers} papers, and the data and code to check {packages_word} of them."
 # The plain row of links under it: label, address.
 links = [
   ["SSRN", "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7457522"],
@@ -34,8 +37,8 @@ links = [
   ["Substack", "https://scarcitythinker.substack.com"],
   ["Email", "mailto:apapadogiannis@gmail.com"],
 ]
-# Under the links. {papers}, {published}, {packages}, {both}, {tools}, {rest} and {journals} are taken from this file.
-checked = "{published} of the {papers} are published or forthcoming in peer-reviewed journals: {journals}. In the tools and replication packages, every published number is recomputed automatically, with machine-readable results and stated limits."
+# In the research section, under its introduction. {journals} is taken from this file.
+checked = "The journals: {journals}. In the tools and replication packages, every published number is recomputed automatically, with machine-readable results and stated limits."
 # Above the map.
 intro = [
   "The papers are written to be used together, as one corpus on value. It follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. Of the {papers} papers, {published} are published or forthcoming and {packages} have a replication package with the data and code ({both} are both).",
@@ -180,6 +183,7 @@ question = "valuation"
 venue = "Finance Research Open, 2026"
 ssrn = "5252774"
 published = "https://doi.org/10.1016/j.finr.2026.100096"
+tool = "dual-risk-calculator"
 repo = "dual-risk-dcf"
 guide = true
 zenodo = "10.5281/zenodo.24465118"
@@ -226,6 +230,7 @@ ssrn = "5487486"
 # ---------------------------------------------------------------- tools
 [[tool]]
 title = "Crypto Observatory: required returns, risks and survival"
+question = "What return should Bitcoin's holders require, and did they get it?"
 repo = "crypto-observatory"
 page = "https://apapadogiannis.github.io/crypto-observatory/"
 paper = "Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold"
@@ -239,6 +244,7 @@ summary = "What return should Bitcoin's holders require, and did they get it? Th
 
 [[tool]]
 title = "Covered-Call Monitor: returns, overlays and flows from SEC filings"
+question = "What does the yield of a covered-call fund cost against its index fund?"
 repo = "covered-call-monitor"
 page = "https://apapadogiannis.github.io/covered-call-monitor/"
 paper = "High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs"
@@ -250,3 +256,18 @@ caption = "Five of the largest funds over three years, each beside its index fun
 figure = "assets/covered-call-monitor.png"
 figure_alt = "Total return over three years of five large covered-call funds, each beside the index fund on the same market"
 summary = "What does the yield cost? For 87 US covered-call, buy-write and premium-income funds: the total return with distributions reinvested, beside an index fund where one applies, the options each fund had actually written, and the money moving in and out. Rebuilt every quarter from SEC filings."
+
+[[tool]]
+title = "Dual-Risk DCF Calculator: the discount rate and the forecast, separated"
+question = "How much of a valuation gap is the forecast, and how much the discount rate?"
+repo = "dual-risk-calculator"
+page = "https://apapadogiannis.github.io/dual-risk-calculator/"
+paper = "From Unified Discounting to Dual-Risk: A New Lens on DCF Valuation"
+link_label = "Calculator"
+workflow = "check.yml"
+skill_for = "Splitting a valuation gap into the discount rate and the forecast, from your own numbers"
+skill_ask = "My forecast is 90 a year for five years and the benchmark is 100. At 8%, what is K and the effective rate?"
+caption = "A worked example: two forecasts of the same asset, valued at the same benchmark rate."
+figure = "assets/dual-risk-calculator-light.svg"
+figure_alt = "Two bars: the value of a benchmark forecast and of a forecast 10% lower, both discounted at 8%, with the valuation ratio K, the gain of capital and the effective rate"
+summary = "Enter a benchmark rate and two views of the same asset, two forecasts or a forecast and a price, and the calculator puts the whole gap into one number, the valuation ratio K, with the gain of capital and the effective discount rate that follow from it. It also runs the same reading over your own price series. It computes in your browser and sends nothing out, and it runs as an MCP server for an AI assistant on your own machine."

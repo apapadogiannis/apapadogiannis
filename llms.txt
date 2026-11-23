@@ -10,9 +10,11 @@ Page for people: https://github.com/apapadogiannis
 
 The work follows value through four questions: value creation (where value comes from); returns (required and expected); valuation (the dual-risk framework); value capture (what the holder actually keeps).
 
-## Live tools
+## Tools
 
-Each recomputes its figures from current public data and publishes them as data files beside its page.
+The Observatory and the Monitor recompute their figures from current public data and publish them as data
+files beside their pages. The Calculator holds no data: it computes from the numbers it is given, as a page
+and as an MCP server.
 
 - Crypto Observatory: required returns, risks and survival
   Page: https://apapadogiannis.github.io/crypto-observatory/
@@ -28,6 +30,13 @@ Each recomputes its figures from current public data and publishes them as data 
   Code and data: https://github.com/apapadogiannis/covered-call-monitor
   Background: High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs
 
+- Dual-Risk DCF Calculator: the discount rate and the forecast, separated
+  Page: https://apapadogiannis.github.io/dual-risk-calculator/
+  Guide: https://apapadogiannis.github.io/dual-risk-calculator/llms.txt
+  Same guide in the repository: https://raw.githubusercontent.com/apapadogiannis/dual-risk-calculator/main/api/llms.txt
+  Code and data: https://github.com/apapadogiannis/dual-risk-calculator
+  Method: From Unified Discounting to Dual-Risk: A New Lens on DCF Valuation
+
 ## Skills
 
 Instruction files a reader adds to their own AI agent. Each says when to use the work, where its files
@@ -35,6 +44,7 @@ are and how to read them, and holds no figures.
 
 - crypto-observatory: Bitcoin's required return, its parts and its record. https://raw.githubusercontent.com/apapadogiannis/crypto-observatory/main/api/SKILL.md
 - covered-call-monitor: Covered-call funds: returns, written calls and flows. https://raw.githubusercontent.com/apapadogiannis/covered-call-monitor/main/api/SKILL.md
+- dual-risk-calculator: Splitting a valuation gap into the discount rate and the forecast, from your own numbers. https://raw.githubusercontent.com/apapadogiannis/dual-risk-calculator/main/api/SKILL.md
 - papadogiannis-finance-research: A number or a finding from any of the papers. https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/skill/SKILL.md
 
 ## Value creation: where value comes from
@@ -130,6 +140,7 @@ are and how to read them, and holds no figures.
   Replication package: https://github.com/apapadogiannis/dual-risk-dcf (archive: https://doi.org/10.5281/zenodo.24465118)
   Guide: https://raw.githubusercontent.com/apapadogiannis/dual-risk-dcf/main/llms.txt
   Results as data: https://raw.githubusercontent.com/apapadogiannis/dual-risk-dcf/main/outputs/results.json
+  Live tool: https://apapadogiannis.github.io/dual-risk-calculator/
 
 - A Dual-Risk Theory of Valuation: Bridging Discounting and Expectational Distortion
   Discover Analytics, 2026.

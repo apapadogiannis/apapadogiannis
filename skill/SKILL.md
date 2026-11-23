@@ -20,7 +20,7 @@ fetch them each time.
 
 ## What is there
 
-Live tools, each with its own skill and guide:
+Tools, each with its own skill and guide:
 
 - Crypto Observatory: required returns, risks and survival
   Guide: https://apapadogiannis.github.io/crypto-observatory/llms.txt
@@ -28,6 +28,9 @@ Live tools, each with its own skill and guide:
 - Covered-Call Monitor: returns, overlays and flows from SEC filings
   Guide: https://apapadogiannis.github.io/covered-call-monitor/llms.txt
   Its skill: https://raw.githubusercontent.com/apapadogiannis/covered-call-monitor/main/api/SKILL.md
+- Dual-Risk DCF Calculator: the discount rate and the forecast, separated
+  Guide: https://apapadogiannis.github.io/dual-risk-calculator/llms.txt
+  Its skill: https://raw.githubusercontent.com/apapadogiannis/dual-risk-calculator/main/api/SKILL.md
 
 Papers with a replication package:
 

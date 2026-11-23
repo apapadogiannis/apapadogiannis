@@ -1,37 +1,62 @@
 ## Agisilaos Papadogiannis
 
-**Independent finance research on what an asset is worth and what return it must earn. Two live tools recompute the answers from current public data, and nine of the 21 papers come with the data and code to check every number.**
+**Independent finance research on what an asset is worth and what return it must earn.** It comes in three forms: three tools you can use now, 21 papers, and the data and code to check nine of them.
 
 <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7457522">SSRN</a> · <a href="https://scholar.google.com/citations?user=RihXr08AAAAJ">Google Scholar</a> · <a href="https://orcid.org/0009-0002-7753-7052">ORCID</a> · <a href="https://scarcitythinker.substack.com">Substack</a> · <a href="mailto:apapadogiannis@gmail.com">Email</a>
 
-9 of the 21 are published or forthcoming in peer-reviewed journals: Financial Economics Letters, Frontiers in Blockchain, Asian Review of Political Economy, Asian Economics Letters, The Journal of Investing, Discover Analytics, Finance Research Open and The Journal of Beta Investment Strategies. In the tools and replication packages, every published number is recomputed automatically, with machine-readable results and stated limits.
+| If you want to | Start here |
+|---|---|
+| get an answer to a question | [Tools](#tools): three pages, free, no account |
+| ask through your own AI assistant | [For your AI assistant](#for-your-ai-assistant): skills and a calculator it can call |
+| read the research or check a number | [The research](#the-research-one-corpus-four-questions): 21 papers, 9 with data and code |
 
-<sub>AI agents and programs: start at [llms.txt](llms.txt), the index of every tool, paper and data file.</sub>
+### Tools
 
-### Live tools
+Each answers one question, from current public data or from your own numbers. The figures below are read from the tools' own data files every month.
 
-Research that keeps running: each tool rebuilds itself from current public data. The figures and pictures below are read from the tools' own data files every month.
+<table>
+<tr>
+<td width="33%" valign="top">
+<h4>Crypto Observatory</h4>
+<p>What return should Bitcoin's holders require, and did they get it?</p>
+<p><sub>Bitcoin's required return, October 2026</sub></p>
+<h3>20.1% a year</h3>
+<p><sub>From 11.8% to 28.5% across the model's inputs. Recomputed every month.</sub></p>
+<p><b><a href="https://apapadogiannis.github.io/crypto-observatory/">Open the tool</a></b></p>
+<p><img src="https://github.com/apapadogiannis/crypto-observatory/actions/workflows/check.yml/badge.svg" alt="automated check"></p>
+</td>
+<td width="33%" valign="top">
+<h4>Covered-Call Monitor</h4>
+<p>What does the yield of a covered-call fund cost against its index fund?</p>
+<p><sub>Funds that returned less than their index fund, 12 months to June 2026</sub></p>
+<h3>18 of 18</h3>
+<p><sub>By 5.5 percentage points at the median, distributions reinvested. 87 funds, rebuilt every quarter from SEC filings.</sub></p>
+<p><b><a href="https://apapadogiannis.github.io/covered-call-monitor/">Open the tool</a></b></p>
+<p><img src="https://github.com/apapadogiannis/covered-call-monitor/actions/workflows/check.yml/badge.svg" alt="automated check"></p>
+</td>
+<td width="33%" valign="top">
+<h4>Dual-Risk DCF Calculator</h4>
+<p>How much of a valuation gap is the forecast, and how much the discount rate?</p>
+<p><sub>Example: a forecast 10% too low, valued at 8% over 5 years</sub></p>
+<h3>K = 1.11</h3>
+<p><sub>One discount rate would have to fall to 5.7% to hide the gap. Enter your own forecasts or prices.</sub></p>
+<p><b><a href="https://apapadogiannis.github.io/dual-risk-calculator/">Open the tool</a></b></p>
+<p><img src="https://github.com/apapadogiannis/dual-risk-calculator/actions/workflows/check.yml/badge.svg" alt="automated check"></p>
+</td>
+</tr>
+</table>
 
-<h4>Crypto Observatory: required returns, risks and survival <img src="https://github.com/apapadogiannis/crypto-observatory/actions/workflows/check.yml/badge.svg" alt="automated check"></h4>
-<p>What return should Bitcoin's holders require, and did they get it? The answer is recomputed every month from public data, with the equation explained term by term, the tests of fit, and a census of cryptoasset deaths.</p>
-<p><b>Latest, October 2026:</b> Bitcoin's required return is 20.1% a year: risk-free 4.9, market 5.8, concentration 7.5, mortality 1.9. Across the range of the model's inputs it runs from 11.8% to 28.5%.</p>
-<p><sub>The required return since 2012, and what each period delivered against it.</sub><br><picture><source media="(prefers-color-scheme: dark)" srcset="assets/crypto-observatory-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/crypto-observatory-light.svg"><img src="assets/crypto-observatory-light.svg" width="100%" alt="Bitcoin&#x27;s required return since 2012 as a band with its midpoint, with the average required and delivered return of each three-year period marked on it"></picture></p>
-<p><b><a href="https://apapadogiannis.github.io/crypto-observatory/">Open the tool</a></b> · <a href="https://github.com/apapadogiannis/crypto-observatory">Code and data</a> · <a href="https://ssrn.com/abstract=7705239">The paper behind it</a> · <a href="#ask-your-own-ai-assistant">Its skill</a></p>
+All three on one page, each with its chart: **[apapadogiannis.github.io](https://apapadogiannis.github.io/)**
 
-<h4>Covered-Call Monitor: returns, overlays and flows from SEC filings <img src="https://github.com/apapadogiannis/covered-call-monitor/actions/workflows/check.yml/badge.svg" alt="automated check"></h4>
-<p>What does the yield cost? For 87 US covered-call, buy-write and premium-income funds: the total return with distributions reinvested, beside an index fund where one applies, the options each fund had actually written, and the money moving in and out. Rebuilt every quarter from SEC filings.</p>
-<p><b>Latest, 12 months to June 2026:</b> all 18 funds that have an index fund on the same market beside them returned less than it, by 0.8 to 19.7 percentage points (median 5.5), distributions reinvested. The index funds returned 22% to 41% over these months: a market that rises this fast is where a cap on the upside costs most.</p>
-<p><sub>Five of the largest funds over three years, each beside its index fund.</sub><br><picture><source media="(prefers-color-scheme: dark)" srcset="assets/covered-call-monitor-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/covered-call-monitor-light.svg"><img src="assets/covered-call-monitor-light.svg" width="100%" alt="Total return over 3 years of 5 large covered-call funds, each beside the index fund on the same market"></picture></p>
-<p><b><a href="https://apapadogiannis.github.io/covered-call-monitor/">Open the tool</a></b> · <a href="https://github.com/apapadogiannis/covered-call-monitor">Code and data</a> · <a href="https://doi.org/10.3905/jbis.2026.001">The paper behind it</a> · <a href="#ask-your-own-ai-assistant">Its skill</a></p>
+### For your AI assistant
 
-### Ask your own AI assistant
-
-A skill is a short instruction file that you add once to an AI assistant such as Claude. From then on you can ask in plain words, and the assistant answers from the latest figures here, with the date and the source, instead of from memory. The three skills are free and need no account or key. They hold no figures, so they do not go out of date.
+A skill is a short instruction file that you add once to an AI assistant such as Claude. From then on you can ask in plain words, and the assistant answers from the latest figures here, with the date and the source, instead of from memory. The four skills are free and need no account or key. They hold no figures, so they do not go out of date.
 
 <table>
 <tr><th>Skill</th><th>What it answers</th><th>A question to try</th></tr>
 <tr><td><a href="https://github.com/apapadogiannis/crypto-observatory/blob/main/api/SKILL.md"><code>crypto-observatory</code></a></td><td>Bitcoin's required return, its parts and its record</td><td>“What return should Bitcoin's holders require now, and how is it made up?”</td></tr>
 <tr><td><a href="https://github.com/apapadogiannis/covered-call-monitor/blob/main/api/SKILL.md"><code>covered-call-monitor</code></a></td><td>Covered-call funds: returns, written calls and flows</td><td>“How did JEPI do against its index fund over three years?”</td></tr>
+<tr><td><a href="https://github.com/apapadogiannis/dual-risk-calculator/blob/main/api/SKILL.md"><code>dual-risk-calculator</code></a></td><td>Splitting a valuation gap into the discount rate and the forecast, from your own numbers</td><td>“My forecast is 90 a year for five years and the benchmark is 100. At 8%, what is K and the effective rate?”</td></tr>
 <tr><td><a href="https://github.com/apapadogiannis/apapadogiannis/blob/main/skill/SKILL.md"><code>papadogiannis-finance-research</code></a></td><td>A number or a finding from any of the papers</td><td>“What does the age-rule paper report for Bitcoin's expected return?”</td></tr>
 </table>
 
@@ -45,15 +70,21 @@ mkdir -p ~/.claude/skills/crypto-observatory
 curl -o ~/.claude/skills/crypto-observatory/SKILL.md https://raw.githubusercontent.com/apapadogiannis/crypto-observatory/main/api/SKILL.md
 ```
 
-The other two work the same way: `covered-call-monitor` from `https://raw.githubusercontent.com/apapadogiannis/covered-call-monitor/main/api/SKILL.md`; `papadogiannis-finance-research` from `https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/skill/SKILL.md`.
+The others work the same way: `covered-call-monitor` from `https://raw.githubusercontent.com/apapadogiannis/covered-call-monitor/main/api/SKILL.md`; `dual-risk-calculator` from `https://raw.githubusercontent.com/apapadogiannis/dual-risk-calculator/main/api/SKILL.md`; `papadogiannis-finance-research` from `https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/skill/SKILL.md`.
 
 In another assistant, add the same file wherever it takes instructions or skills, or give it the address of [llms.txt](llms.txt). The Bitcoin and Ether price inputs come from Coin Metrics community data, which are for non-commercial use, as the Observatory's skill states.
 
+The calculator can also be called directly: it runs as an MCP server on your own machine, with the install line in [its repository](https://github.com/apapadogiannis/dual-risk-calculator#use-it-from-your-own-ai-agent).
+
 </details>
+
+<sub>AI agents and programs: start at [llms.txt](llms.txt), the index of every tool, paper and data file.</sub>
 
 ### The research: one corpus, four questions
 
 The papers are written to be used together, as one corpus on value. It follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. Of the 21 papers, 9 are published or forthcoming and 9 have a replication package with the data and code (6 are both).
+
+The journals: Financial Economics Letters, Frontiers in Blockchain, Asian Review of Political Economy, Asian Economics Letters, The Journal of Investing, Discover Analytics, Finance Research Open and The Journal of Beta Investment Strategies. In the tools and replication packages, every published number is recomputed automatically, with machine-readable results and stated limits.
 
 <p align="center">
 <picture>
@@ -137,7 +168,7 @@ Click a line to open its list. A green badge means the package's stored results 
 <summary><img src="assets/q-valuation-dot.svg" width="12" height="12" alt=""> <b>Valuation</b>: the dual-risk framework (5 papers, 2 with a replication package)</summary>
 <ul>
 <li><b>Beyond Discount Rates: A Valuation Framework for Unpriced Systematic Risk</b>. The Journal of Investing, forthcoming 2027. <a href="https://ssrn.com/abstract=5180040">SSRN</a> · <a href="https://github.com/apapadogiannis/beyond-discount-rates">Replication package</a> <a href="https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></li>
-<li><b>From Unified Discounting to Dual-Risk: A New Lens on DCF Valuation</b>. Finance Research Open, 2026. <a href="https://ssrn.com/abstract=5252774">SSRN</a> · <a href="https://doi.org/10.1016/j.finr.2026.100096">Published version</a> · <a href="https://github.com/apapadogiannis/dual-risk-dcf">Replication package</a> <a href="https://github.com/apapadogiannis/dual-risk-dcf/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/dual-risk-dcf/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></li>
+<li><b>From Unified Discounting to Dual-Risk: A New Lens on DCF Valuation</b>. Finance Research Open, 2026. <a href="https://ssrn.com/abstract=5252774">SSRN</a> · <a href="https://doi.org/10.1016/j.finr.2026.100096">Published version</a> · <a href="https://github.com/apapadogiannis/dual-risk-dcf">Replication package</a> <a href="https://github.com/apapadogiannis/dual-risk-dcf/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/dual-risk-dcf/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> · <a href="https://apapadogiannis.github.io/dual-risk-calculator/">Calculator</a></li>
 <li><b>A Dual-Risk Theory of Valuation: Bridging Discounting and Expectational Distortion</b>. Discover Analytics, 2026. <a href="https://ssrn.com/abstract=5226017">SSRN</a> · <a href="https://doi.org/10.1007/s44257-026-00062-9">Published version</a></li>
 <li><b>Rethinking Capital Budgeting: Embedding Ex-Ante Alpha in the Cost of Capital</b>.</li>
 <li><b>Unifying DCF Valuation Across Traditional and Cryptoassets</b>. <a href="https://ssrn.com/abstract=5363661">SSRN</a></li>

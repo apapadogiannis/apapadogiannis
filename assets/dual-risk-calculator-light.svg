@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 400" width="1040" height="400" role="img" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif"><title>Dual-Risk DCF Calculator: a worked example</title><desc>Two bars: the value of a benchmark forecast and of a forecast 10% lower, both discounted at the same benchmark rate, with the valuation ratio K, the gain of capital and the effective rate</desc>
+<text x="20.0" y="30.0" font-size="14" font-weight="400" fill="#52514e" text-anchor="start">Benchmark rate 8% a year, 5 years. The examined forecast is 10% below the benchmark forecast in every year.</text>
+<text x="20.0" y="87.0" font-size="15" font-weight="600" fill="#0b0b0b" text-anchor="start">Benchmark fair value</text>
+<rect x="250" y="66" width="550.0" height="30" rx="5" fill="#2a78d6"/>
+<text x="812.0" y="87.0" font-size="15" font-weight="700" fill="#0b0b0b" text-anchor="start">399.27</text>
+<text x="20.0" y="141.0" font-size="15" font-weight="600" fill="#0b0b0b" text-anchor="start">Valuation examined</text>
+<rect x="250" y="120" width="495.0" height="30" rx="5" fill="#eb6834"/>
+<text x="757.0" y="141.0" font-size="15" font-weight="700" fill="#0b0b0b" text-anchor="start">359.34</text>
+<line x1="20" y1="196" x2="1020" y2="196" stroke="#e1e0d9" stroke-width="1"/>
+<text x="20.0" y="262.0" font-size="44" font-weight="700" fill="#0b0b0b" text-anchor="start">1.111</text>
+<text x="20.0" y="296.0" font-size="15" font-weight="600" fill="#0b0b0b" text-anchor="start">Valuation ratio K</text>
+<text x="20.0" y="318.0" font-size="12.5" font-weight="400" fill="#52514e" text-anchor="start">fair value divided by the valuation examined</text>
+<text x="360.0" y="262.0" font-size="44" font-weight="700" fill="#0b0b0b" text-anchor="start">+0.163</text>
+<text x="360.0" y="296.0" font-size="15" font-weight="600" fill="#0b0b0b" text-anchor="start">Gain of capital g</text>
+<text x="360.0" y="318.0" font-size="12.5" font-weight="400" fill="#52514e" text-anchor="start">per unit invested, over the 5 years</text>
+<text x="700.0" y="262.0" font-size="44" font-weight="700" fill="#0b0b0b" text-anchor="start">5.7%</text>
+<text x="700.0" y="296.0" font-size="15" font-weight="600" fill="#0b0b0b" text-anchor="start">Effective rate</text>
+<text x="700.0" y="318.0" font-size="12.5" font-weight="400" fill="#52514e" text-anchor="start">the one rate that would hide the gap, against 8%</text>
+<text x="20.0" y="372.0" font-size="12.5" font-weight="400" fill="#898781" text-anchor="start">Solved on the yearly amounts and not in closed form, the effective rate is 4.1%. The calculator shows both.</text>
+</svg>

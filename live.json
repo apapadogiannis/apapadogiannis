@@ -1182,5 +1182,87 @@
     }
    ]
   }
+ },
+ "dual-risk-calculator": {
+  "inputs": {
+   "c": 0.08,
+   "benchmark": [
+    [
+     1,
+     100.0
+    ],
+    [
+     2,
+     100.0
+    ],
+    [
+     3,
+     100.0
+    ],
+    [
+     4,
+     100.0
+    ],
+    [
+     5,
+     100.0
+    ]
+   ],
+   "examined": [
+    [
+     1,
+     90.0
+    ],
+    [
+     2,
+     90.0
+    ],
+    [
+     3,
+     90.0
+    ],
+    [
+     4,
+     90.0
+    ],
+    [
+     5,
+     90.0
+    ]
+   ],
+   "periods": "years"
+  },
+  "results": {
+   "c": 0.08,
+   "horizon": 5.0,
+   "v_fair": 399.2710037078,
+   "v_own": 359.343903337,
+   "K": 1.1111111111,
+   "gain": 0.1632586752,
+   "growth_factor_benchmark": 1.4693280768,
+   "growth_factor_expected": 1.632586752,
+   "expected_return_per_period": 0.1029993426,
+   "c_eff": 0.0574802313,
+   "c_eff_stream": 0.0412410111
+  },
+  "picture": {
+   "alt": "Two bars: the value of a benchmark forecast and of a forecast 10% lower, both discounted at the same benchmark rate, with the valuation ratio K, the gain of capital and the effective rate",
+   "inputs": {
+    "c": 0.08
+   },
+   "results": {
+    "c": 0.08,
+    "horizon": 5.0,
+    "v_fair": 399.2710037078,
+    "v_own": 359.343903337,
+    "K": 1.1111111111,
+    "gain": 0.1632586752,
+    "growth_factor_benchmark": 1.4693280768,
+    "growth_factor_expected": 1.632586752,
+    "expected_return_per_period": 0.1029993426,
+    "c_eff": 0.0574802313,
+    "c_eff_stream": 0.0412410111
+   }
+  }
  }
 }

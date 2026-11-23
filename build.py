@@ -91,6 +91,11 @@ def fetch():
                "on the same market",
         "years": years, "from": bars[0]["from"], "to": to,
         "bars": [{k: b[k] for k in ("ticker", "index_fund", "fund", "benchmark")} for b in bars]}
+    ex = get("dual-risk-calculator/main/api/example.json")
+    live["dual-risk-calculator"] = {"inputs": ex["inputs"], "results": ex["results"], "picture": {
+        "alt": "Two bars: the value of a benchmark forecast and of a forecast 10% lower, both discounted at the same "
+               "benchmark rate, with the valuation ratio K, the gain of capital and the effective rate",
+        "inputs": {"c": ex["inputs"]["c"]}, "results": ex["results"]}}
     (HERE / "live.json").write_text(json.dumps(live, indent=1) + "\n", encoding="utf-8")
     print("wrote live.json")
 
@@ -120,7 +125,34 @@ def latest(repo, live):
             text += (f' The index funds returned {lo:.0f}% to {hi:.0f}% over these months: a market that rises this '
                      f'fast is where a cap on the upside costs most.')
         return text
+    if repo == "dual-risk-calculator":
+        r, c = d["results"], d["inputs"]["c"]
+        return (f'<b>Worked example:</b> a forecast {(1 - r["v_own"] / r["v_fair"]) * 100:.0f}% below the benchmark, at a '
+                f'benchmark rate of {c * 100:.0f}% over {r["horizon"]:.0f} years, gives a valuation ratio K of {r["K"]:.3f} and a '
+                f'gain of capital of {r["gain"]:+.3f}. One discount rate would have to fall to {r["c_eff"] * 100:.1f}% to hide the gap.')
     return ""
+
+
+def headline(repo, live):
+    """For a tool's card on the profile page: (what the figure is, the figure, one line under it)."""
+    d = live.get(repo)
+    if not d:
+        return None
+    if repo == "crypto-observatory":
+        r = d["required"]
+        return (f'Bitcoin\'s required return, {month(d["month_end"])}', f'{r["midpoint"]:.1f}% a year',
+                f'From {r["lower"]:.1f}% to {r["upper"]:.1f}% across the model\'s inputs. Recomputed every month.')
+    if repo == "covered-call-monitor":
+        n, less = d["beside_an_index_fund"], d["returned_less"]
+        return (f'Funds that returned less than their index fund, 12 months to {month(d["to"])}', f'{less} of {n}',
+                f'By {-d["median_gap"]:.1f} percentage points at the median, distributions reinvested. '
+                f'{d["funds"]} funds, rebuilt every quarter from SEC filings.')
+    if repo == "dual-risk-calculator":
+        r, c = d["results"], d["inputs"]["c"]
+        return (f'Example: a forecast {(1 - r["v_own"] / r["v_fair"]) * 100:.0f}% too low, valued at {c * 100:.0f}% over {r["horizon"]:.0f} years',
+                f'K = {r["K"]:.2f}',
+                f'One discount rate would have to fall to {r["c_eff"] * 100:.1f}% to hide the gap. Enter your own forecasts or prices.')
+    return None
 
 
 def esc(text):
@@ -179,7 +211,7 @@ def line(p):
     if "demo" in p:
         links.append(f'<a href="{p["demo"]}">Interactive demo</a>')
     if "tool" in p:
-        links.append(f'<a href="{p["tool_page"]}">Live tool</a>')
+        links.append(f'<a href="{p["tool_page"]}">{p["tool_label"]}</a>')
     if links:
         text += " " + " · ".join(links)
     return f"<li>{text}</li>"
@@ -195,17 +227,19 @@ def picture(t):
             f'<img src="assets/{t["repo"]}-light.svg" width="100%" alt="{alt}"></picture>')
 
 
-def tool(t):
-    """One application, at the full width of the page: name, latest figures, picture, what it does, one row of links."""
-    repo = f'{GH}/{t["repo"]}'
-    check = f'{repo}/actions/workflows/{t["workflow"]}'
+def tool(t, width):
+    """One tool as a card in the row of tools: name, the question it answers, one figure, one link."""
+    check = f'{GH}/{t["repo"]}/actions/workflows/{t["workflow"]}'
+    name = t["title"].partition(": ")[0]
+    h = t.get("headline")
     return "\n".join([
-        f'<h4>{esc(t["title"])} <img src="{check}/badge.svg" alt="automated check"></h4>',
-        f'<p>{esc(t["summary"])}</p>',
-        *([f'<p>{t["latest"]}</p>'] if t.get("latest") else []),
-        f'<p><sub>{esc(t["caption"])}</sub><br>{picture(t)}</p>',
-        f'<p><b><a href="{t["page"]}">Open the tool</a></b> · <a href="{repo}">Code and data</a> · '
-        f'<a href="{t["paper_url"]}">The paper behind it</a> · <a href="#ask-your-own-ai-assistant">Its skill</a></p>'])
+        f'<td width="{width}%" valign="top">',
+        f'<h4>{esc(name)}</h4>',
+        f'<p>{esc(t["question"])}</p>',
+        *([f'<p><sub>{esc(h[0])}</sub></p>', f'<h3>{esc(h[1])}</h3>', f'<p><sub>{esc(h[2])}</sub></p>'] if h else []),
+        f'<p><b><a href="{t["page"]}">Open the tool</a></b></p>',
+        f'<p><img src="{check}/badge.svg" alt="automated check"></p>',
+        '</td>'])
 
 
 def build():
@@ -218,6 +252,7 @@ def build():
     live = json.loads(live_file.read_text(encoding="utf-8")) if live_file.exists() else {}
     for t in tools:
         t["latest"] = latest(t["repo"], live)
+        t["headline"] = headline(t["repo"], live)
         t["drawn_alt"] = live.get(t["repo"], {}).get("picture", {}).get("alt")
         if t["paper"] not in titles:
             sys.exit(f'tool "{t["title"]}" names a paper that is not listed: {t["paper"]}')
@@ -228,6 +263,7 @@ def build():
             if p["tool"] not in pages:
                 sys.exit(f'unknown tool "{p["tool"]}" for: {p["title"]}')
             p["tool_page"] = pages[p["tool"]]
+            p["tool_label"] = next(t.get("link_label", "Live tool") for t in tools if t["repo"] == p["tool"])
     known = {k for k, _, _ in QUESTIONS}
     for p in papers:
         if p["question"] not in known:
@@ -254,22 +290,27 @@ def build():
     for key in ("tools", "packages"):  # as words, for the sentence under the name
         counts[key + "_word"] = words[counts[key]] if counts[key] < len(words) else str(counts[key])
     counts["Tools_word"] = counts["tools_word"].capitalize()
-    out = [f'## {prof["name"]}', "", f'**{prof["position"].format(**counts)}**', "",
+    out = [f'## {prof["name"]}', "", f'**{prof["position"]}** {prof["forms"].format(**counts)}', "",
            " · ".join(f'<a href="{url}">{esc(label)}</a>' for label, url in prof["links"]), "",
-           prof["checked"].format(**counts), "", f'<sub>{prof["agents"]}</sub>', ""]
+           "| If you want to | Start here |", "|---|---|",
+           f'| get an answer to a question | [Tools](#tools): {counts["tools_word"]} pages, free, no account |',
+           "| ask through your own AI assistant | [For your AI assistant](#for-your-ai-assistant): skills and a calculator it can call |",
+           f'| read the research or check a number | [The research](#the-research-one-corpus-four-questions): {counts["papers"]} papers, '
+           f'{counts["packages"]} with data and code |', ""]
 
     if tools:
-        out += ["### Live tools", "",
-                "Research that keeps running: each tool rebuilds itself from current public data. The figures and "
-                "pictures below are read from the tools' own data files every month.", ""]
-        for t in tools:
-            out += [tool(t), ""]
+        out += ["### Tools", "",
+                "Each answers one question, from current public data or from your own numbers. The figures below are "
+                "read from the tools' own data files every month.", "", "<table>", "<tr>"]
+        out += [tool(t, 100 // len(tools)) for t in tools]
+        out += ["</tr>", "</table>", "",
+                f'All {counts["tools_word"]} on one page, each with its chart: **[apapadogiannis.github.io](https://apapadogiannis.github.io/)**', ""]
 
     rows = [(t["repo"], t["skill_for"], t["skill_ask"], f'{t["repo"]}/main/api/SKILL.md', f'{t["repo"]}/blob/main/api/SKILL.md')
             for t in tools]
     rows.append(("papadogiannis-finance-research", prof["skill_for"], prof["skill_ask"],
                  "apapadogiannis/main/skill/SKILL.md", "apapadogiannis/blob/main/skill/SKILL.md"))
-    out += ["### Ask your own AI assistant", ""]
+    out += ["### For your AI assistant", ""]
     for para in prof["skills"]:
         out += [para.format(**counts), ""]
     out += ["<table>", "<tr><th>Skill</th><th>What it answers</th><th>A question to try</th></tr>"]
@@ -281,15 +322,19 @@ def build():
                 f"mkdir -p ~/.claude/skills/{name}",
                 f"curl -o ~/.claude/skills/{name}/SKILL.md {RAW}/{raw}")],
             "```", "",
-            "The other two work the same way: " +
+            "The others work the same way: " +
             "; ".join(f"`{name}` from `{RAW}/{raw}`" for name, _, _, raw, _ in rows[1:]) + ".", "",
             "In another assistant, add the same file wherever it takes instructions or skills, or give it the "
             "address of [llms.txt](llms.txt). The Bitcoin and Ether price inputs come from Coin Metrics community "
-            "data, which are for non-commercial use, as the Observatory's skill states.", "", "</details>", ""]
+            "data, which are for non-commercial use, as the Observatory's skill states.", "",
+            "The calculator can also be called directly: it runs as an MCP server on your own machine, with the "
+            f"install line in [its repository]({GH}/dual-risk-calculator#use-it-from-your-own-ai-agent).", "",
+            "</details>", "", f'<sub>{prof["agents"]}</sub>', ""]
 
     out += ["### The research: one corpus, four questions", ""]
     for para in prof["intro"]:
         out += [para.format(**counts), ""]
+    out += [prof["checked"].format(**counts), ""]
     out += ['<p align="center">', '<picture>',
             '<source media="(prefers-color-scheme: dark)" srcset="assets/map-dark.svg">',
             '<source media="(prefers-color-scheme: light)" srcset="assets/map-light.svg">',
@@ -363,7 +408,7 @@ def skill(prof, papers, tools):
              "3. For a number, use the file the guide names, usually `outputs/results.json` in a package.",
              "   Quote it with its unit and date, and cite the paper as the guide says.", "",
              "## What is there", "",
-             "Live tools, each with its own skill and guide:", ""]
+             "Tools, each with its own skill and guide:", ""]
     for t in tools:
         lines += [f'- {t["title"]}', f'  Guide: {t["page"]}llms.txt',
                   f'  Its skill: {RAW}/{t["repo"]}/main/api/SKILL.md']
@@ -394,8 +439,10 @@ def index(prof, papers, tools):
            f"Page for people: {GH}", "",
            "The work follows value through four questions: " +
            "; ".join(f"{name.lower()} ({what})" for _, name, what in QUESTIONS) + ".", "",
-           "## Live tools", "",
-           "Each recomputes its figures from current public data and publishes them as data files beside its page.", ""]
+           "## Tools", "",
+           "The Observatory and the Monitor recompute their figures from current public data and publish them as data",
+           "files beside their pages. The Calculator holds no data: it computes from the numbers it is given, as a page",
+           "and as an MCP server.", ""]
     for t in tools:
         out += [f'- {t["title"]}', f'  Page: {t["page"]}', f'  Guide: {t["page"]}llms.txt',
                 f'  Same guide in the repository: {raw}/{t["repo"]}/main/api/llms.txt',
