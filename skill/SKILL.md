@@ -29,7 +29,7 @@ Live tools. Read the guide first: it has the reading rules and says which data f
   Guide: https://apapadogiannis.github.io/crypto-observatory/llms.txt
   Same guide in the repository: https://raw.githubusercontent.com/apapadogiannis/crypto-observatory/main/api/llms.txt
 - Covered-Call Monitor: returns, overlays and flows from SEC filings
-  Use for: Covered-call funds: returns, written calls and flows
+  Use for: Covered-call funds: returns, payouts, written calls and flows
   Guide: https://apapadogiannis.github.io/covered-call-monitor/llms.txt
   Same guide in the repository: https://raw.githubusercontent.com/apapadogiannis/covered-call-monitor/main/api/llms.txt
 - Dual-Risk DCF Calculator: the discount rate and the forecast, separated
@@ -72,7 +72,10 @@ The other 11 papers have no package. They are listed in the index with their add
   now, and the paper's for what the paper reports. Say which one you are giving.
 - A replication package is a fixed record of one paper. For current figures use the live tool the
   guide points to.
-- Several papers are working papers. Say so, and report a figure as that paper's result.
+- 10 of the 21 papers are peer-reviewed journal articles, published or accepted; the index marks each one.
+  The others are working papers. Say which a paper is, and report a figure as that paper's result.
+- For the calculator: if the tools of the MCP server `dual-risk` are available to you, use them and do
+  not do the arithmetic yourself.
 - The results are under CC BY 4.0, whose one condition is credit: cite the paper.
 - A published article belongs to its publisher. The packages hold its numbers, not its text.
 

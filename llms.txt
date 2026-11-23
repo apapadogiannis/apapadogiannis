@@ -1,6 +1,6 @@
 # Agisilaos Papadogiannis: open finance research
 
-In the three tools and the nine replication packages, every published number is recomputed automatically, with machine-readable results and stated limits. The other 12 of the 21 papers are papers only: they are listed here with their addresses.
+In the three tools and the nine replication packages, every published number is recomputed automatically, with machine-readable results and stated limits. The other 12 of the 21 papers are papers only: they are listed here with their addresses. 10 of the 21 papers are peer-reviewed journal articles, published or accepted; each entry says which.
 
 > An index of this account for AI agents and other programs: live tools, papers and replication
 > packages. Where an entry has a guide, the guide says what the repository holds, what it adds,
@@ -49,13 +49,10 @@ says when to use the work, where the files are and how to read them, and holds n
 
 - papadogiannis-finance-research: https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/skill/SKILL.md
 
-Each tool also publishes a narrower skill for that tool alone, beside its guide (api/SKILL.md in its
-repository).
-
 ## Value creation: where value comes from
 
 - Economic Scarcity as Value: A Universal Framework for Blockchain and Beyond
-  Working paper.
+  Working paper, not peer-reviewed.
   In one sentence: Writes the value of a network as desirability times scarcity times adoption and applies it to Bitcoin, Ethereum and Bittensor; scarcity is scored from protocol features, and desirability is what remains, as implied volatility is recovered from an option price.
   SSRN: https://ssrn.com/abstract=5384204
   Replication package: https://github.com/apapadogiannis/economic-scarcity-as-value (archive: https://doi.org/10.5281/zenodo.24051776)
@@ -63,7 +60,7 @@ repository).
   Results as data: https://raw.githubusercontent.com/apapadogiannis/economic-scarcity-as-value/main/outputs/results.json
 
 - The Architecture of Blockchain Value: Capabilities, Pillars, and Growth Dynamics
-  Frontiers in Blockchain, 2026.
+  Peer-reviewed journal article: Frontiers in Blockchain, 2026.
   In one sentence: A theory of what a blockchain can deliver, its capabilities, and of how five architectural pillars decide which capabilities are feasible. It estimates nothing and uses no dataset.
   Published article: https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2026.1747512/full
   SSRN: https://ssrn.com/abstract=5401302
@@ -72,7 +69,7 @@ repository).
   Results as data: https://raw.githubusercontent.com/apapadogiannis/architecture-of-blockchain-value/main/outputs/results.json
 
 - Bitcoin Is Not Money: Why Fixed Supply Fails in a Modern Economy
-  Asian Economics Letters, forthcoming.
+  Peer-reviewed journal article: Asian Economics Letters, forthcoming.
   In one sentence: With a fixed money stock and stable velocity, output growth implies deflation at the same rate, so a money with a fixed supply could not serve a growing economy.
   SSRN: https://ssrn.com/abstract=5435197
   Replication package: https://github.com/apapadogiannis/bitcoin-is-not-money (archive: https://doi.org/10.5281/zenodo.24249917)
@@ -80,7 +77,7 @@ repository).
   Results as data: https://raw.githubusercontent.com/apapadogiannis/bitcoin-is-not-money/main/outputs/results.json
 
 - Scarcity in an age of AI abundance
-  Asian Review of Political Economy, forthcoming 2027.
+  Peer-reviewed journal article: Asian Review of Political Economy, forthcoming 2027.
   In one sentence: AI can make many goods cheap to produce without making an essential standard of living broadly affordable, because scarcity and its rents move to five layers: physical resources, infrastructure, capabilities, institutions and jurisdictions.
   SSRN: https://ssrn.com/abstract=5924462
   Paper record (the paper has no computation; its definitions, model and tables as data): https://github.com/apapadogiannis/ai-abundance (archive: https://doi.org/10.5281/zenodo.24441153)
@@ -88,26 +85,26 @@ repository).
   Results as data: https://raw.githubusercontent.com/apapadogiannis/ai-abundance/main/outputs/results.json
 
 - Valuing Scarcity: A General Framework for Bitcoin, Gold, and Traditional Assets
-  Financial Economics Letters, 2026.
+  Peer-reviewed journal article: Financial Economics Letters, 2026.
   Published article: https://doi.org/10.58567/fel05020001
   SSRN: https://ssrn.com/abstract=5289457
 
 - What Moves the Price of Gold: An Economic-Scarcity Lens on Policy, the Dollar, and the Debasement Trade
-  Working paper.
+  Working paper, not peer-reviewed.
   SSRN: https://ssrn.com/abstract=5619373
 
 - The Productivity Myth: Why Scarcity Drives All Value
-  Working paper.
+  Working paper, not peer-reviewed.
   SSRN: https://ssrn.com/abstract=5367197
 
 - How to Classify any Asset: Ontology, Anchor, Rail, Composability
-  Working paper.
+  Working paper, not peer-reviewed.
   SSRN: https://ssrn.com/abstract=5635610
 
 ## Returns: required and expected
 
 - Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold
-  Working paper.
+  Working paper, not peer-reviewed.
   In one sentence: Asks what return Bitcoin's holders should require for the market, concentration and mortality risk they carry (the MCM equation), tests the answer against delivered returns, and takes a census of cryptoasset deaths.
   SSRN: https://ssrn.com/abstract=7705239
   Replication package: https://github.com/apapadogiannis/bitcoin-required-return (archive: https://doi.org/10.5281/zenodo.24003938)
@@ -116,7 +113,7 @@ repository).
   Live tool: https://apapadogiannis.github.io/crypto-observatory/
 
 - Bitcoin's Expected Return: An Age Rule That Beats Current Practice
-  Working paper.
+  Working paper, not peer-reviewed.
   In one sentence: Tests the ways practitioners set Bitcoin's long-run expected return against the returns that followed since 2012; fixed rates and trailing averages fail, and an age rule, the power-law exponent divided by Bitcoin's age, comes closest.
   SSRN: https://ssrn.com/abstract=7705438
   Replication package: https://github.com/apapadogiannis/bitcoin-age-rule (archive: https://doi.org/10.5281/zenodo.24004326)
@@ -124,21 +121,21 @@ repository).
   Results as data: https://raw.githubusercontent.com/apapadogiannis/bitcoin-age-rule/main/outputs/results.json
 
 - On the Physics of Expected Asset Returns
-  Working paper.
+  Working paper, not peer-reviewed.
   SSRN: https://ssrn.com/abstract=6586879
 
 - Scarcity-Aligned Discounting in Asset Valuation
-  Working paper.
+  Working paper, not peer-reviewed.
   SSRN: https://ssrn.com/abstract=5368003
 
 - The Bitcoin Hurdle Fallacy: Why Risk Misalignment Distorts Valuation
-  Working paper.
+  Working paper, not peer-reviewed.
   SSRN: https://ssrn.com/abstract=5368091
 
 ## Valuation: the dual-risk framework
 
 - Beyond Discount Rates: A Valuation Framework for Unpriced Systematic Risk
-  The Journal of Investing, forthcoming 2027.
+  Peer-reviewed journal article: The Journal of Investing, forthcoming 2027.
   In one sentence: Splits an asset's expected return into a cost of capital and a gain of capital, the part that comes from misjudged future cash flows, and measures both for three US equity index funds, 2000 to 2023.
   SSRN: https://ssrn.com/abstract=5180040
   Replication package: https://github.com/apapadogiannis/beyond-discount-rates (archive: https://doi.org/10.5281/zenodo.24243060)
@@ -146,7 +143,7 @@ repository).
   Results as data: https://raw.githubusercontent.com/apapadogiannis/beyond-discount-rates/main/outputs/results.json
 
 - From Unified Discounting to Dual-Risk: A New Lens on DCF Valuation
-  Finance Research Open, 2026.
+  Peer-reviewed journal article: Finance Research Open, 2026.
   In one sentence: Separates a benchmark cost of capital, set outside the asset, from a valuation ratio K, fair value over valuation, and illustrates both on Bitcoin, US equities and gold.
   Published article: https://doi.org/10.1016/j.finr.2026.100096
   SSRN: https://ssrn.com/abstract=5252774
@@ -155,24 +152,24 @@ repository).
   Results as data: https://raw.githubusercontent.com/apapadogiannis/dual-risk-dcf/main/outputs/results.json
   Live tool: https://apapadogiannis.github.io/dual-risk-calculator/
 
-- A Dual-Risk Theory of Valuation: Bridging Discounting and Expectational Distortion
-  Discover Analytics, 2026.
+- A Dual-Risk Theory of Valuation: Separating Market-Based Discounting from Expectational Distortion
+  Peer-reviewed journal article: Discover Analytics, 2026.
   Published article: https://doi.org/10.1007/s44257-026-00062-9
   SSRN: https://ssrn.com/abstract=5226017
 
 - Rethinking Capital Budgeting: Embedding Ex-Ante Alpha in the Cost of Capital
-  Economics Bulletin, 2026.
+  Peer-reviewed journal article: Economics Bulletin, 2026.
   In one sentence: An effective cost of capital that adjusts the benchmark rate for the systematic part of the bias in cash-flow forecasts, so that valuation and the decision to accept a project are kept apart.
   Published article: https://ideas.repec.org/a/ebl/ecbull/eb-25-00176.html
 
 - Unifying DCF Valuation Across Traditional and Cryptoassets
-  Working paper.
+  Working paper, not peer-reviewed.
   SSRN: https://ssrn.com/abstract=5363661
 
 ## Value capture: what the holder actually keeps
 
 - Does AI break the case for broad index investing? Rent decay, private capital, and deflation
-  The Journal of Beta Investment Strategies, forthcoming 2027.
+  Peer-reviewed journal article: The Journal of Beta Investment Strategies, forthcoming 2027.
   In one sentence: Asks whether AI weakens the case for holding a broad capitalization-weighted index, and concludes that it does not: such an index follows the rents as AI moves them.
   SSRN: https://ssrn.com/abstract=6058896
   Replication package: https://github.com/apapadogiannis/ai-broad-index-investing (archive: https://doi.org/10.5281/zenodo.24240516)
@@ -180,7 +177,7 @@ repository).
   Results as data: https://raw.githubusercontent.com/apapadogiannis/ai-broad-index-investing/main/outputs/results.json
 
 - High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs
-  The Journal of Beta Investment Strategies, 2026.
+  Peer-reviewed journal article: The Journal of Beta Investment Strategies, 2026.
   In one sentence: Explains how covered-call funds turn upside into distributions, what that costs in rising markets, and what to look at in a fund.
   Published article: https://doi.org/10.3905/jbis.2026.001
   SSRN: https://ssrn.com/abstract=5370897
@@ -190,7 +187,7 @@ repository).
   Live tool: https://apapadogiannis.github.io/covered-call-monitor/
 
 - Crypto Treasury Companies: Financing Dynamics, Accretion Conditions, and Systemic Risk
-  Working paper.
+  Working paper, not peer-reviewed.
   SSRN: https://ssrn.com/abstract=5487486
 
 ## Licence and credit

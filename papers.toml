@@ -4,7 +4,8 @@
 #               (value creation, returns, valuation with the dual-risk framework, value capture)
 #   record    : repository of a paper record, for a paper with nothing to compute (conventions A1);
 #               not counted as a replication package
-#   venue     : journal and year, for published or forthcoming papers (leave out while under review)
+#   venue     : journal and year, for a paper published or accepted after peer review (leave out while
+#               under review). Every paper with a venue is shown and counted as peer-reviewed
 #   ssrn      : SSRN abstract number
 #   published : link to the published article
 #   repo      : name of the replication package on GitHub;  zenodo : its Zenodo DOI
@@ -30,7 +31,7 @@ name = "Agisilaos Papadogiannis"
 # One sentence under the name: what the work is.
 position = "Independent finance research on what an asset is worth and what return it must earn."
 # The second sentence under the name: the forms the work comes in.
-forms = "It comes in three forms: {tools_word} tools you can use now, {papers} papers, and the data and code to check {packages_word} of them."
+forms = "It comes in three forms: {tools_word} tools you can use now, {papers} papers, {published_word} of them peer-reviewed journal articles, and the data and code to check {packages_word} of them."
 # The plain row of links under it: label, address.
 links = [
   ["SSRN", "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7457522"],
@@ -40,10 +41,10 @@ links = [
   ["Email", "mailto:apapadogiannis@gmail.com"],
 ]
 # In the research section, under its introduction. {journals} is taken from this file.
-checked = "The journals: {journals}. In the {tools_word} tools and the {packages_word} replication packages, every published number is recomputed automatically, with machine-readable results and stated limits. The other {rest} papers are papers only."
+checked = "The peer-reviewed articles are in {journals}. In the {tools_word} tools and the {packages_word} replication packages, every published number is recomputed automatically, with machine-readable results and stated limits. The other {rest} papers are papers only."
 # Above the map.
 intro = [
-  "The papers are written to be used together, as one corpus on value. It follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. Of the {papers} papers, {published} are published or forthcoming and {packages} have a replication package with the data and code ({both} are both).",
+  "The papers are written to be used together, as one corpus on value. It follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. Of the {papers} papers, {published} are peer-reviewed: each was published or accepted by a journal after review by its referees. {packages} have a replication package with the data and code ({both} are both). The others are working papers.",
 ]
 # The section on skills. {skills} is counted.
 skills = [
@@ -180,7 +181,7 @@ figure_alt = "Realized gain of capital over three-year horizons for SPY, QQQ and
 summary = "A cost of capital for priced risk, plus a gain of capital when expected cash flows are misestimated."
 
 [[paper]]
-title = "A Dual-Risk Theory of Valuation: Bridging Discounting and Expectational Distortion"
+title = "A Dual-Risk Theory of Valuation: Separating Market-Based Discounting from Expectational Distortion"
 question = "valuation"
 venue = "Discover Analytics, 2026"
 ssrn = "5226017"
@@ -265,12 +266,12 @@ page = "https://apapadogiannis.github.io/covered-call-monitor/"
 paper = "High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs"
 paper_role = "Background"
 workflow = "check.yml"
-skill_for = "Covered-call funds: returns, written calls and flows"
+skill_for = "Covered-call funds: returns, payouts, written calls and flows"
 skill_ask = "How did JEPI do against its index fund over three years?"
 caption = "Five of the largest funds over three years, each beside its index fund."
 figure = "assets/covered-call-monitor.png"
 figure_alt = "Total return over three years of five large covered-call funds, each beside the index fund on the same market"
-summary = "What does the yield cost? For 87 US covered-call, buy-write and premium-income funds: the total return with distributions reinvested, beside an index fund where one applies, the options each fund had actually written, and the money moving in and out. Rebuilt every quarter from SEC filings."
+summary = "What does the yield cost? For 87 US covered-call, buy-write and premium-income funds: the total return with distributions reinvested, beside an index fund where one applies and a mix with the same market risk, what each fund paid out, the options it had actually written, and the money moving in and out. Rebuilt every quarter from SEC filings."
 
 [[tool]]
 title = "Dual-Risk DCF Calculator: the discount rate and the forecast, separated"

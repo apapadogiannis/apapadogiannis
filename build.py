@@ -206,6 +206,7 @@ def card(p):
         f'<p><img src="assets/q-{q}-tag.svg" height="22" alt="{name}"></p>',
         f'<p><b><a href="{url}">{esc(p["title"])}</a></b></p>',
         f'<p>{p["summary"]}</p>',
+        f'<p><sub>{"Peer-reviewed: " + esc(p["venue"]) if "venue" in p else "Working paper"}</sub></p>',
         f'<p><img src="{url}/actions/workflows/replicate.yml/badge.svg" alt="replication check"></p>',
         '</td>'])
 
@@ -214,7 +215,9 @@ def line(p):
     """One paper in a question's list: title, venue, then the links that exist."""
     text = f'<b>{esc(p["title"])}</b>' + ("" if p["title"].endswith("?") else ".")
     if "venue" in p:
-        text += f' {esc(p["venue"])}.'
+        text += f' <b>Peer-reviewed:</b> {esc(p["venue"])}.'
+    else:
+        text += " Working paper."
     links = []
     if "ssrn" in p:
         links.append(f'<a href="https://ssrn.com/abstract={p["ssrn"]}">SSRN</a>')
@@ -280,6 +283,7 @@ def build():
             sys.exit(f'tool "{t["title"]}" names a paper that is not listed: {t["paper"]}')
         src = by_title[t["paper"]]
         t["paper_url"] = src.get("published") or f'https://ssrn.com/abstract={src["ssrn"]}'
+        t["paper_standing"] = f'peer-reviewed, {src["venue"]}' if "venue" in src else "working paper"
     for p in papers:
         if "tool" in p:
             if p["tool"] not in pages:
@@ -311,13 +315,14 @@ def build():
     for key in ("tools", "packages"):  # as words, for the sentence under the name
         counts[key + "_word"] = words[counts[key]] if counts[key] < len(words) else str(counts[key])
     counts["Tools_word"] = counts["tools_word"].capitalize()
+    counts["published_word"] = words[counts["published"]] if counts["published"] < len(words) else str(counts["published"])
     out = [f'## {prof["name"]}', "", f'**{prof["position"]}** {prof["forms"].format(**counts)}', "",
            " · ".join(f'<a href="{url}">{esc(label)}</a>' for label, url in prof["links"]), "",
            "| If you want to | Start here |", "|---|---|",
            f'| get an answer to a question | [Tools](#tools): {counts["tools_word"]} pages, free, no account |',
            "| ask through your own AI assistant | [For your AI assistant](#for-your-ai-assistant): one skill, and a calculator it can call |",
            f'| read the research or check a number | [The research](#the-research-one-corpus-four-questions): {counts["papers"]} papers, '
-           f'{counts["packages"]} with data and code |', ""]
+           f'{counts["published"]} peer-reviewed, {counts["packages"]} with data and code |', ""]
 
     if tools:
         out += ["### Tools", "",
@@ -342,8 +347,7 @@ def build():
             f"curl -o ~/.claude/skills/{one}/SKILL.md {RAW}/{one_raw}",
             "```", "",
             "In another assistant, add the same file wherever it takes instructions or skills, or give it the "
-            "address of [llms.txt](llms.txt). Each tool also publishes a narrower skill for that tool alone: "
-            + "; ".join(f'[`{t["repo"]}`]({GH}/{t["repo"]}/blob/main/api/SKILL.md)' for t in tools) + ". "
+            "address of [llms.txt](llms.txt). It replaces the separate skills the tools used to publish. "
             "The Bitcoin and Ether price inputs come from Coin Metrics community "
             "data, which are for non-commercial use, as the Observatory's guide states.", "",
             "</details>", "",
@@ -403,7 +407,9 @@ def tools_file(tools):
             "latest_label": m.group(1) if m else "", "latest": m.group(2) if m else "",
             "caption": t.get("caption", ""), "picture_alt": t.get("drawn_alt") or t.get("figure_alt", ""),
             "picture_light": f'{raw}/assets/{t["repo"]}-light.svg', "picture_dark": f'{raw}/assets/{t["repo"]}-dark.svg',
-            "page": t["page"], "code": f'{GH}/{t["repo"]}'})
+            "page": t["page"], "code": f'{GH}/{t["repo"]}',
+            "paper": t["paper"], "paper_role": t.get("paper_role", "Method"), "paper_url": t["paper_url"],
+            "paper_standing": t["paper_standing"]})
     return json.dumps({"tools": rows}, indent=1, ensure_ascii=False) + "\n"
 
 
@@ -451,7 +457,10 @@ def skill(prof, papers, tools, counts):
               "  now, and the paper's for what the paper reports. Say which one you are giving.",
               "- A replication package is a fixed record of one paper. For current figures use the live tool the",
               "  guide points to.",
-              "- Several papers are working papers. Say so, and report a figure as that paper's result.",
+              f"- {counts['published']} of the {counts['papers']} papers are peer-reviewed journal articles, published or accepted; the index marks each one.",
+              "  The others are working papers. Say which a paper is, and report a figure as that paper's result.",
+              "- For the calculator: if the tools of the MCP server `dual-risk` are available to you, use them and do",
+              "  not do the arithmetic yourself.",
               "- The results are under CC BY 4.0, whose one condition is credit: cite the paper.",
               "- A published article belongs to its publisher. The packages hold its numbers, not its text.", "",
               f"Page for people: {GH}", ""]
@@ -464,7 +473,8 @@ def index(prof, papers, tools, live, counts):
     out = [f'# {prof["name"]}: open finance research', "",
            f"In the {counts['tools_word']} tools and the {counts['packages_word']} replication packages, every published number is recomputed "
            "automatically, with machine-readable results and stated limits. "
-           f"The other {counts['rest']} of the {counts['papers']} papers are papers only: they are listed here with their addresses.", "",
+           f"The other {counts['rest']} of the {counts['papers']} papers are papers only: they are listed here with their addresses. "
+           f"{counts['published']} of the {counts['papers']} papers are peer-reviewed journal articles, published or accepted; each entry says which.", "",
            "> An index of this account for AI agents and other programs: live tools, papers and replication",
            "> packages. Where an entry has a guide, the guide says what the repository holds, what it adds,",
            "> which file to use, what not to use it for, and how to cite it.", "",
@@ -492,16 +502,14 @@ def index(prof, papers, tools, live, counts):
     out += ["## Skill", "",
             "One instruction file a reader adds to their own AI agent covers the whole account, tools and papers. It",
             "says when to use the work, where the files are and how to read them, and holds no figures.", "",
-            f'- papadogiannis-finance-research: {raw}/apapadogiannis/main/skill/SKILL.md', "",
-            "Each tool also publishes a narrower skill for that tool alone, beside its guide (api/SKILL.md in its",
-            "repository).", ""]
+            f'- papadogiannis-finance-research: {raw}/apapadogiannis/main/skill/SKILL.md', ""]
     for k, name, what in QUESTIONS:
         out += [f"## {name}: {what}", ""]
         mine = [p for p in papers if p["question"] == k]
         mine.sort(key=lambda p: (not p.get("guide"), "repo" not in p, "record" not in p))
         for p in mine:
             out.append(f'- {p["title"]}')
-            out.append(f'  {p["venue"]}.' if "venue" in p else "  Working paper.")
+            out.append(f'  Peer-reviewed journal article: {p["venue"]}.' if "venue" in p else "  Working paper, not peer-reviewed.")
             if "finding" in p:
                 out.append(f'  In one sentence: {p["finding"]}')
             if "published" in p:

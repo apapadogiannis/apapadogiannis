@@ -11,12 +11,16 @@
    "picture_light": "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/assets/crypto-observatory-light.svg",
    "picture_dark": "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/assets/crypto-observatory-dark.svg",
    "page": "https://apapadogiannis.github.io/crypto-observatory/",
-   "code": "https://github.com/apapadogiannis/crypto-observatory"
+   "code": "https://github.com/apapadogiannis/crypto-observatory",
+   "paper": "Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold",
+   "paper_role": "Method",
+   "paper_url": "https://ssrn.com/abstract=7705239",
+   "paper_standing": "working paper"
   },
   {
    "name": "Covered-Call Monitor",
    "subtitle": "returns, overlays and flows from SEC filings",
-   "summary": "What does the yield cost? For 87 US covered-call, buy-write and premium-income funds: the total return with distributions reinvested, beside an index fund where one applies, the options each fund had actually written, and the money moving in and out. Rebuilt every quarter from SEC filings.",
+   "summary": "What does the yield cost? For 87 US covered-call, buy-write and premium-income funds: the total return with distributions reinvested, beside an index fund where one applies and a mix with the same market risk, what each fund paid out, the options it had actually written, and the money moving in and out. Rebuilt every quarter from SEC filings.",
    "latest_label": "Latest, 12 months to June 2026:",
    "latest": "87 covered-call funds are followed. 18 of them can be set beside an index fund on the same market, and all 18 returned less than it, by 0.8 to 19.7 percentage points (median 5.5), distributions reinvested. The index funds returned 22% to 41% over these months: a market that rises this fast is where a cap on the upside costs most.",
    "caption": "Five of the largest funds over three years, each beside its index fund.",
@@ -24,7 +28,11 @@
    "picture_light": "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/assets/covered-call-monitor-light.svg",
    "picture_dark": "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/assets/covered-call-monitor-dark.svg",
    "page": "https://apapadogiannis.github.io/covered-call-monitor/",
-   "code": "https://github.com/apapadogiannis/covered-call-monitor"
+   "code": "https://github.com/apapadogiannis/covered-call-monitor",
+   "paper": "High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs",
+   "paper_role": "Background",
+   "paper_url": "https://doi.org/10.3905/jbis.2026.001",
+   "paper_standing": "peer-reviewed, The Journal of Beta Investment Strategies, 2026"
   },
   {
    "name": "Dual-Risk DCF Calculator",
@@ -37,7 +45,11 @@
    "picture_light": "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/assets/dual-risk-calculator-light.svg",
    "picture_dark": "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/assets/dual-risk-calculator-dark.svg",
    "page": "https://apapadogiannis.github.io/dual-risk-calculator/",
-   "code": "https://github.com/apapadogiannis/dual-risk-calculator"
+   "code": "https://github.com/apapadogiannis/dual-risk-calculator",
+   "paper": "From Unified Discounting to Dual-Risk: A New Lens on DCF Valuation",
+   "paper_role": "Method",
+   "paper_url": "https://doi.org/10.1016/j.finr.2026.100096",
+   "paper_standing": "peer-reviewed, Finance Research Open, 2026"
   }
  ]
 }
