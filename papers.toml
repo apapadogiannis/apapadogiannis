@@ -178,8 +178,11 @@ published = "https://doi.org/10.1007/s44257-026-00062-9"
 title = "From Unified Discounting to Dual-Risk: A New Lens on DCF Valuation"
 question = "valuation"
 venue = "Finance Research Open, 2026"
-ssrn = "6127866"
+ssrn = "5252774"
 published = "https://doi.org/10.1016/j.finr.2026.100096"
+repo = "dual-risk-dcf"
+guide = true
+zenodo = "10.5281/zenodo.24465118"
 
 [[paper]]
 title = "Rethinking Capital Budgeting: Embedding Ex-Ante Alpha in the Cost of Capital"

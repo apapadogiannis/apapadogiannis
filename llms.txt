@@ -123,15 +123,18 @@ are and how to read them, and holds no figures.
   Guide: https://raw.githubusercontent.com/apapadogiannis/beyond-discount-rates/main/llms.txt
   Results as data: https://raw.githubusercontent.com/apapadogiannis/beyond-discount-rates/main/outputs/results.json
 
+- From Unified Discounting to Dual-Risk: A New Lens on DCF Valuation
+  Finance Research Open, 2026.
+  Published article: https://doi.org/10.1016/j.finr.2026.100096
+  SSRN: https://ssrn.com/abstract=5252774
+  Replication package: https://github.com/apapadogiannis/dual-risk-dcf (archive: https://doi.org/10.5281/zenodo.24465118)
+  Guide: https://raw.githubusercontent.com/apapadogiannis/dual-risk-dcf/main/llms.txt
+  Results as data: https://raw.githubusercontent.com/apapadogiannis/dual-risk-dcf/main/outputs/results.json
+
 - A Dual-Risk Theory of Valuation: Bridging Discounting and Expectational Distortion
   Discover Analytics, 2026.
   Published article: https://doi.org/10.1007/s44257-026-00062-9
   SSRN: https://ssrn.com/abstract=5226017
-
-- From Unified Discounting to Dual-Risk: A New Lens on DCF Valuation
-  Finance Research Open, 2026.
-  Published article: https://doi.org/10.1016/j.finr.2026.100096
-  SSRN: https://ssrn.com/abstract=6127866
 
 - Rethinking Capital Budgeting: Embedding Ex-Ante Alpha in the Cost of Capital
   Working paper.

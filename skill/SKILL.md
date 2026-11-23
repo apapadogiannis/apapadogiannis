@@ -37,6 +37,7 @@ Papers with a replication package:
 - Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold
 - Bitcoin's Expected Return: An Age Rule That Beats Current Practice
 - Beyond Discount Rates: A Valuation Framework for Unpriced Systematic Risk
+- From Unified Discounting to Dual-Risk: A New Lens on DCF Valuation
 - Does AI break the case for broad index investing? Rent decay, private capital, and deflation
 - High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs
 

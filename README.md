@@ -1,6 +1,6 @@
 ## Agisilaos Papadogiannis
 
-**Independent finance research on what an asset is worth and what return it must earn. Two live tools recompute the answers from current public data, and eight of the 21 papers come with the data and code to check every number.**
+**Independent finance research on what an asset is worth and what return it must earn. Two live tools recompute the answers from current public data, and nine of the 21 papers come with the data and code to check every number.**
 
 <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7457522">SSRN</a> · <a href="https://scholar.google.com/citations?user=RihXr08AAAAJ">Google Scholar</a> · <a href="https://orcid.org/0009-0002-7753-7052">ORCID</a> · <a href="https://scarcitythinker.substack.com">Substack</a> · <a href="mailto:apapadogiannis@gmail.com">Email</a>
 
@@ -53,7 +53,7 @@ In another assistant, add the same file wherever it takes instructions or skills
 
 ### The research: one corpus, four questions
 
-The papers are written to be used together, as one corpus on value. It follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. Of the 21 papers, 9 are published or forthcoming and 8 have a replication package with the data and code (5 are both).
+The papers are written to be used together, as one corpus on value. It follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. Of the 21 papers, 9 are published or forthcoming and 9 have a replication package with the data and code (6 are both).
 
 <p align="center">
 <picture>
@@ -134,11 +134,11 @@ Click a line to open its list. A green badge means the package's stored results 
 </details>
 
 <details>
-<summary><img src="assets/q-valuation-dot.svg" width="12" height="12" alt=""> <b>Valuation</b>: the dual-risk framework (5 papers, 1 with a replication package)</summary>
+<summary><img src="assets/q-valuation-dot.svg" width="12" height="12" alt=""> <b>Valuation</b>: the dual-risk framework (5 papers, 2 with a replication package)</summary>
 <ul>
 <li><b>Beyond Discount Rates: A Valuation Framework for Unpriced Systematic Risk</b>. The Journal of Investing, forthcoming 2027. <a href="https://ssrn.com/abstract=5180040">SSRN</a> · <a href="https://github.com/apapadogiannis/beyond-discount-rates">Replication package</a> <a href="https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></li>
+<li><b>From Unified Discounting to Dual-Risk: A New Lens on DCF Valuation</b>. Finance Research Open, 2026. <a href="https://ssrn.com/abstract=5252774">SSRN</a> · <a href="https://doi.org/10.1016/j.finr.2026.100096">Published version</a> · <a href="https://github.com/apapadogiannis/dual-risk-dcf">Replication package</a> <a href="https://github.com/apapadogiannis/dual-risk-dcf/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/dual-risk-dcf/actions/workflows/replicate.yml/badge.svg" alt="replication"></a></li>
 <li><b>A Dual-Risk Theory of Valuation: Bridging Discounting and Expectational Distortion</b>. Discover Analytics, 2026. <a href="https://ssrn.com/abstract=5226017">SSRN</a> · <a href="https://doi.org/10.1007/s44257-026-00062-9">Published version</a></li>
-<li><b>From Unified Discounting to Dual-Risk: A New Lens on DCF Valuation</b>. Finance Research Open, 2026. <a href="https://ssrn.com/abstract=6127866">SSRN</a> · <a href="https://doi.org/10.1016/j.finr.2026.100096">Published version</a></li>
 <li><b>Rethinking Capital Budgeting: Embedding Ex-Ante Alpha in the Cost of Capital</b>.</li>
 <li><b>Unifying DCF Valuation Across Traditional and Cryptoassets</b>. <a href="https://ssrn.com/abstract=5363661">SSRN</a></li>
 </ul>
