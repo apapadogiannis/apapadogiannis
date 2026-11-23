@@ -21,7 +21,7 @@ jobs:
         run: python3 build.py --fetch
       - name: Store the page if a figure has changed
         run: |
-          git add live.json README.md llms.txt skill assets
+          git add live.json README.md llms.txt tools.json skill assets
           if git diff --cached --quiet; then echo "No new figures."; exit 0; fi
           git config user.name "Agisilaos Papadogiannis"
           git config user.email "apapadogiannis@gmail.com"

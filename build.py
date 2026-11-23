@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Writes README.md, the profile page, and llms.txt, the index for AI agents and programs, from papers.toml.
+"""Writes README.md, the profile page, llms.txt, the index for AI agents and programs, and tools.json, the
+live tools as data for the tools page (apapadogiannis.github.io), from papers.toml.
 
     python3 build.py           # rewrite README.md and llms.txt
     python3 build.py --check   # exit 1 if either is out of date (used by the automated check)
@@ -11,6 +12,7 @@ import html
 import json
 import math
 import statistics
+import re
 import sys
 import tomllib
 from pathlib import Path
@@ -319,7 +321,24 @@ def build():
     out += ["### About", "", prof["about"], ""]
 
     return {"README.md": "\n".join(out), "llms.txt": index(prof, papers, tools),
-            "skill/SKILL.md": skill(prof, papers, tools), **charts.pictures(live)}
+            "skill/SKILL.md": skill(prof, papers, tools), "tools.json": tools_file(tools),
+            **charts.pictures(live)}
+
+
+def tools_file(tools):
+    """tools.json: the live tools as data. The tools page, apapadogiannis.github.io, draws its cards from this file."""
+    raw = "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main"
+    rows = []
+    for t in tools:
+        name, _, rest = t["title"].partition(": ")
+        m = re.fullmatch(r"<b>(.*?)</b> (.*)", t["latest"] or "")
+        rows.append({
+            "name": name, "subtitle": rest, "summary": t["summary"],
+            "latest_label": m.group(1) if m else "", "latest": m.group(2) if m else "",
+            "caption": t.get("caption", ""), "picture_alt": t.get("drawn_alt") or t.get("figure_alt", ""),
+            "picture_light": f'{raw}/assets/{t["repo"]}-light.svg', "picture_dark": f'{raw}/assets/{t["repo"]}-dark.svg',
+            "page": t["page"], "code": f'{GH}/{t["repo"]}'})
+    return json.dumps({"tools": rows}, indent=1, ensure_ascii=False) + "\n"
 
 
 def skill(prof, papers, tools):

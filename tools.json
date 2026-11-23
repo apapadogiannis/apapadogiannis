@@ -1,0 +1,30 @@
+{
+ "tools": [
+  {
+   "name": "Crypto Observatory",
+   "subtitle": "required returns, risks and survival",
+   "summary": "What return should Bitcoin's holders require, and did they get it? The answer is recomputed every month from public data, with the equation explained term by term, the tests of fit, and a census of cryptoasset deaths.",
+   "latest_label": "Latest, October 2026:",
+   "latest": "Bitcoin's required return is 20.1% a year: risk-free 4.9, market 5.8, concentration 7.5, mortality 1.9. Across the range of the model's inputs it runs from 11.8% to 28.5%.",
+   "caption": "The required return since 2012, and what each period delivered against it.",
+   "picture_alt": "Bitcoin's required return since 2012 as a band with its midpoint, with the average required and delivered return of each three-year period marked on it",
+   "picture_light": "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/assets/crypto-observatory-light.svg",
+   "picture_dark": "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/assets/crypto-observatory-dark.svg",
+   "page": "https://apapadogiannis.github.io/crypto-observatory/",
+   "code": "https://github.com/apapadogiannis/crypto-observatory"
+  },
+  {
+   "name": "Covered-Call Monitor",
+   "subtitle": "returns, overlays and flows from SEC filings",
+   "summary": "What does the yield cost? For 87 US covered-call, buy-write and premium-income funds: the total return with distributions reinvested, beside an index fund where one applies, the options each fund had actually written, and the money moving in and out. Rebuilt every quarter from SEC filings.",
+   "latest_label": "Latest, 12 months to June 2026:",
+   "latest": "all 18 funds that have an index fund on the same market beside them returned less than it, by 0.8 to 19.7 percentage points (median 5.5), distributions reinvested. The index funds returned 22% to 41% over these months: a market that rises this fast is where a cap on the upside costs most.",
+   "caption": "Five of the largest funds over three years, each beside its index fund.",
+   "picture_alt": "Total return over 3 years of 5 large covered-call funds, each beside the index fund on the same market",
+   "picture_light": "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/assets/covered-call-monitor-light.svg",
+   "picture_dark": "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/assets/covered-call-monitor-dark.svg",
+   "page": "https://apapadogiannis.github.io/covered-call-monitor/",
+   "code": "https://github.com/apapadogiannis/covered-call-monitor"
+  }
+ ]
+}
