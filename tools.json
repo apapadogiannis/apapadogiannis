@@ -18,7 +18,7 @@
    "subtitle": "returns, overlays and flows from SEC filings",
    "summary": "What does the yield cost? For 87 US covered-call, buy-write and premium-income funds: the total return with distributions reinvested, beside an index fund where one applies, the options each fund had actually written, and the money moving in and out. Rebuilt every quarter from SEC filings.",
    "latest_label": "Latest, 12 months to June 2026:",
-   "latest": "all 18 funds that have an index fund on the same market beside them returned less than it, by 0.8 to 19.7 percentage points (median 5.5), distributions reinvested. The index funds returned 22% to 41% over these months: a market that rises this fast is where a cap on the upside costs most.",
+   "latest": "87 covered-call funds are followed. 18 of them can be set beside an index fund on the same market, and all 18 returned less than it, by 0.8 to 19.7 percentage points (median 5.5), distributions reinvested. The index funds returned 22% to 41% over these months: a market that rises this fast is where a cap on the upside costs most.",
    "caption": "Five of the largest funds over three years, each beside its index fund.",
    "picture_alt": "Total return over 3 years of 5 large covered-call funds, each beside the index fund on the same market",
    "picture_light": "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/assets/covered-call-monitor-light.svg",

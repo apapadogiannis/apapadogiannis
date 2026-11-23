@@ -28,9 +28,9 @@ Each answers one question, from current public data or from your own numbers. Th
 <td width="33%" valign="top">
 <h4>Covered-Call Monitor</h4>
 <p>What does the yield of a covered-call fund cost against its index fund?</p>
-<p><sub>Funds that returned less than their index fund, 12 months to June 2026</sub></p>
-<h3>18 of 18</h3>
-<p><sub>By 5.5 percentage points at the median, distributions reinvested. 87 funds, rebuilt every quarter from SEC filings.</sub></p>
+<p><sub>Covered-call funds followed, each from its SEC filings</sub></p>
+<h3>87 funds</h3>
+<p><sub>18 of them can be set beside an index fund on the same market. Over the 12 months to June 2026, all 18 returned less than it, by 5.5 percentage points at the median, distributions reinvested. Rebuilt every quarter.</sub></p>
 <p><b><a href="https://apapadogiannis.github.io/covered-call-monitor/">Open the tool</a></b></p>
 <p><img src="https://github.com/apapadogiannis/covered-call-monitor/actions/workflows/check.yml/badge.svg" alt="automated check"></p>
 </td>

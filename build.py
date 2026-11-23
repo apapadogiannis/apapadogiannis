@@ -114,8 +114,8 @@ def latest(repo, live):
     if repo == "covered-call-monitor":
         n, less = d["beside_an_index_fund"], d["returned_less"]
         who = f"all {n}" if less == n else f"{less} of the {n}"
-        text = (f'<b>Latest, 12 months to {month(d["to"])}:</b> {who} funds that have an index fund on the same market '
-                f'beside them returned less than it')
+        text = (f'<b>Latest, 12 months to {month(d["to"])}:</b> {d["funds"]} covered-call funds are followed. {n} of them '
+                f'can be set beside an index fund on the same market, and {who} returned less than it')
         if less == n:
             text += (f', by {-d["smallest_gap"]:.1f} to {-d["largest_gap"]:.1f} percentage points '
                      f'(median {-d["median_gap"]:.1f})')
@@ -144,9 +144,11 @@ def headline(repo, live):
                 f'From {r["lower"]:.1f}% to {r["upper"]:.1f}% across the model\'s inputs. Recomputed every month.')
     if repo == "covered-call-monitor":
         n, less = d["beside_an_index_fund"], d["returned_less"]
-        return (f'Funds that returned less than their index fund, 12 months to {month(d["to"])}', f'{less} of {n}',
-                f'By {-d["median_gap"]:.1f} percentage points at the median, distributions reinvested. '
-                f'{d["funds"]} funds, rebuilt every quarter from SEC filings.')
+        who = f"all {n}" if less == n else f"{less} of the {n}"
+        return ('Covered-call funds followed, each from its SEC filings', f'{d["funds"]} funds',
+                f'{n} of them can be set beside an index fund on the same market. Over the 12 months to '
+                f'{month(d["to"])}, {who} returned less than it, by {-d["median_gap"]:.1f} percentage points at the '
+                f'median, distributions reinvested. Rebuilt every quarter.')
     if repo == "dual-risk-calculator":
         r, c = d["results"], d["inputs"]["c"]
         return (f'Example: a forecast {(1 - r["v_own"] / r["v_fair"]) * 100:.0f}% too low, valued at {c * 100:.0f}% over {r["horizon"]:.0f} years',
