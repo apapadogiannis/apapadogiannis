@@ -74,9 +74,9 @@ The others work the same way: `covered-call-monitor` from `https://raw.githubuse
 
 In another assistant, add the same file wherever it takes instructions or skills, or give it the address of [llms.txt](llms.txt). The Bitcoin and Ether price inputs come from Coin Metrics community data, which are for non-commercial use, as the Observatory's skill states.
 
-The calculator can also be called directly: it runs as an MCP server on your own machine, with the install line in [its repository](https://github.com/apapadogiannis/dual-risk-calculator#use-it-from-your-own-ai-agent).
-
 </details>
+
+**The calculator is also an MCP server.** A skill tells an assistant where to read figures. An MCP server gives it a tool to call: the assistant sends your numbers and gets the result computed, not estimated. It runs on your own machine, and the install line is in [its repository](https://github.com/apapadogiannis/dual-risk-calculator#use-it-from-your-own-ai-agent).
 
 <sub>AI agents and programs: start at [llms.txt](llms.txt), the index of every tool, paper and data file.</sub>
 
