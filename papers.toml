@@ -25,7 +25,7 @@
 [profile]
 name = "Agisilaos Papadogiannis"
 # One sentence under the name: what the work is.
-position = "Independent finance research on what an asset is worth and what return it must earn. {Tools_word} live tools recompute the answers from current public data, and {packages_word} papers come with the data and code to check every number."
+position = "Independent finance research on what an asset is worth and what return it must earn. {Tools_word} live tools recompute the answers from current public data, and {packages_word} of the {papers} papers come with the data and code to check every number."
 # The plain row of links under it: label, address.
 links = [
   ["SSRN", "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7457522"],
@@ -35,7 +35,7 @@ links = [
   ["Email", "mailto:apapadogiannis@gmail.com"],
 ]
 # Under the links. {papers}, {published}, {packages}, {both}, {tools}, {rest} and {journals} are taken from this file.
-checked = "{published} of the {papers} papers are published or forthcoming in peer-reviewed journals: {journals}. In the tools and replication packages, every published number is recomputed automatically, with machine-readable results and stated limits."
+checked = "{published} of the {papers} are published or forthcoming in peer-reviewed journals: {journals}. In the tools and replication packages, every published number is recomputed automatically, with machine-readable results and stated limits."
 # Above the map.
 intro = [
   "The papers are written to be used together, as one corpus on value. It follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. Of the {papers} papers, {published} are published or forthcoming and {packages} have a replication package with the data and code ({both} are both).",

@@ -1,10 +1,10 @@
 ## Agisilaos Papadogiannis
 
-**Independent finance research on what an asset is worth and what return it must earn. Two live tools recompute the answers from current public data, and eight papers come with the data and code to check every number.**
+**Independent finance research on what an asset is worth and what return it must earn. Two live tools recompute the answers from current public data, and eight of the 21 papers come with the data and code to check every number.**
 
 <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7457522">SSRN</a> · <a href="https://scholar.google.com/citations?user=RihXr08AAAAJ">Google Scholar</a> · <a href="https://orcid.org/0009-0002-7753-7052">ORCID</a> · <a href="https://scarcitythinker.substack.com">Substack</a> · <a href="mailto:apapadogiannis@gmail.com">Email</a>
 
-9 of the 21 papers are published or forthcoming in peer-reviewed journals: Financial Economics Letters, Frontiers in Blockchain, Asian Review of Political Economy, Asian Economics Letters, The Journal of Investing, Discover Analytics, Finance Research Open and The Journal of Beta Investment Strategies. In the tools and replication packages, every published number is recomputed automatically, with machine-readable results and stated limits.
+9 of the 21 are published or forthcoming in peer-reviewed journals: Financial Economics Letters, Frontiers in Blockchain, Asian Review of Political Economy, Asian Economics Letters, The Journal of Investing, Discover Analytics, Finance Research Open and The Journal of Beta Investment Strategies. In the tools and replication packages, every published number is recomputed automatically, with machine-readable results and stated limits.
 
 <sub>AI agents and programs: start at [llms.txt](llms.txt), the index of every tool, paper and data file.</sub>
 
