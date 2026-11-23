@@ -140,12 +140,12 @@ def calculator(d, c):
     out.append(f'<line x1="20" y1="196" x2="{W - 20}" y2="196" stroke="{c["line"]}" stroke-width="1"/>')
     tiles = ((f'{r["K"]:.3f}', "Valuation ratio K", "fair value divided by the valuation examined"),
              (f'{r["gain"]:+.3f}', "Gain of capital g", f'per unit invested, over the {r["horizon"]:.0f} years'),
-             (f'{r["c_eff"] * 100:.1f}%', "Effective rate", f'the one rate that would hide the gap, against {i["c"] * 100:.0f}%'))
+             (f'{r["c_eff_stream"] * 100:.1f}%', "Effective rate", f'the one rate that would hide the gap, against {i["c"] * 100:.0f}%'))
     for k, (big, name, note) in enumerate(tiles):
         x = 20 + k * 340
         out += [text(x, 262, big, 44, c["ink"], 700), text(x, 296, name, 15, c["ink"], 600), text(x, 318, note, 12.5, c["ink2"])]
-    out.append(text(20, 372, f'Solved on the yearly amounts and not in closed form, the effective rate is {r["c_eff_stream"] * 100:.1f}%. '
-                             'The calculator shows both.', 12.5, c["mut"]))
+    out.append(text(20, 372, f"Solved on the yearly amounts. The article's closed form, exact for a single payoff at the horizon, "
+                             f'gives {r["c_eff"] * 100:.1f}%. The calculator shows both.', 12.5, c["mut"]))
     return frame("Dual-Risk DCF Calculator: a worked example", d["alt"], out)
 
 

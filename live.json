@@ -1129,7 +1129,16 @@
      "delivered": 37.3
     }
    ]
-  }
+  },
+  "paper": {
+   "what": "Required return on Bitcoin for its current holders, 2026",
+   "value": 18.3,
+   "range": [
+    15.4,
+    21.9
+   ]
+  },
+  "data_to": "2026-11-19"
  },
  "covered-call-monitor": {
   "funds": 87,
@@ -1181,7 +1190,8 @@
      "benchmark": 102.7156034824098
     }
    ]
-  }
+  },
+  "reports_to": "2026-07-31"
  },
  "dual-risk-calculator": {
   "inputs": {
@@ -1264,5 +1274,6 @@
     "c_eff_stream": 0.0412410111
    }
   }
- }
+ },
+ "read_on": "2026-11-23"
 }

@@ -96,6 +96,12 @@ def fetch():
         "alt": "Two bars: the value of a benchmark forecast and of a forecast 10% lower, both discounted at the same "
                "benchmark rate, with the valuation ratio K, the gain of capital and the effective rate",
         "inputs": {"c": ex["inputs"]["c"]}, "results": ex["results"]}}
+    paper = get("bitcoin-required-return/main/outputs/results.json")["headline"][0]
+    live["crypto-observatory"]["paper"] = {"what": paper["what"], "value": paper["value"], "range": paper["range"]}
+    live["crypto-observatory"]["data_to"] = obs["meta"]["data_to"]
+    live["covered-call-monitor"]["reports_to"] = get("covered-call-monitor/main/api/index.json")["reports_to"]
+    from datetime import date
+    live["read_on"] = date.today().isoformat()
     (HERE / "live.json").write_text(json.dumps(live, indent=1) + "\n", encoding="utf-8")
     print("wrote live.json")
 
@@ -110,7 +116,7 @@ def latest(repo, live):
         return (f'<b>Latest, {month(d["month_end"])}:</b> Bitcoin\'s required return is {r["midpoint"]:.1f}% a year: '
                 f'risk-free {t["risk_free"]:.1f}, market {t["market"]:.1f}, concentration {t["concentration"]:.1f}, '
                 f'mortality {t["mortality"]:.1f}. Across the range of the model\'s inputs it runs from {r["lower"]:.1f}% '
-                f'to {r["upper"]:.1f}%.')
+                f'to {r["upper"]:.1f}%.' + two_figures(d))
     if repo == "covered-call-monitor":
         n, less = d["beside_an_index_fund"], d["returned_less"]
         who = f"all {n}" if less == n else f"{less} of the {n}"
@@ -129,8 +135,18 @@ def latest(repo, live):
         r, c = d["results"], d["inputs"]["c"]
         return (f'<b>Worked example:</b> a forecast {(1 - r["v_own"] / r["v_fair"]) * 100:.0f}% below the benchmark, at a '
                 f'benchmark rate of {c * 100:.0f}% over {r["horizon"]:.0f} years, gives a valuation ratio K of {r["K"]:.3f} and a '
-                f'gain of capital of {r["gain"]:+.3f}. One discount rate would have to fall to {r["c_eff"] * 100:.1f}% to hide the gap.')
+                f'gain of capital of {r["gain"]:+.3f}. One discount rate would have to fall to {r["c_eff_stream"] * 100:.1f}% '
+                f'to hide the gap ({r["c_eff"] * 100:.1f}% by the article\'s closed form, which is exact for a single payoff).')
     return ""
+
+
+def two_figures(d):
+    """Why the tool's figure and the paper's differ: one sentence, or nothing if the paper's is not on file."""
+    p = d.get("paper")
+    if not p:
+        return ""
+    return (f' This is the midpoint between the two edges of that range. The paper\'s {p["value"]:.1f}% for {p["what"][-4:]} is '
+            f'another measure of the same model: the median when all inputs are varied together.')
 
 
 def headline(repo, live):
@@ -141,7 +157,9 @@ def headline(repo, live):
     if repo == "crypto-observatory":
         r = d["required"]
         return (f'Bitcoin\'s required return, {month(d["month_end"])}', f'{r["midpoint"]:.1f}% a year',
-                f'From {r["lower"]:.1f}% to {r["upper"]:.1f}% across the model\'s inputs. Recomputed every month.')
+                f'The midpoint of a range from {r["lower"]:.1f}% to {r["upper"]:.1f}% across the model\'s inputs. '
+                + (f'The paper\'s {d["paper"]["value"]:.1f}% is the median over the same inputs. ' if d.get("paper") else "")
+                + 'Recomputed every month.')
     if repo == "covered-call-monitor":
         n, less = d["beside_an_index_fund"], d["returned_less"]
         who = f"all {n}" if less == n else f"{less} of the {n}"
@@ -153,7 +171,7 @@ def headline(repo, live):
         r, c = d["results"], d["inputs"]["c"]
         return (f'Example: a forecast {(1 - r["v_own"] / r["v_fair"]) * 100:.0f}% too low, valued at {c * 100:.0f}% over {r["horizon"]:.0f} years',
                 f'K = {r["K"]:.2f}',
-                f'One discount rate would have to fall to {r["c_eff"] * 100:.1f}% to hide the gap. Enter your own forecasts or prices.')
+                f'One discount rate would have to fall to {r["c_eff_stream"] * 100:.1f}% to hide the gap. Enter your own forecasts or prices.')
     return None
 
 
@@ -216,6 +234,8 @@ def line(p):
         links.append(f'<a href="{p["tool_page"]}">{p["tool_label"]}</a>')
     if links:
         text += " " + " · ".join(links)
+    if "finding" in p:
+        text += f'<br><sub>{esc(p["finding"])}</sub>'
     return f"<li>{text}</li>"
 
 
@@ -282,7 +302,6 @@ def build():
     words = "zero one two three four five six seven eight nine ten eleven twelve".split()
     counts["rest"] = counts["papers"] - counts["packages"]
     counts["both"] = sum("repo" in p and "venue" in p for p in papers)
-    counts["skills"] = words[len(tools) + 1]
     journals = []
     for p in papers:
         name = p.get("venue", "").split(",")[0].strip()
@@ -296,7 +315,7 @@ def build():
            " · ".join(f'<a href="{url}">{esc(label)}</a>' for label, url in prof["links"]), "",
            "| If you want to | Start here |", "|---|---|",
            f'| get an answer to a question | [Tools](#tools): {counts["tools_word"]} pages, free, no account |',
-           "| ask through your own AI assistant | [For your AI assistant](#for-your-ai-assistant): skills and a calculator it can call |",
+           "| ask through your own AI assistant | [For your AI assistant](#for-your-ai-assistant): one skill, and a calculator it can call |",
            f'| read the research or check a number | [The research](#the-research-one-corpus-four-questions): {counts["papers"]} papers, '
            f'{counts["packages"]} with data and code |', ""]
 
@@ -308,27 +327,25 @@ def build():
         out += ["</tr>", "</table>", "",
                 f'All {counts["tools_word"]} on one page, each with its chart: **[apapadogiannis.github.io](https://apapadogiannis.github.io/)**', ""]
 
-    rows = [(t["repo"], t["skill_for"], t["skill_ask"], f'{t["repo"]}/main/api/SKILL.md', f'{t["repo"]}/blob/main/api/SKILL.md')
-            for t in tools]
-    rows.append(("papadogiannis-finance-research", prof["skill_for"], prof["skill_ask"],
-                 "apapadogiannis/main/skill/SKILL.md", "apapadogiannis/blob/main/skill/SKILL.md"))
+    rows = [(t["skill_for"], t["skill_ask"]) for t in tools] + [(prof["skill_for"], prof["skill_ask"])]
+    one, one_raw = "papadogiannis-finance-research", "apapadogiannis/main/skill/SKILL.md"
     out += ["### For your AI assistant", ""]
     for para in prof["skills"]:
         out += [para.format(**counts), ""]
-    out += ["<table>", "<tr><th>Skill</th><th>What it answers</th><th>A question to try</th></tr>"]
-    out += [f'<tr><td><a href="{GH}/{blob}"><code>{name}</code></a></td><td>{esc(what)}</td><td>“{esc(ask)}”</td></tr>'
-            for name, what, ask, _, blob in rows]
-    out += ["</table>", "", "<details>", "<summary>How to add one</summary>", "",
-            "In Claude Code, one file in one folder. For example:", "", "```",
-            *[line for name, _, _, raw, _ in rows[:1] for line in (
-                f"mkdir -p ~/.claude/skills/{name}",
-                f"curl -o ~/.claude/skills/{name}/SKILL.md {RAW}/{raw}")],
+    out += [f'**One skill covers everything here:** <a href="{GH}/apapadogiannis/blob/main/skill/SKILL.md"><code>{one}</code></a>. '
+            "With it your assistant can answer, for example:", "",
+            "<table>", "<tr><th>What it answers</th><th>A question to try</th></tr>"]
+    out += [f'<tr><td>{esc(what)}</td><td>“{esc(ask)}”</td></tr>' for what, ask in rows]
+    out += ["</table>", "", "<details>", "<summary>How to add it</summary>", "",
+            "In Claude Code, one file in one folder:", "", "```",
+            f"mkdir -p ~/.claude/skills/{one}",
+            f"curl -o ~/.claude/skills/{one}/SKILL.md {RAW}/{one_raw}",
             "```", "",
-            "The others work the same way: " +
-            "; ".join(f"`{name}` from `{RAW}/{raw}`" for name, _, _, raw, _ in rows[1:]) + ".", "",
             "In another assistant, add the same file wherever it takes instructions or skills, or give it the "
-            "address of [llms.txt](llms.txt). The Bitcoin and Ether price inputs come from Coin Metrics community "
-            "data, which are for non-commercial use, as the Observatory's skill states.", "",
+            "address of [llms.txt](llms.txt). Each tool also publishes a narrower skill for that tool alone: "
+            + "; ".join(f'[`{t["repo"]}`]({GH}/{t["repo"]}/blob/main/api/SKILL.md)' for t in tools) + ". "
+            "The Bitcoin and Ether price inputs come from Coin Metrics community "
+            "data, which are for non-commercial use, as the Observatory's guide states.", "",
             "</details>", "",
             "**The calculator is also an MCP server.** A skill tells an assistant where to read figures. An MCP server "
             "gives it a tool to call: the assistant sends your numbers and gets the result computed, not estimated. "
@@ -369,8 +386,8 @@ def build():
 
     out += ["### About", "", prof["about"], ""]
 
-    return {"README.md": "\n".join(out), "llms.txt": index(prof, papers, tools),
-            "skill/SKILL.md": skill(prof, papers, tools), "tools.json": tools_file(tools),
+    return {"README.md": "\n".join(out), "llms.txt": index(prof, papers, tools, live, counts),
+            "skill/SKILL.md": skill(prof, papers, tools, counts), "tools.json": tools_file(tools),
             **charts.pictures(live)}
 
 
@@ -390,7 +407,7 @@ def tools_file(tools):
     return json.dumps({"tools": rows}, indent=1, ensure_ascii=False) + "\n"
 
 
-def skill(prof, papers, tools):
+def skill(prof, papers, tools, counts):
     """skill/SKILL.md: a skill a reader can add to their own AI agent, pointing it at the index."""
     raw = "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/llms.txt"
     packaged = [p for p in papers if "repo" in p]
@@ -398,11 +415,11 @@ def skill(prof, papers, tools):
              "description: Open finance research by Agisilaos Papadogiannis, with replication packages and live tools, on "
              "Bitcoin's required and expected return, the valuation of scarcity and of blockchain networks, covered-call "
              "funds, broad index investing and AI, discount rates and unpriced risk. Use when asked what one of these "
-             "papers says or reports, for a number from one of them, or which of them covers a topic. Every published "
-             "number comes with data and code.",
+             "papers says or reports, for a number from one of them, for the latest figure of a live tool, or which of "
+             f"them covers a topic. {counts['packages']} of the {counts['papers']} papers come with data and code; the others are papers only.",
              "---", "", f'# Research by {prof["name"]}', "",
-             "This skill tells you where the work is and how to reach a paper's numbers. It holds no figures:",
-             "fetch them each time.", "",
+             "This one skill covers the whole account: the live tools and every paper. It tells you where the work is",
+             "and how to reach a number. It holds no figures: fetch them each time.", "",
              "## Steps", "",
              f"1. Fetch the index: {raw}",
              "   It lists every tool, paper, replication package and paper record under four questions, with the address of",
@@ -410,19 +427,28 @@ def skill(prof, papers, tools):
              "2. Open the guide of the repository the question is about (an `llms.txt`). It states the headline",
              "   figures, which file holds what, how to read the figures and what they cannot answer.",
              "3. For a number, use the file the guide names, usually `outputs/results.json` in a package.",
-             "   Quote it with its unit and date, and cite the paper as the guide says.", "",
+             "   Quote it with its unit and date, and cite the paper as the guide says.",
+             "4. For a paper that has no package, the index gives its venue and its SSRN or published address. Say what",
+             "   the paper is and where it is; do not state a number from it unless you have read the paper itself.", "",
              "## What is there", "",
-             "Tools, each with its own skill and guide:", ""]
+             "Live tools. Read the guide first: it has the reading rules and says which data file to fetch.", ""]
     for t in tools:
-        lines += [f'- {t["title"]}', f'  Guide: {t["page"]}llms.txt',
-                  f'  Its skill: {RAW}/{t["repo"]}/main/api/SKILL.md']
-    lines += ["", "Papers with a replication package:", ""]
-    lines += [f'- {p["title"]}' for p in packaged]
+        lines += [f'- {t["title"]}', f'  Use for: {t["skill_for"]}', f'  Guide: {t["page"]}llms.txt',
+                  f'  Same guide in the repository: {RAW}/{t["repo"]}/main/api/llms.txt']
+    lines += ["", "Papers with a replication package, each with its guide:", ""]
+    for p in packaged:
+        lines += [f'- {p["title"]}', f'  Guide: {RAW}/{p["repo"]}/main/llms.txt']
     recorded = [p for p in papers if "record" in p]
     if recorded:
         lines += ["", "Papers with a paper record (no computation; the definitions, model and tables as data):", ""]
-        lines += [f'- {p["title"]}' for p in recorded]
+        for p in recorded:
+            lines += [f'- {p["title"]}', f'  Guide: {RAW}/{p["record"]}/main/llms.txt']
+    rest = [p for p in papers if "repo" not in p and "record" not in p]
+    lines += ["", f"The other {len(rest)} papers have no package. They are listed in the index with their addresses."]
     lines += ["", "## Rules", "",
+              "- A tool and the paper behind it can give different figures for the same thing, because a tool is",
+              "  recomputed and a paper is a fixed record. Give the tool's figure with its date for a question about",
+              "  now, and the paper's for what the paper reports. Say which one you are giving.",
               "- A replication package is a fixed record of one paper. For current figures use the live tool the",
               "  guide points to.",
               "- Several papers are working papers. Say so, and report a figure as that paper's result.",
@@ -432,11 +458,13 @@ def skill(prof, papers, tools):
     return "\n".join(lines)
 
 
-def index(prof, papers, tools):
+def index(prof, papers, tools, live, counts):
     """llms.txt: every tool and paper in one list, with the address of its own guide where it has one."""
     raw = "https://raw.githubusercontent.com/apapadogiannis"
     out = [f'# {prof["name"]}: open finance research', "",
-           "Every published number is recomputed automatically, with machine-readable results and stated limits.", "",
+           f"In the {counts['tools_word']} tools and the {counts['packages_word']} replication packages, every published number is recomputed "
+           "automatically, with machine-readable results and stated limits. "
+           f"The other {counts['rest']} of the {counts['papers']} papers are papers only: they are listed here with their addresses.", "",
            "> An index of this account for AI agents and other programs: live tools, papers and replication",
            "> packages. Where an entry has a guide, the guide says what the repository holds, what it adds,",
            "> which file to use, what not to use it for, and how to cite it.", "",
@@ -450,12 +478,23 @@ def index(prof, papers, tools):
     for t in tools:
         out += [f'- {t["title"]}', f'  Page: {t["page"]}', f'  Guide: {t["page"]}llms.txt',
                 f'  Same guide in the repository: {raw}/{t["repo"]}/main/api/llms.txt',
-                f'  Code and data: {GH}/{t["repo"]}', f'  {t.get("paper_role", "Method")}: {t["paper"]}', ""]
-    out += ["## Skills", "",
-            "Instruction files a reader adds to their own AI agent. Each says when to use the work, where its files",
-            "are and how to read them, and holds no figures.", ""]
-    out += [f'- {t["repo"]}: {t["skill_for"]}. {raw}/{t["repo"]}/main/api/SKILL.md' for t in tools]
-    out += [f'- papadogiannis-finance-research: {prof["skill_for"]}. {raw}/apapadogiannis/main/skill/SKILL.md', ""]
+                f'  Code and data: {GH}/{t["repo"]}', f'  {t.get("paper_role", "Method")}: {t["paper"]}']
+        m = re.fullmatch(r"<b>(.*?)</b> (.*)", t["latest"] or "")
+        if m:
+            out.append(f'  {html.unescape(m.group(1))} {html.unescape(m.group(2))}')
+        out.append("")
+    if live.get("read_on"):
+        o, cc = live.get("crypto-observatory", {}), live.get("covered-call-monitor", {})
+        out += [f"The figures above were read from the tools' own data files on {live['read_on']}"
+                + (f" (Observatory: data to {o['data_to']}" if o.get("data_to") else " (")
+                + (f"; Monitor: fund reports to {cc['reports_to']}" if cc.get("reports_to") else "")
+                + "). They are copies: a tool's guide always has its current figures.", ""]
+    out += ["## Skill", "",
+            "One instruction file a reader adds to their own AI agent covers the whole account, tools and papers. It",
+            "says when to use the work, where the files are and how to read them, and holds no figures.", "",
+            f'- papadogiannis-finance-research: {raw}/apapadogiannis/main/skill/SKILL.md', "",
+            "Each tool also publishes a narrower skill for that tool alone, beside its guide (api/SKILL.md in its",
+            "repository).", ""]
     for k, name, what in QUESTIONS:
         out += [f"## {name}: {what}", ""]
         mine = [p for p in papers if p["question"] == k]
@@ -463,6 +502,8 @@ def index(prof, papers, tools):
         for p in mine:
             out.append(f'- {p["title"]}')
             out.append(f'  {p["venue"]}.' if "venue" in p else "  Working paper.")
+            if "finding" in p:
+                out.append(f'  In one sentence: {p["finding"]}')
             if "published" in p:
                 out.append(f'  Published article: {p["published"]}')
             if "ssrn" in p:

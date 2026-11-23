@@ -11,6 +11,8 @@
 #   demo      : link to an interactive demo page served from the repo
 #   guide     : true when the package has an llms.txt guide for AI agents and programs at its root
 #   tool      : repository name of a [[tool]] below that runs this paper's method on live data
+#   finding   : one plain sentence on what the paper asks and finds, shown under its line and in llms.txt.
+#               Write it from the paper's own abstract or guide; leave it out if you are not sure
 #   featured  : true for the one package shown as a card for its question (needs figure, figure_alt and
 #               summary, one short sentence: the cards are narrow)
 
@@ -38,20 +40,20 @@ links = [
   ["Email", "mailto:apapadogiannis@gmail.com"],
 ]
 # In the research section, under its introduction. {journals} is taken from this file.
-checked = "The journals: {journals}. In the tools and replication packages, every published number is recomputed automatically, with machine-readable results and stated limits."
+checked = "The journals: {journals}. In the {tools_word} tools and the {packages_word} replication packages, every published number is recomputed automatically, with machine-readable results and stated limits. The other {rest} papers are papers only."
 # Above the map.
 intro = [
   "The papers are written to be used together, as one corpus on value. It follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. Of the {papers} papers, {published} are published or forthcoming and {packages} have a replication package with the data and code ({both} are both).",
 ]
 # The section on skills. {skills} is counted.
 skills = [
-  "A skill is a short instruction file that you add once to an AI assistant such as Claude. From then on you can ask in plain words, and the assistant answers from the latest figures here, with the date and the source, instead of from memory. The {skills} skills are free and need no account or key. They hold no figures, so they do not go out of date.",
+  "A skill is a short instruction file that you add once to an AI assistant such as Claude. From then on you can ask in plain words, and the assistant answers from the latest figures here, with the date and the source, instead of from memory. It is free and needs no account or key. It holds no figures, so it does not go out of date.",
 ]
 # What the skill of the whole account is for, and a question to try.
 skill_for = "A number or a finding from any of the papers"
 skill_ask = "What does the age-rule paper report for Bitcoin's expected return?"
 # One line for programs, under the links.
-agents = "AI agents and programs: start at [llms.txt](llms.txt), the index of every tool, paper and data file."
+agents = "AI agents and programs: start at [llms.txt](llms.txt), the index of every tool, paper and data file, with the tools' latest figures and one sentence on what each paper finds."
 # The last section.
 about = "Engineer by training (PhD, MBA). My first research career was in wireless communications, with IEEE publications that have drawn about 2,000 citations. The finance research is independent and unfunded. Corrections and questions are welcome, by email or as an issue on the repository concerned."
 
@@ -61,6 +63,7 @@ title = "Economic Scarcity as Value: A Universal Framework for Blockchain and Be
 question = "creation"
 ssrn = "5384204"
 repo = "economic-scarcity-as-value"
+finding = "Writes the value of a network as desirability times scarcity times adoption and applies it to Bitcoin, Ethereum and Bittensor; scarcity is scored from protocol features, and desirability is what remains, as implied volatility is recovered from an option price."
 guide = true
 zenodo = "10.5281/zenodo.24051776"
 featured = true
@@ -82,6 +85,7 @@ venue = "Frontiers in Blockchain, 2026"
 ssrn = "5401302"
 published = "https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2026.1747512/full"
 repo = "architecture-of-blockchain-value"
+finding = "A theory of what a blockchain can deliver, its capabilities, and of how five architectural pillars decide which capabilities are feasible. It estimates nothing and uses no dataset."
 guide = true
 zenodo = "10.5281/zenodo.24404059"
 demo = "https://apapadogiannis.github.io/architecture-of-blockchain-value/"
@@ -92,6 +96,7 @@ question = "creation"
 venue = "Asian Review of Political Economy, forthcoming 2027"
 ssrn = "5924462"
 record = "ai-abundance"
+finding = "AI can make many goods cheap to produce without making an essential standard of living broadly affordable, because scarcity and its rents move to five layers: physical resources, infrastructure, capabilities, institutions and jurisdictions."
 guide = true
 zenodo = "10.5281/zenodo.24441153"
 
@@ -111,6 +116,7 @@ question = "creation"
 venue = "Asian Economics Letters, forthcoming"
 ssrn = "5435197"
 repo = "bitcoin-is-not-money"
+finding = "With a fixed money stock and stable velocity, output growth implies deflation at the same rate, so a money with a fixed supply could not serve a growing economy."
 guide = true
 zenodo = "10.5281/zenodo.24249917"
 
@@ -125,6 +131,7 @@ title = "Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold
 question = "returns"
 ssrn = "7705239"
 repo = "bitcoin-required-return"
+finding = "Asks what return Bitcoin's holders should require for the market, concentration and mortality risk they carry (the MCM equation), tests the answer against delivered returns, and takes a census of cryptoasset deaths."
 guide = true
 zenodo = "10.5281/zenodo.24003938"
 tool = "crypto-observatory"
@@ -138,6 +145,7 @@ title = "Bitcoin's Expected Return: An Age Rule That Beats Current Practice"
 question = "returns"
 ssrn = "7705438"
 repo = "bitcoin-age-rule"
+finding = "Tests the ways practitioners set Bitcoin's long-run expected return against the returns that followed since 2012; fixed rates and trailing averages fail, and an age rule, the power-law exponent divided by Bitcoin's age, comes closest."
 guide = true
 zenodo = "10.5281/zenodo.24004326"
 
@@ -163,6 +171,7 @@ question = "valuation"
 venue = "The Journal of Investing, forthcoming 2027"
 ssrn = "5180040"
 repo = "beyond-discount-rates"
+finding = "Splits an asset's expected return into a cost of capital and a gain of capital, the part that comes from misjudged future cash flows, and measures both for three US equity index funds, 2000 to 2023."
 guide = true
 zenodo = "10.5281/zenodo.24243060"
 featured = true
@@ -185,12 +194,16 @@ ssrn = "5252774"
 published = "https://doi.org/10.1016/j.finr.2026.100096"
 tool = "dual-risk-calculator"
 repo = "dual-risk-dcf"
+finding = "Separates a benchmark cost of capital, set outside the asset, from a valuation ratio K, fair value over valuation, and illustrates both on Bitcoin, US equities and gold."
 guide = true
 zenodo = "10.5281/zenodo.24465118"
 
 [[paper]]
 title = "Rethinking Capital Budgeting: Embedding Ex-Ante Alpha in the Cost of Capital"
 question = "valuation"
+venue = "Economics Bulletin, 2026"
+published = "https://ideas.repec.org/a/ebl/ecbull/eb-25-00176.html"
+finding = "An effective cost of capital that adjusts the benchmark rate for the systematic part of the bias in cash-flow forecasts, so that valuation and the decision to accept a project are kept apart."
 
 [[paper]]
 title = "Unifying DCF Valuation Across Traditional and Cryptoassets"
@@ -204,6 +217,7 @@ question = "capture"
 venue = "The Journal of Beta Investment Strategies, forthcoming 2027"
 ssrn = "6058896"
 repo = "ai-broad-index-investing"
+finding = "Asks whether AI weakens the case for holding a broad capitalization-weighted index, and concludes that it does not: such an index follows the rents as AI moves them."
 guide = true
 zenodo = "10.5281/zenodo.24240516"
 featured = true
@@ -218,6 +232,7 @@ venue = "The Journal of Beta Investment Strategies, 2026"
 ssrn = "5370897"
 published = "https://doi.org/10.3905/jbis.2026.001"
 repo = "covered-call-etfs"
+finding = "Explains how covered-call funds turn upside into distributions, what that costs in rising markets, and what to look at in a fund."
 guide = true
 zenodo = "10.5281/zenodo.24244700"
 tool = "covered-call-monitor"

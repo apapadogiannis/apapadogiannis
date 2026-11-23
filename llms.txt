@@ -1,6 +1,6 @@
 # Agisilaos Papadogiannis: open finance research
 
-Every published number is recomputed automatically, with machine-readable results and stated limits.
+In the three tools and the nine replication packages, every published number is recomputed automatically, with machine-readable results and stated limits. The other 12 of the 21 papers are papers only: they are listed here with their addresses.
 
 > An index of this account for AI agents and other programs: live tools, papers and replication
 > packages. Where an entry has a guide, the guide says what the repository holds, what it adds,
@@ -22,6 +22,7 @@ and as an MCP server.
   Same guide in the repository: https://raw.githubusercontent.com/apapadogiannis/crypto-observatory/main/api/llms.txt
   Code and data: https://github.com/apapadogiannis/crypto-observatory
   Method: Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold
+  Latest, October 2026: Bitcoin's required return is 20.1% a year: risk-free 4.9, market 5.8, concentration 7.5, mortality 1.9. Across the range of the model's inputs it runs from 11.8% to 28.5%. This is the midpoint between the two edges of that range. The paper's 18.3% for 2026 is another measure of the same model: the median when all inputs are varied together.
 
 - Covered-Call Monitor: returns, overlays and flows from SEC filings
   Page: https://apapadogiannis.github.io/covered-call-monitor/
@@ -29,6 +30,7 @@ and as an MCP server.
   Same guide in the repository: https://raw.githubusercontent.com/apapadogiannis/covered-call-monitor/main/api/llms.txt
   Code and data: https://github.com/apapadogiannis/covered-call-monitor
   Background: High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs
+  Latest, 12 months to June 2026: 87 covered-call funds are followed. 18 of them can be set beside an index fund on the same market, and all 18 returned less than it, by 0.8 to 19.7 percentage points (median 5.5), distributions reinvested. The index funds returned 22% to 41% over these months: a market that rises this fast is where a cap on the upside costs most.
 
 - Dual-Risk DCF Calculator: the discount rate and the forecast, separated
   Page: https://apapadogiannis.github.io/dual-risk-calculator/
@@ -36,21 +38,25 @@ and as an MCP server.
   Same guide in the repository: https://raw.githubusercontent.com/apapadogiannis/dual-risk-calculator/main/api/llms.txt
   Code and data: https://github.com/apapadogiannis/dual-risk-calculator
   Method: From Unified Discounting to Dual-Risk: A New Lens on DCF Valuation
+  Worked example: a forecast 10% below the benchmark, at a benchmark rate of 8% over 5 years, gives a valuation ratio K of 1.111 and a gain of capital of +0.163. One discount rate would have to fall to 4.1% to hide the gap (5.7% by the article's closed form, which is exact for a single payoff).
 
-## Skills
+The figures above were read from the tools' own data files on 2026-11-23 (Observatory: data to 2026-11-19; Monitor: fund reports to 2026-07-31). They are copies: a tool's guide always has its current figures.
 
-Instruction files a reader adds to their own AI agent. Each says when to use the work, where its files
-are and how to read them, and holds no figures.
+## Skill
 
-- crypto-observatory: Bitcoin's required return, its parts and its record. https://raw.githubusercontent.com/apapadogiannis/crypto-observatory/main/api/SKILL.md
-- covered-call-monitor: Covered-call funds: returns, written calls and flows. https://raw.githubusercontent.com/apapadogiannis/covered-call-monitor/main/api/SKILL.md
-- dual-risk-calculator: Splitting a valuation gap into the discount rate and the forecast, from your own numbers. https://raw.githubusercontent.com/apapadogiannis/dual-risk-calculator/main/api/SKILL.md
-- papadogiannis-finance-research: A number or a finding from any of the papers. https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/skill/SKILL.md
+One instruction file a reader adds to their own AI agent covers the whole account, tools and papers. It
+says when to use the work, where the files are and how to read them, and holds no figures.
+
+- papadogiannis-finance-research: https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/skill/SKILL.md
+
+Each tool also publishes a narrower skill for that tool alone, beside its guide (api/SKILL.md in its
+repository).
 
 ## Value creation: where value comes from
 
 - Economic Scarcity as Value: A Universal Framework for Blockchain and Beyond
   Working paper.
+  In one sentence: Writes the value of a network as desirability times scarcity times adoption and applies it to Bitcoin, Ethereum and Bittensor; scarcity is scored from protocol features, and desirability is what remains, as implied volatility is recovered from an option price.
   SSRN: https://ssrn.com/abstract=5384204
   Replication package: https://github.com/apapadogiannis/economic-scarcity-as-value (archive: https://doi.org/10.5281/zenodo.24051776)
   Guide: https://raw.githubusercontent.com/apapadogiannis/economic-scarcity-as-value/main/llms.txt
@@ -58,6 +64,7 @@ are and how to read them, and holds no figures.
 
 - The Architecture of Blockchain Value: Capabilities, Pillars, and Growth Dynamics
   Frontiers in Blockchain, 2026.
+  In one sentence: A theory of what a blockchain can deliver, its capabilities, and of how five architectural pillars decide which capabilities are feasible. It estimates nothing and uses no dataset.
   Published article: https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2026.1747512/full
   SSRN: https://ssrn.com/abstract=5401302
   Replication package: https://github.com/apapadogiannis/architecture-of-blockchain-value (archive: https://doi.org/10.5281/zenodo.24404059)
@@ -66,6 +73,7 @@ are and how to read them, and holds no figures.
 
 - Bitcoin Is Not Money: Why Fixed Supply Fails in a Modern Economy
   Asian Economics Letters, forthcoming.
+  In one sentence: With a fixed money stock and stable velocity, output growth implies deflation at the same rate, so a money with a fixed supply could not serve a growing economy.
   SSRN: https://ssrn.com/abstract=5435197
   Replication package: https://github.com/apapadogiannis/bitcoin-is-not-money (archive: https://doi.org/10.5281/zenodo.24249917)
   Guide: https://raw.githubusercontent.com/apapadogiannis/bitcoin-is-not-money/main/llms.txt
@@ -73,6 +81,7 @@ are and how to read them, and holds no figures.
 
 - Scarcity in an age of AI abundance
   Asian Review of Political Economy, forthcoming 2027.
+  In one sentence: AI can make many goods cheap to produce without making an essential standard of living broadly affordable, because scarcity and its rents move to five layers: physical resources, infrastructure, capabilities, institutions and jurisdictions.
   SSRN: https://ssrn.com/abstract=5924462
   Paper record (the paper has no computation; its definitions, model and tables as data): https://github.com/apapadogiannis/ai-abundance (archive: https://doi.org/10.5281/zenodo.24441153)
   Guide: https://raw.githubusercontent.com/apapadogiannis/ai-abundance/main/llms.txt
@@ -99,6 +108,7 @@ are and how to read them, and holds no figures.
 
 - Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold
   Working paper.
+  In one sentence: Asks what return Bitcoin's holders should require for the market, concentration and mortality risk they carry (the MCM equation), tests the answer against delivered returns, and takes a census of cryptoasset deaths.
   SSRN: https://ssrn.com/abstract=7705239
   Replication package: https://github.com/apapadogiannis/bitcoin-required-return (archive: https://doi.org/10.5281/zenodo.24003938)
   Guide: https://raw.githubusercontent.com/apapadogiannis/bitcoin-required-return/main/llms.txt
@@ -107,6 +117,7 @@ are and how to read them, and holds no figures.
 
 - Bitcoin's Expected Return: An Age Rule That Beats Current Practice
   Working paper.
+  In one sentence: Tests the ways practitioners set Bitcoin's long-run expected return against the returns that followed since 2012; fixed rates and trailing averages fail, and an age rule, the power-law exponent divided by Bitcoin's age, comes closest.
   SSRN: https://ssrn.com/abstract=7705438
   Replication package: https://github.com/apapadogiannis/bitcoin-age-rule (archive: https://doi.org/10.5281/zenodo.24004326)
   Guide: https://raw.githubusercontent.com/apapadogiannis/bitcoin-age-rule/main/llms.txt
@@ -128,6 +139,7 @@ are and how to read them, and holds no figures.
 
 - Beyond Discount Rates: A Valuation Framework for Unpriced Systematic Risk
   The Journal of Investing, forthcoming 2027.
+  In one sentence: Splits an asset's expected return into a cost of capital and a gain of capital, the part that comes from misjudged future cash flows, and measures both for three US equity index funds, 2000 to 2023.
   SSRN: https://ssrn.com/abstract=5180040
   Replication package: https://github.com/apapadogiannis/beyond-discount-rates (archive: https://doi.org/10.5281/zenodo.24243060)
   Guide: https://raw.githubusercontent.com/apapadogiannis/beyond-discount-rates/main/llms.txt
@@ -135,6 +147,7 @@ are and how to read them, and holds no figures.
 
 - From Unified Discounting to Dual-Risk: A New Lens on DCF Valuation
   Finance Research Open, 2026.
+  In one sentence: Separates a benchmark cost of capital, set outside the asset, from a valuation ratio K, fair value over valuation, and illustrates both on Bitcoin, US equities and gold.
   Published article: https://doi.org/10.1016/j.finr.2026.100096
   SSRN: https://ssrn.com/abstract=5252774
   Replication package: https://github.com/apapadogiannis/dual-risk-dcf (archive: https://doi.org/10.5281/zenodo.24465118)
@@ -148,7 +161,9 @@ are and how to read them, and holds no figures.
   SSRN: https://ssrn.com/abstract=5226017
 
 - Rethinking Capital Budgeting: Embedding Ex-Ante Alpha in the Cost of Capital
-  Working paper.
+  Economics Bulletin, 2026.
+  In one sentence: An effective cost of capital that adjusts the benchmark rate for the systematic part of the bias in cash-flow forecasts, so that valuation and the decision to accept a project are kept apart.
+  Published article: https://ideas.repec.org/a/ebl/ecbull/eb-25-00176.html
 
 - Unifying DCF Valuation Across Traditional and Cryptoassets
   Working paper.
@@ -158,6 +173,7 @@ are and how to read them, and holds no figures.
 
 - Does AI break the case for broad index investing? Rent decay, private capital, and deflation
   The Journal of Beta Investment Strategies, forthcoming 2027.
+  In one sentence: Asks whether AI weakens the case for holding a broad capitalization-weighted index, and concludes that it does not: such an index follows the rents as AI moves them.
   SSRN: https://ssrn.com/abstract=6058896
   Replication package: https://github.com/apapadogiannis/ai-broad-index-investing (archive: https://doi.org/10.5281/zenodo.24240516)
   Guide: https://raw.githubusercontent.com/apapadogiannis/ai-broad-index-investing/main/llms.txt
@@ -165,6 +181,7 @@ are and how to read them, and holds no figures.
 
 - High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs
   The Journal of Beta Investment Strategies, 2026.
+  In one sentence: Explains how covered-call funds turn upside into distributions, what that costs in rising markets, and what to look at in a fund.
   Published article: https://doi.org/10.3905/jbis.2026.001
   SSRN: https://ssrn.com/abstract=5370897
   Replication package: https://github.com/apapadogiannis/covered-call-etfs (archive: https://doi.org/10.5281/zenodo.24244700)
