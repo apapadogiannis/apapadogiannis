@@ -1,6 +1,6 @@
 ## Agisilaos Papadogiannis
 
-**Independent finance research on what an asset is worth and what return it must earn.** It comes in three forms: three tools you can use now, 21 papers, ten of them peer-reviewed journal articles, and the data and code to check nine of them.
+**Independent finance research on what an asset is worth and what return it must earn, built to be used by people and by AI assistants alike.** It comes in three forms: three tools you can use now, 21 papers, ten of them peer-reviewed journal articles, and the data and code to check nine of them.
 
 <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7457522">SSRN</a> · <a href="https://scholar.google.com/citations?user=RihXr08AAAAJ">Google Scholar</a> · <a href="https://orcid.org/0009-0002-7753-7052">ORCID</a> · <a href="https://scarcitythinker.substack.com">Substack</a> · <a href="mailto:apapadogiannis@gmail.com">Email</a>
 

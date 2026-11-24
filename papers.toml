@@ -29,7 +29,7 @@
 [profile]
 name = "Agisilaos Papadogiannis"
 # One sentence under the name: what the work is.
-position = "Independent finance research on what an asset is worth and what return it must earn."
+position = "Independent finance research on what an asset is worth and what return it must earn, built to be used by people and by AI assistants alike."
 # The second sentence under the name: the forms the work comes in.
 forms = "It comes in three forms: {tools_word} tools you can use now, {papers} papers, {published_word} of them peer-reviewed journal articles, and the data and code to check {packages_word} of them."
 # The plain row of links under it: label, address.
