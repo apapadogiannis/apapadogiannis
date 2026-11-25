@@ -389,8 +389,12 @@ def build():
            ""]
     answers = [(t, answer(t, live)) for t in tools]
     if all(a for _, a in answers):
-        out = out[:-1] + ["| The question | Latest answer | As of | Updated |", "|---|---|---|---|"]
-        out += [f'| [{t.get("row_question", t["question"])}]({t["page"]}) | {a[0]} | {a[1]} | {t["updated"]} |' for t, a in answers]
+        out = out[:-1] + ["| The question | Latest answer | As of | Research behind it |", "|---|---|---|---|"]
+        for t, a in answers:
+            kind, _, venue = t["paper_standing"].partition(", ")
+            when = a[1] + (f', {t["updated"]}' if t.get("updated") else "")
+            out.append(f'| [{t.get("row_question", t["question"])}]({t["page"]}) | {a[0]} | {when} | '
+                       f'[{kind.capitalize()}]({t["paper_url"]})' + (f', {venue}' if venue else "") + " |")
         out += ["", f'<sub>{prof["note"].format(**counts)}</sub>', "", ""]
     wide = [t for t in tools if t.get("wide")]
     rest = [t for t in tools if not t.get("wide")]

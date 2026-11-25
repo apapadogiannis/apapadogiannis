@@ -25,7 +25,7 @@
 #   skill_for and skill_ask (what its skill answers, and a question to try), caption (one line above its picture)
 #   wide = true shows the tool on the profile page across the full width, with its picture (it then needs pitch
 #   and points); the others follow as cards. Tools appear everywhere in the order they are written here.
-#   updated: how often its figure changes, one word, for the table of answers under the name
+#   updated: how often its figure changes, two words after the date in the table of answers under the name (optional)
 #   row_question: the question as worded in that table, if narrower than "question"
 #   figures_file: address of one small file with the latest figures, if the tool publishes one
 # The latest figures shown with each tool are not typed here: "python3 build.py --fetch" reads them from the
@@ -255,7 +255,7 @@ ssrn = "5487486"
 title = "Covered-Call Monitor: returns, overlays and flows from SEC filings"
 question = "What does the yield of a covered-call fund cost against its index fund?"
 wide = true
-updated = "Quarterly"
+updated = "rebuilt quarterly"
 row_question = "What does the yield of a covered-call fund cost?"
 pitch = "For US covered-call, buy-write and premium-income funds, each read from its own SEC filings and rebuilt every quarter."
 points = [
@@ -280,7 +280,7 @@ summary = "What does the yield cost? For 87 US covered-call, buy-write and premi
 title = "Crypto Observatory: required returns, risks and survival"
 question = "What return should a cryptoasset's holders require?"
 wide = true
-updated = "Monthly"
+updated = "recomputed monthly"
 row_question = "What return should a Bitcoin holder require?"
 figures_file = "https://apapadogiannis.github.io/crypto-observatory/latest.json"
 # For a wide tool: one sentence after the question, and what a visitor gets there (markdown, a bold label first).
@@ -304,7 +304,6 @@ summary = "What return should the holders of a cryptoasset require for the risks
 [[tool]]
 title = "Dual-Risk DCF Calculator: the discount rate and the forecast, separated"
 question = "How much of a valuation gap is the forecast, and how much the discount rate?"
-updated = "Calculator"
 repo = "dual-risk-calculator"
 page = "https://apapadogiannis.github.io/dual-risk-calculator/"
 paper = "From Unified Discounting to Dual-Risk: A New Lens on DCF Valuation"

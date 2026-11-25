@@ -4,11 +4,11 @@
 
 **Live answers to three investor questions, recomputed on a schedule from public filings and market data.** Each figure is dated, checked automatically before it is published, and backed by a paper you can read and code you can run.
 
-| The question | Latest answer | As of | Updated |
+| The question | Latest answer | As of | Research behind it |
 |---|---|---|---|
-| [What does the yield of a covered-call fund cost?](https://apapadogiannis.github.io/covered-call-monitor/) | 87 funds followed from their SEC filings. Where a fund has an index fund on the same market, it returned 5.5 points less at the median | 12 months to June 2026 | Quarterly |
-| [What return should a Bitcoin holder require?](https://apapadogiannis.github.io/crypto-observatory/) | 18.8% a year, a hurdle rate, not a forecast | October 2026 | Monthly |
-| [How much of a valuation gap is the forecast, and how much the discount rate?](https://apapadogiannis.github.io/dual-risk-calculator/) | Computed from your own numbers | Any time | Calculator |
+| [What does the yield of a covered-call fund cost?](https://apapadogiannis.github.io/covered-call-monitor/) | 87 funds followed from their SEC filings. Where a fund has an index fund on the same market, it returned 5.5 points less at the median | 12 months to June 2026, rebuilt quarterly | [Peer-reviewed](https://doi.org/10.3905/jbis.2026.001), The Journal of Beta Investment Strategies, 2026 |
+| [What return should a Bitcoin holder require?](https://apapadogiannis.github.io/crypto-observatory/) | 18.8% a year, a hurdle rate, not a forecast | October 2026, recomputed monthly | [Working paper](https://ssrn.com/abstract=7705239) |
+| [How much of a valuation gap is the forecast, and how much the discount rate?](https://apapadogiannis.github.io/dual-risk-calculator/) | Computed from your own numbers | Any time | [Peer-reviewed](https://doi.org/10.1016/j.finr.2026.100096), Finance Research Open, 2026 |
 
 <sub>Free, no account. Every figure is also a data file your AI assistant can read. Methods: 21 papers, ten of them peer-reviewed.</sub>
 
