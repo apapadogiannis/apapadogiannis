@@ -454,7 +454,7 @@ def build():
             "</details>", "",
             f'<sub>{prof["agents"]}</sub>', ""]
 
-    out += ["### About", "", prof["about"], ""]
+    out += ["### About", "", prof["about"], "", "---", "", f'<sub>{prof["disclaimer"]}</sub>', ""]
 
     return {"README.md": "\n".join(out), "llms.txt": index(prof, papers, tools, live, counts),
             "skill/SKILL.md": skill(prof, papers, tools, counts), "tools.json": tools_file(tools),

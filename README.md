@@ -194,3 +194,7 @@ In another assistant, add the same file wherever it takes instructions or skills
 ### About
 
 Engineer by training (PhD, MBA). My first research career was in wireless communications, with IEEE publications that have drawn about 2,000 citations. The finance research is independent and unfunded. Corrections and questions are welcome, by email or as an issue on the repository concerned.
+
+---
+
+<sub>This research was conducted independently and without funding, review, or endorsement. The views expressed are solely those of the author and do not represent any institutional position. This page, the tools and the papers are for informational and academic purposes only and do not constitute financial, investment, tax, or legal advice, nor a recommendation to buy or sell any financial instrument. All data used are from publicly available sources.</sub>

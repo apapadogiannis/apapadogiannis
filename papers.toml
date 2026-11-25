@@ -62,7 +62,8 @@ skill_for = "A number or a finding from any of the papers"
 skill_ask = "What does the age-rule paper report for Bitcoin's expected return?"
 # One line for programs, under the links.
 agents = "AI agents and programs: start at [llms.txt](llms.txt), the index of every tool, paper and data file, with the tools' latest figures and one sentence on what each paper finds."
-# The last section.
+# The last section, and the disclaimer under it: his standard one, worded for this page and its tools.
+disclaimer = "This research was conducted independently and without funding, review, or endorsement. The views expressed are solely those of the author and do not represent any institutional position. This page, the tools and the papers are for informational and academic purposes only and do not constitute financial, investment, tax, or legal advice, nor a recommendation to buy or sell any financial instrument. All data used are from publicly available sources."
 about = "Engineer by training (PhD, MBA). My first research career was in wireless communications, with IEEE publications that have drawn about 2,000 citations. The finance research is independent and unfunded. Corrections and questions are welcome, by email or as an issue on the repository concerned."
 
 # ---------------------------------------------------------------- value creation
