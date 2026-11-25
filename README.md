@@ -197,4 +197,4 @@ Engineer by training (PhD, MBA). My first research career was in wireless commun
 
 ---
 
-<sub>This research was conducted independently and without funding, review, or endorsement. The views expressed are solely those of the author and do not represent any institutional position. This page, the tools and the papers are for informational and academic purposes only and do not constitute financial, investment, tax, or legal advice, nor a recommendation to buy or sell any financial instrument. All data used are from publicly available sources.</sub>
+<sub>This research was conducted independently and without funding or institutional endorsement. The views expressed are solely those of the author and do not represent any institutional position. This page, the tools and the papers are for informational and academic purposes only and do not constitute financial, investment, tax, or legal advice, nor a recommendation to buy or sell any financial instrument. All data used are from publicly available sources.</sub>
