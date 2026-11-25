@@ -16,14 +16,6 @@ The Observatory and the Monitor recompute their figures from current public data
 files beside their pages. The Calculator holds no data: it computes from the numbers it is given, as a page
 and as an MCP server.
 
-- Crypto Observatory: required returns, risks and survival
-  Page: https://apapadogiannis.github.io/crypto-observatory/
-  Guide: https://apapadogiannis.github.io/crypto-observatory/llms.txt
-  Same guide in the repository: https://raw.githubusercontent.com/apapadogiannis/crypto-observatory/main/api/llms.txt
-  Code and data: https://github.com/apapadogiannis/crypto-observatory
-  Method: Bitcoin's Required Return: Market Risk, Concentration and Mortality
-  Latest, October 2026: Bitcoin's required return is 18.8% a year: risk-free 4.9, market 5.8, concentration 6.2, mortality 1.9. Across the range of the model's inputs it runs from 11.7% to 25.9%. The same equation gives Ether 24.6%, BNB 17.3%, Solana 24.4%, Tron 9.1%, against 8.9% for the US stock market and 5.5% for gold. Each figure is the midpoint of its range. The paper's 18.1% for Bitcoin in 2026 is another measure of the same model: the median when all inputs are varied together.
-
 - Covered-Call Monitor: returns, overlays and flows from SEC filings
   Page: https://apapadogiannis.github.io/covered-call-monitor/
   Guide: https://apapadogiannis.github.io/covered-call-monitor/llms.txt
@@ -31,6 +23,14 @@ and as an MCP server.
   Code and data: https://github.com/apapadogiannis/covered-call-monitor
   Background: High Yield, Capped Gains: Mechanics, Trade-Offs, and Practical Diagnostics for Covered-Call ETFs
   Latest, 12 months to June 2026: 87 covered-call funds are followed. 18 of them can be set beside an index fund on the same market, and all 18 returned less than it, by 0.8 to 19.7 percentage points (median 5.5), distributions reinvested. The index funds returned 22% to 41% over these months: a market that rises this fast is where a cap on the upside costs most.
+
+- Crypto Observatory: required returns, risks and survival
+  Page: https://apapadogiannis.github.io/crypto-observatory/
+  Guide: https://apapadogiannis.github.io/crypto-observatory/llms.txt
+  Same guide in the repository: https://raw.githubusercontent.com/apapadogiannis/crypto-observatory/main/api/llms.txt
+  Code and data: https://github.com/apapadogiannis/crypto-observatory
+  Method: Bitcoin's Required Return: Market Risk, Concentration and Mortality
+  Latest, October 2026: Bitcoin's required return is 18.8% a year: risk-free 4.9, market 5.8, concentration 6.2, mortality 1.9. Across the range of the model's inputs it runs from 11.7% to 25.9%. The same equation gives Ether 24.6%, BNB 17.3%, Solana 24.4%, Tron 9.1%, against 8.9% for the US stock market and 5.5% for gold. Each figure is the midpoint of its range. The paper's 18.1% for Bitcoin in 2026 is another measure of the same model: the median when all inputs are varied together.
 
 - Dual-Risk DCF Calculator: the discount rate and the forecast, separated
   Page: https://apapadogiannis.github.io/dual-risk-calculator/

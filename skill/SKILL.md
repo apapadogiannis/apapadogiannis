@@ -24,14 +24,14 @@ and how to reach a number. It holds no figures: fetch them each time.
 
 Live tools. Read the guide first: it has the reading rules and says which data file to fetch.
 
-- Crypto Observatory: required returns, risks and survival
-  Use for: The required return of Bitcoin, Ether, BNB, Solana and Tron, what each is made of, and Bitcoin's record
-  Guide: https://apapadogiannis.github.io/crypto-observatory/llms.txt
-  Same guide in the repository: https://raw.githubusercontent.com/apapadogiannis/crypto-observatory/main/api/llms.txt
 - Covered-Call Monitor: returns, overlays and flows from SEC filings
   Use for: Covered-call funds: returns, payouts, written calls and flows
   Guide: https://apapadogiannis.github.io/covered-call-monitor/llms.txt
   Same guide in the repository: https://raw.githubusercontent.com/apapadogiannis/covered-call-monitor/main/api/llms.txt
+- Crypto Observatory: required returns, risks and survival
+  Use for: The required return of Bitcoin, Ether, BNB, Solana and Tron, what each is made of, and Bitcoin's record
+  Guide: https://apapadogiannis.github.io/crypto-observatory/llms.txt
+  Same guide in the repository: https://raw.githubusercontent.com/apapadogiannis/crypto-observatory/main/api/llms.txt
 - Dual-Risk DCF Calculator: the discount rate and the forecast, separated
   Use for: Splitting a valuation gap into the discount rate and the forecast, from your own numbers
   Guide: https://apapadogiannis.github.io/dual-risk-calculator/llms.txt

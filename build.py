@@ -190,8 +190,26 @@ def headline(repo, live):
     if repo == "dual-risk-calculator":
         r, c = d["results"], d["inputs"]["c"]
         return (f'Example: a forecast {(1 - r["v_own"] / r["v_fair"]) * 100:.0f}% too low, valued at {c * 100:.0f}% over {r["horizon"]:.0f} years',
-                f'K = {r["K"]:.2f}',
+                f'{(r["K"] - 1) * 100:.0f}% gap in value',
+                f'The value on the benchmark forecast is {r["K"]:.2f} times the value on the lower one: that ratio is K. '
                 f'One discount rate would have to fall to {r["c_eff_stream"] * 100:.1f}% to hide the gap. Enter your own forecasts or prices.')
+    return None
+
+
+def answer(t, live):
+    """For the table of answers under the name: (the latest answer, what date it is for), or None."""
+    d = live.get(t["repo"])
+    if not d:
+        return None
+    if t["repo"] == "covered-call-monitor":
+        gap = d["median_gap"]
+        return (f'{d["funds"]} funds followed from their SEC filings. Where a fund has an index fund on the same market, '
+                f'it returned {abs(gap):.1f} points {"less" if gap < 0 else "more"} at the median',
+                f'12 months to {month(d["to"])}')
+    if t["repo"] == "crypto-observatory":
+        return (f'{d["required"]["midpoint"]:.1f}% a year, a hurdle rate, not a forecast', month(d["month_end"]))
+    if t["repo"] == "dual-risk-calculator":
+        return ("Computed from your own numbers", "Any time")
     return None
 
 
@@ -288,11 +306,11 @@ def tool(t, width):
 
 
 def lead(t, live):
-    """The lead tool across the full width: the question, the picture, the latest figures and what the tool does."""
+    """A wide tool across the full width: the question, the picture, the latest figures and what the tool does."""
     d = live.get(t["repo"], {})
     name = t["title"].partition(": ")[0]
     check = f'{GH}/{t["repo"]}/actions/workflows/{t["workflow"]}'
-    out = [f'### {name}', "", f'**{t["question"]}** {t["pitch"]}', "",
+    out = [f'### {t["question"]}', "", f'**{name}.** {t["pitch"]}', "",
            f'<a href="{t["page"]}">{picture(t)}</a>', ""]
     if d.get("assets"):
         cells = d["assets"] + [b for b in d.get("benchmarks", []) if b["name"] in ("US stock market", "Gold")]
@@ -302,14 +320,17 @@ def lead(t, live):
                 "</table>", "",
                 f'<sub>Required return a year at the end of {month(d["month_end"])}, the midpoint of each asset\'s range. A hurdle rate, not a forecast. '
                 "Equities and gold are priced the same way for scale. Read from the tool's own data file every month.</sub>", ""]
+    elif t.get("latest"):
+        out += [t["latest"], ""]
     points = list(t["points"])
     rec = d.get("record") or {}
     if rec.get("share_of_excess_return_explained_by_mcm_pct") is not None:
         points.append(f'**The record.** Since {rec["period"][:4]} the three risks account for {rec["share_of_excess_return_explained_by_mcm_pct"]:.0f}% of what Bitcoin '
                       f'delivered over the risk-free rate; market risk alone, as in the CAPM, for {rec["share_explained_by_capm_pct"]:.0f}%.')
     out += [f'- {p}' for p in points] + ["",
-            f'**<a href="{t["page"]}">Open the {esc(name)}</a>** · <a href="{t["paper_url"]}">the paper behind it</a> ({t["paper_standing"]}) · '
-            f'<a href="{t["page"]}latest.json">the figures as one small file</a> · <img src="{check}/badge.svg" alt="automated check">', ""]
+            f'**<a href="{t["page"]}">Open the {esc(name)}</a>** · <a href="{t["paper_url"]}">{"the paper behind it" if t.get("paper_role", "Method") == "Method" else "background paper"}</a> ({t["paper_standing"]}) · '
+            + (f'<a href="{t["figures_file"]}">the figures as one small file</a> · ' if t.get("figures_file") else "")
+            + f'<img src="{check}/badge.svg" alt="automated check">', ""]
     return out
 
 
@@ -365,31 +386,25 @@ def build():
     out = [f'## {prof["name"]}', "", f'**{prof["position"]}** {prof["forms"].format(**counts)}', "",
            " · ".join(f'<a href="{url}">{esc(label)}</a>' for label, url in prof["links"]), "",
            ""]
-    first = next((t for t in tools if t.get("lead")), None)
-    rest = [t for t in tools if t is not first]
-    if first:
-        out += lead(first, live)
-    out += ["| If you want to | Start here |", "|---|---|",
-            (f'| get an answer to a question | the [{first["title"].partition(": ")[0]}](#{first["title"].partition(": ")[0].lower().replace(" ", "-")}) above, and [{words[len(rest)]} more tools](#more-tools), free, no account |'
-             if first else f'| get an answer to a question | [Tools](#tools): {counts["tools_word"]} pages, free, no account |'),
-            "| ask through your own AI assistant | [For your AI assistant](#for-your-ai-assistant): one skill, and a calculator it can call |",
-            f'| read the research or check a number | [The research](#the-research-one-corpus-four-questions): {counts["papers"]} papers, '
-            f'{counts["published"]} peer-reviewed, {counts["packages"]} with data and code |', ""]
-
+    answers = [(t, answer(t, live)) for t in tools]
+    if all(a for _, a in answers):
+        out = out[:-1] + ["| The question | Latest answer | As of | Updated |", "|---|---|---|---|"]
+        out += [f'| [{t.get("row_question", t["question"])}]({t["page"]}) | {a[0]} | {a[1]} | {t["updated"]} |' for t, a in answers]
+        out += ["", f'<sub>{prof["note"].format(**counts)}</sub>', "", ""]
+    wide = [t for t in tools if t.get("wide")]
+    rest = [t for t in tools if not t.get("wide")]
+    for t in wide:
+        out += lead(t, live)
     if rest:
-        out += ["### More tools" if first else "### Tools", "",
-                "Each answers one question, from current public data or from your own numbers. The figures below are "
-                "read from the tools' own data files every month.", "", "<table>", "<tr>"]
-        out += [tool(t, 100 // len(rest)) for t in rest]
-        out += ["</tr>", "</table>", "",
-                f'All {counts["tools_word"]} on one page, each with its chart: **[apapadogiannis.github.io](https://apapadogiannis.github.io/)**', ""]
+        out += ["<table>", "<tr>"] + [tool(t, 100 // len(rest)) for t in rest] + ["</tr>", "</table>", ""]
+    out += [f'All {counts["tools_word"]} on one page, each with its chart: **[apapadogiannis.github.io](https://apapadogiannis.github.io/)**', ""]
 
     rows = [(t["skill_for"], t["skill_ask"]) for t in tools] + [(prof["skill_for"], prof["skill_ask"])]
     one, one_raw = "papadogiannis-finance-research", "apapadogiannis/main/skill/SKILL.md"
     out += ["### For your AI assistant", ""]
     for para in prof["skills"]:
         out += [para.format(**counts), ""]
-    out += [f'**One skill covers everything here:** <a href="{GH}/apapadogiannis/blob/main/skill/SKILL.md"><code>{one}</code></a>. '
+    out += [f'**One skill reads every figure and every paper here:** <a href="{GH}/apapadogiannis/blob/main/skill/SKILL.md"><code>{one}</code></a>. '
             "With it your assistant can answer, for example:", "",
             "<table>", "<tr><th>What it answers</th><th>A question to try</th></tr>"]
     out += [f'<tr><td>{esc(what)}</td><td>“{esc(ask)}”</td></tr>' for what, ask in rows]
@@ -408,7 +423,7 @@ def build():
             f"It runs on your own machine, and the install line is in [its repository]({GH}/dual-risk-calculator#use-it-from-your-own-ai-agent).", "",
             f'<sub>{prof["agents"]}</sub>', ""]
 
-    out += ["### The research: one corpus, four questions", ""]
+    out += ["### The method behind the figures", ""]
     for para in prof["intro"]:
         out += [para.format(**counts), ""]
     out += [prof["checked"].format(**counts), ""]

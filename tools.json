@@ -1,23 +1,6 @@
 {
  "tools": [
   {
-   "name": "Crypto Observatory",
-   "subtitle": "required returns, risks and survival",
-   "summary": "What return should the holders of a cryptoasset require for the risks they carry? Recomputed every month from public data for Bitcoin, Ether, BNB, Solana and Tron, beside equities and gold: what each figure is made of, its Sharpe ratio and what volatility leaves of it. Bitcoin's requirement is tested against what it delivered since 2012, with the equation explained term by term and a census of cryptoasset deaths.",
-   "latest_label": "Latest, October 2026:",
-   "latest": "Bitcoin's required return is 18.8% a year: risk-free 4.9, market 5.8, concentration 6.2, mortality 1.9. Across the range of the model's inputs it runs from 11.7% to 25.9%. The same equation gives Ether 24.6%, BNB 17.3%, Solana 24.4%, Tron 9.1%, against 8.9% for the US stock market and 5.5% for gold. Each figure is the midpoint of its range. The paper's 18.1% for Bitcoin in 2026 is another measure of the same model: the median when all inputs are varied together.",
-   "caption": "What each required return is made of, with equities and gold priced the same way for scale.",
-   "picture_alt": "The required return of Bitcoin, Ether, BNB, Solana and Tron, each as a bar made of the risk-free rate, market risk, concentration risk and mortality risk, with three equity series and gold below for scale",
-   "picture_light": "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/assets/crypto-observatory-light.svg",
-   "picture_dark": "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/assets/crypto-observatory-dark.svg",
-   "page": "https://apapadogiannis.github.io/crypto-observatory/",
-   "code": "https://github.com/apapadogiannis/crypto-observatory",
-   "paper": "Bitcoin's Required Return: Market Risk, Concentration and Mortality",
-   "paper_role": "Method",
-   "paper_url": "https://ssrn.com/abstract=7705239",
-   "paper_standing": "working paper"
-  },
-  {
    "name": "Covered-Call Monitor",
    "subtitle": "returns, overlays and flows from SEC filings",
    "summary": "What does the yield cost? For 87 US covered-call, buy-write and premium-income funds: the total return with distributions reinvested, beside an index fund where one applies and a mix with the same market risk, what each fund paid out, the options it had actually written, and the money moving in and out. Rebuilt every quarter from SEC filings.",
@@ -33,6 +16,23 @@
    "paper_role": "Background",
    "paper_url": "https://doi.org/10.3905/jbis.2026.001",
    "paper_standing": "peer-reviewed, The Journal of Beta Investment Strategies, 2026"
+  },
+  {
+   "name": "Crypto Observatory",
+   "subtitle": "required returns, risks and survival",
+   "summary": "What return should the holders of a cryptoasset require for the risks they carry? Recomputed every month from public data for Bitcoin, Ether, BNB, Solana and Tron, beside equities and gold: what each figure is made of, its Sharpe ratio and what volatility leaves of it. Bitcoin's requirement is tested against what it delivered since 2012, with the equation explained term by term and a census of cryptoasset deaths.",
+   "latest_label": "Latest, October 2026:",
+   "latest": "Bitcoin's required return is 18.8% a year: risk-free 4.9, market 5.8, concentration 6.2, mortality 1.9. Across the range of the model's inputs it runs from 11.7% to 25.9%. The same equation gives Ether 24.6%, BNB 17.3%, Solana 24.4%, Tron 9.1%, against 8.9% for the US stock market and 5.5% for gold. Each figure is the midpoint of its range. The paper's 18.1% for Bitcoin in 2026 is another measure of the same model: the median when all inputs are varied together.",
+   "caption": "What each required return is made of, with equities and gold priced the same way for scale.",
+   "picture_alt": "The required return of Bitcoin, Ether, BNB, Solana and Tron, each as a bar made of the risk-free rate, market risk, concentration risk and mortality risk, with three equity series and gold below for scale",
+   "picture_light": "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/assets/crypto-observatory-light.svg",
+   "picture_dark": "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/assets/crypto-observatory-dark.svg",
+   "page": "https://apapadogiannis.github.io/crypto-observatory/",
+   "code": "https://github.com/apapadogiannis/crypto-observatory",
+   "paper": "Bitcoin's Required Return: Market Risk, Concentration and Mortality",
+   "paper_role": "Method",
+   "paper_url": "https://ssrn.com/abstract=7705239",
+   "paper_standing": "working paper"
   },
   {
    "name": "Dual-Risk DCF Calculator",

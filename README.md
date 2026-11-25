@@ -1,13 +1,36 @@
 ## Agisilaos Papadogiannis
 
-**Independent finance research on what an asset is worth and what return it must earn, built to be used by people and by AI assistants alike.** It comes in three forms: three tools you can use now, 21 papers, ten of them peer-reviewed journal articles, and the data and code to check nine of them.
+**Live answers to three investor questions, recomputed on a schedule from public filings and market data.** Each figure is dated, checked automatically before it is published, and backed by a paper you can read and code you can run.
 
 <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7457522">SSRN</a> · <a href="https://scholar.google.com/citations?user=RihXr08AAAAJ">Google Scholar</a> · <a href="https://orcid.org/0009-0002-7753-7052">ORCID</a> · <a href="https://scarcitythinker.substack.com">Substack</a> · <a href="mailto:apapadogiannis@gmail.com">Email</a>
 
+| The question | Latest answer | As of | Updated |
+|---|---|---|---|
+| [What does the yield of a covered-call fund cost?](https://apapadogiannis.github.io/covered-call-monitor/) | 87 funds followed from their SEC filings. Where a fund has an index fund on the same market, it returned 5.5 points less at the median | 12 months to June 2026 | Quarterly |
+| [What return should a Bitcoin holder require?](https://apapadogiannis.github.io/crypto-observatory/) | 18.8% a year, a hurdle rate, not a forecast | October 2026 | Monthly |
+| [How much of a valuation gap is the forecast, and how much the discount rate?](https://apapadogiannis.github.io/dual-risk-calculator/) | Computed from your own numbers | Any time | Calculator |
 
-### Crypto Observatory
+<sub>Free, no account. Every figure is also a data file your AI assistant can read. Methods: 21 papers, ten of them peer-reviewed.</sub>
 
-**What return should a cryptoasset's holders require?** A live answer for Bitcoin, Ether, BNB, Solana and Tron, recomputed every month from public data with one published equation, and set beside equities and gold.
+
+### What does the yield of a covered-call fund cost against its index fund?
+
+**Covered-Call Monitor.** For US covered-call, buy-write and premium-income funds, each read from its own SEC filings and rebuilt every quarter.
+
+<a href="https://apapadogiannis.github.io/covered-call-monitor/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/covered-call-monitor-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/covered-call-monitor-light.svg"><img src="assets/covered-call-monitor-light.svg" width="100%" alt="Total return over 3 years of 5 large covered-call funds, each beside the index fund on the same market"></picture></a>
+
+<b>Latest, 12 months to June 2026:</b> 87 covered-call funds are followed. 18 of them can be set beside an index fund on the same market, and all 18 returned less than it, by 0.8 to 19.7 percentage points (median 5.5), distributions reinvested. The index funds returned 22% to 41% over these months: a market that rises this fast is where a cap on the upside costs most.
+
+- **Look up one fund.** Its total return with distributions reinvested, over a period you choose, back to 2019.
+- **What the yield cost.** The same return beside an index fund on the same market, where one applies, and beside a mix with the same market risk.
+- **What it paid and what it wrote.** Each fund's payouts, the calls it had actually written, and the money moving in and out.
+- **Checked, and open.** Every figure is in data files, one per fund, that a person or an AI assistant can read directly.
+
+**<a href="https://apapadogiannis.github.io/covered-call-monitor/">Open the Covered-Call Monitor</a>** · <a href="https://doi.org/10.3905/jbis.2026.001">background paper</a> (peer-reviewed, The Journal of Beta Investment Strategies, 2026) · <img src="https://github.com/apapadogiannis/covered-call-monitor/actions/workflows/check.yml/badge.svg" alt="automated check">
+
+### What return should a cryptoasset's holders require?
+
+**Crypto Observatory.** A live answer for Bitcoin, Ether, BNB, Solana and Tron, recomputed every month from public data with one published equation, and set beside equities and gold.
 
 <a href="https://apapadogiannis.github.io/crypto-observatory/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/crypto-observatory-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/crypto-observatory-light.svg"><img src="assets/crypto-observatory-light.svg" width="100%" alt="The required return of Bitcoin, Ether, BNB, Solana and Tron, each as a bar made of the risk-free rate, market risk, concentration risk and mortality risk, with three equity series and gold below for scale"></picture></a>
 
@@ -26,33 +49,14 @@
 
 **<a href="https://apapadogiannis.github.io/crypto-observatory/">Open the Crypto Observatory</a>** · <a href="https://ssrn.com/abstract=7705239">the paper behind it</a> (working paper) · <a href="https://apapadogiannis.github.io/crypto-observatory/latest.json">the figures as one small file</a> · <img src="https://github.com/apapadogiannis/crypto-observatory/actions/workflows/check.yml/badge.svg" alt="automated check">
 
-| If you want to | Start here |
-|---|---|
-| get an answer to a question | the [Crypto Observatory](#crypto-observatory) above, and [two more tools](#more-tools), free, no account |
-| ask through your own AI assistant | [For your AI assistant](#for-your-ai-assistant): one skill, and a calculator it can call |
-| read the research or check a number | [The research](#the-research-one-corpus-four-questions): 21 papers, 10 peer-reviewed, 9 with data and code |
-
-### More tools
-
-Each answers one question, from current public data or from your own numbers. The figures below are read from the tools' own data files every month.
-
 <table>
 <tr>
-<td width="50%" valign="top">
-<h4>Covered-Call Monitor</h4>
-<p>What does the yield of a covered-call fund cost against its index fund?</p>
-<p><sub>Covered-call funds followed, each from its SEC filings</sub></p>
-<h3>87 funds</h3>
-<p><sub>18 of them can be set beside an index fund on the same market. Over the 12 months to June 2026, all 18 returned less than it, by 5.5 percentage points at the median, distributions reinvested. Rebuilt every quarter.</sub></p>
-<p><b><a href="https://apapadogiannis.github.io/covered-call-monitor/">Open the tool</a></b></p>
-<p><img src="https://github.com/apapadogiannis/covered-call-monitor/actions/workflows/check.yml/badge.svg" alt="automated check"></p>
-</td>
-<td width="50%" valign="top">
+<td width="100%" valign="top">
 <h4>Dual-Risk DCF Calculator</h4>
 <p>How much of a valuation gap is the forecast, and how much the discount rate?</p>
 <p><sub>Example: a forecast 10% too low, valued at 8% over 5 years</sub></p>
-<h3>K = 1.11</h3>
-<p><sub>One discount rate would have to fall to 4.1% to hide the gap. Enter your own forecasts or prices.</sub></p>
+<h3>11% gap in value</h3>
+<p><sub>The value on the benchmark forecast is 1.11 times the value on the lower one: that ratio is K. One discount rate would have to fall to 4.1% to hide the gap. Enter your own forecasts or prices.</sub></p>
 <p><b><a href="https://apapadogiannis.github.io/dual-risk-calculator/">Open the tool</a></b></p>
 <p><img src="https://github.com/apapadogiannis/dual-risk-calculator/actions/workflows/check.yml/badge.svg" alt="automated check"></p>
 </td>
@@ -63,14 +67,14 @@ All three on one page, each with its chart: **[apapadogiannis.github.io](https:/
 
 ### For your AI assistant
 
-A skill is a short instruction file that you add once to an AI assistant such as Claude. From then on you can ask in plain words, and the assistant answers from the latest figures here, with the date and the source, instead of from memory. It is free and needs no account or key. It holds no figures, so it does not go out of date.
+Add one short instruction file, a skill, to an AI assistant such as Claude, and it answers from the latest figures here, with the date and the source, instead of from memory. Free, no account or key.
 
-**One skill covers everything here:** <a href="https://github.com/apapadogiannis/apapadogiannis/blob/main/skill/SKILL.md"><code>papadogiannis-finance-research</code></a>. With it your assistant can answer, for example:
+**One skill reads every figure and every paper here:** <a href="https://github.com/apapadogiannis/apapadogiannis/blob/main/skill/SKILL.md"><code>papadogiannis-finance-research</code></a>. With it your assistant can answer, for example:
 
 <table>
 <tr><th>What it answers</th><th>A question to try</th></tr>
-<tr><td>The required return of Bitcoin, Ether, BNB, Solana and Tron, what each is made of, and Bitcoin's record</td><td>“What return should the holders of Bitcoin and of Ether require now, and what is each made of?”</td></tr>
 <tr><td>Covered-call funds: returns, payouts, written calls and flows</td><td>“How did JEPI do against its index fund over three years?”</td></tr>
+<tr><td>The required return of Bitcoin, Ether, BNB, Solana and Tron, what each is made of, and Bitcoin's record</td><td>“What return should the holders of Bitcoin and of Ether require now, and what is each made of?”</td></tr>
 <tr><td>Splitting a valuation gap into the discount rate and the forecast, from your own numbers</td><td>“My forecast is 90 a year for five years and the benchmark is 100. At 8%, what is K and the effective rate?”</td></tr>
 <tr><td>A number or a finding from any of the papers</td><td>“What does the age-rule paper report for Bitcoin's expected return?”</td></tr>
 </table>
@@ -93,7 +97,7 @@ In another assistant, add the same file wherever it takes instructions or skills
 
 <sub>AI agents and programs: start at [llms.txt](llms.txt), the index of every tool, paper and data file, with the tools' latest figures and one sentence on what each paper finds.</sub>
 
-### The research: one corpus, four questions
+### The method behind the figures
 
 The papers are written to be used together, as one corpus on value. It follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. Of the 21 papers, 10 are peer-reviewed: each was published or accepted by a journal after review by its referees. 9 have a replication package with the data and code (6 are both). The others are working papers.
 
