@@ -297,6 +297,7 @@ def tool(t, width):
     h = t.get("headline")
     return "\n".join([
         f'<td width="{width}%" valign="top">',
+        f'<a href="{t["page"]}">{picture(t)}</a>',
         f'<h4>{esc(name)}</h4>',
         f'<p>{esc(t["question"])}</p>',
         *([f'<p><sub>{esc(h[0])}</sub></p>', f'<h3>{esc(h[1])}</h3>', f'<p><sub>{esc(h[2])}</sub></p>'] if h else []),
@@ -396,39 +397,10 @@ def build():
             out.append(f'| [{t.get("row_question", t["question"])}]({t["page"]}) | {a[0]} | {when} | '
                        f'[{kind.capitalize()}]({t["paper_url"]})' + (f', {venue}' if venue else "") + " |")
         out += ["", f'<sub>{prof["note"].format(**counts)}</sub>', "", ""]
-    wide = [t for t in tools if t.get("wide")]
-    rest = [t for t in tools if not t.get("wide")]
-    for t in wide:
-        out += lead(t, live)
-    if rest:
-        out += ["<table>", "<tr>"] + [tool(t, 100 // len(rest)) for t in rest] + ["</tr>", "</table>", ""]
-    out += [f'All {counts["tools_word"]} on one page, each with its chart: **[apapadogiannis.github.io](https://apapadogiannis.github.io/)**', ""]
+    out += ["### The tools", "", "<table>", "<tr>"] + [tool(t, 100 // len(tools)) for t in tools] + ["</tr>", "</table>", "",
+            f'All {counts["tools_word"]} on one page, with what each one shows: **[apapadogiannis.github.io](https://apapadogiannis.github.io/)**', ""]
 
-    rows = [(t["skill_for"], t["skill_ask"]) for t in tools] + [(prof["skill_for"], prof["skill_ask"])]
-    one, one_raw = "papadogiannis-finance-research", "apapadogiannis/main/skill/SKILL.md"
-    out += ["### For your AI assistant", ""]
-    for para in prof["skills"]:
-        out += [para.format(**counts), ""]
-    out += [f'**One skill reads every figure and every paper here:** <a href="{GH}/apapadogiannis/blob/main/skill/SKILL.md"><code>{one}</code></a>. '
-            "With it your assistant can answer, for example:", "",
-            "<table>", "<tr><th>What it answers</th><th>A question to try</th></tr>"]
-    out += [f'<tr><td>{esc(what)}</td><td>“{esc(ask)}”</td></tr>' for what, ask in rows]
-    out += ["</table>", "", "<details>", "<summary>How to add it</summary>", "",
-            "In Claude Code, one file in one folder:", "", "```",
-            f"mkdir -p ~/.claude/skills/{one}",
-            f"curl -o ~/.claude/skills/{one}/SKILL.md {RAW}/{one_raw}",
-            "```", "",
-            "In another assistant, add the same file wherever it takes instructions or skills, or give it the "
-            "address of [llms.txt](llms.txt). It replaces the separate skills the tools used to publish. "
-            "The Bitcoin and Ether price inputs come from Coin Metrics community "
-            "data, which are for non-commercial use, as the Observatory's guide states.", "",
-            "</details>", "",
-            "**The calculator is also an MCP server.** A skill tells an assistant where to read figures. An MCP server "
-            "gives it a tool to call: the assistant sends your numbers and gets the result computed, not estimated. "
-            f"It runs on your own machine, and the install line is in [its repository]({GH}/dual-risk-calculator#use-it-from-your-own-ai-agent).", "",
-            f'<sub>{prof["agents"]}</sub>', ""]
-
-    out += ["### The method behind the figures", ""]
+    out += ["### The research behind them", ""]
     for para in prof["intro"]:
         out += [para.format(**counts), ""]
     out += [prof["checked"].format(**counts), ""]
@@ -438,13 +410,7 @@ def build():
             f'<img src="assets/map-light.svg" width="720" alt="{MAP_ALT}">',
             '</picture>', '</p>', ""]
 
-    out += ["### Four papers, one per question", "",
-            "Each comes with its data and code.", "", "<table>"]
-    out += ["<tr>"] + [card(p) for p in featured] + ["</tr>"]
-    out += ["</table>", ""]
-
-    out += ["### All papers by question", "",
-            "Click a line to open its list. A green badge means the package's stored results were reproduced at "
+    out += ["Click a line to open its list. A green badge means the package's stored results were reproduced at "
             "the last automated run.", ""]
     for k, name, what in QUESTIONS:
         mine = [p for p in papers if p["question"] == k]
@@ -459,6 +425,34 @@ def build():
         out += ["<details>",
                 f'<summary><img src="assets/q-{k}-dot.svg" width="12" height="12" alt=""> <b>{name}</b>: {what} ({count})</summary>',
                 "<ul>"] + [line(p) for p in mine] + ["</ul>", "</details>", ""]
+
+    out += ["<details>", "<summary><b>Four papers to start with</b>: one per question, each with its data and code</summary>", "",
+            "<table>", "<tr>"] + [card(p) for p in featured] + ["</tr>", "</table>", "", "</details>", ""]
+
+    rows = [(t["skill_for"], t["skill_ask"]) for t in tools] + [(prof["skill_for"], prof["skill_ask"])]
+    one, one_raw = "papadogiannis-finance-research", "apapadogiannis/main/skill/SKILL.md"
+    out += ["### For your AI assistant", ""]
+    for para in prof["skills"]:
+        out += [para.format(**counts), ""]
+    out += [f'**One skill reads every figure and every paper here:** <a href="{GH}/apapadogiannis/blob/main/skill/SKILL.md"><code>{one}</code></a>. '
+            "It is one file, and it holds no figures, so it does not go out of date.", "",
+            "<details>", "<summary>What it answers, and how to add it</summary>", "",
+            "<table>", "<tr><th>What it answers</th><th>A question to try</th></tr>"]
+    out += [f'<tr><td>{esc(what)}</td><td>“{esc(ask)}”</td></tr>' for what, ask in rows]
+    out += ["</table>", "",
+            "In Claude Code, one file in one folder:", "", "```",
+            f"mkdir -p ~/.claude/skills/{one}",
+            f"curl -o ~/.claude/skills/{one}/SKILL.md {RAW}/{one_raw}",
+            "```", "",
+            "In another assistant, add the same file wherever it takes instructions or skills, or give it the "
+            "address of [llms.txt](llms.txt). It replaces the separate skills the tools used to publish. "
+            "The Bitcoin and Ether price inputs come from Coin Metrics community "
+            "data, which are for non-commercial use, as the Observatory's guide states.", "",
+            "**The calculator is also an MCP server.** A skill tells an assistant where to read figures. An MCP server "
+            "gives it a tool to call: the assistant sends your numbers and gets the result computed, not estimated. "
+            f"It runs on your own machine, and the install line is in [its repository]({GH}/dual-risk-calculator#use-it-from-your-own-ai-agent).", "",
+            "</details>", "",
+            f'<sub>{prof["agents"]}</sub>', ""]
 
     out += ["### About", "", prof["about"], ""]
 

@@ -13,45 +13,32 @@
 <sub>Free, no account. Every figure is also a data file your AI assistant can read. Methods: 21 papers, ten of them peer-reviewed.</sub>
 
 
-### What does the yield of a covered-call fund cost against its index fund?
-
-**Covered-Call Monitor.** For US covered-call, buy-write and premium-income funds, each read from its own SEC filings and rebuilt every quarter.
-
-<a href="https://apapadogiannis.github.io/covered-call-monitor/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/covered-call-monitor-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/covered-call-monitor-light.svg"><img src="assets/covered-call-monitor-light.svg" width="100%" alt="Total return over 3 years of 5 large covered-call funds, each beside the index fund on the same market"></picture></a>
-
-<b>Latest, 12 months to June 2026:</b> 87 covered-call funds are followed. 18 of them can be set beside an index fund on the same market, and all 18 returned less than it, by 0.8 to 19.7 percentage points (median 5.5), distributions reinvested. The index funds returned 22% to 41% over these months: a market that rises this fast is where a cap on the upside costs most.
-
-- **Look up one fund.** Its total return with distributions reinvested, over a period you choose, back to 2019.
-- **What the yield cost.** The same return beside an index fund on the same market, where one applies, and beside a mix with the same market risk.
-- **What it paid and what it wrote.** Each fund's payouts, the calls it had actually written, and the money moving in and out.
-- **Checked, and open.** Every figure is in data files, one per fund, that a person or an AI assistant can read directly.
-
-**<a href="https://apapadogiannis.github.io/covered-call-monitor/">Open the Covered-Call Monitor</a>** · <a href="https://doi.org/10.3905/jbis.2026.001">background paper</a> (peer-reviewed, The Journal of Beta Investment Strategies, 2026) · <img src="https://github.com/apapadogiannis/covered-call-monitor/actions/workflows/check.yml/badge.svg" alt="automated check">
-
-### What return should a cryptoasset's holders require?
-
-**Crypto Observatory.** A live answer for Bitcoin, Ether, BNB, Solana and Tron, recomputed every month from public data with one published equation, and set beside equities and gold.
-
-<a href="https://apapadogiannis.github.io/crypto-observatory/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/crypto-observatory-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/crypto-observatory-light.svg"><img src="assets/crypto-observatory-light.svg" width="100%" alt="The required return of Bitcoin, Ether, BNB, Solana and Tron, each as a bar made of the risk-free rate, market risk, concentration risk and mortality risk, with three equity series and gold below for scale"></picture></a>
-
-<table>
-<tr><th>Bitcoin</th><th>Ether</th><th>BNB</th><th>Solana</th><th>Tron</th><th>US stock market</th><th>Gold</th></tr>
-<tr><td align="center"><b>18.8%</b></td><td align="center"><b>24.6%</b></td><td align="center"><b>17.3%</b></td><td align="center"><b>24.4%</b></td><td align="center"><b>9.1%</b></td><td align="center"><b>8.9%</b></td><td align="center"><b>5.5%</b></td></tr>
-<tr><td align="center"><sub>Sharpe ratio 0.31<br>compounds at 8.6%</sub></td><td align="center"><sub>Sharpe ratio 0.30<br>compounds at 2.6%</sub></td><td align="center"><sub>Sharpe ratio 0.25<br>compounds at 5.1%</sub></td><td align="center"><sub>Sharpe ratio 0.26<br>compounds at -3.0%</sub></td><td align="center"><sub>Sharpe ratio 0.14<br>compounds at 4.6%</sub></td><td align="center"><sub>Sharpe ratio 0.28<br>compounds at 7.9%</sub></td><td align="center"><sub>Sharpe ratio 0.03<br>compounds at 4.2%</sub></td></tr>
-</table>
-
-<sub>Required return a year at the end of October 2026, the midpoint of each asset's range. A hurdle rate, not a forecast. Equities and gold are priced the same way for scale. Read from the tool's own data file every month.</sub>
-
-- **What each figure is made of.** The risk-free rate, market risk, concentration risk and mortality risk, for every asset, with the inputs behind them.
-- **What the return costs.** Volatility, the Sharpe ratio, and what is left once volatility has taken its share: the compound return.
-- **Checked, and open.** Before every update the model must reproduce the paper's stored results. Every number is in data files that a person or an AI assistant can read directly.
-- **The record.** Since 2018 the three risks account for 89% of what Bitcoin delivered over the risk-free rate; market risk alone, as in the CAPM, for 41%.
-
-**<a href="https://apapadogiannis.github.io/crypto-observatory/">Open the Crypto Observatory</a>** · <a href="https://ssrn.com/abstract=7705239">the paper behind it</a> (working paper) · <a href="https://apapadogiannis.github.io/crypto-observatory/latest.json">the figures as one small file</a> · <img src="https://github.com/apapadogiannis/crypto-observatory/actions/workflows/check.yml/badge.svg" alt="automated check">
+### The tools
 
 <table>
 <tr>
-<td width="100%" valign="top">
+<td width="33%" valign="top">
+<a href="https://apapadogiannis.github.io/covered-call-monitor/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/covered-call-monitor-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/covered-call-monitor-light.svg"><img src="assets/covered-call-monitor-light.svg" width="100%" alt="Total return over 3 years of 5 large covered-call funds, each beside the index fund on the same market"></picture></a>
+<h4>Covered-Call Monitor</h4>
+<p>What does the yield of a covered-call fund cost against its index fund?</p>
+<p><sub>Covered-call funds followed, each from its SEC filings</sub></p>
+<h3>87 funds</h3>
+<p><sub>18 of them can be set beside an index fund on the same market. Over the 12 months to June 2026, all 18 returned less than it, by 5.5 percentage points at the median, distributions reinvested. Rebuilt every quarter.</sub></p>
+<p><b><a href="https://apapadogiannis.github.io/covered-call-monitor/">Open the tool</a></b></p>
+<p><img src="https://github.com/apapadogiannis/covered-call-monitor/actions/workflows/check.yml/badge.svg" alt="automated check"></p>
+</td>
+<td width="33%" valign="top">
+<a href="https://apapadogiannis.github.io/crypto-observatory/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/crypto-observatory-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/crypto-observatory-light.svg"><img src="assets/crypto-observatory-light.svg" width="100%" alt="The required return of Bitcoin, Ether, BNB, Solana and Tron, each as a bar made of the risk-free rate, market risk, concentration risk and mortality risk, with three equity series and gold below for scale"></picture></a>
+<h4>Crypto Observatory</h4>
+<p>What return should a cryptoasset's holders require?</p>
+<p><sub>Bitcoin's required return, October 2026</sub></p>
+<h3>18.8% a year</h3>
+<p><sub>The midpoint of a range from 11.7% to 25.9% across the model's inputs. The paper's 18.1% is the median over the same inputs. Recomputed every month.</sub></p>
+<p><b><a href="https://apapadogiannis.github.io/crypto-observatory/">Open the tool</a></b></p>
+<p><img src="https://github.com/apapadogiannis/crypto-observatory/actions/workflows/check.yml/badge.svg" alt="automated check"></p>
+</td>
+<td width="33%" valign="top">
+<a href="https://apapadogiannis.github.io/dual-risk-calculator/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dual-risk-calculator-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/dual-risk-calculator-light.svg"><img src="assets/dual-risk-calculator-light.svg" width="100%" alt="Two bars: the value of a benchmark forecast and of a forecast 10% lower, both discounted at the same benchmark rate, with the valuation ratio K, the gain of capital and the effective rate"></picture></a>
 <h4>Dual-Risk DCF Calculator</h4>
 <p>How much of a valuation gap is the forecast, and how much the discount rate?</p>
 <p><sub>Example: a forecast 10% too low, valued at 8% over 5 years</sub></p>
@@ -63,45 +50,13 @@
 </tr>
 </table>
 
-All three on one page, each with its chart: **[apapadogiannis.github.io](https://apapadogiannis.github.io/)**
+All three on one page, with what each one shows: **[apapadogiannis.github.io](https://apapadogiannis.github.io/)**
 
-### For your AI assistant
+### The research behind them
 
-Add one short instruction file, a skill, to an AI assistant such as Claude, and it answers from the latest figures here, with the date and the source, instead of from memory. Free, no account or key.
+21 papers, 10 of them peer-reviewed: published or accepted by a journal after review by its referees. 9 come with a replication package, the data and code to recompute every number. Together they follow value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps.
 
-**One skill reads every figure and every paper here:** <a href="https://github.com/apapadogiannis/apapadogiannis/blob/main/skill/SKILL.md"><code>papadogiannis-finance-research</code></a>. With it your assistant can answer, for example:
-
-<table>
-<tr><th>What it answers</th><th>A question to try</th></tr>
-<tr><td>Covered-call funds: returns, payouts, written calls and flows</td><td>“How did JEPI do against its index fund over three years?”</td></tr>
-<tr><td>The required return of Bitcoin, Ether, BNB, Solana and Tron, what each is made of, and Bitcoin's record</td><td>“What return should the holders of Bitcoin and of Ether require now, and what is each made of?”</td></tr>
-<tr><td>Splitting a valuation gap into the discount rate and the forecast, from your own numbers</td><td>“My forecast is 90 a year for five years and the benchmark is 100. At 8%, what is K and the effective rate?”</td></tr>
-<tr><td>A number or a finding from any of the papers</td><td>“What does the age-rule paper report for Bitcoin's expected return?”</td></tr>
-</table>
-
-<details>
-<summary>How to add it</summary>
-
-In Claude Code, one file in one folder:
-
-```
-mkdir -p ~/.claude/skills/papadogiannis-finance-research
-curl -o ~/.claude/skills/papadogiannis-finance-research/SKILL.md https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/skill/SKILL.md
-```
-
-In another assistant, add the same file wherever it takes instructions or skills, or give it the address of [llms.txt](llms.txt). It replaces the separate skills the tools used to publish. The Bitcoin and Ether price inputs come from Coin Metrics community data, which are for non-commercial use, as the Observatory's guide states.
-
-</details>
-
-**The calculator is also an MCP server.** A skill tells an assistant where to read figures. An MCP server gives it a tool to call: the assistant sends your numbers and gets the result computed, not estimated. It runs on your own machine, and the install line is in [its repository](https://github.com/apapadogiannis/dual-risk-calculator#use-it-from-your-own-ai-agent).
-
-<sub>AI agents and programs: start at [llms.txt](llms.txt), the index of every tool, paper and data file, with the tools' latest figures and one sentence on what each paper finds.</sub>
-
-### The method behind the figures
-
-The papers are written to be used together, as one corpus on value. It follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. Of the 21 papers, 10 are peer-reviewed: each was published or accepted by a journal after review by its referees. 9 have a replication package with the data and code (6 are both). The others are working papers.
-
-The peer-reviewed articles are in Financial Economics Letters, Frontiers in Blockchain, Asian Review of Political Economy, Asian Economics Letters, The Journal of Investing, Discover Analytics, Finance Research Open, Economics Bulletin and The Journal of Beta Investment Strategies. In the three tools and the nine replication packages, every published number is recomputed automatically, with machine-readable results and stated limits. The other 12 papers are papers only.
+The peer-reviewed articles are in Financial Economics Letters, Frontiers in Blockchain, Asian Review of Political Economy, Asian Economics Letters, The Journal of Investing, Discover Analytics, Finance Research Open, Economics Bulletin and The Journal of Beta Investment Strategies.
 
 <p align="center">
 <picture>
@@ -110,53 +65,6 @@ The peer-reviewed articles are in Financial Economics Letters, Frontiers in Bloc
 <img src="assets/map-light.svg" width="720" alt="Two overlapping circles. Value creation: where value comes from, through cash flows, scarcity, desirability and adoption. Returns: required and expected, what an asset must earn and is expected to earn. Their overlap is valuation, the dual-risk framework: a valuation carries two risks, in what the asset delivers and in the return it must earn. An arrow leads to a band below: value capture, what the holder actually keeps.">
 </picture>
 </p>
-
-### Four papers, one per question
-
-Each comes with its data and code.
-
-<table>
-<tr>
-<td width="25%" valign="top">
-<p><img src="assets/q-creation-band.svg" width="100%" alt=""></p>
-<img src="assets/economic-scarcity.png" alt="Implied desirability of Bitcoin, Ethereum and Bittensor, with sensitivity ranges">
-<p><img src="assets/q-creation-tag.svg" height="22" alt="Value creation"></p>
-<p><b><a href="https://github.com/apapadogiannis/economic-scarcity-as-value">Economic Scarcity as Value: A Universal Framework for Blockchain and Beyond</a></b></p>
-<p>Network value written as desirability times scarcity times adoption, for Bitcoin, Ethereum and Bittensor.</p>
-<p><sub>Working paper</sub></p>
-<p><img src="https://github.com/apapadogiannis/economic-scarcity-as-value/actions/workflows/replicate.yml/badge.svg" alt="replication check"></p>
-</td>
-<td width="25%" valign="top">
-<p><img src="assets/q-returns-band.svg" width="100%" alt=""></p>
-<img src="assets/required-return.png" alt="Bitcoin&#x27;s required return since 2012, split into risk-free rate, market risk, concentration risk and mortality risk">
-<p><img src="assets/q-returns-tag.svg" height="22" alt="Returns"></p>
-<p><b><a href="https://github.com/apapadogiannis/bitcoin-required-return">Bitcoin's Required Return: Market Risk, Concentration and Mortality</a></b></p>
-<p>The MCM equation prices market, concentration and mortality risk: about 18% a year for 2026 at the median. The live tool above shows the midpoint of its band.</p>
-<p><sub>Working paper</sub></p>
-<p><img src="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml/badge.svg" alt="replication check"></p>
-</td>
-<td width="25%" valign="top">
-<p><img src="assets/q-valuation-band.svg" width="100%" alt=""></p>
-<img src="assets/beyond-discount-rates.png" alt="Realized gain of capital over three-year horizons for SPY, QQQ and IWM, by starting month, 2000 to 2020">
-<p><img src="assets/q-valuation-tag.svg" height="22" alt="Valuation"></p>
-<p><b><a href="https://github.com/apapadogiannis/beyond-discount-rates">Beyond Discount Rates: A Valuation Framework for Unpriced Systematic Risk</a></b></p>
-<p>A cost of capital for priced risk, plus a gain of capital when expected cash flows are misestimated.</p>
-<p><sub>Peer-reviewed: The Journal of Investing, forthcoming 2027</sub></p>
-<p><img src="https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml/badge.svg" alt="replication check"></p>
-</td>
-<td width="25%" valign="top">
-<p><img src="assets/q-capture-band.svg" width="100%" alt=""></p>
-<img src="assets/ai-broad-index.png" alt="Annual returns since the release of ChatGPT: capitalization-weighted indices against the equal-weighted S&amp;P 500 and three AI-themed funds">
-<p><img src="assets/q-capture-tag.svg" height="22" alt="Value capture"></p>
-<p><b><a href="https://github.com/apapadogiannis/ai-broad-index-investing">Does AI break the case for broad index investing? Rent decay, private capital, and deflation</a></b></p>
-<p>Since ChatGPT the S&amp;P 500 returned 19% a year against 11% equal-weighted: a capitalization-weighted index follows rents as AI moves them.</p>
-<p><sub>Peer-reviewed: The Journal of Beta Investment Strategies, forthcoming 2027</sub></p>
-<p><img src="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml/badge.svg" alt="replication check"></p>
-</td>
-</tr>
-</table>
-
-### All papers by question
 
 Click a line to open its list. A green badge means the package's stored results were reproduced at the last automated run.
 
@@ -204,6 +112,84 @@ Click a line to open its list. A green badge means the package's stored results 
 <li><b>Crypto Treasury Companies: Financing Dynamics, Accretion Conditions, and Systemic Risk</b>. Working paper. <a href="https://ssrn.com/abstract=5487486">SSRN</a></li>
 </ul>
 </details>
+
+<details>
+<summary><b>Four papers to start with</b>: one per question, each with its data and code</summary>
+
+<table>
+<tr>
+<td width="25%" valign="top">
+<p><img src="assets/q-creation-band.svg" width="100%" alt=""></p>
+<img src="assets/economic-scarcity.png" alt="Implied desirability of Bitcoin, Ethereum and Bittensor, with sensitivity ranges">
+<p><img src="assets/q-creation-tag.svg" height="22" alt="Value creation"></p>
+<p><b><a href="https://github.com/apapadogiannis/economic-scarcity-as-value">Economic Scarcity as Value: A Universal Framework for Blockchain and Beyond</a></b></p>
+<p>Network value written as desirability times scarcity times adoption, for Bitcoin, Ethereum and Bittensor.</p>
+<p><sub>Working paper</sub></p>
+<p><img src="https://github.com/apapadogiannis/economic-scarcity-as-value/actions/workflows/replicate.yml/badge.svg" alt="replication check"></p>
+</td>
+<td width="25%" valign="top">
+<p><img src="assets/q-returns-band.svg" width="100%" alt=""></p>
+<img src="assets/required-return.png" alt="Bitcoin&#x27;s required return since 2012, split into risk-free rate, market risk, concentration risk and mortality risk">
+<p><img src="assets/q-returns-tag.svg" height="22" alt="Returns"></p>
+<p><b><a href="https://github.com/apapadogiannis/bitcoin-required-return">Bitcoin's Required Return: Market Risk, Concentration and Mortality</a></b></p>
+<p>The MCM equation prices market, concentration and mortality risk: about 18% a year for 2026 at the median. The live tool above shows the midpoint of its band.</p>
+<p><sub>Working paper</sub></p>
+<p><img src="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml/badge.svg" alt="replication check"></p>
+</td>
+<td width="25%" valign="top">
+<p><img src="assets/q-valuation-band.svg" width="100%" alt=""></p>
+<img src="assets/beyond-discount-rates.png" alt="Realized gain of capital over three-year horizons for SPY, QQQ and IWM, by starting month, 2000 to 2020">
+<p><img src="assets/q-valuation-tag.svg" height="22" alt="Valuation"></p>
+<p><b><a href="https://github.com/apapadogiannis/beyond-discount-rates">Beyond Discount Rates: A Valuation Framework for Unpriced Systematic Risk</a></b></p>
+<p>A cost of capital for priced risk, plus a gain of capital when expected cash flows are misestimated.</p>
+<p><sub>Peer-reviewed: The Journal of Investing, forthcoming 2027</sub></p>
+<p><img src="https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml/badge.svg" alt="replication check"></p>
+</td>
+<td width="25%" valign="top">
+<p><img src="assets/q-capture-band.svg" width="100%" alt=""></p>
+<img src="assets/ai-broad-index.png" alt="Annual returns since the release of ChatGPT: capitalization-weighted indices against the equal-weighted S&amp;P 500 and three AI-themed funds">
+<p><img src="assets/q-capture-tag.svg" height="22" alt="Value capture"></p>
+<p><b><a href="https://github.com/apapadogiannis/ai-broad-index-investing">Does AI break the case for broad index investing? Rent decay, private capital, and deflation</a></b></p>
+<p>Since ChatGPT the S&amp;P 500 returned 19% a year against 11% equal-weighted: a capitalization-weighted index follows rents as AI moves them.</p>
+<p><sub>Peer-reviewed: The Journal of Beta Investment Strategies, forthcoming 2027</sub></p>
+<p><img src="https://github.com/apapadogiannis/ai-broad-index-investing/actions/workflows/replicate.yml/badge.svg" alt="replication check"></p>
+</td>
+</tr>
+</table>
+
+</details>
+
+### For your AI assistant
+
+Add one short instruction file, a skill, to an AI assistant such as Claude, and it answers from the latest figures here, with the date and the source, instead of from memory. Free, no account or key.
+
+**One skill reads every figure and every paper here:** <a href="https://github.com/apapadogiannis/apapadogiannis/blob/main/skill/SKILL.md"><code>papadogiannis-finance-research</code></a>. It is one file, and it holds no figures, so it does not go out of date.
+
+<details>
+<summary>What it answers, and how to add it</summary>
+
+<table>
+<tr><th>What it answers</th><th>A question to try</th></tr>
+<tr><td>Covered-call funds: returns, payouts, written calls and flows</td><td>“How did JEPI do against its index fund over three years?”</td></tr>
+<tr><td>The required return of Bitcoin, Ether, BNB, Solana and Tron, what each is made of, and Bitcoin's record</td><td>“What return should the holders of Bitcoin and of Ether require now, and what is each made of?”</td></tr>
+<tr><td>Splitting a valuation gap into the discount rate and the forecast, from your own numbers</td><td>“My forecast is 90 a year for five years and the benchmark is 100. At 8%, what is K and the effective rate?”</td></tr>
+<tr><td>A number or a finding from any of the papers</td><td>“What does the age-rule paper report for Bitcoin's expected return?”</td></tr>
+</table>
+
+In Claude Code, one file in one folder:
+
+```
+mkdir -p ~/.claude/skills/papadogiannis-finance-research
+curl -o ~/.claude/skills/papadogiannis-finance-research/SKILL.md https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/skill/SKILL.md
+```
+
+In another assistant, add the same file wherever it takes instructions or skills, or give it the address of [llms.txt](llms.txt). It replaces the separate skills the tools used to publish. The Bitcoin and Ether price inputs come from Coin Metrics community data, which are for non-commercial use, as the Observatory's guide states.
+
+**The calculator is also an MCP server.** A skill tells an assistant where to read figures. An MCP server gives it a tool to call: the assistant sends your numbers and gets the result computed, not estimated. It runs on your own machine, and the install line is in [its repository](https://github.com/apapadogiannis/dual-risk-calculator#use-it-from-your-own-ai-agent).
+
+</details>
+
+<sub>AI agents and programs: start at [llms.txt](llms.txt), the index of every tool, paper and data file, with the tools' latest figures and one sentence on what each paper finds.</sub>
 
 ### About
 

@@ -23,8 +23,8 @@
 #   profile page), summary (two or three sentences, for the tools page), figure, figure_alt,
 #   paper (the title of the [[paper]] whose method it uses), workflow (the file name of its check, for the badge),
 #   skill_for and skill_ask (what its skill answers, and a question to try), caption (one line above its picture)
-#   wide = true shows the tool on the profile page across the full width, with its picture (it then needs pitch
-#   and points); the others follow as cards. Tools appear everywhere in the order they are written here.
+#   Tools appear everywhere in the order they are written here, on the profile page as one row of cards.
+#   wide, pitch and points are kept for a full-width panel (build.py, lead) and are not shown at present.
 #   updated: how often its figure changes, two words after the date in the table of answers under the name (optional)
 #   row_question: the question as worded in that table, if narrower than "question"
 #   figures_file: address of one small file with the latest figures, if the tool publishes one
@@ -48,10 +48,10 @@ links = [
   ["Email", "mailto:apapadogiannis@gmail.com"],
 ]
 # In the research section, under its introduction. {journals} is taken from this file.
-checked = "The peer-reviewed articles are in {journals}. In the {tools_word} tools and the {packages_word} replication packages, every published number is recomputed automatically, with machine-readable results and stated limits. The other {rest} papers are papers only."
+checked = "The peer-reviewed articles are in {journals}."
 # Above the map.
 intro = [
-  "The papers are written to be used together, as one corpus on value. It follows value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps. Of the {papers} papers, {published} are peer-reviewed: each was published or accepted by a journal after review by its referees. {packages} have a replication package with the data and code ({both} are both). The others are working papers.",
+  "{papers} papers, {published} of them peer-reviewed: published or accepted by a journal after review by its referees. {packages} come with a replication package, the data and code to recompute every number. Together they follow value through four questions: where it comes from, what return it must earn, what it is worth once both are known, and what its holder actually keeps.",
 ]
 # The section on skills. {skills} is counted.
 skills = [
