@@ -1,8 +1,8 @@
 ## Agisilaos Papadogiannis
 
-**Live answers to three investor questions, recomputed on a schedule from public filings and market data.** Each figure is dated, checked automatically before it is published, and backed by a paper you can read and code you can run.
+<sub><a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7457522">SSRN</a> · <a href="https://scholar.google.com/citations?user=RihXr08AAAAJ">Google Scholar</a> · <a href="https://orcid.org/0009-0002-7753-7052">ORCID</a> · <a href="https://scarcitythinker.substack.com">Substack</a> · <a href="mailto:apapadogiannis@gmail.com">Email</a></sub>
 
-<a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7457522">SSRN</a> · <a href="https://scholar.google.com/citations?user=RihXr08AAAAJ">Google Scholar</a> · <a href="https://orcid.org/0009-0002-7753-7052">ORCID</a> · <a href="https://scarcitythinker.substack.com">Substack</a> · <a href="mailto:apapadogiannis@gmail.com">Email</a>
+**Live answers to three investor questions, recomputed on a schedule from public filings and market data.** Each figure is dated, checked automatically before it is published, and backed by a paper you can read and code you can run.
 
 | The question | Latest answer | As of | Updated |
 |---|---|---|---|

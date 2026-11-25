@@ -383,8 +383,9 @@ def build():
         counts[key + "_word"] = words[counts[key]] if counts[key] < len(words) else str(counts[key])
     counts["Tools_word"] = counts["tools_word"].capitalize()
     counts["published_word"] = words[counts["published"]] if counts["published"] < len(words) else str(counts["published"])
-    out = [f'## {prof["name"]}', "", f'**{prof["position"]}** {prof["forms"].format(**counts)}', "",
-           " · ".join(f'<a href="{url}">{esc(label)}</a>' for label, url in prof["links"]), "",
+    out = [f'## {prof["name"]}', "",
+           "<sub>" + " · ".join(f'<a href="{url}">{esc(label)}</a>' for label, url in prof["links"]) + "</sub>", "",
+           f'**{prof["position"]}** {prof["forms"].format(**counts)}', "",
            ""]
     answers = [(t, answer(t, live)) for t in tools]
     if all(a for _, a in answers):
