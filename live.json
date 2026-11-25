@@ -2,1140 +2,278 @@
  "crypto-observatory": {
   "month_end": "2026-10-31",
   "required": {
-   "lower": 11.77,
-   "midpoint": 20.12,
-   "upper": 28.47,
-   "upper_if_surveyed_owner": 28.47,
+   "lower": 11.65,
+   "midpoint": 18.78,
+   "upper": 25.92,
+   "upper_if_surveyed_owner": 25.92,
    "upper_if_early_holder": 6.97,
    "upper_set_by": "average surveyed owner"
   },
   "terms_at_midpoint": {
    "risk_free": 4.94,
    "market": 5.78,
-   "concentration": 7.5,
+   "concentration": 6.16,
    "mortality": 1.9
   },
+  "assets": [
+   {
+    "name": "Bitcoin",
+    "required": 18.78,
+    "low": 11.65,
+    "high": 25.92,
+    "terms": [
+     4.94,
+     5.78,
+     6.16,
+     1.9
+    ],
+    "sharpe": 0.31,
+    "volatility": 45.1,
+    "compound": 8.61
+   },
+   {
+    "name": "Ether",
+    "required": 24.6,
+    "low": 14.85,
+    "high": 34.35,
+    "terms": [
+     4.94,
+     8.71,
+     9.04,
+     1.9
+    ],
+    "sharpe": 0.3,
+    "volatility": 66.3,
+    "compound": 2.65
+   },
+   {
+    "name": "BNB",
+    "required": 17.32,
+    "low": 10.96,
+    "high": 23.68,
+    "terms": [
+     4.94,
+     5.22,
+     5.25,
+     1.9
+    ],
+    "sharpe": 0.25,
+    "volatility": 49.4,
+    "compound": 5.11
+   },
+   {
+    "name": "Solana",
+    "required": 24.45,
+    "low": 16.39,
+    "high": 32.51,
+    "terms": [
+     4.94,
+     11.32,
+     6.29,
+     1.9
+    ],
+    "sharpe": 0.26,
+    "volatility": 74.0,
+    "compound": -2.95
+   },
+   {
+    "name": "Tron",
+    "required": 9.11,
+    "low": 6.03,
+    "high": 12.18,
+    "terms": [
+     4.94,
+     0.4,
+     1.87,
+     1.9
+    ],
+    "sharpe": 0.14,
+    "volatility": 30.1,
+    "compound": 4.57
+   }
+  ],
+  "benchmarks": [
+   {
+    "name": "US stock market",
+    "required": 8.94,
+    "terms": [
+     4.94,
+     4.0,
+     0.0,
+     0.0
+    ],
+    "sharpe": 0.28,
+    "volatility": 14.4,
+    "compound": 7.9
+   },
+   {
+    "name": "Developed markets",
+    "required": 8.67,
+    "terms": [
+     4.94,
+     3.73,
+     0.0,
+     0.0
+    ],
+    "sharpe": 0.27,
+    "volatility": 13.9,
+    "compound": 7.71
+   },
+   {
+    "name": "US small caps",
+    "required": 9.63,
+    "terms": [
+     4.94,
+     4.69,
+     0.0,
+     0.0
+    ],
+    "sharpe": 0.23,
+    "volatility": 20.4,
+    "compound": 7.55
+   },
+   {
+    "name": "Gold",
+    "required": 5.47,
+    "terms": [
+     4.94,
+     0.0,
+     0.38,
+     0.15
+    ],
+    "sharpe": 0.03,
+    "volatility": 15.9,
+    "compound": 4.2
+   }
+  ],
+  "record": {
+   "period": "2018\u201326",
+   "share_of_excess_return_explained_by_mcm_pct": 89.2,
+   "share_explained_by_capm_pct": 40.6
+  },
   "picture": {
-   "alt": "Bitcoin's required return since 2012 as a band with its midpoint, with the average required and delivered return of each three-year period marked on it",
-   "months": [
-    {
-     "month_end": "2012-01-31",
-     "lower": 13.25,
-     "midpoint": 198.88,
-     "upper": 384.52
-    },
-    {
-     "month_end": "2012-02-29",
-     "lower": 11.84,
-     "midpoint": 180.74,
-     "upper": 349.65
-    },
-    {
-     "month_end": "2012-03-31",
-     "lower": 11.56,
-     "midpoint": 164.33,
-     "upper": 317.1
-    },
-    {
-     "month_end": "2012-04-30",
-     "lower": 11.38,
-     "midpoint": 149.55,
-     "upper": 287.72
-    },
-    {
-     "month_end": "2012-05-31",
-     "lower": 10.86,
-     "midpoint": 136.26,
-     "upper": 261.65
-    },
-    {
-     "month_end": "2012-06-30",
-     "lower": 11.17,
-     "midpoint": 128.3,
-     "upper": 245.42
-    },
-    {
-     "month_end": "2012-07-31",
-     "lower": 11.4,
-     "midpoint": 123.46,
-     "upper": 235.53
-    },
-    {
-     "month_end": "2012-08-31",
-     "lower": 11.15,
-     "midpoint": 113.55,
-     "upper": 215.96
-    },
-    {
-     "month_end": "2012-09-30",
-     "lower": 11.31,
-     "midpoint": 106.63,
-     "upper": 201.95
-    },
-    {
-     "month_end": "2012-10-31",
-     "lower": 11.35,
-     "midpoint": 98.77,
-     "upper": 186.2
-    },
-    {
-     "month_end": "2012-11-30",
-     "lower": 11.24,
-     "midpoint": 91.68,
-     "upper": 172.12
-    },
-    {
-     "month_end": "2012-12-31",
-     "lower": 11.28,
-     "midpoint": 84.97,
-     "upper": 158.66
-    },
-    {
-     "month_end": "2013-01-31",
-     "lower": 12.46,
-     "midpoint": 87.73,
-     "upper": 162.99
-    },
-    {
-     "month_end": "2013-02-28",
-     "lower": 13.54,
-     "midpoint": 93.24,
-     "upper": 172.94
-    },
-    {
-     "month_end": "2013-03-31",
-     "lower": 24.25,
-     "midpoint": 143.67,
-     "upper": 263.08
-    },
-    {
-     "month_end": "2013-04-30",
-     "lower": 27.67,
-     "midpoint": 142.25,
-     "upper": 256.82
-    },
-    {
-     "month_end": "2013-05-31",
-     "lower": 23.59,
-     "midpoint": 130.58,
-     "upper": 237.57
-    },
-    {
-     "month_end": "2013-06-30",
-     "lower": 20.54,
-     "midpoint": 125.94,
-     "upper": 231.35
-    },
-    {
-     "month_end": "2013-07-31",
-     "lower": 19.8,
-     "midpoint": 116.96,
-     "upper": 214.12
-    },
-    {
-     "month_end": "2013-08-31",
-     "lower": 20.92,
-     "midpoint": 112.73,
-     "upper": 204.53
-    },
-    {
-     "month_end": "2013-09-30",
-     "lower": 19.26,
-     "midpoint": 103.94,
-     "upper": 188.62
-    },
-    {
-     "month_end": "2013-10-31",
-     "lower": 24.11,
-     "midpoint": 109.75,
-     "upper": 195.4
-    },
-    {
-     "month_end": "2013-11-30",
-     "lower": 152.06,
-     "midpoint": 301.98,
-     "upper": 451.89
-    },
-    {
-     "month_end": "2013-12-31",
-     "lower": 91.7,
-     "midpoint": 263.07,
-     "upper": 434.43
-    },
-    {
-     "month_end": "2014-01-31",
-     "lower": 86.18,
-     "midpoint": 243.91,
-     "upper": 401.63
-    },
-    {
-     "month_end": "2014-02-28",
-     "lower": 58.06,
-     "midpoint": 221.03,
-     "upper": 384.01
-    },
-    {
-     "month_end": "2014-03-31",
-     "lower": 46.34,
-     "midpoint": 202.27,
-     "upper": 358.19
-    },
-    {
-     "month_end": "2014-04-30",
-     "lower": 41.84,
-     "midpoint": 186.39,
-     "upper": 330.95
-    },
-    {
-     "month_end": "2014-05-31",
-     "lower": 49.47,
-     "midpoint": 182.75,
-     "upper": 316.02
-    },
-    {
-     "month_end": "2014-06-30",
-     "lower": 45.84,
-     "midpoint": 169.03,
-     "upper": 292.21
-    },
-    {
-     "month_end": "2014-07-31",
-     "lower": 40.16,
-     "midpoint": 155.6,
-     "upper": 271.04
-    },
-    {
-     "month_end": "2014-08-31",
-     "lower": 31.87,
-     "midpoint": 142.9,
-     "upper": 253.93
-    },
-    {
-     "month_end": "2014-09-30",
-     "lower": 28.88,
-     "midpoint": 133.9,
-     "upper": 238.92
-    },
-    {
-     "month_end": "2014-10-31",
-     "lower": 23.72,
-     "midpoint": 123.23,
-     "upper": 222.75
-    },
-    {
-     "month_end": "2014-11-30",
-     "lower": 23.59,
-     "midpoint": 115.37,
-     "upper": 207.16
-    },
-    {
-     "month_end": "2014-12-31",
-     "lower": 20.68,
-     "midpoint": 107.44,
-     "upper": 194.2
-    },
-    {
-     "month_end": "2015-01-31",
-     "lower": 17.78,
-     "midpoint": 105.35,
-     "upper": 192.92
-    },
-    {
-     "month_end": "2015-02-28",
-     "lower": 17.82,
-     "midpoint": 99.49,
-     "upper": 181.15
-    },
-    {
-     "month_end": "2015-03-31",
-     "lower": 16.88,
-     "midpoint": 92.33,
-     "upper": 167.79
-    },
-    {
-     "month_end": "2015-04-30",
-     "lower": 14.82,
-     "midpoint": 85.19,
-     "upper": 155.56
-    },
-    {
-     "month_end": "2015-05-31",
-     "lower": 15.47,
-     "midpoint": 79.83,
-     "upper": 144.19
-    },
-    {
-     "month_end": "2015-06-30",
-     "lower": 16.76,
-     "midpoint": 76.15,
-     "upper": 135.53
-    },
-    {
-     "month_end": "2015-07-31",
-     "lower": 16.14,
-     "midpoint": 71.03,
-     "upper": 125.93
-    },
-    {
-     "month_end": "2015-08-31",
-     "lower": 13.77,
-     "midpoint": 67.21,
-     "upper": 120.64
-    },
-    {
-     "month_end": "2015-09-30",
-     "lower": 11.09,
-     "midpoint": 61.4,
-     "upper": 111.7
-    },
-    {
-     "month_end": "2015-10-31",
-     "lower": 16.76,
-     "midpoint": 63.77,
-     "upper": 110.78
-    },
-    {
-     "month_end": "2015-11-30",
-     "lower": 17.26,
-     "midpoint": 61.5,
-     "upper": 105.74
-    },
-    {
-     "month_end": "2015-12-31",
-     "lower": 17.49,
-     "midpoint": 58.53,
-     "upper": 99.58
-    },
-    {
-     "month_end": "2016-01-31",
-     "lower": 16.17,
-     "midpoint": 55.22,
-     "upper": 94.27
-    },
-    {
-     "month_end": "2016-02-29",
-     "lower": 16.37,
-     "midpoint": 53.2,
-     "upper": 90.02
-    },
-    {
-     "month_end": "2016-03-31",
-     "lower": 15.83,
-     "midpoint": 49.77,
-     "upper": 83.72
-    },
-    {
-     "month_end": "2016-04-30",
-     "lower": 15.8,
-     "midpoint": 47.01,
-     "upper": 78.21
-    },
-    {
-     "month_end": "2016-05-31",
-     "lower": 16.14,
-     "midpoint": 45.56,
-     "upper": 74.99
-    },
-    {
-     "month_end": "2016-06-30",
-     "lower": 16.62,
-     "midpoint": 45.46,
-     "upper": 74.29
-    },
-    {
-     "month_end": "2016-07-31",
-     "lower": 15.86,
-     "midpoint": 42.61,
-     "upper": 69.36
-    },
-    {
-     "month_end": "2016-08-31",
-     "lower": 15.33,
-     "midpoint": 40.23,
-     "upper": 65.12
-    },
-    {
-     "month_end": "2016-09-30",
-     "lower": 15.22,
-     "midpoint": 37.99,
-     "upper": 60.76
-    },
-    {
-     "month_end": "2016-10-31",
-     "lower": 15.63,
-     "midpoint": 36.97,
-     "upper": 58.3
-    },
-    {
-     "month_end": "2016-11-30",
-     "lower": 15.69,
-     "midpoint": 35.32,
-     "upper": 54.95
-    },
-    {
-     "month_end": "2016-12-31",
-     "lower": 16.83,
-     "midpoint": 37.15,
-     "upper": 57.46
-    },
-    {
-     "month_end": "2017-01-31",
-     "lower": 15.65,
-     "midpoint": 34.51,
-     "upper": 53.38
-    },
-    {
-     "month_end": "2017-02-28",
-     "lower": 16.29,
-     "midpoint": 34.76,
-     "upper": 53.23
-    },
-    {
-     "month_end": "2017-03-31",
-     "lower": 13.68,
-     "midpoint": 31.98,
-     "upper": 50.28
-    },
-    {
-     "month_end": "2017-04-30",
-     "lower": 14.44,
-     "midpoint": 33.2,
-     "upper": 51.96
-    },
-    {
-     "month_end": "2017-05-31",
-     "lower": 20.04,
-     "midpoint": 45.67,
-     "upper": 71.3
-    },
-    {
-     "month_end": "2017-06-30",
-     "lower": 19.09,
-     "midpoint": 42.87,
-     "upper": 66.64
-    },
-    {
-     "month_end": "2017-07-31",
-     "lower": 20.08,
-     "midpoint": 42.03,
-     "upper": 63.98
-    },
-    {
-     "month_end": "2017-08-31",
-     "lower": 30.22,
-     "midpoint": 57.27,
-     "upper": 84.33
-    },
-    {
-     "month_end": "2017-09-30",
-     "lower": 27.46,
-     "midpoint": 52.18,
-     "upper": 76.89
-    },
-    {
-     "month_end": "2017-10-31",
-     "lower": 35.35,
-     "midpoint": 70.84,
-     "upper": 106.33
-    },
-    {
-     "month_end": "2017-11-30",
-     "lower": 46.91,
-     "midpoint": 107.44,
-     "upper": 167.97
-    },
-    {
-     "month_end": "2017-12-31",
-     "lower": 58.11,
-     "midpoint": 144.09,
-     "upper": 230.08
-    },
-    {
-     "month_end": "2018-01-31",
-     "lower": 47.15,
-     "midpoint": 107.25,
-     "upper": 167.34
-    },
-    {
-     "month_end": "2018-02-28",
-     "lower": 45.61,
-     "midpoint": 101.66,
-     "upper": 157.71
-    },
-    {
-     "month_end": "2018-03-31",
-     "lower": 38.38,
-     "midpoint": 77.39,
-     "upper": 116.4
-    },
-    {
-     "month_end": "2018-04-30",
-     "lower": 44.68,
-     "midpoint": 95.49,
-     "upper": 146.3
-    },
-    {
-     "month_end": "2018-05-31",
-     "lower": 36.93,
-     "midpoint": 75.34,
-     "upper": 113.74
-    },
-    {
-     "month_end": "2018-06-30",
-     "lower": 31.93,
-     "midpoint": 62.83,
-     "upper": 93.73
-    },
-    {
-     "month_end": "2018-07-31",
-     "lower": 33.48,
-     "midpoint": 66.8,
-     "upper": 100.13
-    },
-    {
-     "month_end": "2018-08-31",
-     "lower": 29.46,
-     "midpoint": 56.37,
-     "upper": 83.28
-    },
-    {
-     "month_end": "2018-09-30",
-     "lower": 25.96,
-     "midpoint": 48.32,
-     "upper": 70.68
-    },
-    {
-     "month_end": "2018-10-31",
-     "lower": 23.46,
-     "midpoint": 42.38,
-     "upper": 61.31
-    },
-    {
-     "month_end": "2018-11-30",
-     "lower": 19.38,
-     "midpoint": 42.89,
-     "upper": 66.4
-    },
-    {
-     "month_end": "2018-12-31",
-     "lower": 16.79,
-     "midpoint": 37.61,
-     "upper": 58.44
-    },
-    {
-     "month_end": "2019-01-31",
-     "lower": 13.26,
-     "midpoint": 32.48,
-     "upper": 51.71
-    },
-    {
-     "month_end": "2019-02-28",
-     "lower": 13.1,
-     "midpoint": 29.8,
-     "upper": 46.5
-    },
-    {
-     "month_end": "2019-03-31",
-     "lower": 12.29,
-     "midpoint": 26.63,
-     "upper": 40.97
-    },
-    {
-     "month_end": "2019-04-30",
-     "lower": 14.01,
-     "midpoint": 26.74,
-     "upper": 39.47
-    },
-    {
-     "month_end": "2019-05-31",
-     "lower": 18.01,
-     "midpoint": 36.34,
-     "upper": 54.68
-    },
-    {
-     "month_end": "2019-06-30",
-     "lower": 20.33,
-     "midpoint": 41.96,
-     "upper": 63.58
-    },
-    {
-     "month_end": "2019-07-31",
-     "lower": 17.53,
-     "midpoint": 35.31,
-     "upper": 53.09
-    },
-    {
-     "month_end": "2019-08-31",
-     "lower": 14.17,
-     "midpoint": 29.08,
-     "upper": 43.99
-    },
-    {
-     "month_end": "2019-09-30",
-     "lower": 11.87,
-     "midpoint": 23.67,
-     "upper": 35.47
-    },
-    {
-     "month_end": "2019-10-31",
-     "lower": 10.88,
-     "midpoint": 22.34,
-     "upper": 33.79
-    },
-    {
-     "month_end": "2019-11-30",
-     "lower": 8.91,
-     "midpoint": 17.88,
-     "upper": 26.84
-    },
-    {
-     "month_end": "2019-12-31",
-     "lower": 7.93,
-     "midpoint": 15.61,
-     "upper": 23.29
-    },
-    {
-     "month_end": "2020-01-31",
-     "lower": 8.81,
-     "midpoint": 18.27,
-     "upper": 27.74
-    },
-    {
-     "month_end": "2020-02-29",
-     "lower": 7.14,
-     "midpoint": 15.1,
-     "upper": 23.05
-    },
-    {
-     "month_end": "2020-03-31",
-     "lower": 7.57,
-     "midpoint": 14.23,
-     "upper": 20.89
-    },
-    {
-     "month_end": "2020-04-30",
-     "lower": 9.46,
-     "midpoint": 17.96,
-     "upper": 26.45
-    },
-    {
-     "month_end": "2020-05-31",
-     "lower": 9.11,
-     "midpoint": 17.37,
-     "upper": 25.63
-    },
-    {
-     "month_end": "2020-06-30",
-     "lower": 8.32,
-     "midpoint": 15.62,
-     "upper": 22.92
-    },
-    {
-     "month_end": "2020-07-31",
-     "lower": 9.11,
-     "midpoint": 17.43,
-     "upper": 25.75
-    },
-    {
-     "month_end": "2020-08-31",
-     "lower": 8.51,
-     "midpoint": 16.17,
-     "upper": 23.82
-    },
-    {
-     "month_end": "2020-09-30",
-     "lower": 7.85,
-     "midpoint": 14.47,
-     "upper": 21.08
-    },
-    {
-     "month_end": "2020-10-31",
-     "lower": 8.66,
-     "midpoint": 16.5,
-     "upper": 24.34
-    },
-    {
-     "month_end": "2020-11-30",
-     "lower": 11.16,
-     "midpoint": 22.5,
-     "upper": 33.83
-    },
-    {
-     "month_end": "2020-12-31",
-     "lower": 14.28,
-     "midpoint": 31.8,
-     "upper": 49.33
-    },
-    {
-     "month_end": "2021-01-31",
-     "lower": 14.32,
-     "midpoint": 32.27,
-     "upper": 50.21
-    },
-    {
-     "month_end": "2021-02-28",
-     "lower": 16.79,
-     "midpoint": 41.3,
-     "upper": 65.8
-    },
-    {
-     "month_end": "2021-03-31",
-     "lower": 18.46,
-     "midpoint": 48.86,
-     "upper": 79.25
-    },
-    {
-     "month_end": "2021-04-30",
-     "lower": 16.77,
-     "midpoint": 42.91,
-     "upper": 69.06
-    },
-    {
-     "month_end": "2021-05-31",
-     "lower": 15.65,
-     "midpoint": 34.39,
-     "upper": 53.13
-    },
-    {
-     "month_end": "2021-06-30",
-     "lower": 14.04,
-     "midpoint": 29.69,
-     "upper": 45.35
-    },
-    {
-     "month_end": "2021-07-31",
-     "lower": 14.09,
-     "midpoint": 31.01,
-     "upper": 47.92
-    },
-    {
-     "month_end": "2021-08-31",
-     "lower": 14.12,
-     "midpoint": 31.23,
-     "upper": 48.35
-    },
-    {
-     "month_end": "2021-09-30",
-     "lower": 13.22,
-     "midpoint": 27.47,
-     "upper": 41.71
-    },
-    {
-     "month_end": "2021-10-31",
-     "lower": 15.88,
-     "midpoint": 37.1,
-     "upper": 58.33
-    },
-    {
-     "month_end": "2021-11-30",
-     "lower": 14.53,
-     "midpoint": 32.97,
-     "upper": 51.41
-    },
-    {
-     "month_end": "2021-12-31",
-     "lower": 13.33,
-     "midpoint": 28.19,
-     "upper": 43.05
-    },
-    {
-     "month_end": "2022-01-31",
-     "lower": 13.28,
-     "midpoint": 25.6,
-     "upper": 37.91
-    },
-    {
-     "month_end": "2022-02-28",
-     "lower": 13.38,
-     "midpoint": 26.33,
-     "upper": 39.28
-    },
-    {
-     "month_end": "2022-03-31",
-     "lower": 13.25,
-     "midpoint": 25.9,
-     "upper": 38.55
-    },
-    {
-     "month_end": "2022-04-30",
-     "lower": 13.26,
-     "midpoint": 23.83,
-     "upper": 34.4
-    },
-    {
-     "month_end": "2022-05-31",
-     "lower": 12.65,
-     "midpoint": 21.64,
-     "upper": 30.63
-    },
-    {
-     "month_end": "2022-06-30",
-     "lower": 13.28,
-     "midpoint": 21.04,
-     "upper": 28.8
-    },
-    {
-     "month_end": "2022-07-31",
-     "lower": 13.46,
-     "midpoint": 22.15,
-     "upper": 30.84
-    },
-    {
-     "month_end": "2022-08-31",
-     "lower": 13.39,
-     "midpoint": 20.91,
-     "upper": 28.44
-    },
-    {
-     "month_end": "2022-09-30",
-     "lower": 13.39,
-     "midpoint": 20.33,
-     "upper": 27.27
-    },
-    {
-     "month_end": "2022-10-31",
-     "lower": 13.53,
-     "midpoint": 20.36,
-     "upper": 27.19
-    },
-    {
-     "month_end": "2022-11-30",
-     "lower": 12.43,
-     "midpoint": 18.4,
-     "upper": 24.36
-    },
-    {
-     "month_end": "2022-12-31",
-     "lower": 12.41,
-     "midpoint": 17.99,
-     "upper": 23.57
-    },
-    {
-     "month_end": "2023-01-31",
-     "lower": 13.9,
-     "midpoint": 21.4,
-     "upper": 28.9
-    },
-    {
-     "month_end": "2023-02-28",
-     "lower": 13.97,
-     "midpoint": 21.08,
-     "upper": 28.18
-    },
-    {
-     "month_end": "2023-03-31",
-     "lower": 14.18,
-     "midpoint": 22.36,
-     "upper": 30.54
-    },
-    {
-     "month_end": "2023-04-30",
-     "lower": 13.79,
-     "midpoint": 21.67,
-     "upper": 29.56
-    },
-    {
-     "month_end": "2023-05-31",
-     "lower": 14.58,
-     "midpoint": 21.89,
-     "upper": 29.21
-    },
-    {
-     "month_end": "2023-06-30",
-     "lower": 14.69,
-     "midpoint": 22.27,
-     "upper": 29.86
-    },
-    {
-     "month_end": "2023-07-31",
-     "lower": 14.43,
-     "midpoint": 21.45,
-     "upper": 28.47
-    },
-    {
-     "month_end": "2023-08-31",
-     "lower": 14.2,
-     "midpoint": 20.55,
-     "upper": 26.9
-    },
-    {
-     "month_end": "2023-09-30",
-     "lower": 14.42,
-     "midpoint": 20.62,
-     "upper": 26.83
-    },
-    {
-     "month_end": "2023-10-31",
-     "lower": 15.25,
-     "midpoint": 22.82,
-     "upper": 30.38
-    },
-    {
-     "month_end": "2023-11-30",
-     "lower": 14.74,
-     "midpoint": 22.45,
-     "upper": 30.17
-    },
-    {
-     "month_end": "2023-12-31",
-     "lower": 14.41,
-     "midpoint": 22.52,
-     "upper": 30.63
-    },
-    {
-     "month_end": "2024-01-31",
-     "lower": 14.27,
-     "midpoint": 22.04,
-     "upper": 29.81
-    },
-    {
-     "month_end": "2024-02-29",
-     "lower": 16.84,
-     "midpoint": 29.37,
-     "upper": 41.89
-    },
-    {
-     "month_end": "2024-03-31",
-     "lower": 16.99,
-     "midpoint": 30.94,
-     "upper": 44.89
-    },
-    {
-     "month_end": "2024-04-30",
-     "lower": 16.95,
-     "midpoint": 28.94,
-     "upper": 40.93
-    },
-    {
-     "month_end": "2024-05-31",
-     "lower": 16.76,
-     "midpoint": 29.37,
-     "upper": 41.98
-    },
-    {
-     "month_end": "2024-06-30",
-     "lower": 16.03,
-     "midpoint": 27.32,
-     "upper": 38.62
-    },
-    {
-     "month_end": "2024-07-31",
-     "lower": 15.29,
-     "midpoint": 26.25,
-     "upper": 37.21
-    },
-    {
-     "month_end": "2024-08-31",
-     "lower": 14.85,
-     "midpoint": 24.69,
-     "upper": 34.54
-    },
-    {
-     "month_end": "2024-09-30",
-     "lower": 14.56,
-     "midpoint": 24.52,
-     "upper": 34.49
-    },
-    {
-     "month_end": "2024-10-31",
-     "lower": 15.19,
-     "midpoint": 25.77,
-     "upper": 36.35
-    },
-    {
-     "month_end": "2024-11-30",
-     "lower": 16.22,
-     "midpoint": 32.57,
-     "upper": 48.92
-    },
-    {
-     "month_end": "2024-12-31",
-     "lower": 15.8,
-     "midpoint": 30.69,
-     "upper": 45.58
-    },
-    {
-     "month_end": "2025-01-31",
-     "lower": 15.66,
-     "midpoint": 31.13,
-     "upper": 46.59
-    },
-    {
-     "month_end": "2025-02-28",
-     "lower": 15.1,
-     "midpoint": 28.5,
-     "upper": 41.91
-    },
-    {
-     "month_end": "2025-03-31",
-     "lower": 14.34,
-     "midpoint": 26.67,
-     "upper": 39.0
-    },
-    {
-     "month_end": "2025-04-30",
-     "lower": 14.37,
-     "midpoint": 27.98,
-     "upper": 41.58
-    },
-    {
-     "month_end": "2025-05-31",
-     "lower": 14.41,
-     "midpoint": 28.82,
-     "upper": 43.22
-    },
-    {
-     "month_end": "2025-06-30",
-     "lower": 13.94,
-     "midpoint": 27.76,
-     "upper": 41.57
-    },
-    {
-     "month_end": "2025-07-31",
-     "lower": 13.95,
-     "midpoint": 28.05,
-     "upper": 42.15
-    },
-    {
-     "month_end": "2025-08-31",
-     "lower": 13.51,
-     "midpoint": 26.16,
-     "upper": 38.82
-    },
-    {
-     "month_end": "2025-09-30",
-     "lower": 13.3,
-     "midpoint": 25.81,
-     "upper": 38.32
-    },
-    {
-     "month_end": "2025-10-31",
-     "lower": 12.65,
-     "midpoint": 24.03,
-     "upper": 35.4
-    },
-    {
-     "month_end": "2025-11-30",
-     "lower": 12.6,
-     "midpoint": 22.95,
-     "upper": 33.29
-    },
-    {
-     "month_end": "2025-12-31",
-     "lower": 12.79,
-     "midpoint": 22.36,
-     "upper": 31.92
-    },
-    {
-     "month_end": "2026-01-31",
-     "lower": 12.58,
-     "midpoint": 21.2,
-     "upper": 29.82
-    },
-    {
-     "month_end": "2026-02-28",
-     "lower": 12.52,
-     "midpoint": 20.43,
-     "upper": 28.34
-    },
-    {
-     "month_end": "2026-03-31",
-     "lower": 12.48,
-     "midpoint": 20.06,
-     "upper": 27.63
-    },
-    {
-     "month_end": "2026-04-30",
-     "lower": 12.44,
-     "midpoint": 20.51,
-     "upper": 28.58
-    },
-    {
-     "month_end": "2026-05-31",
-     "lower": 12.11,
-     "midpoint": 19.57,
-     "upper": 27.02
-    },
-    {
-     "month_end": "2026-06-30",
-     "lower": 11.1,
-     "midpoint": 17.99,
-     "upper": 24.89
-    },
-    {
-     "month_end": "2026-07-31",
-     "lower": 11.15,
-     "midpoint": 18.12,
-     "upper": 25.09
-    },
-    {
-     "month_end": "2026-08-31",
-     "lower": 11.38,
-     "midpoint": 20.44,
-     "upper": 29.51
-    },
-    {
-     "month_end": "2026-09-30",
-     "lower": 12.25,
-     "midpoint": 21.44,
-     "upper": 30.63
-    },
-    {
-     "month_end": "2026-10-31",
-     "lower": 11.77,
-     "midpoint": 20.12,
-     "upper": 28.47
-    }
-   ],
-   "periods": [
-    {
-     "period": "2012\u201314",
-     "from": "2012-01",
-     "to": "2014-12",
-     "months": 36,
-     "required_mid": 157.6,
-     "delivered": 277.7
-    },
-    {
-     "period": "2015\u201317",
-     "from": "2015-01",
-     "to": "2017-12",
-     "months": 36,
-     "required_mid": 61.4,
-     "delivered": 159.6
-    },
-    {
-     "period": "2018\u201320",
-     "from": "2018-01",
-     "to": "2020-12",
-     "months": 36,
-     "required_mid": 38.9,
-     "delivered": 69.3
-    },
-    {
-     "period": "2021\u201323",
-     "from": "2021-01",
-     "to": "2023-12",
-     "months": 36,
-     "required_mid": 26.5,
-     "delivered": 30.0
-    },
-    {
-     "period": "2024\u201326",
-     "from": "2024-01",
-     "to": "2026-08",
-     "months": 32,
-     "required_mid": 25.6,
-     "delivered": 37.3
+   "alt": "The required return of Bitcoin, Ether, BNB, Solana and Tron, each as a bar made of the risk-free rate, market risk, concentration risk and mortality risk, with three equity series and gold below for scale",
+   "when": "October 2026",
+   "crypto": 5,
+   "rows": [
+    {
+     "name": "Bitcoin",
+     "total": 18.78,
+     "terms": [
+      4.94,
+      5.78,
+      6.16,
+      1.9
+     ],
+     "band": [
+      11.65,
+      25.92
+     ]
+    },
+    {
+     "name": "Ether",
+     "total": 24.6,
+     "terms": [
+      4.94,
+      8.71,
+      9.04,
+      1.9
+     ],
+     "band": [
+      14.85,
+      34.35
+     ]
+    },
+    {
+     "name": "Solana",
+     "total": 24.45,
+     "terms": [
+      4.94,
+      11.32,
+      6.29,
+      1.9
+     ],
+     "band": [
+      16.39,
+      32.51
+     ]
+    },
+    {
+     "name": "BNB",
+     "total": 17.32,
+     "terms": [
+      4.94,
+      5.22,
+      5.25,
+      1.9
+     ],
+     "band": [
+      10.96,
+      23.68
+     ]
+    },
+    {
+     "name": "Tron",
+     "total": 9.11,
+     "terms": [
+      4.94,
+      0.4,
+      1.87,
+      1.9
+     ],
+     "band": [
+      6.03,
+      12.18
+     ]
+    },
+    {
+     "name": "US small caps",
+     "total": 9.63,
+     "terms": [
+      4.94,
+      4.69,
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "name": "US stock market",
+     "total": 8.94,
+     "terms": [
+      4.94,
+      4.0,
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "name": "Developed markets",
+     "total": 8.67,
+     "terms": [
+      4.94,
+      3.73,
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "name": "Gold",
+     "total": 5.47,
+     "terms": [
+      4.94,
+      0.0,
+      0.38,
+      0.15
+     ]
     }
    ]
   },
   "paper": {
    "what": "Required return on Bitcoin for its current holders, 2026",
-   "value": 18.3,
+   "value": 18.1,
    "range": [
-    15.4,
-    21.9
+    15.2,
+    21.8
    ]
   },
   "data_to": "2026-11-19"
@@ -1275,5 +413,5 @@
    }
   }
  },
- "read_on": "2026-11-23"
+ "read_on": "2026-11-25"
 }

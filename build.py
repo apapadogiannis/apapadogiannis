@@ -54,13 +54,25 @@ def fetch():
     m = obs["months"][-1]
     live = {"crypto-observatory": {"month_end": m["month_end"], "required": m["required"],
                                    "terms_at_midpoint": m["terms_at_midpoint"]}}
+    lt = get("crypto-observatory/main/api/latest.json")
+    key = lambda x, k: x[k + "_pct_per_year"]
+    terms = lambda x: [key(x, k) for k in ("risk_free", "market_term", "concentration_term", "mortality_term")]
+    assets = [{"name": a["asset_name"], "required": key(a, "required_midpoint"), "low": key(a, "required_lower"),
+               "high": key(a, "required_upper"), "terms": terms(a), "sharpe": a["sharpe_ratio"],
+               "volatility": a["volatility_pct_annualised"], "compound": key(a, "required_compound")} for a in lt["assets"]]
+    bench = [{"name": b["name"], "required": key(b, "required"), "terms": terms(b), "sharpe": b["sharpe_ratio"],
+              "volatility": b["volatility_pct_annualised"], "compound": key(b, "required_compound")} for b in lt["benchmarks_for_comparison"]]
+    rec = lt.get("bitcoin_delivered_against_required") or {}
+    live["crypto-observatory"].update({
+        "assets": assets, "benchmarks": bench,
+        "record": {k: rec[k] for k in ("period", "share_of_excess_return_explained_by_mcm_pct", "share_explained_by_capm_pct") if k in rec}})
+    rows = [assets[0]] + sorted(assets[1:], key=lambda a: -a["required"]) + sorted(bench, key=lambda b: -b["required"])
     live["crypto-observatory"]["picture"] = {
-        "alt": "Bitcoin's required return since 2012 as a band with its midpoint, with the average required and "
-               "delivered return of each three-year period marked on it",
-        "months": [{"month_end": x["month_end"], **{k: x["required"][k] for k in ("lower", "midpoint", "upper")}}
-                   for x in obs["months"]],
-        "periods": [{k: p[k] for k in ("period", "from", "to", "months", "required_mid", "delivered")}
-                    for p in obs["periods"] if not p["summary"]]}
+        "alt": "The required return of Bitcoin, Ether, BNB, Solana and Tron, each as a bar made of the risk-free rate, market "
+               "risk, concentration risk and mortality risk, with three equity series and gold below for scale",
+        "when": month(m["month_end"]), "crypto": len(assets),
+        "rows": [{"name": r["name"], "total": r["required"], "terms": r["terms"],
+                  **({"band": [r["low"], r["high"]]} if "low" in r else {})} for r in rows]}
     funds = [f for f in get("covered-call-monitor/main/api/funds.json")["funds"]
              if f["role"] == "fund" and f["still_reporting"]]
     pairs = [f["against_benchmark"]["last_12_months"] for f in funds
@@ -113,10 +125,18 @@ def latest(repo, live):
         return ""
     if repo == "crypto-observatory":
         r, t = d["required"], d["terms_at_midpoint"]
-        return (f'<b>Latest, {month(d["month_end"])}:</b> Bitcoin\'s required return is {r["midpoint"]:.1f}% a year: '
+        text = (f'<b>Latest, {month(d["month_end"])}:</b> Bitcoin\'s required return is {r["midpoint"]:.1f}% a year: '
                 f'risk-free {t["risk_free"]:.1f}, market {t["market"]:.1f}, concentration {t["concentration"]:.1f}, '
                 f'mortality {t["mortality"]:.1f}. Across the range of the model\'s inputs it runs from {r["lower"]:.1f}% '
-                f'to {r["upper"]:.1f}%.' + two_figures(d))
+                f'to {r["upper"]:.1f}%.')
+        if d.get("assets"):
+            others = ", ".join(f'{a["name"]} {a["required"]:.1f}%' for a in d["assets"][1:])
+            scale = {b["name"]: b for b in d.get("benchmarks", [])}
+            text += f' The same equation gives {others}'
+            if "US stock market" in scale and "Gold" in scale:
+                text += f', against {scale["US stock market"]["required"]:.1f}% for the US stock market and {scale["Gold"]["required"]:.1f}% for gold'
+            text += "."
+        return text + two_figures(d)
     if repo == "covered-call-monitor":
         n, less = d["beside_an_index_fund"], d["returned_less"]
         who = f"all {n}" if less == n else f"{less} of the {n}"
@@ -145,7 +165,7 @@ def two_figures(d):
     p = d.get("paper")
     if not p:
         return ""
-    return (f' This is the midpoint between the two edges of that range. The paper\'s {p["value"]:.1f}% for {p["what"][-4:]} is '
+    return (f' Each figure is the midpoint of its range. The paper\'s {p["value"]:.1f}% for Bitcoin in {p["what"][-4:]} is '
             f'another measure of the same model: the median when all inputs are varied together.')
 
 
@@ -267,6 +287,32 @@ def tool(t, width):
         '</td>'])
 
 
+def lead(t, live):
+    """The lead tool across the full width: the question, the picture, the latest figures and what the tool does."""
+    d = live.get(t["repo"], {})
+    name = t["title"].partition(": ")[0]
+    check = f'{GH}/{t["repo"]}/actions/workflows/{t["workflow"]}'
+    out = [f'### {name}', "", f'**{t["question"]}** {t["pitch"]}', "",
+           f'<a href="{t["page"]}">{picture(t)}</a>', ""]
+    if d.get("assets"):
+        cells = d["assets"] + [b for b in d.get("benchmarks", []) if b["name"] in ("US stock market", "Gold")]
+        out += ["<table>", "<tr>" + "".join(f'<th>{esc(c["name"])}</th>' for c in cells) + "</tr>",
+                "<tr>" + "".join(f'<td align="center"><b>{c["required"]:.1f}%</b></td>' for c in cells) + "</tr>",
+                "<tr>" + "".join(f'<td align="center"><sub>Sharpe ratio {c["sharpe"]:.2f}<br>compounds at {c["compound"]:.1f}%</sub></td>' for c in cells) + "</tr>",
+                "</table>", "",
+                f'<sub>Required return a year at the end of {month(d["month_end"])}, the midpoint of each asset\'s range. A hurdle rate, not a forecast. '
+                "Equities and gold are priced the same way for scale. Read from the tool's own data file every month.</sub>", ""]
+    points = list(t["points"])
+    rec = d.get("record") or {}
+    if rec.get("share_of_excess_return_explained_by_mcm_pct") is not None:
+        points.append(f'**The record.** Since {rec["period"][:4]} the three risks account for {rec["share_of_excess_return_explained_by_mcm_pct"]:.0f}% of what Bitcoin '
+                      f'delivered over the risk-free rate; market risk alone, as in the CAPM, for {rec["share_explained_by_capm_pct"]:.0f}%.')
+    out += [f'- {p}' for p in points] + ["",
+            f'**<a href="{t["page"]}">Open the {esc(name)}</a>** · <a href="{t["paper_url"]}">the paper behind it</a> ({t["paper_standing"]}) · '
+            f'<a href="{t["page"]}latest.json">the figures as one small file</a> · <img src="{check}/badge.svg" alt="automated check">', ""]
+    return out
+
+
 def build():
     data = tomllib.loads((HERE / "papers.toml").read_text(encoding="utf-8"))
     prof, papers, tools = data["profile"], data["paper"], data.get("tool", [])
@@ -318,17 +364,23 @@ def build():
     counts["published_word"] = words[counts["published"]] if counts["published"] < len(words) else str(counts["published"])
     out = [f'## {prof["name"]}', "", f'**{prof["position"]}** {prof["forms"].format(**counts)}', "",
            " · ".join(f'<a href="{url}">{esc(label)}</a>' for label, url in prof["links"]), "",
-           "| If you want to | Start here |", "|---|---|",
-           f'| get an answer to a question | [Tools](#tools): {counts["tools_word"]} pages, free, no account |',
-           "| ask through your own AI assistant | [For your AI assistant](#for-your-ai-assistant): one skill, and a calculator it can call |",
-           f'| read the research or check a number | [The research](#the-research-one-corpus-four-questions): {counts["papers"]} papers, '
-           f'{counts["published"]} peer-reviewed, {counts["packages"]} with data and code |', ""]
+           ""]
+    first = next((t for t in tools if t.get("lead")), None)
+    rest = [t for t in tools if t is not first]
+    if first:
+        out += lead(first, live)
+    out += ["| If you want to | Start here |", "|---|---|",
+            (f'| get an answer to a question | the [{first["title"].partition(": ")[0]}](#{first["title"].partition(": ")[0].lower().replace(" ", "-")}) above, and [{words[len(rest)]} more tools](#more-tools), free, no account |'
+             if first else f'| get an answer to a question | [Tools](#tools): {counts["tools_word"]} pages, free, no account |'),
+            "| ask through your own AI assistant | [For your AI assistant](#for-your-ai-assistant): one skill, and a calculator it can call |",
+            f'| read the research or check a number | [The research](#the-research-one-corpus-four-questions): {counts["papers"]} papers, '
+            f'{counts["published"]} peer-reviewed, {counts["packages"]} with data and code |', ""]
 
-    if tools:
-        out += ["### Tools", "",
+    if rest:
+        out += ["### More tools" if first else "### Tools", "",
                 "Each answers one question, from current public data or from your own numbers. The figures below are "
                 "read from the tools' own data files every month.", "", "<table>", "<tr>"]
-        out += [tool(t, 100 // len(tools)) for t in tools]
+        out += [tool(t, 100 // len(rest)) for t in rest]
         out += ["</tr>", "</table>", "",
                 f'All {counts["tools_word"]} on one page, each with its chart: **[apapadogiannis.github.io](https://apapadogiannis.github.io/)**', ""]
 

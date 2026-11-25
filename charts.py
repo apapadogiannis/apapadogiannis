@@ -8,9 +8,9 @@ import math
 FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif"
 THEMES = {
     "light": dict(ink="#0b0b0b", ink2="#52514e", mut="#898781", line="#e1e0d9", axis="#c3c2b7",
-                  blue="#2a78d6", band="#cde2fb", orange="#eb6834", page="#ffffff"),
+                  blue="#2a78d6", band="#cde2fb", orange="#eb6834", page="#ffffff", rf="#b9b8ae", violet="#6250d6", aqua="#1baf7a"),
     "dark": dict(ink="#f0efec", ink2="#c3c2b7", mut="#898781", line="#2e2e2b", axis="#52514e",
-                 blue="#3987e5", band="#173a66", orange="#d95926", page="#0d1117"),
+                 blue="#3987e5", band="#173a66", orange="#d95926", page="#0d1117", rf="#6b6a64", violet="#9085e9", aqua="#199e70"),
 }
 MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
 W, H = 1040, 400
@@ -37,66 +37,43 @@ def ym(s):
 
 
 def observatory(d, c):
-    """Bitcoin's required return: the band and its midpoint by month, and each period's required and delivered average."""
-    months, periods = d["months"], d["periods"]
-    left, right, top, bottom = 62, 918, 64, 378
-    x0, x1 = int(months[0]["month_end"][:4]), ym(months[-1]["month_end"])
-    lo, hi = math.log(5), math.log(500)
-    X = lambda t: left + (t - x0) / (x1 - x0) * (right - left)
-    Y = lambda v: bottom - (math.log(min(max(v, 5), 500)) - lo) / (hi - lo) * (bottom - top)
-    out = []
-    # legend
-    lx = 20
-    out += [f'<rect x="{lx}" y="9" width="14" height="10" rx="2" fill="{c["band"]}"/>', text(lx + 20, 19, "required band", 12, c["ink2"]),
-            f'<line x1="{lx + 118}" y1="14" x2="{lx + 134}" y2="14" stroke="{c["blue"]}" stroke-width="2"/>',
-            text(lx + 140, 19, "required, midpoint", 12, c["ink2"]),
-            f'<line x1="{lx + 262}" y1="14" x2="{lx + 278}" y2="14" stroke="{c["blue"]}" stroke-width="5" stroke-linecap="round"/>',
-            text(lx + 286, 19, "required, average of the period", 12, c["ink2"]),
-            f'<circle cx="{lx + 484}" cy="14" r="5" fill="{c["page"]}" stroke="{c["ink"]}" stroke-width="2"/>',
-            text(lx + 495, 19, "delivered, average of the period", 12, c["ink2"])]
-    # grid
-    for v in (5, 10, 20, 50, 100, 200, 400):
-        out += [f'<line x1="{left}" y1="{Y(v):.1f}" x2="{right}" y2="{Y(v):.1f}" stroke="{c["line"]}" stroke-width="1"/>',
-                text(left - 8, Y(v) + 4, f"{v}%", 11, c["mut"], anchor="end")]
-    for year in range(x0, int(x1) + 1, 2):
-        out.append(text(X(year), bottom + 16, str(year), 11, c["mut"], anchor="middle" if year > x0 else "start"))
-    # band and midpoint
-    pts = [(X(ym(m["month_end"])), m) for m in months]
-    area = " ".join(f"{x:.1f},{Y(m['upper']):.1f}" for x, m in pts) + " " + \
-           " ".join(f"{x:.1f},{Y(m['lower']):.1f}" for x, m in reversed(pts))
-    out.append(f'<polygon points="{area}" fill="{c["band"]}"/>')
-    out.append(f'<polyline points="{" ".join(f"{x:.1f},{Y(m["midpoint"]):.1f}" for x, m in pts)}" fill="none" '
-               f'stroke="{c["blue"]}" stroke-width="1.6" stroke-linejoin="round"/>')
-    # periods
-    for i, p in enumerate(periods):
-        a, b = ym(p["from"]) - 1 / 24, ym(p["to"]) + 1 / 24
-        xa, xb, mid = X(a), min(X(b), right), (X(a) + min(X(b), right)) / 2
-        if i:
-            out.append(f'<line x1="{xa:.1f}" y1="{top - 22}" x2="{xa:.1f}" y2="{bottom}" stroke="{c["axis"]}" '
-                       f'stroke-width="1" stroke-dasharray="2 4"/>')
-        label = p["period"] + ("" if p["months"] == 36 else f' ({p["months"]} months)')
-        out.append(text(mid, top - 16, label, 12, c["ink2"], 600, "middle"))
-        yr, yd = Y(p["required_mid"]), Y(p["delivered"])
-        out += [f'<line x1="{xa + 6:.1f}" y1="{yr:.1f}" x2="{xb - 6:.1f}" y2="{yr:.1f}" stroke="{c["page"]}" stroke-width="9" stroke-linecap="round"/>',
-                f'<line x1="{xa + 6:.1f}" y1="{yr:.1f}" x2="{xb - 6:.1f}" y2="{yr:.1f}" stroke="{c["blue"]}" stroke-width="5" stroke-linecap="round"/>',
-                f'<text x="{xb - 10:.1f}" y="{yr + 18:.1f}" font-size="12" font-weight="600" fill="none" text-anchor="end" '
-                f'stroke="{c["band"]}" stroke-width="4" stroke-linejoin="round">{whole(p["required_mid"])}%</text>',
-                text(xb - 10, yr + 18, f'{whole(p["required_mid"])}%', 12, c["ink"], 600, "end"),
-                f'<line x1="{mid:.1f}" y1="{yd + 6:.1f}" x2="{mid:.1f}" y2="{yr - 4:.1f}" stroke="{c["ink"]}" stroke-width="1.2" stroke-dasharray="3 3"/>',
-                f'<circle cx="{mid:.1f}" cy="{yd:.1f}" r="6" fill="{c["page"]}" stroke="{c["ink"]}" stroke-width="2"/>',
-                text(mid + 11, yd + 4, f'{whole(p["delivered"])}%', 12.5, c["ink"], 700)]
-    # now
-    m = months[-1]
-    xn, r = X(ym(m["month_end"])), m
-    out += [f'<circle cx="{xn:.1f}" cy="{Y(r["midpoint"]):.1f}" r="4.5" fill="{c["blue"]}" stroke="{c["page"]}" stroke-width="2"/>',
-            f'<line x1="{xn + 14:.1f}" y1="{Y(r["upper"]):.1f}" x2="{xn + 14:.1f}" y2="{Y(r["lower"]):.1f}" stroke="{c["ink2"]}" stroke-width="1.5"/>',
-            f'<line x1="{xn + 10:.1f}" y1="{Y(r["upper"]):.1f}" x2="{xn + 18:.1f}" y2="{Y(r["upper"]):.1f}" stroke="{c["ink2"]}" stroke-width="1.5"/>',
-            f'<line x1="{xn + 10:.1f}" y1="{Y(r["lower"]):.1f}" x2="{xn + 18:.1f}" y2="{Y(r["lower"]):.1f}" stroke="{c["ink2"]}" stroke-width="1.5"/>',
-            text(xn + 24, Y(r["upper"]) - 4, f'{r["upper"]:.1f}%', 11, c["mut"]),
-            text(xn + 24, Y(r["midpoint"]) - 6, f'now, {MONTHS[int(m["month_end"][5:7]) - 1]} {m["month_end"][:4]}', 11.5, c["ink2"]),
-            text(xn + 24, Y(r["midpoint"]) + 12, f'{r["midpoint"]:.1f}%', 15, c["ink"], 700),
-            text(xn + 24, Y(r["lower"]) + 13, f'{r["lower"]:.1f}%', 11, c["mut"])]
-    return frame("Bitcoin's required return", d["alt"], out)
+    """The required return of each cryptoasset as a bar of its four terms, with equities and gold below for scale."""
+    rows, n_crypto = d["rows"], d["crypto"]
+    x0, x1, top = 186, 800, 46
+    step = (H - top - 34 - 14) / len(rows)
+    hi = math.ceil(max(sum(r["terms"]) for r in rows) / 5) * 5
+    X = lambda v: x0 + v / hi * (x1 - x0)
+    out, lx = [], 20
+    for name, key in (("risk-free rate", "rf"), ("market risk", "violet"), ("concentration risk", "orange"), ("mortality risk", "aqua")):
+        out += [f'<rect x="{lx}" y="9" width="14" height="10" rx="2" fill="{c[key]}"/>', text(lx + 20, 19, name, 12.5, c["ink2"])]
+        lx += 44 + 7.2 * len(name)
+    out.append(text(W - 20, 19, f'percent a year, {d["when"]}', 12.5, c["mut"], anchor="end"))
+    bottom = top + len(rows) * step + 14
+    for v in range(0, hi + 1, 5):
+        out += [f'<line x1="{X(v):.1f}" y1="{top - 6}" x2="{X(v):.1f}" y2="{bottom:.1f}" stroke="{c["line"]}" stroke-width="1"/>',
+                text(X(v), bottom + 17, f"{v}%", 11.5, c["mut"], anchor="middle")]
+    for i, r in enumerate(rows):
+        y = top + i * step + (14 if i >= n_crypto else 0)
+        ref, main = i >= n_crypto, i == 0
+        if i == n_crypto:
+            out.append(f'<line x1="20" y1="{y - 5:.1f}" x2="{W - 20}" y2="{y - 5:.1f}" stroke="{c["axis"]}" stroke-width="1" stroke-dasharray="3 3"/>')
+        bh = step - 14
+        out.append(text(x0 - 12, y + bh / 2 + 5, r["name"], 15 if main else 13.5, c["ink2"] if ref else c["ink"], 800 if main else 400 if ref else 600, "end"))
+        acc = 0
+        for v, key in zip(r["terms"], ("rf", "violet", "orange", "aqua")):
+            if v > 0.005:
+                w = max(0.0, X(acc + v) - X(acc) - 2)
+                out.append(f'<rect x="{X(acc):.1f}" y="{y:.1f}" width="{w:.1f}" height="{bh:.1f}" rx="3" fill="{c[key]}"'
+                           + (' opacity="0.7"' if ref else "") + "/>")
+                if w > 34:
+                    out.append(text(X(acc) + w / 2, y + bh / 2 + 4, f"{v:.1f}", 11, c["ink"] if key == "rf" else "#ffffff", anchor="middle"))
+                acc += v
+        label = (f'<text x="{X(acc) + 8:.1f}" y="{y + bh / 2 + 5:.1f}" font-size="{15 if main else 13.5}" fill="{c["ink"]}">'
+                 f'<tspan font-weight="{800 if main else 700}">{r["total"]:.1f}%</tspan>')
+        if r.get("band"):
+            label += f'<tspan dx="8" font-size="12" fill="{c["mut"]}">band {r["band"][0]:.1f} to {r["band"][1]:.1f}%</tspan>'
+        out.append(label + "</text>")
+    return frame("Required returns of five cryptoassets, with equities and gold for scale", d["alt"], out)
 
 
 def monitor(d, c):

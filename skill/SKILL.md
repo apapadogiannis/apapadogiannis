@@ -25,7 +25,7 @@ and how to reach a number. It holds no figures: fetch them each time.
 Live tools. Read the guide first: it has the reading rules and says which data file to fetch.
 
 - Crypto Observatory: required returns, risks and survival
-  Use for: Bitcoin's required return, its parts and its record
+  Use for: The required return of Bitcoin, Ether, BNB, Solana and Tron, what each is made of, and Bitcoin's record
   Guide: https://apapadogiannis.github.io/crypto-observatory/llms.txt
   Same guide in the repository: https://raw.githubusercontent.com/apapadogiannis/crypto-observatory/main/api/llms.txt
 - Covered-Call Monitor: returns, overlays and flows from SEC filings
@@ -45,7 +45,7 @@ Papers with a replication package, each with its guide:
   Guide: https://raw.githubusercontent.com/apapadogiannis/architecture-of-blockchain-value/main/llms.txt
 - Bitcoin Is Not Money: Why Fixed Supply Fails in a Modern Economy
   Guide: https://raw.githubusercontent.com/apapadogiannis/bitcoin-is-not-money/main/llms.txt
-- Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold
+- Bitcoin's Required Return: Market Risk, Concentration and Mortality
   Guide: https://raw.githubusercontent.com/apapadogiannis/bitcoin-required-return/main/llms.txt
 - Bitcoin's Expected Return: An Age Rule That Beats Current Practice
   Guide: https://raw.githubusercontent.com/apapadogiannis/bitcoin-age-rule/main/llms.txt

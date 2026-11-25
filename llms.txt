@@ -21,8 +21,8 @@ and as an MCP server.
   Guide: https://apapadogiannis.github.io/crypto-observatory/llms.txt
   Same guide in the repository: https://raw.githubusercontent.com/apapadogiannis/crypto-observatory/main/api/llms.txt
   Code and data: https://github.com/apapadogiannis/crypto-observatory
-  Method: Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold
-  Latest, October 2026: Bitcoin's required return is 20.1% a year: risk-free 4.9, market 5.8, concentration 7.5, mortality 1.9. Across the range of the model's inputs it runs from 11.8% to 28.5%. This is the midpoint between the two edges of that range. The paper's 18.3% for 2026 is another measure of the same model: the median when all inputs are varied together.
+  Method: Bitcoin's Required Return: Market Risk, Concentration and Mortality
+  Latest, October 2026: Bitcoin's required return is 18.8% a year: risk-free 4.9, market 5.8, concentration 6.2, mortality 1.9. Across the range of the model's inputs it runs from 11.7% to 25.9%. The same equation gives Ether 24.6%, BNB 17.3%, Solana 24.4%, Tron 9.1%, against 8.9% for the US stock market and 5.5% for gold. Each figure is the midpoint of its range. The paper's 18.1% for Bitcoin in 2026 is another measure of the same model: the median when all inputs are varied together.
 
 - Covered-Call Monitor: returns, overlays and flows from SEC filings
   Page: https://apapadogiannis.github.io/covered-call-monitor/
@@ -40,7 +40,7 @@ and as an MCP server.
   Method: From Unified Discounting to Dual-Risk: A New Lens on DCF Valuation
   Worked example: a forecast 10% below the benchmark, at a benchmark rate of 8% over 5 years, gives a valuation ratio K of 1.111 and a gain of capital of +0.163. One discount rate would have to fall to 4.1% to hide the gap (5.7% by the article's closed form, which is exact for a single payoff).
 
-The figures above were read from the tools' own data files on 2026-11-23 (Observatory: data to 2026-11-19; Monitor: fund reports to 2026-07-31). They are copies: a tool's guide always has its current figures.
+The figures above were read from the tools' own data files on 2026-11-25 (Observatory: data to 2026-11-19; Monitor: fund reports to 2026-07-31). They are copies: a tool's guide always has its current figures.
 
 ## Skill
 
@@ -103,7 +103,7 @@ says when to use the work, where the files are and how to read them, and holds n
 
 ## Returns: required and expected
 
-- Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold
+- Bitcoin's Required Return: Market Risk, Concentration and Mortality
   Working paper, not peer-reviewed.
   In one sentence: Asks what return Bitcoin's holders should require for the market, concentration and mortality risk they carry (the MCM equation), tests the answer against delivered returns, and takes a census of cryptoasset deaths.
   SSRN: https://ssrn.com/abstract=7705239

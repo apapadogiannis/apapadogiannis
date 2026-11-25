@@ -23,6 +23,7 @@
 #   profile page), summary (two or three sentences, for the tools page), figure, figure_alt,
 #   paper (the title of the [[paper]] whose method it uses), workflow (the file name of its check, for the badge),
 #   skill_for and skill_ask (what its skill answers, and a question to try), caption (one line above its picture)
+#   lead = true on one tool shows it first on the profile page, across the full width, with its picture
 # The latest figures shown with each tool are not typed here: "python3 build.py --fetch" reads them from the
 # tool's own data file into live.json, and the update workflow does so every month.
 
@@ -128,7 +129,7 @@ ssrn = "5635610"
 
 # ---------------------------------------------------------------- returns
 [[paper]]
-title = "Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold"
+title = "Bitcoin's Required Return: Market Risk, Concentration and Mortality"
 question = "returns"
 ssrn = "7705239"
 repo = "bitcoin-required-return"
@@ -246,17 +247,25 @@ ssrn = "5487486"
 # ---------------------------------------------------------------- tools
 [[tool]]
 title = "Crypto Observatory: required returns, risks and survival"
-question = "What return should Bitcoin's holders require, and did they get it?"
+question = "What return should a cryptoasset's holders require?"
+lead = true
+# For the lead tool: one sentence after the question, and what a visitor gets there (markdown, a bold label first).
+pitch = "A live answer for Bitcoin, Ether, BNB, Solana and Tron, recomputed every month from public data with one published equation, and set beside equities and gold."
+points = [
+  "**What each figure is made of.** The risk-free rate, market risk, concentration risk and mortality risk, for every asset, with the inputs behind them.",
+  "**What the return costs.** Volatility, the Sharpe ratio, and what is left once volatility has taken its share: the compound return.",
+  "**Checked, and open.** Before every update the model must reproduce the paper's stored results. Every number is in data files that a person or an AI assistant can read directly.",
+]
 repo = "crypto-observatory"
 page = "https://apapadogiannis.github.io/crypto-observatory/"
-paper = "Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold"
+paper = "Bitcoin's Required Return: Market Risk, Concentration and Mortality"
 workflow = "check.yml"
-skill_for = "Bitcoin's required return, its parts and its record"
-skill_ask = "What return should Bitcoin's holders require now, and how is it made up?"
-caption = "The required return since 2012, and what each period delivered against it."
+skill_for = "The required return of Bitcoin, Ether, BNB, Solana and Tron, what each is made of, and Bitcoin's record"
+skill_ask = "What return should the holders of Bitcoin and of Ether require now, and what is each made of?"
+caption = "What each required return is made of, with equities and gold priced the same way for scale."
 figure = "assets/crypto-observatory.png"
 figure_alt = "Bitcoin's required return since 2012 as a band with its midpoint, with the average delivered return of each three-year period marked on it"
-summary = "What return should Bitcoin's holders require, and did they get it? The answer is recomputed every month from public data, with the equation explained term by term, the tests of fit, and a census of cryptoasset deaths."
+summary = "What return should the holders of a cryptoasset require for the risks they carry? Recomputed every month from public data for Bitcoin, Ether, BNB, Solana and Tron, beside equities and gold: what each figure is made of, its Sharpe ratio and what volatility leaves of it. Bitcoin's requirement is tested against what it delivered since 2012, with the equation explained term by term and a census of cryptoasset deaths."
 
 [[tool]]
 title = "Covered-Call Monitor: returns, overlays and flows from SEC filings"

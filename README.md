@@ -4,28 +4,41 @@
 
 <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7457522">SSRN</a> · <a href="https://scholar.google.com/citations?user=RihXr08AAAAJ">Google Scholar</a> · <a href="https://orcid.org/0009-0002-7753-7052">ORCID</a> · <a href="https://scarcitythinker.substack.com">Substack</a> · <a href="mailto:apapadogiannis@gmail.com">Email</a>
 
+
+### Crypto Observatory
+
+**What return should a cryptoasset's holders require?** A live answer for Bitcoin, Ether, BNB, Solana and Tron, recomputed every month from public data with one published equation, and set beside equities and gold.
+
+<a href="https://apapadogiannis.github.io/crypto-observatory/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/crypto-observatory-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/crypto-observatory-light.svg"><img src="assets/crypto-observatory-light.svg" width="100%" alt="The required return of Bitcoin, Ether, BNB, Solana and Tron, each as a bar made of the risk-free rate, market risk, concentration risk and mortality risk, with three equity series and gold below for scale"></picture></a>
+
+<table>
+<tr><th>Bitcoin</th><th>Ether</th><th>BNB</th><th>Solana</th><th>Tron</th><th>US stock market</th><th>Gold</th></tr>
+<tr><td align="center"><b>18.8%</b></td><td align="center"><b>24.6%</b></td><td align="center"><b>17.3%</b></td><td align="center"><b>24.4%</b></td><td align="center"><b>9.1%</b></td><td align="center"><b>8.9%</b></td><td align="center"><b>5.5%</b></td></tr>
+<tr><td align="center"><sub>Sharpe ratio 0.31<br>compounds at 8.6%</sub></td><td align="center"><sub>Sharpe ratio 0.30<br>compounds at 2.6%</sub></td><td align="center"><sub>Sharpe ratio 0.25<br>compounds at 5.1%</sub></td><td align="center"><sub>Sharpe ratio 0.26<br>compounds at -3.0%</sub></td><td align="center"><sub>Sharpe ratio 0.14<br>compounds at 4.6%</sub></td><td align="center"><sub>Sharpe ratio 0.28<br>compounds at 7.9%</sub></td><td align="center"><sub>Sharpe ratio 0.03<br>compounds at 4.2%</sub></td></tr>
+</table>
+
+<sub>Required return a year at the end of October 2026, the midpoint of each asset's range. A hurdle rate, not a forecast. Equities and gold are priced the same way for scale. Read from the tool's own data file every month.</sub>
+
+- **What each figure is made of.** The risk-free rate, market risk, concentration risk and mortality risk, for every asset, with the inputs behind them.
+- **What the return costs.** Volatility, the Sharpe ratio, and what is left once volatility has taken its share: the compound return.
+- **Checked, and open.** Before every update the model must reproduce the paper's stored results. Every number is in data files that a person or an AI assistant can read directly.
+- **The record.** Since 2018 the three risks account for 89% of what Bitcoin delivered over the risk-free rate; market risk alone, as in the CAPM, for 41%.
+
+**<a href="https://apapadogiannis.github.io/crypto-observatory/">Open the Crypto Observatory</a>** · <a href="https://ssrn.com/abstract=7705239">the paper behind it</a> (working paper) · <a href="https://apapadogiannis.github.io/crypto-observatory/latest.json">the figures as one small file</a> · <img src="https://github.com/apapadogiannis/crypto-observatory/actions/workflows/check.yml/badge.svg" alt="automated check">
+
 | If you want to | Start here |
 |---|---|
-| get an answer to a question | [Tools](#tools): three pages, free, no account |
+| get an answer to a question | the [Crypto Observatory](#crypto-observatory) above, and [two more tools](#more-tools), free, no account |
 | ask through your own AI assistant | [For your AI assistant](#for-your-ai-assistant): one skill, and a calculator it can call |
 | read the research or check a number | [The research](#the-research-one-corpus-four-questions): 21 papers, 10 peer-reviewed, 9 with data and code |
 
-### Tools
+### More tools
 
 Each answers one question, from current public data or from your own numbers. The figures below are read from the tools' own data files every month.
 
 <table>
 <tr>
-<td width="33%" valign="top">
-<h4>Crypto Observatory</h4>
-<p>What return should Bitcoin's holders require, and did they get it?</p>
-<p><sub>Bitcoin's required return, October 2026</sub></p>
-<h3>20.1% a year</h3>
-<p><sub>The midpoint of a range from 11.8% to 28.5% across the model's inputs. The paper's 18.3% is the median over the same inputs. Recomputed every month.</sub></p>
-<p><b><a href="https://apapadogiannis.github.io/crypto-observatory/">Open the tool</a></b></p>
-<p><img src="https://github.com/apapadogiannis/crypto-observatory/actions/workflows/check.yml/badge.svg" alt="automated check"></p>
-</td>
-<td width="33%" valign="top">
+<td width="50%" valign="top">
 <h4>Covered-Call Monitor</h4>
 <p>What does the yield of a covered-call fund cost against its index fund?</p>
 <p><sub>Covered-call funds followed, each from its SEC filings</sub></p>
@@ -34,7 +47,7 @@ Each answers one question, from current public data or from your own numbers. Th
 <p><b><a href="https://apapadogiannis.github.io/covered-call-monitor/">Open the tool</a></b></p>
 <p><img src="https://github.com/apapadogiannis/covered-call-monitor/actions/workflows/check.yml/badge.svg" alt="automated check"></p>
 </td>
-<td width="33%" valign="top">
+<td width="50%" valign="top">
 <h4>Dual-Risk DCF Calculator</h4>
 <p>How much of a valuation gap is the forecast, and how much the discount rate?</p>
 <p><sub>Example: a forecast 10% too low, valued at 8% over 5 years</sub></p>
@@ -56,7 +69,7 @@ A skill is a short instruction file that you add once to an AI assistant such as
 
 <table>
 <tr><th>What it answers</th><th>A question to try</th></tr>
-<tr><td>Bitcoin's required return, its parts and its record</td><td>“What return should Bitcoin's holders require now, and how is it made up?”</td></tr>
+<tr><td>The required return of Bitcoin, Ether, BNB, Solana and Tron, what each is made of, and Bitcoin's record</td><td>“What return should the holders of Bitcoin and of Ether require now, and what is each made of?”</td></tr>
 <tr><td>Covered-call funds: returns, payouts, written calls and flows</td><td>“How did JEPI do against its index fund over three years?”</td></tr>
 <tr><td>Splitting a valuation gap into the discount rate and the forecast, from your own numbers</td><td>“My forecast is 90 a year for five years and the benchmark is 100. At 8%, what is K and the effective rate?”</td></tr>
 <tr><td>A number or a finding from any of the papers</td><td>“What does the age-rule paper report for Bitcoin's expected return?”</td></tr>
@@ -113,7 +126,7 @@ Each comes with its data and code.
 <p><img src="assets/q-returns-band.svg" width="100%" alt=""></p>
 <img src="assets/required-return.png" alt="Bitcoin&#x27;s required return since 2012, split into risk-free rate, market risk, concentration risk and mortality risk">
 <p><img src="assets/q-returns-tag.svg" height="22" alt="Returns"></p>
-<p><b><a href="https://github.com/apapadogiannis/bitcoin-required-return">Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold</a></b></p>
+<p><b><a href="https://github.com/apapadogiannis/bitcoin-required-return">Bitcoin's Required Return: Market Risk, Concentration and Mortality</a></b></p>
 <p>The MCM equation prices market, concentration and mortality risk: about 18% a year for 2026 at the median. The live tool above shows the midpoint of its band.</p>
 <p><sub>Working paper</sub></p>
 <p><img src="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml/badge.svg" alt="replication check"></p>
@@ -160,7 +173,7 @@ Click a line to open its list. A green badge means the package's stored results 
 <details>
 <summary><img src="assets/q-returns-dot.svg" width="12" height="12" alt=""> <b>Returns</b>: required and expected (5 papers, 2 with a replication package)</summary>
 <ul>
-<li><b>Bitcoin's Required Return: Pricing a New Asset Beside Equities and Gold</b>. Working paper. <a href="https://ssrn.com/abstract=7705239">SSRN</a> · <a href="https://github.com/apapadogiannis/bitcoin-required-return">Replication package</a> <a href="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> · <a href="https://apapadogiannis.github.io/crypto-observatory/">Live tool</a><br><sub>Asks what return Bitcoin's holders should require for the market, concentration and mortality risk they carry (the MCM equation), tests the answer against delivered returns, and takes a census of cryptoasset deaths.</sub></li>
+<li><b>Bitcoin's Required Return: Market Risk, Concentration and Mortality</b>. Working paper. <a href="https://ssrn.com/abstract=7705239">SSRN</a> · <a href="https://github.com/apapadogiannis/bitcoin-required-return">Replication package</a> <a href="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/bitcoin-required-return/actions/workflows/replicate.yml/badge.svg" alt="replication"></a> · <a href="https://apapadogiannis.github.io/crypto-observatory/">Live tool</a><br><sub>Asks what return Bitcoin's holders should require for the market, concentration and mortality risk they carry (the MCM equation), tests the answer against delivered returns, and takes a census of cryptoasset deaths.</sub></li>
 <li><b>Bitcoin's Expected Return: An Age Rule That Beats Current Practice</b>. Working paper. <a href="https://ssrn.com/abstract=7705438">SSRN</a> · <a href="https://github.com/apapadogiannis/bitcoin-age-rule">Replication package</a> <a href="https://github.com/apapadogiannis/bitcoin-age-rule/actions/workflows/replicate.yml"><img src="https://github.com/apapadogiannis/bitcoin-age-rule/actions/workflows/replicate.yml/badge.svg" alt="replication"></a><br><sub>Tests the ways practitioners set Bitcoin's long-run expected return against the returns that followed since 2012; fixed rates and trailing averages fail, and an age rule, the power-law exponent divided by Bitcoin's age, comes closest.</sub></li>
 <li><b>On the Physics of Expected Asset Returns</b>. Working paper. <a href="https://ssrn.com/abstract=6586879">SSRN</a></li>
 <li><b>Scarcity-Aligned Discounting in Asset Valuation</b>. Working paper. <a href="https://ssrn.com/abstract=5368003">SSRN</a></li>
