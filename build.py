@@ -484,10 +484,13 @@ def skill(prof, papers, tools, counts):
     raw = "https://raw.githubusercontent.com/apapadogiannis/apapadogiannis/main/llms.txt"
     packaged = [p for p in papers if "repo" in p]
     lines = ["---", "name: papadogiannis-finance-research",
-             "description: Open finance research by Agisilaos Papadogiannis, with replication packages and live tools, on "
-             "Bitcoin's required and expected return, the valuation of scarcity and of blockchain networks, covered-call "
-             "funds, broad index investing and AI, discount rates and unpriced risk. Use when asked what one of these "
-             "papers says or reports, for a number from one of them, for the latest figure of a live tool, or which of "
+             "description: Open finance research by Agisilaos Papadogiannis, with replication packages and live tools. Use for "
+             "questions such as: what return should the holders of Bitcoin, Ether, BNB, Solana or Tron require, and did "
+             "Bitcoin deliver it; how has a covered-call fund (QYLD, XYLD, RYLD, JEPI, JEPQ and others) done against its "
+             "index fund, and what does it pay out; how much of a valuation gap is the discount rate and how much the "
+             "forecast. Also for what one of his papers says or reports on Bitcoin's required and expected return, the "
+             "valuation of scarcity and of blockchain networks, covered-call funds, broad index investing and AI, discount "
+             "rates and unpriced risk; for a number from one of them; for the latest figure of a live tool; or for which of "
              f"them covers a topic. {counts['packages']} of the {counts['papers']} papers come with data and code; the others are papers only.",
              "---", "", f'# Research by {prof["name"]}', "",
              "This one skill covers the whole account: the live tools and every paper. It tells you where the work is",

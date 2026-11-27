@@ -1,6 +1,6 @@
 ---
 name: papadogiannis-finance-research
-description: Open finance research by Agisilaos Papadogiannis, with replication packages and live tools, on Bitcoin's required and expected return, the valuation of scarcity and of blockchain networks, covered-call funds, broad index investing and AI, discount rates and unpriced risk. Use when asked what one of these papers says or reports, for a number from one of them, for the latest figure of a live tool, or which of them covers a topic. 9 of the 21 papers come with data and code; the others are papers only.
+description: Open finance research by Agisilaos Papadogiannis, with replication packages and live tools. Use for questions such as: what return should the holders of Bitcoin, Ether, BNB, Solana or Tron require, and did Bitcoin deliver it; how has a covered-call fund (QYLD, XYLD, RYLD, JEPI, JEPQ and others) done against its index fund, and what does it pay out; how much of a valuation gap is the discount rate and how much the forecast. Also for what one of his papers says or reports on Bitcoin's required and expected return, the valuation of scarcity and of blockchain networks, covered-call funds, broad index investing and AI, discount rates and unpriced risk; for a number from one of them; for the latest figure of a live tool; or for which of them covers a topic. 9 of the 21 papers come with data and code; the others are papers only.
 ---
 
 # Research by Agisilaos Papadogiannis
@@ -29,7 +29,7 @@ Live tools. Read the guide first: it has the reading rules and says which data f
   Guide: https://apapadogiannis.github.io/covered-call-monitor/llms.txt
   Same guide in the repository: https://raw.githubusercontent.com/apapadogiannis/covered-call-monitor/main/api/llms.txt
 - Crypto Observatory: required returns, risks and survival
-  Use for: The required return of Bitcoin, Ether, BNB, Solana and Tron, what each is made of, and Bitcoin's record
+  Use for: The required return of Bitcoin, Ether, BNB, Solana and Tron, what each is made of, what changed since last month, and Bitcoin's record
   Guide: https://apapadogiannis.github.io/crypto-observatory/llms.txt
   Same guide in the repository: https://raw.githubusercontent.com/apapadogiannis/crypto-observatory/main/api/llms.txt
 - Dual-Risk DCF Calculator: the discount rate and the forecast, separated

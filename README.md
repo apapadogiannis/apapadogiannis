@@ -171,7 +171,7 @@ Add one short instruction file, a skill, to an AI assistant such as Claude, and 
 <table>
 <tr><th>What it answers</th><th>A question to try</th></tr>
 <tr><td>Covered-call funds: returns, payouts, written calls and flows</td><td>“How did JEPI do against its index fund over three years?”</td></tr>
-<tr><td>The required return of Bitcoin, Ether, BNB, Solana and Tron, what each is made of, and Bitcoin's record</td><td>“What return should the holders of Bitcoin and of Ether require now, and what is each made of?”</td></tr>
+<tr><td>The required return of Bitcoin, Ether, BNB, Solana and Tron, what each is made of, what changed since last month, and Bitcoin's record</td><td>“What return should the holders of Bitcoin and of Ether require now, and what is each made of?”</td></tr>
 <tr><td>Splitting a valuation gap into the discount rate and the forecast, from your own numbers</td><td>“My forecast is 90 a year for five years and the benchmark is 100. At 8%, what is K and the effective rate?”</td></tr>
 <tr><td>A number or a finding from any of the papers</td><td>“What does the age-rule paper report for Bitcoin's expected return?”</td></tr>
 </table>
